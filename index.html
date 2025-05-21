@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#007BCA">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>No La Penses! - Automatizaciones digitales y soluciones IA</title>
+    <meta name="description" content="Automatizaciones digitales, creación de páginas web, chatbots personalizados con IA, sistemas a medida y asistencia por WhatsApp IA.">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="FAVICON.png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'blue-electric': '#007BCA',
+                        'white-pure': '#FFFFFF',
+                        'gray-dark': '#1F1F1F',
+                        'red-coral': '#F94C66',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        };
+    </script>
+    
+    <script>
+        // Configuración global
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generar un estado de ánimo aleatorio y un saludo aleatorio antes de iniciar Alpine
+            const moods = ['Alegre', 'Creativo', 'Energético', 'Curioso', 'Motivado'];
+            const emojis = ['😄', '🎨', '⚡', '🤔', '💪'];
+            const randomMoodIndex = Math.floor(Math.random() * moods.length);
+            const selectedMood = moods[randomMoodIndex];
+            const selectedEmoji = emojis[randomMoodIndex];
+            
+            // Actualizar el badge de estado de ánimo en el DOM
+            const moodBadgeElement = document.getElementById('moodBadge');
+            if (moodBadgeElement) {
+                moodBadgeElement.textContent = 'Estado de ánimo: ' + selectedMood;
+            }
+            
+            // Saludos por estado de ánimo
+            const moodGreetings = {
+                'Alegre': [
+                    '¡Qué bueno verte con tanta alegría! 😄 ¿En qué puedo ayudarte hoy?',
+                    'Tu energía positiva es contagiosa. ¿Qué proyecto tienes en mente?',
+                    'Con ese buen humor, seguro que hoy logramos grandes cosas. ¿Comenzamos?',
+                    'La alegría es el mejor combustible para la creatividad. ¿Qué vamos a crear hoy?'
+                ],
+                'Creativo': [
+                    'Las mejores ideas nacen de mentes creativas como la tuya 💡 ¿Qué estás pensando implementar?',
+                    'Veo que estás en modo creativo. ¡Perfecto para innovar! ¿Qué tienes en mente?',
+                    'La creatividad es la inteligencia divirtiéndose. ¿Qué vamos a explorar hoy?',
+                    'Cuando la creatividad fluye, todo es posible. ¿Qué proyecto te gustaría desarrollar?'
+                ],
+                'Energético': [
+                    '¡Con esa energía podemos conquistar el mundo digital! ¿Por dónde empezamos?',
+                    'Tu energía es exactamente lo que necesitamos para hacer grandes proyectos. ¿Qué te gustaría implementar?',
+                    '¡A toda máquina! Con ese impulso, hoy lograremos mucho. ¿Cuál es tu objetivo?',
+                    'La energía que traes es perfecta para superar cualquier desafío tecnológico. ¿Qué necesitas resolver?'
+                ],
+                'Curioso': [
+                    'La curiosidad es el primer paso hacia la innovación. ¿Qué te gustaría descubrir hoy?',
+                    'Las mentes curiosas siempre encuentran soluciones creativas. ¿Qué estás explorando?',
+                    'Preguntar es el principio de la sabiduría. ¿Qué te gustaría saber sobre nuestros servicios?',
+                    'La curiosidad te ha traído al lugar correcto. ¿Qué tecnología te intriga más?'
+                ],
+                'Motivado': [
+                    'Con esa motivación, no hay meta inalcanzable. ¿Qué proyecto quieres impulsar hoy?',
+                    'La motivación es lo que te pone en marcha, y el hábito lo que te mantiene. ¿Qué hábito digital quieres crear?',
+                    'Personas motivadas como tú son las que cambian el mundo digital. ¿Qué cambio quieres iniciar?',
+                    'Tu motivación es inspiradora. ¿Qué te gustaría lograr con nuestros servicios?'
+                ]
+            };
+            
+            // Seleccionar un saludo aleatorio para el estado de ánimo seleccionado
+            const greetings = moodGreetings[selectedMood] || [];
+            if (greetings.length > 0) {
+                const randomGreetingIndex = Math.floor(Math.random() * greetings.length);
+                const selectedGreeting = greetings[randomGreetingIndex];
+                
+                // Actualizar el saludo en el DOM
+                const greetingElement = document.getElementById('personalizedGreeting');
+                if (greetingElement) {
+                    greetingElement.textContent = selectedGreeting;
+                }
+            }
+            
+            // Iniciar Alpine
+            Alpine.start();
+        });
+    </script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Script para manejar los botones de servicio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener todos los botones de servicio
+            const serviceButtons = document.querySelectorAll('.service-link');
+            
+            // Agregar manejador de eventos a cada botón
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    // Prevenir comportamiento predeterminado
+                    event.preventDefault();
+                    
+                    // Obtener el ID del servicio del atributo data-service
+                    const serviceId = this.getAttribute('data-service');
+                    console.log('Botón de servicio clickeado:', serviceId);
+                    
+                    // Buscar el servicio en la lista de servicios disponibles
+                    const serviceOptions = [
+                        { id: 'automatizaciones', emoji: '🤖', text: 'Automatizaciones' },
+                        { id: 'ia-atencion', emoji: '💬', text: 'Atención al cliente con IA' },
+                        { id: 'web', emoji: '🌐', text: 'Quiero mi página web' },
+                        { id: 'sistemas', emoji: '💻', text: 'Sistemas personalizados' },
+                        { id: 'whatsapp', emoji: '📱', text: 'Chatbot de WhatsApp' },
+                        { id: 'chatbot-ia', emoji: '🤖', text: 'Chatbot con IA' },
+                        { id: 'redes', emoji: '📸', text: 'Automatización de redes sociales' },
+                        { id: 'ayuda', emoji: '🤔', text: 'No lo sé bien, ayudame' }
+                    ];
+                    
+                    const selectedService = serviceOptions.find(service => service.id === serviceId) || {
+                        id: serviceId,
+                        emoji: '❓',
+                        text: serviceId
+                    };
+                    
+                    // Obtener el estado de ánimo actual del badge
+                    const moodBadge = document.getElementById('moodBadge');
+                    const currentMood = moodBadge ? moodBadge.textContent.replace('Estado de ánimo: ', '') : 'Creativo';
+                    
+                    // Guardar la selección en localStorage para referencia futura
+                    localStorage.setItem('selectedService', JSON.stringify(selectedService));
+                    localStorage.setItem('currentMood', currentMood);
+                    
+                    // Actualizar el mensaje del chatbot en la sección de voz
+                    const selectedServiceText = document.getElementById('selectedServiceText');
+                    const chatMoodBadge = document.getElementById('chatMoodBadge');
+                    const chatServiceEmoji = document.getElementById('chatServiceEmoji');
+                    const chatServiceText = document.getElementById('chatServiceText');
+                    
+                    if (selectedServiceText && chatMoodBadge && chatServiceEmoji && chatServiceText) {
+                        // Actualizar el texto del servicio seleccionado en el mensaje
+                        selectedServiceText.textContent = selectedService.text;
+                        
+                        // Actualizar los badges
+                        chatMoodBadge.textContent = 'Estado de ánimo: ' + currentMood;
+                        chatServiceEmoji.textContent = selectedService.emoji;
+                        chatServiceText.textContent = selectedService.text;
+                        
+                        // Desplazarse a la sección de voz
+                        const voiceSection = document.getElementById('voice-section');
+                        if (voiceSection) {
+                            voiceSection.scrollIntoView({ behavior: 'smooth' });
+                            console.log('Desplazamiento a la sección de voz completado');
+                        } else {
+                            console.error('No se encontró la sección de voz');
+                        }
+                    } else {
+                        console.error('No se encontraron los elementos necesarios para actualizar el mensaje del chatbot');
+                        
+                        // Si no se pueden encontrar los elementos, desplazarse directamente a la sección de voz
+                        const voiceSection = document.getElementById('voice-section');
+                        if (voiceSection) {
+                            voiceSection.scrollIntoView({ behavior: 'smooth' });
+                            console.log('Desplazamiento directo a la sección de voz');
+                        } else {
+                            console.error('No se encontró la sección de voz');
+                        }
+                    }
+                });
+            });
+            
+            console.log('Manejadores de eventos para botones de servicio configurados');
+        });
+    </script>
+    
+    <!-- Web Speech API polyfill -->
+    <script src="https://cdn.jsdelivr.net/npm/web-speech-cognitive-services@7.1.3/dist/webspeech-polyfill.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+    
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="bg-gray-dark text-white-pure" x-data="landingApp">
+    <!-- Header -->
+    <header class="relative overflow-hidden h-screen flex items-center justify-center">
+        <!-- Background with floating emojis -->
+        <div class="absolute inset-0 z-0 emoji-background"></div>
+        
+        <!-- Logo/Profile Image -->
+        <div class="absolute top-4 left-4 z-20">
+            <img src="assets/img/logo-blanco.svg" alt="No La Penses!" class="w-24 h-24">
+        </div>
+        
+        <!-- Main content -->
+        <div class="container mx-auto px-4 z-10 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl mb-8 animate__animated animate__fadeInDown">
+                    <span class="text-white-pure drop-shadow-lg">No la penses!</span> <br>
+                    <span class="text-blue-electric">¡Nosotros lo hacemos por vos!</span>
+                </h1>
+                
+                <!-- Dynamic AI welcome message -->
+                <div id="welcomeMessage" class="bg-white-pure/10 backdrop-blur-sm p-6 rounded-lg mb-8 animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="flex items-center mb-2">
+                        <span id="moodBadge" class="text-sm bg-blue-electric/30 px-2 py-1 rounded-md inline-block">Estado de ánimo: Creativo</span>
+                    </div>
+                    <p id="personalizedGreeting" class="text-2xl mb-4">Las mejores ideas nacen de mentes creativas como la tuya 💡 ¿Qué estás pensando implementar?</p>
+                </div>
+                
+                <!-- Service options section - shown automatically -->
+                <div id="serviceSelectionSection" class="animate__animated animate__fadeIn animate__delay-2s">
+                    <p id="serviceSelectionTitle" class="text-xl mb-4">Seleccioná qué te gustaría implementar:</p>
+                    
+                    <div id="serviceButtonsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+                        <button id="serviceButton-automatizaciones" data-service="automatizaciones" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                            <span class="text-2xl">🤖</span>
+                            <span class="text-lg font-medium">Automatizaciones</span>
+                        </button>
+                        <button id="serviceButton-ia-atencion" data-service="ia-atencion" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                            <span class="text-2xl">💬</span>
+                            <span class="text-lg font-medium">Atención al cliente con IA</span>
+                        </button>
+                        <button id="serviceButton-web" data-service="web" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                            <span class="text-2xl">🌐</span>
+                            <span class="text-lg font-medium">Quiero mi página web</span>
+                        </button>
+                        <button id="serviceButton-sistemas" data-service="sistemas" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                            <span class="text-2xl">💻</span>
+                            <span class="text-lg font-medium">Sistemas personalizados</span>
+                        </button>
+                        <button id="serviceButton-whatsapp" data-service="whatsapp" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                            <span class="text-2xl">📱</span>
+                            <span class="text-lg font-medium">Chatbot de WhatsApp</span>
+                        </button>
+                        <button id="serviceButton-chatbot-ia" data-service="chatbot-ia" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                            <span class="text-2xl">🤖</span>
+                            <span class="text-lg font-medium">Chatbot con IA</span>
+                        </button>
+                        <button id="serviceButton-redes" data-service="redes" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                            <span class="text-2xl">📸</span>
+                            <span class="text-lg font-medium">Automatización de redes sociales</span>
+                        </button>
+                        <button id="serviceButton-ayuda" data-service="ayuda" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                            <span class="text-2xl">🤔</span>
+                            <span class="text-lg font-medium">No lo sé bien, ayudame</span>
+                        </button>
+                    </div>
+                </div>
+                
+    
+                <!-- Esta sección ya no es necesaria, la eliminamos -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Voice interaction section -->
+    <section id="voice-section" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center">Contanos un poco más de lo que querés</h2>
+                
+                <div class="bg-white-pure/5 backdrop-blur-sm p-8 rounded-lg">
+                    <div class="mb-8 text-center">
+                        <p class="text-xl mb-6">Dale, grabate un mensaje con tu idea y te ayudamos a implementarla</p>
+                        
+                        <!-- Voice recorder UI -->
+                        <div class="flex flex-col items-center">
+                            <button 
+                                id="recordButton"
+                                @click="requestMicrophonePermission" 
+                                class="record-button flex items-center justify-center gap-2 bg-red-coral hover:bg-red-coral/90"
+                                title="Grabar mensaje de voz"
+                                aria-label="Grabar o detener grabación de mensaje de voz">
+                                <div class="mic-icon-container">
+                                    <!-- Icono de micrófono siempre visible -->
+                                    <svg class="w-8 h-8" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"></path>
+                                        <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"></path>
+                                    </svg>
+                                </div>
+                                <span class="font-bold text-white">Grabar mensaje</span>
+                            </button>
+                            
+                            <div x-show="isRecording" class="mt-4 flex items-center">
+                                <div class="recording-indicator"></div>
+                                <span class="ml-2">Grabando...</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chatbot message container - Always visible with initial or response message -->
+                    <div class="mt-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-electric flex items-center justify-center flex-shrink-0">
+                                <span class="text-2xl">🤖</span>
+                            </div>
+                            <div class="flex-1 bg-blue-electric/20 p-4 rounded-lg">
+                                <!-- Initial message (shown by default) -->
+                                <div id="initialChatbotMessage">
+                                    <p class="text-lg mb-4">¡Hola! Veo que te interesa <span id="selectedServiceText" class="font-medium">nuestros servicios</span>. ¿Podés contarme un poco más sobre tu idea? Grabá un mensaje de voz y te ayudaré a implementarla.</p>
+                                    <div id="serviceInfo" class="flex items-center gap-2 my-3">
+                                        <span id="chatMoodBadge" class="text-sm bg-blue-electric/30 px-2 py-1 rounded-md inline-block">Estado de ánimo: Creativo</span>
+                                        <span id="chatServiceBadge" class="text-sm bg-green-500/30 px-2 py-1 rounded-md inline-block flex items-center gap-1">
+                                            <span id="chatServiceEmoji">🤖</span>
+                                            <span id="chatServiceText">Automatizaciones</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Response after voice message (hidden initially, shown after voice processing) -->
+                                <div id="voiceResponseContainer" style="display: none;">
+                                    <p id="voiceResponseText" class="text-lg mb-4"></p>
+                                    
+                                    <!-- Audio player for AI response -->
+                                    <div id="audioResponseContainer" style="display: none;" class="mt-4">
+                                        <audio id="audioResponsePlayer" controls class="w-full"></audio>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-sm mt-4 text-white-pure/70">Probalo, ¡es un caño!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diagonal divider -->
+        <div class="diagonal-divider"></div>
+    </section>
+
+    <!-- Contact form section -->
+    <section id="contact-section" class="py-20 bg-blue-electric/10 relative">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-center">Conectá con nuestra IA de WhatsApp</h2>
+                <p class="text-xl text-center mb-12 max-w-3xl mx-auto">Una asistente inteligente que te ayudará con todo lo que necesites para tu negocio</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <!-- Formulario de contacto -->
+                    <div>
+                        <form @submit.prevent="submitForm" class="bg-white-pure/5 backdrop-blur-sm p-8 rounded-lg h-full">
+                            <h3 class="text-2xl font-bold mb-6">Dejá tus datos</h3>
+                            
+                            <div class="mb-6">
+                                <label for="name" class="block text-lg mb-2">Nombre</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    x-model="form.nombre" 
+                                    required
+                                    class="w-full bg-white-pure/10 border border-white-pure/20 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-electric"
+                                >
+                            </div>
+                            
+                            <div class="mb-8">
+                                <label for="phone" class="block text-lg mb-2">WhatsApp (con código de país)</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    x-model="form.telefono" 
+                                    required
+                                    placeholder="+5492664000000"
+                                    class="w-full bg-white-pure/10 border border-white-pure/20 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-electric"
+                                >
+                            </div>
+                            
+                            <button 
+                                id="submitButton"
+                                type="submit" 
+                                class="w-full bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+                                :disabled="formSubmitted"
+                                title="Conectar con la IA de WhatsApp"
+                                aria-label="Enviar información de contacto para recibir asistencia por WhatsApp"
+                            >
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                                </svg>
+                                <span class="font-bold">Conectar con la IA</span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Capacidades de la IA -->
+                    <div class="bg-white-pure/5 backdrop-blur-sm p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-6">Lo que nuestra IA puede hacer por vos</h3>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="text-blue-electric text-xl">📧</span>
+                                <span>Enviar correos personalizados a tus clientes</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-blue-electric text-xl">📅</span>
+                                <span>Agendar reuniones y enviar recordatorios automáticos</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-blue-electric text-xl">💰</span>
+                                <span>Gestionar pagos a través de MercadoPago</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-blue-electric text-xl">🔍</span>
+                                <span>Buscar información en internet en tiempo real</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-blue-electric text-xl">📊</span>
+                                <span>Crear y enviar campañas de marketing a tus contactos</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-blue-electric text-xl">🤖</span>
+                                <span>Automatizar tareas repetitivas de tu negocio</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-6 p-4 bg-blue-electric/20 rounded-lg">
+                            <p class="text-white-pure/90 italic">"Nuestra IA de WhatsApp trabaja 24/7 para tu negocio, atendiendo consultas y realizando tareas mientras vos te enfocás en lo importante"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Success message -->
+                <div x-show="formSuccess" x-transition class="mt-8 bg-blue-electric/20 p-6 rounded-lg text-center">
+                    <p class="text-xl mb-4">¡Golazo! Si querés probar todas estas funcionalidades, completá el formulario de arriba con tu nombre y número de WhatsApp.</p>
+                    <p class="text-lg">Te enviaremos un mensaje para que puedas comenzar a interactuar con nuestra IA y descubrir cómo puede ayudarte a optimizar tu negocio.</p>
+                    <div class="flex justify-center mt-4">
+                        <div class="loading-dots"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot example section -->
+    <section id="chatbot-section" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center">Mirá lo que hace nuestro chatbot IA, ¡es un caño!</h2>
+                
+                <div class="chat-container bg-white-pure/5 backdrop-blur-sm p-6 rounded-lg mb-12">
+                    <!-- Chat messages -->
+                    <div class="space-y-6 mb-8">
+                        <!-- Bot message -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-electric flex items-center justify-center flex-shrink-0">
+                                <span>🤖</span>
+                            </div>
+                            <div class="flex-1 bg-blue-electric/20 p-4 rounded-lg">
+                                <p>¡Hola! Soy el asistente virtual de No La Penses!. ¿En qué puedo ayudarte hoy?</p>
+                            </div>
+                        </div>
+                        
+                        <!-- User message -->
+                        <div class="flex items-start gap-4 flex-row-reverse">
+                            <div class="w-10 h-10 rounded-full bg-gray-dark flex items-center justify-center flex-shrink-0">
+                                <span>👤</span>
+                            </div>
+                            <div class="flex-1 bg-white-pure/10 p-4 rounded-lg">
+                                <p>Che, necesito armar una página web para mi negocio. ¿Me dan una mano?</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Bot message -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-electric flex items-center justify-center flex-shrink-0">
+                                <span>🤖</span>
+                            </div>
+                            <div class="flex-1 bg-blue-electric/20 p-4 rounded-lg">
+                                <p>¡Claro que sí! En No La Penses! nos especializamos en crear páginas web a medida. ¿Podrías contarme un poco más sobre tu negocio? ¿Qué tipo de funcionalidades necesitarías en tu sitio web?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA button -->
+                <div class="text-center">
+                    <a 
+                        href="https://wa.me/5492665267159" 
+                        target="_blank"
+                        class="inline-block bg-red-coral hover:bg-red-coral/80 text-white-pure font-bold py-5 px-8 rounded-lg text-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
+                    >
+                        <img src="facebook.png" alt="WhatsApp" class="w-10 h-10 rounded-full border-2 border-white-pure">
+                        <span class="title-font">¡Dale, charlá con nuestro chatbot IA! 💬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Diagonal divider -->
+        <div class="diagonal-divider-alt"></div>
+    </section>
+
+    <!-- Services section -->
+    <section id="services-section" class="py-20 bg-blue-electric/5">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center">Nuestros servicios</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service card 1 -->
+                <div class="service-card">
+                    <div class="icon-container">
+                        <span class="text-4xl">🌐</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Páginas Web</h3>
+                    <p>Diseñamos y desarrollamos sitios web a medida, optimizados para móviles y con las últimas tecnologías.</p>
+                </div>
+                
+                <!-- Service card 2 -->
+                <div class="service-card">
+                    <div class="icon-container">
+                        <span class="text-4xl">🤖</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Chatbots IA</h3>
+                    <p>Creamos asistentes virtuales inteligentes que pueden interactuar con tus clientes las 24 horas.</p>
+                </div>
+                
+                <!-- Service card 3 -->
+                <div class="service-card">
+                    <div class="icon-container">
+                        <span class="text-4xl">⚙️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Automatizaciones</h3>
+                    <p>Optimizamos tus procesos con flujos de trabajo automatizados que ahorran tiempo y recursos.</p>
+                </div>
+                
+                <!-- Service card 4 -->
+                <div class="service-card">
+                    <div class="icon-container">
+                        <span class="text-4xl">📱</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">WhatsApp IA</h3>
+                    <p>Integramos la inteligencia artificial con WhatsApp para brindar atención inmediata a tus clientes.</p>
+                </div>
+                
+                <!-- Service card 5 -->
+                <div class="service-card">
+                    <div class="icon-container">
+                        <span class="text-4xl">💻</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Sistemas a medida</h3>
+                    <p>Desarrollamos soluciones personalizadas que se adaptan perfectamente a las necesidades de tu negocio.</p>
+                </div>
+                
+                <!-- Service card 6 -->
+                <div class="service-card">
+                    <div class="icon-container">
+                        <span class="text-4xl">📊</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Marketing Digital con IA</h3>
+                    <p>Potenciamos tus campañas de marketing con inteligencia artificial para maximizar resultados y optimizar tu inversión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-dark">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-6">No La Penses!</h2>
+            <p class="mb-8">Automatizaciones digitales, armado de páginas web, chatbots personalizados con IA</p>
+            
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-white-pure hover:text-blue-electric transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-white-pure hover:text-blue-electric transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-white-pure hover:text-blue-electric transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                    </svg>
+                </a>
+            </div>
+            
+            <p class="text-white-pure/60">© 2025 No La Penses!. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Config JS -->
+    <script src="assets/js/config.js"></script>
+    
+    <!-- Main JS (Simplified version for testing) -->
+    <script src="assets/js/main-simple.js"></script>
+    
+    <!-- Uncomment to use original main.js -->
+    <!-- <script src="assets/js/main.js"></script> -->
+</body>
+</html>

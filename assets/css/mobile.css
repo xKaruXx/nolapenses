@@ -1,0 +1,95 @@
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 768px) {
+    /* Ajustes generales para móviles */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* Mejorar espaciado en móviles */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Ajustar tamaños de texto para mejor legibilidad */
+    h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Mejorar interacción táctil */
+    button, 
+    .service-button,
+    input, 
+    select, 
+    textarea {
+        font-size: 16px !important; /* Previene zoom automático en iOS */
+        min-height: 44px; /* Área de toque mínima recomendada */
+    }
+    
+    /* Ajustar espaciado en secciones */
+    section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    /* Mejorar visualización de botones */
+    .service-button {
+        width: 100%;
+        margin-bottom: 0.75rem;
+    }
+    
+    /* Ajustar tamaño de iconos */
+    .icon-container {
+        transform: scale(0.9);
+    }
+    
+    /* Mejorar experiencia de grabación de voz */
+    .record-button {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+
+/* Ajustes para dispositivos muy pequeños */
+@media (max-width: 375px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    h2 {
+        font-size: 1.75rem !important;
+    }
+    
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+
+/* Mejoras de rendimiento para dispositivos móviles */
+@media (max-width: 768px) {
+    /* Reducir complejidad de animaciones */
+    .emoji-background {
+        opacity: 0.5;
+    }
+    
+    /* Optimizar transiciones */
+    .transition-all {
+        transition-duration: 0.2s !important;
+    }
+}
+
+/* Mejoras para pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Asegurar que las imágenes se vean nítidas */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}

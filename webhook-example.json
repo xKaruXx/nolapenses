@@ -1,0 +1,35 @@
+{
+  "estado-usuario": {
+    "request": {
+      "estado": "Alegre",
+      "hora": "21:05",
+      "navegador": "Chrome",
+      "ai_mood": "creativo"
+    },
+    "response": {
+      "greeting": "¡Qué buena onda que estés tan contento! Yo ando re creativo hoy, así que juntos podemos hacer altas cosas. ¿Te copa si te muestro algunas ideas para tu proyecto?"
+    }
+  },
+  "audio-recibido": {
+    "request": {
+      "audio_base64": "...",
+      "usuario_id": "user_123abc"
+    },
+    "response": {
+      "transcription": "Me gustaría saber más sobre los chatbots personalizados que ofrecen",
+      "audio_url": "https://automatizaciones.nolapenses.com.ar/audio/respuesta.mp3",
+      "text_response": "¡De una! Nuestros chatbots están re piolas. Los armamos a medida para tu negocio, pueden atender consultas las 24 horas, responder preguntas frecuentes y hasta hacer ventas. ¿Te gustaría que te arme una demo para tu negocio?"
+    }
+  },
+  "lead-nuevo": {
+    "request": {
+      "nombre": "Valentina",
+      "telefono": "+5492664000000",
+      "estado_animo": "Creativa"
+    },
+    "response": {
+      "success": true,
+      "message": "Lead registrado correctamente. Se ha enviado un mensaje de WhatsApp."
+    }
+  }
+}

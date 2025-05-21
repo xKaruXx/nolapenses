@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  nolapenses-web:
+    build: .
+    container_name: nolapenses-web
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    environment:
+      - NGINX_HOST=nolapenses.com.ar
+      - NGINX_PORT=80
+    networks:
+      - nolapenses-network
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nolapenses.rule=Host(`nolapenses.com.ar`)"
+      - "traefik.http.routers.nolapenses.entrypoints=websecure"
+      - "traefik.http.routers.nolapenses.tls.certresolver=myresolver"
+
+  # Certbot para SSL automático
+  certbot:
+    image: certbot/certbot
+    container_name: nolapenses-certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    depends_on:
+      - nolapenses-web
+
+networks:
+  nolapenses-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+
+volumes:
+  certbot-conf:
+  certbot-www:
