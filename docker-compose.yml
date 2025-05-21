@@ -9,8 +9,8 @@ services:
       - "8080:80"
       - "8443:443"
     volumes:
-      - ./:/usr/share/nginx/html
-      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./:/usr/share/nginx/html:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
     environment:
       - NGINX_HOST=nolapenses.com.ar
       - NGINX_PORT=80
