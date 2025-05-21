@@ -6,8 +6,8 @@ services:
     container_name: nolapenses-web
     restart: always
     ports:
-      - "8080:80"
-      - "8443:443"
+      - "6030:80"
+      - "6031:443"
     volumes:
       - ./:/usr/share/nginx/html:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
