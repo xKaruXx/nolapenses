@@ -6,20 +6,22 @@
 const CONFIG = {
     // Webhook URLs for n8n integrations
     webhooks: {
+        // Generic webhook used by mood/service selection flows
+        mood: 'https://n8n.nolapenses.com.ar/webhook-test/web-nolapenses',
+
         // Webhook for user mood state
         userMood: 'https://n8n.nolapenses.com.ar/webhook-test/web-nolapenses',
         
         // Webhook for audio processing
-        audioReceived: 'https://automatizaciones.nolapenses.com.ar/webhook/audio-recibido',
+        audioReceived: 'https://n8n.nolapenses.com.ar/webhook/audio-recibido',
         
         // Webhook for new lead form submission
-        newLead: 'https://automatizaciones.nolapenses.com.ar/webhook/lead-nuevo'
+        newLead: 'https://n8n.nolapenses.com.ar/webhook/lead-nuevo'
     },
     
     // WhatsApp contact information
     whatsapp: {
-        // Replace with actual WhatsApp business number
-        contactUrl: 'https://wa.me/message/EXAMPLE'
+        contactUrl: 'https://wa.me/5492665267159'
     },
     
     // AI mood settings
