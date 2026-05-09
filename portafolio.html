@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#007BCA">
+    <title>Carlos Salini — Engineering Manager + AI Builder</title>
+    <meta name="description" content="Engineering Manager con foco en IA y automatización end-to-end. n8n, OpenAI, agentes conversacionales en producción. San Luis, Argentina · Remoto.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="FAVICON.png" type="image/png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Carlos Salini — Engineering Manager + AI Builder">
+    <meta property="og:description" content="Engineering Manager con IA y automatización end-to-end. n8n, OpenAI, agentes en producción.">
+    <meta property="og:image" content="https://nolapenses.com.ar/perfil-face.png">
+    <meta property="og:url" content="https://nolapenses.com.ar/portafolio.html">
+    <meta property="og:type" content="profile">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'blue-electric': '#007BCA',
+                        'white-pure': '#FFFFFF',
+                        'gray-dark': '#1F1F1F',
+                        'gray-medium': '#2A2A2A',
+                        'red-coral': '#F94C66',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Permanent Marker', 'cursive'],
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-display { font-family: 'Permanent Marker', cursive; }
+
+        /* Hero background pattern */
+        .hero-bg {
+            background-image: linear-gradient(135deg, rgba(0,123,202,0.15) 0%, rgba(31,31,31,0) 60%), url('fondo-1920.png');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+
+        /* Section dividers */
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #007BCA, transparent);
+            margin: 0 auto;
+            max-width: 200px;
+        }
+
+        /* Skill chip */
+        .skill-chip {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(0,123,202,0.3);
+            transition: all 0.2s;
+        }
+        .skill-chip:hover {
+            background: rgba(0,123,202,0.2);
+            border-color: #007BCA;
+            transform: translateY(-2px);
+        }
+
+        /* Project card */
+        .project-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.3s;
+        }
+        .project-card:hover {
+            border-color: rgba(0,123,202,0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,123,202,0.15);
+        }
+
+        /* Timeline */
+        .timeline-dot {
+            width: 14px;
+            height: 14px;
+            background: #007BCA;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(0,123,202,0.2);
+        }
+        .timeline-line {
+            width: 2px;
+            background: linear-gradient(to bottom, #007BCA, rgba(0,123,202,0.2));
+        }
+
+        /* Contact icon button */
+        .contact-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.2s;
+        }
+        .contact-btn:hover {
+            background: rgba(0,123,202,0.15);
+            border-color: #007BCA;
+            transform: translateY(-2px);
+        }
+
+        /* Profile image wrapper */
+        .profile-img-wrapper {
+            background: linear-gradient(135deg, #007BCA, #F94C66);
+            padding: 4px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-gray-dark text-white-pure">
+
+    <!-- Top nav -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-dark/80 backdrop-blur-md border-b border-white-pure/5">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <img src="assets/img/logo-blanco.svg" alt="No La Penses!" class="w-10 h-10">
+                <span class="font-display text-lg hidden sm:inline">No La Penses!</span>
+            </a>
+            <div class="flex items-center gap-4 text-sm">
+                <a href="#proyectos" class="hover:text-blue-electric transition-colors hidden md:inline">Proyectos</a>
+                <a href="#experiencia" class="hover:text-blue-electric transition-colors hidden md:inline">Experiencia</a>
+                <a href="#servicios" class="hover:text-blue-electric transition-colors hidden md:inline">Servicios</a>
+                <a href="#contacto" class="bg-blue-electric hover:bg-blue-electric/80 px-4 py-2 rounded-lg font-medium transition-all">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-bg min-h-screen flex items-center justify-center pt-20 pb-12 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-center">
+
+                <!-- Profile image -->
+                <div class="flex justify-center md:justify-start animate__animated animate__fadeInLeft">
+                    <div class="profile-img-wrapper">
+                        <img src="perfil-face.png" alt="Carlos Salini" class="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-gray-dark">
+                    </div>
+                </div>
+
+                <!-- Intro text -->
+                <div class="animate__animated animate__fadeInRight">
+                    <p class="text-blue-electric font-medium mb-2 tracking-wide">👋 ¡Hola! Soy</p>
+                    <h1 class="font-display text-5xl md:text-7xl mb-4 leading-tight">
+                        Carlos <span class="text-blue-electric">Salini</span>
+                    </h1>
+                    <p class="text-2xl md:text-3xl mb-6 font-medium">
+                        Engineering Manager <span class="text-blue-electric">+</span> AI Builder
+                    </p>
+                    <p class="text-lg text-white-pure/80 mb-8 max-w-2xl leading-relaxed">
+                        Lidero equipos y <strong class="text-white-pure">shippeo</strong> productos donde la IA es parte del producto, no un accesorio. Construyo agentes, automatizaciones y pipelines en producción con n8n, OpenAI y stack web moderno.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="text-sm px-3 py-1 bg-blue-electric/20 rounded-full">📍 San Luis, AR</span>
+                        <span class="text-sm px-3 py-1 bg-blue-electric/20 rounded-full">🌐 100% Remoto</span>
+                        <span class="text-sm px-3 py-1 bg-blue-electric/20 rounded-full">🇪🇸 ES nativo · 🇬🇧 EN profesional</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#contacto" class="bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-medium px-6 py-3 rounded-lg transition-all flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            Contactame
+                        </a>
+                        <a href="https://github.com/xKaruXx" target="_blank" rel="noopener" class="contact-btn px-6 py-3 rounded-lg font-medium flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/carlossalini" target="_blank" rel="noopener" class="contact-btn px-6 py-3 rounded-lg font-medium flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sobre mí -->
+    <section id="sobre-mi" class="py-20 px-4 bg-gray-medium">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="font-display text-4xl md:text-5xl mb-4 text-center">Sobre mí</h2>
+            <div class="section-divider mb-12"></div>
+
+            <div class="grid md:grid-cols-2 gap-8 text-lg leading-relaxed text-white-pure/85">
+                <div>
+                    <p class="mb-4">Llevo más de <strong class="text-blue-electric">8 años</strong> liderando equipos de software y diseño. Hoy soy <strong class="text-white-pure">Gerente de Área de Software y Diseño en Coradir</strong> con un equipo multidisciplinario de 8 personas (programadores, diseñadores, marketing).</p>
+                    <p class="mb-4">Antes lideré un programa con <strong class="text-blue-electric">21 personas</strong> en Universidad de la Punta y representé a Argentina en el <em>Microsoft in Education Global Forum</em> (Barcelona).</p>
+                </div>
+                <div>
+                    <p class="mb-4">En paralelo opero como <strong class="text-white-pure">consultor en automatización con IA</strong>. Construí en producción un agente de ventas WhatsApp end-to-end (n8n + OpenAI + MercadoPago) y un pipeline de contenido IA multi-plataforma.</p>
+                    <p class="mb-4">Lo que me hace diferente: <strong class="text-blue-electric">soy manager Y builder</strong>. No solo gerencio — escribo código, prototipo, itero. Pocos perfiles tienen ambas con proyectos reales en producción.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stack técnico -->
+    <section id="stack" class="py-20 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="font-display text-4xl md:text-5xl mb-4 text-center">Stack técnico</h2>
+            <div class="section-divider mb-12"></div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-medium p-6 rounded-xl">
+                    <div class="text-3xl mb-3">🤖</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-electric">IA & Automation</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">n8n</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">OpenAI API</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">Agentes</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">RAG</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">LLM workflows</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-medium p-6 rounded-xl">
+                    <div class="text-3xl mb-3">⚙️</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-electric">Backend</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">PHP</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">Node.js</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">MySQL</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">REST APIs</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">CodeIgniter</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-medium p-6 rounded-xl">
+                    <div class="text-3xl mb-3">🎨</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-electric">Frontend & Web</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">HTML/CSS</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">Tailwind</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">Alpine.js</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">WordPress</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-medium p-6 rounded-xl">
+                    <div class="text-3xl mb-3">🔌</div>
+                    <h3 class="text-xl font-bold mb-3 text-blue-electric">Integraciones</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">MercadoPago</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">WhatsApp Cloud API</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">Meta APIs</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">Webhooks</span>
+                        <span class="skill-chip text-sm px-3 py-1 rounded-full">Google APIs</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 p-6 bg-blue-electric/10 rounded-xl border border-blue-electric/20">
+                <p class="text-center text-white-pure/80">
+                    <span class="text-blue-electric font-bold">+ Liderazgo:</span>
+                    Gestión de equipos hasta 21 personas · Hiring & coaching · Stakeholder management · Comunicación ejecutiva ante audiencias 1.000+
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos destacados -->
+    <section id="proyectos" class="py-20 px-4 bg-gray-medium">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="font-display text-4xl md:text-5xl mb-4 text-center">Proyectos destacados</h2>
+            <div class="section-divider mb-12"></div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Project 1: WhatsApp Agent -->
+                <div class="project-card p-6 rounded-xl">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold mb-3">Agente de ventas WhatsApp</h3>
+                    <p class="text-white-pure/80 mb-4 leading-relaxed">
+                        Agente conversacional <strong>end-to-end</strong> que califica leads, conversa, envía links de pago de MercadoPago y cierra ventas — sin intervención humana.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="text-xs px-2 py-1 bg-blue-electric/20 text-blue-electric rounded">n8n</span>
+                        <span class="text-xs px-2 py-1 bg-blue-electric/20 text-blue-electric rounded">OpenAI</span>
+                        <span class="text-xs px-2 py-1 bg-blue-electric/20 text-blue-electric rounded">MercadoPago</span>
+                        <span class="text-xs px-2 py-1 bg-blue-electric/20 text-blue-electric rounded">WhatsApp API</span>
+                    </div>
+                    <p class="text-sm text-white-pure/60 italic">Producción · 2025</p>
+                </div>
+
+                <!-- Project 2: Content Pipeline -->
+                <div class="project-card p-6 rounded-xl">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold mb-3">Pipeline de contenido IA</h3>
+                    <p class="text-white-pure/80 mb-4 leading-relaxed">
+                        Sistema autónomo que genera copys con IA y publica desatendido en LinkedIn, Instagram y Facebook. Cero edición manual diaria.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="text-xs px-2 py-1 bg-blue-electric/20 text-blue-electric rounded">OpenAI</span>
+                        <span class="text-xs px-2 py-1 bg-blue-electric/20 text-blue-electric rounded">Meta APIs</span>
+                        <span class="text-xs px-2 py-1 bg-blue-electric/20 text-blue-electric rounded">LinkedIn API</span>
+                        <span class="text-xs px-2 py-1 bg-blue-electric/20 text-blue-electric rounded">n8n</span>
+                    </div>
+                    <p class="text-sm text-white-pure/60 italic">Producción · 2025</p>
+                </div>
+
+                <!-- Project 3: Coradir AI Adoption -->
+                <div class="project-card p-6 rounded-xl">
+                    <div class="text-4xl mb-4">🏢</div>
+                    <h3 class="text-xl font-bold mb-3">Adopción de IA en Coradir</h3>
+                    <p class="text-white-pure/80 mb-4 leading-relaxed">
+                        Lidero iniciativas de IA transversales: optimización de procesos de RRHH y promoción del uso en múltiples áreas para escalar eficiencia.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="text-xs px-2 py-1 bg-blue-electric/20 text-blue-electric rounded">Change Mgmt</span>
+                        <span class="text-xs px-2 py-1 bg-blue-electric/20 text-blue-electric rounded">Estrategia IA</span>
+                        <span class="text-xs px-2 py-1 bg-blue-electric/20 text-blue-electric rounded">Liderazgo</span>
+                    </div>
+                    <p class="text-sm text-white-pure/60 italic">En curso · 2025-presente</p>
+                </div>
+            </div>
+
+            <p class="text-center mt-8 text-white-pure/60">
+                Más en mi <a href="https://github.com/xKaruXx" target="_blank" rel="noopener" class="text-blue-electric hover:underline">GitHub</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Experiencia -->
+    <section id="experiencia" class="py-20 px-4">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="font-display text-4xl md:text-5xl mb-4 text-center">Experiencia</h2>
+            <div class="section-divider mb-12"></div>
+
+            <div class="space-y-8">
+                <!-- Job 1: Coradir -->
+                <div class="flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line flex-1 mt-2"></div>
+                    </div>
+                    <div class="pb-6 flex-1">
+                        <p class="text-sm text-blue-electric font-medium">Actualidad</p>
+                        <h3 class="text-xl font-bold mb-1">Gerente de Área — Software y Diseño</h3>
+                        <p class="text-white-pure/70 mb-3"><strong>Coradir</strong> · San Luis, Argentina</p>
+                        <ul class="text-white-pure/80 space-y-1 list-disc list-inside text-sm leading-relaxed">
+                            <li>Equipo multidisciplinario de 8 personas (programadores, diseñadores, marketing)</li>
+                            <li>Lidero la <strong>adopción de IA en la empresa</strong> — iniciativas para RRHH y otras áreas</li>
+                            <li>Traduzco requerimientos de negocio en specs técnicas accionables</li>
+                            <li>Superviso ciclo de vida completo del producto</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2: Freelance -->
+                <div class="flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line flex-1 mt-2"></div>
+                    </div>
+                    <div class="pb-6 flex-1">
+                        <p class="text-sm text-blue-electric font-medium">2017 — Actualidad</p>
+                        <h3 class="text-xl font-bold mb-1">Consultor & Líder de Proyectos Digitales (Freelance)</h3>
+                        <p class="text-white-pure/70 mb-3">Independiente · San Luis, Argentina</p>
+                        <ul class="text-white-pure/80 space-y-1 list-disc list-inside text-sm leading-relaxed">
+                            <li>Diseñé y desplegué el agente de ventas WhatsApp end-to-end (n8n + OpenAI + MercadoPago)</li>
+                            <li>Creé pipeline automatizado de contenido IA multi-plataforma</li>
+                            <li>Lideré la estrategia digital de una fundación de impacto y campaña de figura pública (equipo de 10)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3: Secretaría Deportes -->
+                <div class="flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line flex-1 mt-2"></div>
+                    </div>
+                    <div class="pb-6 flex-1">
+                        <p class="text-sm text-blue-electric font-medium">2015 — 2017</p>
+                        <h3 class="text-xl font-bold mb-1">Jefe de Área — Imagen Digital y Deporte Electrónico</h3>
+                        <p class="text-white-pure/70 mb-3"><strong>Secretaría de Estado de Deportes</strong> · San Luis</p>
+                        <ul class="text-white-pure/80 space-y-1 list-disc list-inside text-sm leading-relaxed">
+                            <li>Gestioné todos los activos digitales de la Secretaría</li>
+                            <li>Fundé y desarrollé el área de Deporte Electrónico — convenio con AADE</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 4: ULP -->
+                <div class="flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="pb-6 flex-1">
+                        <p class="text-sm text-blue-electric font-medium">2014 — 2015</p>
+                        <h3 class="text-xl font-bold mb-1">Jefe de Programa — Olimpiadas del Conocimiento</h3>
+                        <p class="text-white-pure/70 mb-3"><strong>Universidad de la Punta</strong> · San Luis</p>
+                        <ul class="text-white-pure/80 space-y-1 list-disc list-inside text-sm leading-relaxed">
+                            <li><strong>Lideré un equipo de 21 personas</strong> a nivel provincial</li>
+                            <li>Presentador y animador principal ante audiencias de <strong>1.000+ personas</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 p-6 bg-blue-electric/10 rounded-xl border border-blue-electric/20">
+                <p class="text-center text-white-pure/80">
+                    <strong class="text-blue-electric">Educación:</strong> Diplomatura en Fundamentos de la IA — UBA (en curso) · Ingeniería en Electrónica — UNSL (3er año)
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-20 px-4 bg-gray-medium">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="font-display text-4xl md:text-5xl mb-4 text-center">Cómo trabajo</h2>
+            <div class="section-divider mb-12"></div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Full-time -->
+                <div class="project-card p-8 rounded-xl">
+                    <div class="text-4xl mb-4">💼</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-electric">Roles full-time remotos</h3>
+                    <p class="text-white-pure/80 mb-4 leading-relaxed">
+                        Busco posiciones de <strong>Engineering Manager</strong>, <strong>Tech Lead</strong>, <strong>AI/Automation Lead</strong> o <strong>Solutions Architect</strong> en empresas que valoran builders.
+                    </p>
+                    <ul class="text-white-pure/80 space-y-2 mb-4 text-sm">
+                        <li class="flex items-start gap-2"><span class="text-blue-electric">▸</span> 100% remoto · timezone ART (UTC-3)</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-electric">▸</span> Overlap con LATAM, EU/EMEA o NA</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-electric">▸</span> Sin sponsorship requerido</li>
+                        <li class="flex items-start gap-2"><span class="text-blue-electric">▸</span> Comp target: USD 3K – 6K / mes</li>
+                    </ul>
+                </div>
+
+                <!-- Freelance -->
+                <div class="project-card p-8 rounded-xl">
+                    <div class="text-4xl mb-4">🛠️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-electric">Freelance — IA & Automation</h3>
+                    <p class="text-white-pure/80 mb-4 leading-relaxed">
+                        Tomo proyectos cortos de <strong>n8n + WordPress + automatizaciones con IA</strong> e integraciones a medida.
+                    </p>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center bg-gray-dark/50 px-4 py-2 rounded-lg">
+                            <span class="text-white-pure/80">Proyecto fijo</span>
+                            <span class="text-blue-electric font-bold">USD 1.5K – 5K</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-dark/50 px-4 py-2 rounded-lg">
+                            <span class="text-white-pure/80">Retainer mensual (15-25h)</span>
+                            <span class="text-blue-electric font-bold">USD 1.5K – 3K</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-gray-dark/50 px-4 py-2 rounded-lg">
+                            <span class="text-white-pure/80">Hora suelta</span>
+                            <span class="text-blue-electric font-bold">desde USD 50/h</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-white-pure/60 mt-4 italic">Pagos en USD · Discovery primero, cotización después</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="font-display text-4xl md:text-5xl mb-4">Hablemos</h2>
+            <div class="section-divider mb-8"></div>
+
+            <p class="text-xl text-white-pure/80 mb-12 max-w-2xl mx-auto">
+                ¿Estás armando un equipo o tenés un proyecto donde encajo? Decime.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <a href="mailto:charlysalini@gmail.com" class="contact-btn p-6 rounded-xl flex flex-col items-center gap-2">
+                    <svg class="w-8 h-8 text-blue-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    <span class="font-medium">Email</span>
+                    <span class="text-xs text-white-pure/60 break-all">charlysalini@gmail.com</span>
+                </a>
+
+                <a href="https://linkedin.com/in/carlossalini" target="_blank" rel="noopener" class="contact-btn p-6 rounded-xl flex flex-col items-center gap-2">
+                    <svg class="w-8 h-8 text-blue-electric" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <span class="font-medium">LinkedIn</span>
+                    <span class="text-xs text-white-pure/60">@carlossalini</span>
+                </a>
+
+                <a href="https://github.com/xKaruXx" target="_blank" rel="noopener" class="contact-btn p-6 rounded-xl flex flex-col items-center gap-2">
+                    <svg class="w-8 h-8 text-blue-electric" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span class="font-medium">GitHub</span>
+                    <span class="text-xs text-white-pure/60">@xKaruXx</span>
+                </a>
+
+                <a href="https://wa.me/5492665005400" target="_blank" rel="noopener" class="contact-btn p-6 rounded-xl flex flex-col items-center gap-2">
+                    <svg class="w-8 h-8 text-blue-electric" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.520-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.306 1.265.489 1.697.626.713.226 1.362.194 1.875.118.572-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+                    <span class="font-medium">WhatsApp</span>
+                    <span class="text-xs text-white-pure/60">+54 266-5005400</span>
+                </a>
+            </div>
+
+            <a href="https://wa.me/5492665005400?text=Hola%20Carlos%2C%20vi%20tu%20portafolio%20y%20quiero%20charlar." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-red-coral hover:bg-red-coral/80 text-white-pure font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-lg">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24z"/></svg>
+                Charlemos por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 border-t border-white-pure/5">
+        <div class="container mx-auto max-w-4xl text-center">
+            <p class="text-white-pure/60 text-sm mb-2">
+                Carlos Salini · San Luis, Argentina · 2026
+            </p>
+            <p class="text-white-pure/40 text-xs">
+                Hecho con ☕ y código. ¿Buscás la agencia? <a href="index.html" class="text-blue-electric hover:underline">No La Penses!</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
