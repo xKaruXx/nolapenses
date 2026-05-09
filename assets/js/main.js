@@ -115,6 +115,7 @@ window.landingApp = function() {
         isRecording: false,
         mediaRecorder: null,
         audioChunks: [],
+        voiceTextMessage: '',
         voiceResponse: '',
         audioResponse: null,
         
@@ -122,10 +123,13 @@ window.landingApp = function() {
         form: {
             nombre: '',
             telefono: '',
+            email: '',
+            message: '',
             estado_animo: ''
         },
         formSubmitted: false,
         formSuccess: false,
+        formSuccessMessage: '',
         
         // Browser info for analytics
         browserInfo: {
@@ -944,6 +948,94 @@ window.landingApp = function() {
             }
         },
         
+        getSelectedService() {
+            try {
+                return JSON.parse(localStorage.getItem('selectedService') || '{}');
+            } catch (error) {
+                return {};
+            }
+        },
+
+        showChatbotResponse(message, audioUrl = null) {
+            const initialMessage = document.getElementById('initialChatbotMessage');
+            const voiceResponseContainer = document.getElementById('voiceResponseContainer');
+            const voiceResponseText = document.getElementById('voiceResponseText');
+            const audioResponseContainer = document.getElementById('audioResponseContainer');
+            const audioResponsePlayer = document.getElementById('audioResponsePlayer');
+
+            if (initialMessage) {
+                initialMessage.style.display = 'none';
+            }
+
+            if (voiceResponseContainer) {
+                voiceResponseContainer.style.display = 'block';
+            }
+
+            if (voiceResponseText) {
+                voiceResponseText.textContent = message;
+            }
+
+            if (audioUrl && audioResponseContainer && audioResponsePlayer) {
+                audioResponsePlayer.src = audioUrl;
+                audioResponseContainer.style.display = 'block';
+            }
+        },
+
+        buildChatbotPayload(extraData = {}) {
+            const selectedService = this.getSelectedService();
+
+            return {
+                session_id: localStorage.getItem('nlp_session_id') || this.createSessionId(),
+                source: 'landing',
+                nombre: this.form.nombre || '',
+                telefono: this.form.telefono || '',
+                email: this.form.email || '',
+                selectedService,
+                estado_animo: this.userMood || localStorage.getItem('currentMood') || '',
+                navegador: this.getBrowserName(),
+                created_at: new Date().toISOString(),
+                ...extraData
+            };
+        },
+
+        createSessionId() {
+            const sessionId = 'nlp_' + Date.now() + '_' + Math.random().toString(16).slice(2);
+            localStorage.setItem('nlp_session_id', sessionId);
+            return sessionId;
+        },
+
+        sendTextWebhook() {
+            const message = (this.voiceTextMessage || '').trim();
+
+            if (!message) {
+                alert('Escribi una consulta para que la IA pueda responder.');
+                return;
+            }
+
+            this.showChatbotResponse('Procesando tu consulta con la IA...');
+
+            const webhookData = this.buildChatbotPayload({
+                message,
+                wants_voice_response: false
+            });
+
+            fetch(CONFIG.webhooks.chatbot, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(webhookData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                this.showChatbotResponse(data.reply || 'Listo, recibimos tu consulta.', data.audio_url || null);
+            })
+            .catch(error => {
+                console.error('Error al enviar consulta al chatbot:', error);
+                this.showChatbotResponse('Hubo un error al procesar tu consulta. Por favor, intenta nuevamente.');
+            });
+        },
+
         // Send recorded audio to webhook
         sendAudioWebhook(audioBase64) {
             try {
@@ -961,13 +1053,12 @@ window.landingApp = function() {
                     voiceResponseText.textContent = 'Procesando tu mensaje de voz...';
                 }
                 
-                // Prepare data for webhook
-                const webhookData = {
-                    audio: audioBase64,
-                    estado_animo: this.userMood,
-                    navegador: this.getBrowserName(),
-                    servicio: localStorage.getItem('selectedService') || '{}'
-                };
+                const webhookData = this.buildChatbotPayload({
+                    audio_base64: audioBase64,
+                    audio_mime_type: 'audio/webm',
+                    wants_voice_response: true,
+                    message: this.voiceTextMessage || ''
+                });
                 
                 // Check if we're in a local environment
                 const isLocalEnvironment = window.location.hostname === 'localhost' || 
@@ -1009,7 +1100,7 @@ window.landingApp = function() {
                     }, 2000);
                 } else {
                     // In production, make an actual API call
-                    fetch(CONFIG.webhooks.audioReceived, {
+                    fetch(CONFIG.webhooks.chatbot, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -1020,21 +1111,7 @@ window.landingApp = function() {
                     .then(data => {
                         console.log('Respuesta del webhook de audio:', data);
                         
-                        // Update with the response from the webhook
-                        if (data && data.transcription && voiceResponseText) {
-                            voiceResponseText.textContent = data.transcription;
-                        }
-                        
-                        // Set audio response if available
-                        if (data && data.audio_url) {
-                            const audioResponseContainer = document.getElementById('audioResponseContainer');
-                            const audioResponsePlayer = document.getElementById('audioResponsePlayer');
-                            
-                            if (audioResponseContainer && audioResponsePlayer) {
-                                audioResponsePlayer.src = data.audio_url;
-                                audioResponseContainer.style.display = 'block';
-                            }
-                        }
+                        this.showChatbotResponse(data.reply || data.text_response || data.transcription || 'Listo, recibimos tu audio.', data.audio_url || null);
                     })
                     .catch(error => {
                         console.error('Error al enviar audio al webhook:', error);
@@ -1088,14 +1165,13 @@ window.landingApp = function() {
                     }
                 }
                 
-                // Prepare data for webhook
-                const webhookData = {
+                const webhookData = this.buildChatbotPayload({
                     nombre: this.form.nombre,
                     telefono: this.form.telefono,
-                    estado_animo: this.form.estado_animo,
-                    navegador: this.browserInfo.name,
-                    hora: this.browserInfo.time
-                };
+                    email: this.form.email,
+                    message: this.form.message || 'Quiero que me contacten para conversar un proyecto con IA y automatizacion.',
+                    wants_voice_response: false
+                });
                 
                 // Check if we're in a local environment
                 const isLocalEnvironment = window.location.hostname === 'localhost' || 
@@ -1109,6 +1185,7 @@ window.landingApp = function() {
                     // Simulate webhook response locally after a short delay
                     setTimeout(() => {
                         this.formSuccess = true;
+                        this.formSuccessMessage = 'Demo local: la IA recibio tus datos y preparo el seguimiento.';
                         console.log('Formulario enviado correctamente (simulado)');
                     }, 1500);
                 } else {
@@ -1124,6 +1201,7 @@ window.landingApp = function() {
                     .then(data => {
                         console.log('Respuesta del webhook de formulario:', data);
                         this.formSuccess = true;
+                        this.formSuccessMessage = data.reply || 'Te vamos a responder por WhatsApp o email con el resumen y el proximo paso.';
                     })
                     .catch(error => {
                         console.error('Error al enviar formulario:', error);
@@ -1151,7 +1229,7 @@ window.landingApp = function() {
                     // Reset text
                     const buttonText = submitButton.querySelector('span');
                     if (buttonText) {
-                        buttonText.textContent = 'Enviar información';
+                        buttonText.textContent = 'Conectar con la IA';
                     }
                     
                     // Reset icon to send icon
