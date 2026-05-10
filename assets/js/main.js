@@ -115,7 +115,7 @@ window.landingApp = function() {
         isRecording: false,
         mediaRecorder: null,
         audioChunks: [],
-        voiceTextMessage: '',
+        typedInquiry: '',
         voiceResponse: '',
         audioResponse: null,
         
@@ -1005,7 +1005,7 @@ window.landingApp = function() {
         },
 
         sendTextWebhook() {
-            const message = (this.voiceTextMessage || '').trim();
+            const message = (this.typedInquiry || '').trim();
 
             if (!message) {
                 alert('Escribi una consulta para que la IA pueda responder.');
@@ -1057,7 +1057,7 @@ window.landingApp = function() {
                     audio_base64: audioBase64,
                     audio_mime_type: 'audio/webm',
                     wants_voice_response: true,
-                    message: this.voiceTextMessage || ''
+                    message: this.typedInquiry || ''
                 });
                 
                 // Check if we're in a local environment
