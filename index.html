@@ -10,8 +10,127 @@
     <meta name="description" content="Automatizaciones digitales, creación de páginas web, chatbots personalizados con IA, sistemas a medida y asistencia por WhatsApp IA.">
     <meta name="format-detection" content="telephone=no">
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nolapenses.com.ar/">
+    <meta property="og:title" content="No La Penses! - Automatizaciones digitales y soluciones IA">
+    <meta property="og:description" content="Automatizaciones digitales, creación de páginas web, chatbots personalizados con IA, sistemas a medida y asistencia por WhatsApp IA.">
+    <meta property="og:image" content="https://nolapenses.com.ar/FAVICON.png">
+
     <!-- Favicon -->
     <link rel="icon" href="FAVICON.png" type="image/png">
+
+    <!-- Google Tag Manager & Meta Pixel Template (Comentado para activar al lanzar pauta) -->
+    <!-- 
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'ID-PIXEL');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=ID-PIXEL&ev=PageView&noscript=1"/></noscript>
+    -->
+
+    <!-- Structured Data Schema.org (JSON-LD) para SEO Local y Profesional -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "No La Penses!",
+      "image": "https://nolapenses.com.ar/FAVICON.png",
+      "@id": "https://nolapenses.com.ar/#service",
+      "url": "https://nolapenses.com.ar/",
+      "telephone": "+5492665267159",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Luis",
+        "addressRegion": "San Luis",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.301726,
+        "longitude": -66.337752
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://nolapenses.com.ar/portafolio.html"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Carlos Salini",
+        "jobTitle": "Engineering Manager & AI Builder",
+        "url": "https://nolapenses.com.ar/portafolio.html",
+        "email": "charly@nolapenses.com.ar"
+      }
+    }
+    </script>
+
+    <!-- Structured Data Schema.org (JSON-LD) para FAQPage (SEO Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿La IA va a responder cualquier cosa a mis clientes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Diseñamos directrices estrictas y sistemas de contención (guardrails) basados en prompts y RAG para asegurar que el agente de IA solo responda con información oficial y aprobada de tu negocio. Si detecta un caso complejo, puede derivarlo automáticamente a un operador humano."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tengo que cambiar los sistemas que ya uso en mi empresa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para nada. Integramos nuestros flujos mediante APIs y webhooks seguros con tus herramientas actuales (WhatsApp, CRMs, Google Sheets, Trello, Stripe, MercadoPago, Gmail, etc.) para que no tengas que cambiar tu forma de operar ni forzar a tu equipo a aprender una nueva interfaz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué herramientas utilizan para las automatizaciones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nuestra herramienta central es n8n, por su flexibilidad para albergar agentes y conectarse con servicios externos sin depender de costos inflados por ejecución. También desarrollamos backends en Node.js/PHP si el flujo requiere bases de datos locales o procesos a medida de alta performance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo toma implementar un asistente o automatización?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los flujos operativos estándar se entregan y configuran en menos de 10 días. El retorno de inversión en tiempo libre y mensajes de soporte respondidos se percibe desde las primeras 24 horas del despliegue."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -35,91 +154,8 @@
 
 
 
-    <!-- Alpine.js -->
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
-<!-- Script para manejar los botones de servicio -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Obtener todos los botones de servicio
-            const serviceButtons = document.querySelectorAll('.service-link');
-
-            // Agregar manejador de eventos a cada botón
-            serviceButtons.forEach(button => {
-                button.addEventListener('click', function(event) {
-                    // Prevenir comportamiento predeterminado
-                    event.preventDefault();
-
-                    // Obtener el ID del servicio del atributo data-service
-                    const serviceId = this.getAttribute('data-service');
-                    console.log('Botón de servicio clickeado:', serviceId);
-
-                    // Buscar el servicio en la lista de servicios disponibles
-                    const serviceOptions = [
-                        { id: 'automatizaciones', emoji: '🤖', text: 'Automatizaciones' },
-                        { id: 'ia-atencion', emoji: '💬', text: 'Atención al cliente con IA' },
-                        { id: 'web', emoji: '🌐', text: 'Quiero mi página web' },
-                        { id: 'sistemas', emoji: '💻', text: 'Sistemas personalizados' },
-                        { id: 'whatsapp', emoji: '📱', text: 'Chatbot de WhatsApp' },
-                        { id: 'chatbot-ia', emoji: '🤖', text: 'Chatbot con IA' },
-                        { id: 'redes', emoji: '📸', text: 'Automatización de redes sociales' },
-                        { id: 'ayuda', emoji: '🤔', text: 'No lo sé bien, ayudame' }
-                    ];
-
-                    const selectedService = serviceOptions.find(service => service.id === serviceId) || {
-                        id: serviceId,
-                        emoji: '❓',
-                        text: serviceId
-                    };
-
-                    // Obtener el estado de ánimo actual del badge
-                    const moodBadge = document.getElementById('moodBadge');
-                    const currentMood = moodBadge ? moodBadge.textContent.replace('Estado de ánimo: ', '') : 'Creativo';
-
-                    // Guardar la selección en localStorage para referencia futura
-                    localStorage.setItem('selectedService', JSON.stringify(selectedService));
-                    localStorage.setItem('currentMood', currentMood);
-
-                    // Actualizar el mensaje del chatbot en la sección de voz
-                    const selectedServiceText = document.getElementById('selectedServiceText');
-                    const chatMoodBadge = document.getElementById('chatMoodBadge');
-                    const chatServiceEmoji = document.getElementById('chatServiceEmoji');
-                    const chatServiceText = document.getElementById('chatServiceText');
-
-                    if (selectedServiceText && chatMoodBadge && chatServiceEmoji && chatServiceText) {
-                        // Actualizar el texto del servicio seleccionado en el mensaje
-                        selectedServiceText.textContent = selectedService.text;
-
-                        // Actualizar los badges
-                        chatMoodBadge.textContent = 'Estado de ánimo: ' + currentMood;
-                        chatServiceEmoji.textContent = selectedService.emoji;
-                        chatServiceText.textContent = selectedService.text;
-
-                        // Desplazarse a la sección de voz
-                        const voiceSection = document.getElementById('voice-section');
-                        if (voiceSection) {
-                            voiceSection.scrollIntoView({ behavior: 'smooth' });
-                            console.log('Desplazamiento a la sección de voz completado');
-                        } else {
-                            console.error('No se encontró la sección de voz');
-                        }
-                    } else {
-                        console.error('No se encontraron los elementos necesarios para actualizar el mensaje del chatbot');
-
-                        // Si no se pueden encontrar los elementos, desplazarse directamente a la sección de voz
-                        const voiceSection = document.getElementById('voice-section');
-                        if (voiceSection) {
-                            voiceSection.scrollIntoView({ behavior: 'smooth' });
-                            console.log('Desplazamiento directo a la sección de voz');
-                        } else {
-                            console.error('No se encontró la sección de voz');
-                        }
-                    }
-                });
-            });
-
-            console.log('Manejadores de eventos para botones de servicio configurados');
-        });
-    </script>
+    <!-- Alpine.js (Updated to v3) -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
     <!-- Web Speech API polyfill -->
     <script src="https://cdn.jsdelivr.net/npm/web-speech-cognitive-services@7.1.3/dist/webspeech-polyfill.min.js"></script>
@@ -137,81 +173,100 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body class="bg-gray-dark text-white-pure" x-data="landingApp()" x-init="init()">
+    <!-- Google Tag Manager (noscript) Template (Comentado para activar al lanzar pauta) -->
+    <!--
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    -->
+    <!-- Floating Glassmorphic Navbar -->
+    <nav class="floating-nav px-6 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <img src="assets/img/logo-blanco.svg" alt="No La Penses!" class="w-8 h-8">
+            <span class="font-display text-lg hidden sm:inline text-white-pure font-bold">No La Penses!</span>
+        </a>
+        <div class="flex items-center gap-6 text-sm font-medium">
+            <a href="#welcomeMessage" class="hover:text-blue-electric transition-colors">Inicio</a>
+            <a href="#solutions-section" class="hover:text-blue-electric transition-colors">Soluciones</a>
+            <a href="#roi-section" class="hover:text-blue-electric transition-colors hidden md:inline">Calculadora</a>
+            <a href="#faq-section" class="hover:text-blue-electric transition-colors hidden md:inline">FAQ</a>
+            <a href="portafolio.html" class="hover:text-blue-electric transition-colors">Carlos Salini</a>
+        </div>
+    </nav>
+
     <!-- Header -->
-    <header class="relative overflow-hidden min-h-screen flex items-center justify-center py-20 md:py-0">
+    <header class="relative overflow-hidden min-h-screen flex flex-col items-center justify-center pt-32 pb-20 md:pt-36 md:pb-12 px-4">
         <!-- Background with floating emojis -->
         <div class="absolute inset-0 z-0 emoji-background"></div>
 
         <!-- Logo/Profile Image -->
-        <div class="absolute top-4 left-4 z-20">
+        <div class="absolute top-4 left-4 z-20 hidden">
             <img src="assets/img/logo-blanco.svg" alt="No La Penses!" class="w-24 h-24">
         </div>
 
         <!-- Main content -->
         <div class="container mx-auto px-4 z-10 text-center">
             <div class="max-w-4xl mx-auto">
-                <h1 class="text-4xl sm:text-5xl md:text-7xl mb-6 md:mb-8 animate__animated animate__fadeInDown">
-                    <span class="text-white-pure drop-shadow-lg">No la penses!</span> <br>
-                    <span class="text-blue-electric">¡Nosotros lo hacemos por vos!</span>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl mb-4 md:mb-6 animate__animated animate__fadeInDown">
+                    <span class="text-white-pure drop-shadow-lg font-display">No la penses!</span> <br>
+                    <span class="text-blue-electric text-3xl sm:text-4xl md:text-5xl block mt-4 font-extrabold tracking-tight">Multiplicá tus ventas y automatizá tu negocio con IA</span>
                 </h1>
+                <p class="text-lg md:text-xl text-white-pure/80 mb-8 max-w-2xl mx-auto leading-relaxed animate__animated animate__fadeIn animate__delay-1s">
+                    Creamos agentes autónomos de WhatsApp, chatbots inteligentes y flujos de trabajo automáticos que trabajan por vos 24/7. <strong class="text-white-pure font-bold">Recuperá tu tiempo y no pierdas ningún cliente más.</strong>
+                </p>
 
                 <!-- Dynamic AI welcome message -->
-                <div id="welcomeMessage" class="bg-white-pure/10 backdrop-blur-sm p-6 rounded-lg mb-8 animate__animated animate__fadeIn animate__delay-1s">
+                <div id="welcomeMessage" class="glass-card p-6 rounded-2xl mb-8 border border-white-pure/10 animate__animated animate__fadeIn animate__delay-1s">
                     <div class="flex items-center mb-2">
-                        <span id="moodBadge" class="text-sm bg-blue-electric/30 px-2 py-1 rounded-md inline-block">Estado de ánimo: Creativo</span>
+                        <span id="moodBadge" class="text-sm bg-blue-electric/30 px-3 py-1 rounded-full font-medium inline-block text-blue-300 border border-blue-400/20 shadow-sm" x-text="'Estado de ánimo: ' + (userMood || 'Creativo')">Estado de ánimo: Creativo</span>
                     </div>
-                    <p id="personalizedGreeting" class="text-xl md:text-2xl mb-4">Las mejores ideas nacen de mentes creativas como la tuya 💡 ¿Qué estás pensando implementar?</p>
+                    <p id="personalizedGreeting" class="text-xl md:text-2xl mb-4 font-semibold text-white-pure" x-text="userMoodResponse || 'Las mejores ideas nacen de mentes creativas como la tuya 💡 ¿Qué estás pensando implementar?'">Las mejores ideas nacen de mentes creativas como la tuya 💡 ¿Qué estás pensando implementar?</p>
                 </div>
 
                 <!-- Service options section - shown automatically -->
                 <div id="serviceSelectionSection" class="animate__animated animate__fadeIn animate__delay-2s">
-                    <p id="serviceSelectionTitle" class="text-xl mb-4">Seleccioná qué te gustaría implementar:</p>
+                    <p id="serviceSelectionTitle" class="text-xl mb-4 opacity-90">Seleccioná qué te gustaría implementar:</p>
 
                     <div id="serviceButtonsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-                        <button id="serviceButton-automatizaciones" data-service="automatizaciones" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                        <button id="serviceButton-automatizaciones" @click="selectServiceAndScroll('automatizaciones')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">🤖</span>
                             <span class="text-lg font-medium">Automatizaciones</span>
                         </button>
-                        <button id="serviceButton-ia-atencion" data-service="ia-atencion" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                        <button id="serviceButton-ia-atencion" @click="selectServiceAndScroll('ia-atencion')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">💬</span>
                             <span class="text-lg font-medium">Atención al cliente con IA</span>
                         </button>
-                        <button id="serviceButton-web" data-service="web" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                        <button id="serviceButton-web" @click="selectServiceAndScroll('web')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">🌐</span>
                             <span class="text-lg font-medium">Quiero mi página web</span>
                         </button>
-                        <button id="serviceButton-sistemas" data-service="sistemas" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                        <button id="serviceButton-sistemas" @click="selectServiceAndScroll('sistemas')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">💻</span>
                             <span class="text-lg font-medium">Sistemas personalizados</span>
                         </button>
-                        <button id="serviceButton-whatsapp" data-service="whatsapp" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                        <button id="serviceButton-whatsapp" @click="selectServiceAndScroll('whatsapp')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">📱</span>
                             <span class="text-lg font-medium">Chatbot de WhatsApp</span>
                         </button>
-                        <button id="serviceButton-chatbot-ia" data-service="chatbot-ia" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                        <button id="serviceButton-chatbot-ia" @click="selectServiceAndScroll('chatbot-ia')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">🤖</span>
                             <span class="text-lg font-medium">Chatbot con IA</span>
                         </button>
-                        <button id="serviceButton-redes" data-service="redes" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                        <button id="serviceButton-redes" @click="selectServiceAndScroll('redes')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">📸</span>
                             <span class="text-lg font-medium">Automatización de redes sociales</span>
                         </button>
-                        <button id="serviceButton-ayuda" data-service="ayuda" class="service-button service-link flex items-center justify-start gap-3 p-4 bg-white-pure/20 hover:bg-white-pure/30 rounded-lg transition-all duration-300 text-left">
+                        <button id="serviceButton-ayuda" @click="selectServiceAndScroll('ayuda')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">🤔</span>
                             <span class="text-lg font-medium">No lo sé bien, ayudame</span>
                         </button>
                     </div>
-                </div>
-
-
-                <!-- Esta sección ya no es necesaria, la eliminamos -->
                 </div>
             </div>
         </div>
 
         <!-- Scroll indicator -->
         <div class="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-8 h-8 opacity-70 hover:opacity-100 transition-opacity cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onclick="document.getElementById('voice-section').scrollIntoView({ behavior: 'smooth' })">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
         </div>
@@ -224,8 +279,9 @@
                 <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center">Contanos un poco más de lo que querés</h2>
 
                 <div class="bg-white-pure/5 backdrop-blur-sm p-8 rounded-lg">
-                    <div class="mb-8 text-center">
-                        <p class="text-xl mb-6">Proba el chatbot: escribi tu consulta o manda un audio para ver STT + respuesta IA.</p>
+                    <!-- Step 0: Input area for Inquiry (visible only during inquiry step) -->
+                    <div x-show="chatStep === 'inquiry'" class="mb-8 text-center animate__animated animate__fadeIn">
+                        <p class="text-xl mb-6">Probá el chatbot: escribí tu consulta o mandá un audio para ver STT + respuesta IA.</p>
 
                         <div class="mb-8 text-left">
                             <label for="chatbotTextInput" class="block text-lg mb-2">Consulta escrita</label>
@@ -252,7 +308,6 @@
                                 title="Grabar mensaje de voz"
                                 aria-label="Grabar o detener grabación de mensaje de voz">
                                 <div class="mic-icon-container">
-                                    <!-- Icono de micrófono siempre visible -->
                                     <svg class="w-8 h-8" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"></path>
                                         <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"></path>
@@ -268,38 +323,226 @@
                         </div>
                     </div>
 
-                    <!-- Chatbot message container - Always visible with initial or response message -->
-                    <div class="mt-8">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-full bg-blue-electric flex items-center justify-center flex-shrink-0">
-                                <span class="text-2xl">🤖</span>
+                    <!-- Chatbot Message Container & Conversational Funnel -->
+                    <div class="mt-8 glass-card p-6 rounded-2xl border border-white-pure/10 relative overflow-hidden">
+                        <!-- Step 0: Initial Stage (when inquiry hasn't been submitted yet) -->
+                        <div x-show="chatStep === 'inquiry'" class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-electric to-blue-400 flex items-center justify-center flex-shrink-0 shadow-md">
+                                    <span class="text-2xl">🤖</span>
+                                </div>
+                                <div class="flex-1">
+                                    <!-- Thinking typing indicator -->
+                                    <div x-show="chatbotThinking" class="mb-4 flex items-center gap-1.5 py-2 px-3 bg-blue-electric/10 rounded-xl max-w-max border border-blue-400/20">
+                                        <div class="w-2.5 h-2.5 bg-blue-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                        <div class="w-2.5 h-2.5 bg-blue-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                        <div class="w-2.5 h-2.5 bg-blue-400 rounded-full animate-bounce" style="animation-delay: 0.3s"></div>
+                                    </div>
+
+                                    <!-- Initial message (shown by default) -->
+                                    <div id="initialChatbotMessage" class="space-y-4">
+                                        <p class="text-lg leading-relaxed">¡Hola! Veo que te interesa <span id="selectedServiceText" class="font-semibold text-blue-300">nuestros servicios</span>. ¿Podés contarme un poco más sobre tu idea? Escribí un mensaje o grabá un audio y te ayudaré a implementarla.</p>
+                                        <div id="serviceInfo" class="flex flex-wrap items-center gap-2">
+                                            <span id="chatMoodBadge" class="text-xs bg-blue-electric/20 text-blue-200 px-3 py-1 rounded-full border border-blue-400/20 inline-block font-medium">Estado de ánimo: Creativo</span>
+                                            <span id="chatServiceBadge" class="text-xs bg-emerald-500/20 text-emerald-200 px-3 py-1 rounded-full border border-emerald-400/20 inline-block flex items-center gap-1 font-medium">
+                                                <span id="chatServiceEmoji">🤖</span>
+                                                <span id="chatServiceText">Automatizaciones</span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Response after voice/text message (hidden initially, shown after processing) -->
+                                    <div id="voiceResponseContainer" style="display: none;" class="space-y-4">
+                                        <p id="voiceResponseText" class="text-lg leading-relaxed font-medium text-white-pure"></p>
+
+                                        <!-- Audio player for AI response -->
+                                        <div id="audioResponseContainer" style="display: none;" class="mt-4 bg-white-pure/5 p-4 rounded-xl border border-white-pure/10">
+                                            <div class="text-xs text-white-pure/60 mb-2 font-semibold">RESPUESTA DE VOZ IA:</div>
+                                            <audio id="audioResponsePlayer" controls class="w-full h-10"></audio>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="flex-1 bg-blue-electric/20 p-4 rounded-lg">
-                                <!-- Initial message (shown by default) -->
-                                <div id="initialChatbotMessage">
-                                    <p class="text-lg mb-4">¡Hola! Veo que te interesa <span id="selectedServiceText" class="font-medium">nuestros servicios</span>. ¿Podés contarme un poco más sobre tu idea? Grabá un mensaje de voz y te ayudaré a implementarla.</p>
-                                    <div id="serviceInfo" class="flex items-center gap-2 my-3">
-                                        <span id="chatMoodBadge" class="text-sm bg-blue-electric/30 px-2 py-1 rounded-md inline-block">Estado de ánimo: Creativo</span>
-                                        <span id="chatServiceBadge" class="text-sm bg-green-500/30 px-2 py-1 rounded-md inline-block flex items-center gap-1">
-                                            <span id="chatServiceEmoji">🤖</span>
-                                            <span id="chatServiceText">Automatizaciones</span>
+                        </div>
+
+                        <!-- Step 1: Show AI Tip & Ask Name -->
+                        <div x-show="chatStep === 'name'" class="space-y-6 animate__animated animate__fadeIn">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-electric to-blue-400 flex items-center justify-center flex-shrink-0 shadow-md">
+                                    <span class="text-2xl">🤖</span>
+                                </div>
+                                <div class="flex-1 space-y-4">
+                                    <div class="bg-blue-electric/10 border border-blue-400/20 p-4 rounded-2xl">
+                                        <p class="text-white-pure font-bold text-sm mb-1 uppercase tracking-wider text-blue-300">Tip de la IA:</p>
+                                        <p class="text-white-pure/90 text-sm leading-relaxed whitespace-pre-line" x-text="chatResponseText"></p>
+                                    </div>
+                                    <p class="text-lg leading-relaxed">Para poder armarte una propuesta a medida y pasarte un presupuesto, contame: <strong class="text-blue-electric">¿cómo te llamás?</strong></p>
+                                    
+                                    <div class="flex flex-col sm:flex-row gap-3">
+                                        <input type="text" x-model="chatName" placeholder="Tu nombre y apellido" class="flex-1 bg-white-pure/5 border border-white-pure/15 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-electric">
+                                        <button @click="if(chatName.trim()) { chatStep = 'province'; } else { alert('Por favor, ingresá tu nombre.'); }" class="bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-3 px-6 rounded-xl transition-colors">Siguiente</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Ask Province -->
+                        <div x-show="chatStep === 'province'" class="space-y-6 animate__animated animate__fadeIn">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-electric to-blue-400 flex items-center justify-center flex-shrink-0 shadow-md">
+                                    <span class="text-2xl">🤖</span>
+                                </div>
+                                <div class="flex-1 space-y-4">
+                                    <p class="text-lg leading-relaxed">¡Un gusto, <span class="font-bold text-blue-300" x-text="chatName"></span>! ¿De qué provincia de Argentina nos escribís?</p>
+                                    
+                                    <div class="flex flex-col sm:flex-row gap-3">
+                                        <select x-model="chatProvince" class="flex-1 bg-gray-dark border border-white-pure/15 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-electric">
+                                            <option value="">Seleccioná tu provincia...</option>
+                                            <option value="San Luis">San Luis</option>
+                                            <option value="Buenos Aires">Buenos Aires</option>
+                                            <option value="CABA">CABA</option>
+                                            <option value="Córdoba">Córdoba</option>
+                                            <option value="Santa Fe">Santa Fe</option>
+                                            <option value="Mendoza">Mendoza</option>
+                                            <option value="San Juan">San Juan</option>
+                                            <option value="La Pampa">La Pampa</option>
+                                            <option value="Entre Ríos">Entre Ríos</option>
+                                            <option value="Tucumán">Tucumán</option>
+                                            <option value="Neuquén">Neuquén</option>
+                                            <option value="Río Negro">Río Negro</option>
+                                            <option value="Chubut">Chubut</option>
+                                            <option value="Santa Cruz">Santa Cruz</option>
+                                            <option value="Tierra del Fuego">Tierra del Fuego</option>
+                                            <option value="Salta">Salta</option>
+                                            <option value="Jujuy">Jujuy</option>
+                                            <option value="Chaco">Chaco</option>
+                                            <option value="Formosa">Formosa</option>
+                                            <option value="Corrientes">Corrientes</option>
+                                            <option value="Misiones">Misiones</option>
+                                            <option value="Santiago del Estero">Santiago del Estero</option>
+                                            <option value="Catamarca">Catamarca</option>
+                                            <option value="La Rioja">La Rioja</option>
+                                        </select>
+                                        <button @click="if(chatProvince) { chatStep = 'phone'; } else { alert('Por favor, seleccioná tu provincia.'); }" class="bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-3 px-6 rounded-xl transition-colors">Siguiente</button>
+                                    </div>
+                                    <button @click="chatStep = 'name'" class="text-xs text-white-pure/40 hover:text-white-pure/80 transition-colors">← Volver al paso anterior</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Ask Phone -->
+                        <div x-show="chatStep === 'phone'" class="space-y-6 animate__animated animate__fadeIn">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-electric to-blue-400 flex items-center justify-center flex-shrink-0 shadow-md">
+                                    <span class="text-2xl">🤖</span>
+                                </div>
+                                <div class="flex-1 space-y-4">
+                                    <p class="text-lg leading-relaxed">Buenísimo. Por último, ¿cuál es tu número de <strong class="text-blue-electric">teléfono / WhatsApp</strong> para que te enviemos la propuesta?</p>
+                                    
+                                    <div class="flex flex-col sm:flex-row gap-3">
+                                        <input type="tel" x-model="chatPhone" placeholder="Ej: 2664123456 (con código de área sin 0 ni 15)" class="flex-1 bg-white-pure/5 border border-white-pure/15 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-electric">
+                                        <button @click="if(chatPhone.trim()) { chatStep = 'calendar'; submitChatbotLeadData(); } else { alert('Por favor, ingresá tu número de teléfono.'); }" class="bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-3 px-6 rounded-xl transition-colors">Enviar y Continuar</button>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <button @click="chatStep = 'province'" class="text-xs text-white-pure/40 hover:text-white-pure/80 transition-colors">← Volver al paso anterior</button>
+                                        <span class="text-xs text-emerald-400 flex items-center gap-1 font-semibold">
+                                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.9L10 9.554l7.834-4.654A2.001 2.001 0 0016 3H4a2.001 2.001 0 00-1.834 1.9zM18 7.21l-8 4.756-8-4.757V15a2 2 0 002 2h12a2 2 0 002-2V7.21z" clip-rule="evenodd"></path></svg>
+                                            Tus datos están 100% seguros
                                         </span>
                                     </div>
                                 </div>
-
-                                <!-- Response after voice message (hidden initially, shown after voice processing) -->
-                                <div id="voiceResponseContainer" style="display: none;">
-                                    <p id="voiceResponseText" class="text-lg mb-4"></p>
-
-                                    <!-- Audio player for AI response -->
-                                    <div id="audioResponseContainer" style="display: none;" class="mt-4">
-                                        <audio id="audioResponsePlayer" controls class="w-full"></audio>
-                                    </div>
-                                </div>
-
-                                <p class="text-sm mt-4 text-white-pure/70">Probalo, ¡es un caño!</p>
                             </div>
                         </div>
+
+                        <!-- Step 4: Schedule Call Calendar -->
+                        <div x-show="chatStep === 'calendar'" class="space-y-6 animate__animated animate__fadeIn">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-electric to-blue-400 flex items-center justify-center flex-shrink-0 shadow-md">
+                                    <span class="text-2xl">🤖</span>
+                                </div>
+                                <div class="flex-1 space-y-4">
+                                    <p class="text-lg leading-relaxed">¡Excelente, datos guardados! Para coordinar en detalle y ver una demostración en vivo de la tecnología, te sugiero agendar una llamada virtual rápida (15 min) en nuestro calendario:</p>
+                                    
+                                    <!-- Embedded Interactive Calendar Grid -->
+                                    <div class="bg-white-pure/5 border border-white-pure/10 rounded-2xl p-4 md:p-6 space-y-4">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <!-- Date Selection -->
+                                            <div>
+                                                <label class="block text-xs font-semibold text-white-pure/50 uppercase tracking-wider mb-2">Seleccioná un Día:</label>
+                                                <div class="space-y-2 max-h-48 overflow-y-auto scrollbar-thin scrollbar-thumb-white-pure/10 pr-1">
+                                                    <template x-for="date in availableDates" :key="date.value">
+                                                        <button 
+                                                            @click="chatDate = date.value"
+                                                            class="w-full text-left px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all duration-200"
+                                                            :class="chatDate === date.value ? 'bg-blue-electric border-blue-electric text-white' : 'bg-white-pure/5 border-white-pure/10 text-white-pure/80 hover:bg-white-pure/10'"
+                                                            x-text="date.label"
+                                                        ></button>
+                                                    </template>
+                                                </div>
+                                            </div>
+
+                                            <!-- Time Selection -->
+                                            <div>
+                                                <label class="block text-xs font-semibold text-white-pure/50 uppercase tracking-wider mb-2">Seleccioná un Horario (Zona Horaria Arg):</label>
+                                                <div class="grid grid-cols-3 gap-2">
+                                                    <template x-for="time in availableTimes" :key="time">
+                                                        <button 
+                                                            @click="chatTime = time"
+                                                            class="px-2 py-2.5 rounded-xl border text-sm font-bold text-center transition-all duration-200"
+                                                            :class="chatTime === time ? 'bg-red-coral border-red-coral text-white' : 'bg-white-pure/5 border-white-pure/10 text-white-pure/80 hover:bg-white-pure/10'"
+                                                            x-text="time"
+                                                        ></button>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button 
+                                            @click="if(chatDate && chatTime) { chatStep = 'finished'; submitChatbotLeadData(); } else { alert('Por favor, selecciona un día y horario.'); }"
+                                            class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
+                                        >
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                            Confirmar Llamada Virtual
+                                        </button>
+                                    </div>
+
+                                    <div class="flex justify-between items-center pt-2">
+                                        <button @click="chatStep = 'phone'" class="text-xs text-white-pure/40 hover:text-white-pure/80 transition-colors">← Volver al teléfono</button>
+                                        <button @click="chatStep = 'finished'; submitChatbotLeadData();" class="text-xs text-blue-electric hover:underline font-bold transition-all">Saltar este paso y finalizar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Finished Success message -->
+                        <div x-show="chatStep === 'finished'" class="space-y-6 text-center py-6 animate__animated animate__fadeIn">
+                            <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-white-pure">¡Propuesta en marcha!</h3>
+                            <p class="text-white-pure/80 max-w-md mx-auto leading-relaxed">
+                                <span class="font-bold text-blue-300" x-text="chatName"></span>, ya recibimos tu consulta y estamos procesándola.
+                                <template x-if="chatDate && chatTime">
+                                    <span class="block mt-2">Agendamos la llamada virtual para el <strong class="text-white-pure" x-text="availableDates.find(d => d.value === chatDate)?.label"></strong> a las <strong class="text-white-pure" x-text="chatTime"></strong> (Hora Arg).</span>
+                                </template>
+                            </p>
+                            <p class="text-sm text-white-pure/60 max-w-sm mx-auto">
+                                Te enviaremos un mensaje de confirmación por WhatsApp en unos minutos con el link de la reunión. ¡No la penses más!
+                            </p>
+                            
+                            <!-- WhatsApp CTA direct button -->
+                            <div class="pt-4">
+                                <a :href="'https://wa.me/5492665267159?text=Hola%20Carlos,%20soy%20' + encodeURIComponent(chatName) + '.%20Acabo%20de%20completar%20la%20consulta%20en%20No%20La%20Penses%20sobre:%20' + encodeURIComponent(chatInquiry)" target="_blank" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-8 rounded-xl transition-colors shadow-lg shadow-emerald-500/20">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.588 2.019 14.12 1.002 11.5 1.002c-5.437 0-9.864 4.373-9.867 9.803-.001 1.73.457 3.419 1.32 4.904l-.994 3.633 3.688-.957zM17.17 14.94c-.284-.144-1.683-.82-1.944-.913-.26-.094-.45-.14-.64.143-.188.285-.73.916-.894 1.1-.164.186-.328.21-.612.067-.285-.143-1.202-.437-2.29-1.393-.846-.745-1.417-1.666-1.583-1.948-.166-.282-.017-.435.125-.575.127-.127.284-.328.425-.492.143-.165.19-.283.284-.473.095-.19.047-.356-.024-.498-.07-.144-.64-1.517-.877-2.078-.23-.55-.463-.475-.64-.484-.165-.008-.356-.01-.548-.01-.19 0-.501.07-.763.354-.262.285-.998.96-.998 2.342s1.006 2.713 1.147 2.9c.142.186 1.98 2.977 4.794 4.168.669.283 1.192.453 1.599.58.673.21 1.287.18 1.77.108.54-.08 1.684-.678 1.92-1.332.237-.655.237-1.22.166-1.333-.07-.11-.26-.183-.544-.326z"/></svg>
+                                    Chatear por WhatsApp ahora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-white-pure/5 flex items-center justify-between text-xs text-white-pure/50">
+                        <span>Asistente Virtual IA</span>
+                        <span class="font-semibold text-blue-electric">No la penses!</span>
                     </div>
                 </div>
             </div>
@@ -307,6 +550,553 @@
 
         <!-- Diagonal divider -->
         <div class="diagonal-divider"></div>
+    </section>
+
+    <!-- Soluciones en Acción Section -->
+    <section id="solutions-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Soluciones en Acción</h2>
+            <div class="section-divider mb-12"></div>
+            <p class="text-xl text-center mb-16 max-w-3xl mx-auto text-white-pure/80">
+                No vendemos tecnología compleja. Desarrollamos soluciones directas y automatizadas que resuelven los dolores de tu negocio.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Solución 1 -->
+                <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between h-full transform hover:scale-102 transition-transform duration-300">
+                    <div>
+                        <div class="text-4xl mb-4">🤖</div>
+                        <h3 class="text-2xl font-bold mb-3 text-blue-electric">Agente de Ventas WhatsApp 24/7</h3>
+                        <p class="text-xs text-white-pure/50 mb-4 font-semibold uppercase tracking-wider">El dolor: Perder ventas por responder tarde</p>
+                        <p class="text-white-pure/80 mb-6 leading-relaxed">
+                            Agente de inteligencia artificial autónomo integrado con <strong>n8n, OpenAI y MercadoPago</strong>. Atiende consultas a cualquier hora, asesora sobre tus productos, cotiza y cobra de manera automática por WhatsApp.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-sm">
+                        <span class="text-white-pure/60">Resultado:</span>
+                        <span class="font-extrabold text-blue-electric">100% de chats respondidos</span>
+                    </div>
+                </div>
+
+                <!-- Solución 2 -->
+                <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between h-full transform hover:scale-102 transition-transform duration-300">
+                    <div>
+                        <div class="text-4xl mb-4">💬</div>
+                        <h3 class="text-2xl font-bold mb-3 text-blue-electric">Soporte y Atención Inteligente</h3>
+                        <p class="text-xs text-white-pure/50 mb-4 font-semibold uppercase tracking-wider">El dolor: Equipo saturado con dudas repetitivas</p>
+                        <p class="text-white-pure/80 mb-6 leading-relaxed">
+                                    Chatbots web y de chat entrenados con la base de conocimientos específica de tu empresa (utilizando tecnología RAG). Resuelven dudas de clientes, guían en el uso de plataformas y agendan llamadas sin intervención humana.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-sm">
+                        <span class="text-white-pure/60">Resultado:</span>
+                        <span class="font-extrabold text-blue-electric">-70% carga de soporte manual</span>
+                    </div>
+                </div>
+
+                <!-- Solución 3 -->
+                <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between h-full transform hover:scale-102 transition-transform duration-300">
+                    <div>
+                        <div class="text-4xl mb-4">⚙️</div>
+                        <h3 class="text-2xl font-bold mb-3 text-blue-electric">Operaciones en Piloto Automático</h3>
+                        <p class="text-xs text-white-pure/50 mb-4 font-semibold uppercase tracking-wider">El dolor: Horas perdidas copiando datos a mano</p>
+                        <p class="text-white-pure/80 mb-6 leading-relaxed">
+                            Flujos de trabajo automáticos que conectan tus herramientas favoritas (WhatsApp, CRMs, Google Sheets, ERPs y Gmail). Sincronizan stock, envían facturas generadas por IA y notifican a tu equipo en tiempo real.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-sm">
+                        <span class="text-white-pure/60">Resultado:</span>
+                        <span class="font-extrabold text-blue-electric">Ahorro de 15+ horas semanales</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Automatizaciones por Sector / Industria -->
+            <div x-data="{ 
+                industryTab: 'inmo',
+                inmoChat: [
+                    { sender: 'user', text: 'Hola! Vi el dpto de 2 ambientes en alquiler' },
+                    { sender: 'bot', text: '¡Hola! 👋 Sí, está disponible. Para ver si se ajusta a lo que buscás, ¿cuál es tu presupuesto aproximado de alquiler?' },
+                    { sender: 'user', text: 'Hasta 300 mil pesos' },
+                    { sender: 'bot', text: '¡Excelente! Queda en presupuesto. Tiene cochera, expensas bajas y balcón. ¿Te gustaría agendar una visita esta semana? 📅' },
+                    { sender: 'user', text: 'Sí, me viene bien el jueves por la tarde' },
+                    { sender: 'bot', text: 'Perfecto. Te reservé el Jueves a las 16:00hs. Te acabo de enviar la confirmación y los detalles por mail. ¡Nos vemos! 🏢' }
+                ],
+                ecomChat: [
+                    { sender: 'user', text: 'Hola, tenés stock de las zapas running talle 41?' },
+                    { sender: 'bot', text: '¡Hola! 🏃‍♂️ Sí, nos quedan las últimas 2 unidades en color negro. ¿Te las reservo por 30 minutos?' },
+                    { sender: 'user', text: 'Sí por favor! ¿Cómo puedo pagarlas?' },
+                    { sender: 'bot', text: '¡Reservadas! 💳 Podés pagar con MercadoPago con 10% OFF usando este link directo: mpago.la/running41' },
+                    { sender: 'user', text: 'Buenísimo, ya hice el pago!' },
+                    { sender: 'bot', text: '¡Pago aprobado! 🎉 Tu pedido ya está en preparación. Te enviaremos el código de seguimiento en cuanto salga del depósito.' }
+                ],
+                servChat: [
+                    { sender: 'user', text: 'Hola, quiero pedir presupuesto para automatizar mi consultorio' },
+                    { sender: 'bot', text: '¡Hola! 👋 Con gusto. Para enviarte la propuesta adecuada, ¿cuál es el principal cuello de botella que tenés hoy?' },
+                    { sender: 'user', text: 'El agendamiento de turnos y las preguntas repetitivas' },
+                    { sender: 'bot', text: 'Entendido ⚙️. Es nuestra especialidad. Dejame tu email y teléfono, y te agendo una llamada breve de 15 min con Carlos.' },
+                    { sender: 'user', text: 'charly@nolapenses.com.ar, +5492664000' },
+                    { sender: 'bot', text: '¡Listo! Registrado en nuestro CRM. Carlos te contactará por WhatsApp para coordinar el horario. ¡Gracias! 🚀' }
+                ],
+                visibleMessages: [],
+                messageIndex: 0,
+                typing: false,
+                chatTimeout: null,
+                playChatLoop() {
+                    if (this.chatTimeout) {
+                        clearTimeout(this.chatTimeout);
+                    }
+                    this.visibleMessages = [];
+                    this.messageIndex = 0;
+                    this.typeNextMessage();
+                },
+                typeNextMessage() {
+                    let chat = this.industryTab === 'inmo' ? this.inmoChat : (this.industryTab === 'ecom' ? this.ecomChat : this.servChat);
+                    if (this.messageIndex < chat.length) {
+                        this.typing = true;
+                        this.chatTimeout = setTimeout(() => {
+                            this.typing = false;
+                            this.visibleMessages.push(chat[this.messageIndex]);
+                            this.messageIndex++;
+                            this.$nextTick(() => {
+                                const container = document.getElementById('mockChatContainer');
+                                if (container) {
+                                    container.scrollTop = container.scrollHeight;
+                                }
+                            });
+                            this.typeNextMessage();
+                        }, chat[this.messageIndex].sender === 'bot' ? 2000 : 1500);
+                    } else {
+                        this.chatTimeout = setTimeout(() => {
+                            this.playChatLoop();
+                        }, 5000);
+                    }
+                }
+            }" 
+            x-init="$watch('industryTab', value => playChatLoop()); playChatLoop();"
+            class="mt-24 border-t border-white-pure/5 pt-16">
+                <h3 class="text-2xl md:text-4xl font-extrabold mb-4 text-center tracking-tight">Especialidades por Sector</h3>
+                <div class="section-divider mb-8"></div>
+                <p class="text-lg text-center mb-10 max-w-2xl mx-auto text-white-pure/70">
+                    Diseñamos integraciones específicas según el modelo de negocio de tu sector. Hacé clic para ver ejemplos reales de lo que podemos construir.
+                </p>
+
+                <!-- Selector de Pestañas -->
+                <div class="flex flex-wrap justify-center gap-3 mb-12">
+                    <button 
+                        @click="industryTab = 'inmo'" 
+                        :class="industryTab === 'inmo' ? 'bg-blue-electric text-white-pure shadow-lg shadow-blue-electric/25' : 'bg-white-pure/5 hover:bg-white-pure/10 text-white-pure/70 hover:text-white-pure'"
+                        class="px-6 py-3 rounded-full font-bold transition-all flex items-center gap-2 text-sm md:text-base border border-white-pure/10"
+                    >
+                        <span>🏢</span> Inmobiliarias
+                    </button>
+                    <button 
+                        @click="industryTab = 'ecom'" 
+                        :class="industryTab === 'ecom' ? 'bg-blue-electric text-white-pure shadow-lg shadow-blue-electric/25' : 'bg-white-pure/5 hover:bg-white-pure/10 text-white-pure/70 hover:text-white-pure'"
+                        class="px-6 py-3 rounded-full font-bold transition-all flex items-center gap-2 text-sm md:text-base border border-white-pure/10"
+                    >
+                        <span>🛒</span> E-commerce
+                    </button>
+                    <button 
+                        @click="industryTab = 'serv'" 
+                        :class="industryTab === 'serv' ? 'bg-blue-electric text-white-pure shadow-lg shadow-blue-electric/25' : 'bg-white-pure/5 hover:bg-white-pure/10 text-white-pure/70 hover:text-white-pure'"
+                        class="px-6 py-3 rounded-full font-bold transition-all flex items-center gap-2 text-sm md:text-base border border-white-pure/10"
+                    >
+                        <span>💼</span> Servicios & Consultoría
+                    </button>
+                </div>
+
+                <!-- Contenido de las Pestañas (Rejilla combinada con Simulador) -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+                    
+                    <!-- Columna de Contenidos (Ancho 2/3) -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <!-- Inmobiliarias -->
+                        <div x-show="industryTab === 'inmo'" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <span class="text-3xl">📱</span>
+                                        <h4 class="text-xl font-bold text-white-pure">Calificación y Envío de Fichas por WhatsApp</h4>
+                                    </div>
+                                    <p class="text-white-pure/85 leading-relaxed text-sm mb-6">
+                                        El bot de WhatsApp interactúa con los interesados para preguntarles su presupuesto, zona buscada y cantidad de ambientes. Si el perfil coincide con tus criterios, busca automáticamente en tu base de datos (Google Sheets o CRM) y les envía los PDFs de las propiedades coincidentes en el acto.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-xs text-blue-electric font-semibold">
+                                    <span>Ahorro: Cero tiempo perdido en chats fríos</span>
+                                    <span>Foco en leads calificados</span>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <span class="text-3xl">🗓️</span>
+                                        <h4 class="text-xl font-bold text-white-pure">Agendamiento Automático de Visitas</h4>
+                                    </div>
+                                    <p class="text-white-pure/85 leading-relaxed text-sm mb-6">
+                                        Cuando el interesado califica y demuestra interés real en coordinar una visita física a una propiedad, la IA le comparte un enlace de agenda. El cliente reserva su horario comercial disponible, se sincroniza con Google Calendar de tus corredores y les envía un aviso por WhatsApp a ambas partes.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-xs text-blue-electric font-semibold">
+                                    <span>Integración: WhatsApp + Calendar + CRM</span>
+                                    <span>Agenda completa sin llamados</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- E-commerce -->
+                        <div x-show="industryTab === 'ecom'" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" class="grid grid-cols-1 md:grid-cols-2 gap-8" style="display: none;">
+                            <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <span class="text-3xl">📦</span>
+                                        <h4 class="text-xl font-bold text-white-pure">Asistente IA de Stock & Recomendación</h4>
+                                    </div>
+                                    <p class="text-white-pure/85 leading-relaxed text-sm mb-6">
+                                        Un agente conversacional inteligente conectado a tu plataforma de e-commerce o planilla de stock. Responde dudas sobre medidas, talle, colores disponibles y realiza recomendaciones de productos complementarios incrementando el ticket promedio de compra.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-xs text-blue-electric font-semibold">
+                                    <span>Soporte: 24 horas del día</span>
+                                    <span>Venta cruzada activa</span>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <span class="text-3xl">💳</span>
+                                        <h4 class="text-xl font-bold text-white-pure">Recuperación de Carritos y Link de Pago</h4>
+                                    </div>
+                                    <p class="text-white-pure/85 leading-relaxed text-sm mb-6">
+                                        Si un usuario abandona la compra en la web, el sistema dispara automáticamente un mensaje de WhatsApp amigable a las pocas horas con un incentivo (ej: envío gratis o 5% de descuento) y un enlace directo a Mercado Pago o tu pasarela de cobro favorita para concretar la venta de inmediato.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-xs text-blue-electric font-semibold">
+                                    <span>Conversión: +25% carritos recuperados</span>
+                                    <span>Mercado Pago Directo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Servicios & Consultoría -->
+                        <div x-show="industryTab === 'serv'" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" class="grid grid-cols-1 md:grid-cols-2 gap-8" style="display: none;">
+                            <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <span class="text-3xl">⚙️</span>
+                                        <h4 class="text-xl font-bold text-white-pure">Nutrición de Leads & Sincronización de CRM</h4>
+                                    </div>
+                                    <p class="text-white-pure/85 leading-relaxed text-sm mb-6">
+                                        Cuando entra un lead desde tus anuncios de Facebook o formularios web, el flujo de n8n los registra de inmediato en tu CRM (Hubspot, Pipedrive, ActiveCampaign), crea una alerta en el canal de Slack o Discord del equipo y asigna el prospecto al asesor correspondiente de manera equitativa.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-xs text-blue-electric font-semibold">
+                                    <span>Operación: Sin carga de datos manual</span>
+                                    <span>Velocidad de contacto inmediata</span>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <span class="text-3xl">🧾</span>
+                                        <h4 class="text-xl font-bold text-white-pure">Facturación y Notificaciones Post-Venta</h4>
+                                    </div>
+                                    <p class="text-white-pure/85 leading-relaxed text-sm mb-6">
+                                        Al procesarse el pago, el sistema interactúa de manera transparente con tu software de facturación (o AFIP), genera la factura correspondiente en formato PDF, se la envía por correo electrónico al cliente y notifica al área de operaciones para iniciar la entrega del servicio contratado.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-xs text-blue-electric font-semibold">
+                                    <span>Administración: 100% libre de errores</span>
+                                    <span>Proceso automatizado de punta a punta</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna del Teléfono Virtual (Ancho 1/3) -->
+                    <div class="flex justify-center w-full lg:sticky lg:top-32">
+                        <div class="w-full max-w-[290px] relative">
+                            <!-- Brillo trasero en vidrio -->
+                            <div class="absolute -inset-1 bg-gradient-to-tr from-blue-electric to-emerald-500 rounded-[2.3rem] blur-lg opacity-30 animate-pulse"></div>
+                            
+                            <!-- Smartphone Wrapper -->
+                            <div class="relative bg-[#0b141a] border-[6px] border-gray-900 rounded-[2.2rem] shadow-2xl overflow-hidden h-[410px] flex flex-col z-10 w-full">
+                                
+                                <!-- Top notch/camera -->
+                                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-4 bg-gray-900 rounded-b-xl flex items-center justify-center z-30">
+                                    <div class="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
+                                </div>
+                                
+                                <!-- WhatsApp Header -->
+                                <div class="bg-[#128c7e] p-2.5 pt-5 flex items-center gap-2 border-b border-[#075e54] relative z-20 shadow-md">
+                                    <div class="w-7 h-7 rounded-full bg-emerald-700/50 flex items-center justify-center font-bold text-xs text-white">
+                                        🤖
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-white text-[10px] leading-none">Asistente Virtual</h4>
+                                        <p class="text-[8px] text-emerald-200 mt-0.5">En línea</p>
+                                    </div>
+                                </div>
+
+                                <!-- WhatsApp Chat Area -->
+                                <div id="mockChatContainer" class="flex-1 p-2.5 overflow-y-auto space-y-2.5 bg-[#0b141a] scroll-smooth pb-4">
+                                    <!-- Message bubbles -->
+                                    <template x-for="(msg, index) in visibleMessages" :key="index">
+                                        <div class="flex w-full" :class="msg.sender === 'user' ? 'justify-end' : 'justify-start'">
+                                            <div 
+                                                class="max-w-[85%] rounded-lg p-2 text-[10px] leading-relaxed shadow-sm relative" 
+                                                :class="msg.sender === 'user' ? 'bg-[#005c4b] text-white rounded-tr-none' : 'bg-[#202c33] text-white rounded-tl-none'"
+                                            >
+                                                <span x-text="msg.text"></span>
+                                            </div>
+                                        </div>
+                                    </template>
+
+                                    <!-- Typing Indicator -->
+                                    <div x-show="typing" class="flex justify-start">
+                                        <div class="bg-[#202c33] rounded-lg rounded-tl-none p-2 max-w-[80%] flex items-center gap-1">
+                                            <div class="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                            <div class="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                            <div class="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.3s"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- WhatsApp Input bar (visual only) -->
+                                <div class="bg-[#1f2c34] p-1.5 flex items-center gap-2 border-t border-[#2a3942]">
+                                    <div class="flex-1 bg-[#2a3942] rounded-full px-2.5 py-1 flex items-center text-[9px] text-gray-400">
+                                        Escribe un mensaje...
+                                    </div>
+                                    <div class="w-6 h-6 rounded-full bg-[#00a884] flex items-center justify-center text-white">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- El Método No La Penses Section -->
+    <section id="process-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">El Método "No La Penses"</h2>
+            <div class="section-divider mb-12"></div>
+            <p class="text-xl text-center mb-16 max-w-3xl mx-auto text-white-pure/80">
+                Llevar procesos manuales a flujos automáticos inteligentes no tiene por qué ser complicado. Diseñamos un camino libre de fricciones.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                <!-- Paso 1 -->
+                <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between h-full relative">
+                    <div class="absolute -top-5 -left-3 bg-blue-electric text-white-pure w-10 h-10 rounded-full flex items-center justify-center font-extrabold shadow-lg shadow-blue-electric/30">1</div>
+                    <div class="mt-4">
+                        <div class="text-4xl mb-4">🔍</div>
+                        <h3 class="text-2xl font-bold mb-3 text-white-pure">Diagnóstico Sin Cargo</h3>
+                        <p class="text-xs text-blue-electric mb-4 font-semibold uppercase tracking-wider">Duración: 15 minutos</p>
+                        <p class="text-white-pure/70 leading-relaxed text-sm">
+                            Analizamos tu flujo operativo actual para detectar las tareas repetitivas, cuellos de botella y pérdidas de leads. Te decimos exactamente qué automatizar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between h-full relative">
+                    <div class="absolute -top-5 -left-3 bg-blue-electric text-white-pure w-10 h-10 rounded-full flex items-center justify-center font-extrabold shadow-lg shadow-blue-electric/30">2</div>
+                    <div class="mt-4">
+                        <div class="text-4xl mb-4">🚀</div>
+                        <h3 class="text-2xl font-bold mb-3 text-white-pure">Prototipo Funcional</h3>
+                        <p class="text-xs text-blue-electric mb-4 font-semibold uppercase tracking-wider">Entrega: 7 a 10 días</p>
+                        <p class="text-white-pure/70 leading-relaxed text-sm">
+                            Desarrollamos una versión inicial del flujo automático (MVP) para que puedas probar la IA y ver cómo interactúa con tus herramientas favoritas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between h-full relative">
+                    <div class="absolute -top-5 -left-3 bg-blue-electric text-white-pure w-10 h-10 rounded-full flex items-center justify-center font-extrabold shadow-lg shadow-blue-electric/30">3</div>
+                    <div class="mt-4">
+                        <div class="text-4xl mb-4">⚙️</div>
+                        <h3 class="text-2xl font-bold mb-3 text-white-pure">Integración y Escala</h3>
+                        <p class="text-xs text-blue-electric mb-4 font-semibold uppercase tracking-wider">Lanzamiento definitivo</p>
+                        <p class="text-white-pure/70 leading-relaxed text-sm">
+                            Conectamos de forma definitiva y segura tus sistemas mediante APIs oficiales. Monitoreamos los resultados para asegurar el retorno de inversión desde el primer día.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora de ROI Section -->
+    <section id="roi-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Simulá tu Ahorro con IA</h2>
+            <div class="section-divider mb-12"></div>
+            <p class="text-xl text-center mb-12 max-w-3xl mx-auto text-white-pure/80">
+                Ingresá tus números estimativos y calculá de forma interactiva cuánto tiempo y dinero podrías recuperar automatizando tareas operativas.
+            </p>
+
+            <div x-data="{ horas: 10, costoHora: 20 }" class="glass-card p-8 md:p-12 rounded-3xl border border-white-pure/10 shadow-2xl relative overflow-hidden">
+                <!-- Background glow -->
+                <div class="absolute -right-16 -top-16 w-32 h-32 bg-blue-electric/10 rounded-full blur-3xl"></div>
+                <div class="absolute -left-16 -bottom-16 w-32 h-32 bg-red-coral/5 rounded-full blur-3xl"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 relative z-10">
+                    <!-- Slider Horas de Trabajo Manual -->
+                    <div class="flex flex-col justify-center">
+                        <label class="block text-lg font-medium text-white-pure/80 mb-3">
+                            ¿Cuántas horas semanales perdés en tareas repetitivas?
+                        </label>
+                        <input type="range" min="2" max="40" x-model="horas" class="w-full h-2 bg-white-pure/10 rounded-lg appearance-none cursor-pointer accent-blue-electric">
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-xs text-white-pure/50">2 horas</span>
+                            <span class="text-2xl font-extrabold text-blue-electric" x-text="horas + ' horas'"></span>
+                            <span class="text-xs text-white-pure/50">40 horas</span>
+                        </div>
+                        <p class="text-xs text-white-pure/40 mt-2">Ej: responder WhatsApps de soporte repetitivos, copiar contactos, facturar a mano.</p>
+                    </div>
+
+                    <!-- Input Costo por Hora -->
+                    <div class="flex flex-col justify-center">
+                        <label class="block text-lg font-medium text-white-pure/80 mb-3">
+                            Costo estimado de tu hora de trabajo (o de tu empleado)
+                        </label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white-pure/60 text-xl">$</span>
+                            <input type="number" x-model="costoHora" class="w-full bg-white-pure/5 border border-white-pure/15 rounded-xl py-3 pl-8 pr-12 text-white-pure text-xl font-bold focus:outline-none focus:border-blue-electric/50 transition-colors">
+                            <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white-pure/60 font-semibold text-sm">USD</span>
+                        </div>
+                        <p class="text-xs text-white-pure/40 mt-2">Valor promedio por hora de la persona a cargo de la tarea.</p>
+                    </div>
+                </div>
+                
+                <!-- Resultados del Cálculo -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                    <div class="bg-white-pure/5 p-6 rounded-2xl border border-white-pure/5 flex flex-col justify-center items-center text-center">
+                        <p class="text-xs text-white-pure/50 uppercase tracking-wider mb-1 font-semibold">Tiempo recuperado al año</p>
+                        <p class="text-4xl font-extrabold text-blue-electric" x-text="(horas * 52) + ' hs'"></p>
+                        <p class="text-xs text-white-pure/40 mt-2">¡Equivale a unas <span class="font-bold text-white-pure" x-text="Math.round(horas * 52 / 8)"></span> jornadas laborales completas de descanso o ventas!</p>
+                    </div>
+                    <div class="bg-white-pure/5 p-6 rounded-2xl border border-white-pure/5 flex flex-col justify-center items-center text-center">
+                        <p class="text-xs text-white-pure/50 uppercase tracking-wider mb-1 font-semibold">Dinero ahorrado al año</p>
+                        <p class="text-4xl font-extrabold text-red-coral" x-text="'$' + (horas * 52 * costoHora).toLocaleString() + ' USD'"></p>
+                        <p class="text-xs text-white-pure/40 mt-2">Capital que podés reinvertir para hacer crecer tu negocio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quién está detrás Section -->
+    <section id="about-leader-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
+        <!-- Decorative Glow -->
+        <div class="absolute -right-48 top-1/2 transform -translate-y-1/2 w-96 h-96 bg-blue-electric/5 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Quién está detrás</h2>
+            <div class="section-divider mb-12"></div>
+            
+            <div class="glass-card rounded-3xl border border-white-pure/10 p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <!-- Photo Column -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="relative w-36 h-36 rounded-2xl overflow-hidden border-2 border-blue-electric/40 shadow-xl mb-4 bg-gray-medium flex items-center justify-center">
+                            <img src="assets/img/perfil.jpeg" alt="Carlos Salini" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-2xl font-bold text-white-pure">Carlos Salini</h3>
+                        <p class="text-sm text-blue-electric font-semibold mt-1">Engineering Manager + AI Builder</p>
+                    </div>
+                    
+                    <!-- Bio Column -->
+                    <div class="md:col-span-2 space-y-4 text-white-pure/80 text-base leading-relaxed">
+                        <p>
+                            Lidero equipos de software hace más de 8 años. Actualmente me desempeño como <strong class="text-white-pure">Gerente de Área de Software y Diseño en Coradir</strong>, coordinando perfiles técnicos, creativos y de marketing.
+                        </p>
+                        <p>
+                            En el ámbito de la consultoría IA, no solo planifico estrategias; **desarrollo y programo soluciones que operan en producción real**. He diseñado integraciones complejas con n8n, asistentes entrenados con RAG y flujos transaccionales automáticos con MercadoPago.
+                        </p>
+                        
+                        <!-- Badges -->
+                        <div class="flex flex-wrap gap-2 pt-3">
+                            <span class="text-xs px-3 py-1 bg-white-pure/5 rounded-full border border-white-pure/10">+8 Años Exp.</span>
+                            <span class="text-xs px-3 py-1 bg-white-pure/5 rounded-full border border-white-pure/10">Coradir Software Manager</span>
+                            <span class="text-xs px-3 py-1 bg-white-pure/5 rounded-full border border-white-pure/10">n8n & AI Agent Expert</span>
+                            <span class="text-xs px-3 py-1 bg-white-pure/5 rounded-full border border-white-pure/10">Microsoft Forum Delegate</span>
+                        </div>
+                        
+                        <!-- CTA Link to Portfolio -->
+                        <div class="pt-4 flex items-center gap-3">
+                            <a href="portafolio.html" class="inline-flex items-center gap-2 text-blue-electric hover:text-blue-electric/80 font-bold transition-colors">
+                                Conocé mi portafolio completo 
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Preguntas Frecuentes</h2>
+            <div class="section-divider mb-12"></div>
+            
+            <div x-data="{ active: null }" class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
+                    <button @click="active = active === 1 ? null : 1" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                        <span class="text-white-pure">¿La IA va a responder cualquier cosa a mis clientes?</span>
+                        <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="active === 1" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                        No. Diseñamos directrices estrictas y sistemas de contención (guardrails) basados en prompts y RAG para asegurar que el agente de IA solo responda con información oficial y aprobada de tu negocio. Si detecta un caso complejo, puede derivarlo automáticamente a un operador humano.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
+                    <button @click="active = active === 2 ? null : 2" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                        <span class="text-white-pure">¿Tengo que cambiar los sistemas que ya uso en mi empresa?</span>
+                        <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="active === 2" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                        Para nada. Integramos nuestros flujos mediante APIs y webhooks seguros con tus herramientas actuales (WhatsApp, CRMs, Google Sheets, Trello, Stripe, MercadoPago, Gmail, etc.) para que no tengas que cambiar tu forma de operar ni forzar a tu equipo a aprender una nueva interfaz.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
+                    <button @click="active = active === 3 ? null : 3" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                        <span class="text-white-pure">¿Qué herramientas utilizan para las automatizaciones?</span>
+                        <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 3 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="active === 3" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                        Nuestra herramienta central es n8n, por su flexibilidad para albergar agentes y conectarse con servicios externos sin depender de costos inflados por ejecución. También desarrollamos backends en Node.js/PHP si el flujo requiere bases de datos locales o procesos a medida de alta performance.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
+                    <button @click="active = active === 4 ? null : 4" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                        <span class="text-white-pure">¿Cuánto tiempo toma implementar un asistente o automatización?</span>
+                        <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 4 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="active === 4" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                        Los flujos operativos estándar se entregan y configuran en menos de 10 días. El retorno de inversión en tiempo libre y mensajes de soporte respondidos se percibe desde las primeras 24 horas del despliegue.
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Contact form section -->
@@ -381,6 +1171,17 @@
                                 <span class="font-bold">Conectar con la IA</span>
                             </button>
                         </form>
+
+                        <!-- Micro-Garantía de Cero Fricción -->
+                        <div class="mt-6 bg-blue-electric/10 border border-blue-400/20 p-4 rounded-xl flex items-start gap-3 shadow-lg shadow-blue-electric/5">
+                            <span class="text-emerald-400 text-2xl flex-shrink-0">🛡️</span>
+                            <div>
+                                <h4 class="font-bold text-white-pure text-sm">Garantía de Cero Fricción Técnica</h4>
+                                <p class="text-xs text-white-pure/70 mt-1 leading-relaxed">
+                                    No tenés que cambiar tus herramientas actuales ni contratar programadores. Implementamos todo sobre lo que ya usás (WhatsApp, Sheets, Gmail, CRMs) y te entregamos un prototipo funcional en menos de 10 días hábiles.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Capacidades de la IA -->
@@ -477,7 +1278,9 @@
                         target="_blank"
                         class="inline-block bg-red-coral hover:bg-red-coral/80 text-white-pure font-bold py-5 px-8 rounded-lg text-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
                     >
-                        <img src="facebook.png" alt="WhatsApp" class="w-10 h-10 rounded-full border-2 border-white-pure">
+                        <svg class="w-10 h-10 text-white-pure" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.520-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.306 1.265.489 1.697.626.713.226 1.362.194 1.875.118.572-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+                        </svg>
                         <span class="title-font">¡Dale, charlá con nuestro chatbot IA! 💬</span>
                     </a>
                 </div>

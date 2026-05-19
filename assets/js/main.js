@@ -119,6 +119,20 @@ window.landingApp = function() {
         voiceResponse: '',
         audioResponse: null,
         
+        // Conversational Chatbot Funnel state
+        chatStep: 'inquiry', // inquiry, name, province, phone, calendar, finished
+        chatInquiry: '',
+        chatName: '',
+        chatProvince: '',
+        chatPhone: '',
+        chatResponseText: '',
+        chatDate: '',
+        chatTime: '',
+        availableTimes: ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00', '17:00'],
+        availableDates: [],
+        industryTab: 'inmo',
+        chatbotThinking: false,
+        
         // Form state
         form: {
             nombre: '',
@@ -155,12 +169,31 @@ window.landingApp = function() {
                 // Inicializar animaciones
                 this.initScrollAnimations();
                 this.setupScrollIndicator();
+                this.initScrollspy();
                 
                 // Establecer directamente un estado de ánimo y saludo aleatorios
                 this.setRandomMoodAndGreeting();
                 
                 // Inicializar el mensaje del chatbot si hay elementos guardados
                 this.initChatbotMessage();
+                
+                // Generar fechas hábiles disponibles (los próximos 5 días de Lunes a Viernes)
+                const datesList = [];
+                let dateCursor = new Date();
+                dateCursor.setDate(dateCursor.getDate() + 1); // Empezar desde mañana
+                while (datesList.length < 5) {
+                    const dayOfWeek = dateCursor.getDay();
+                    if (dayOfWeek !== 0 && dayOfWeek !== 6) { // Evitar Sábado (0 = Domingo, 6 = Sábado)
+                        const dateFormatted = dateCursor.toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' });
+                        const cap = dateFormatted.charAt(0).toUpperCase() + dateFormatted.slice(1);
+                        datesList.push({
+                            value: dateCursor.toISOString().split('T')[0],
+                            label: cap
+                        });
+                    }
+                    dateCursor.setDate(dateCursor.getDate() + 1);
+                }
+                this.availableDates = datesList;
                 
                 console.log('Aplicación inicializada correctamente');
             } catch (error) {
@@ -386,6 +419,18 @@ window.landingApp = function() {
                 
                 // Establecer el servicio seleccionado
                 this.selectedService = serviceId;
+                
+                // Guardar en localStorage para persistencia y chatbot
+                localStorage.setItem('selectedService', JSON.stringify(selectedService));
+                
+                // Actualizar dinámicamente los textos del chatbot en tiempo real
+                const domSelectedServiceText = document.getElementById('selectedServiceText');
+                const domChatServiceText = document.getElementById('chatServiceText');
+                const domChatServiceEmoji = document.getElementById('chatServiceEmoji');
+                
+                if (domSelectedServiceText) domSelectedServiceText.textContent = selectedService.text;
+                if (domChatServiceText) domChatServiceText.textContent = selectedService.text;
+                if (domChatServiceEmoji) domChatServiceEmoji.textContent = selectedService.emoji;
                 
                 // Obtener respuesta personalizada basada en el estado de ánimo y el servicio
                 if (this.moodServiceResponses[this.userMood] && this.moodServiceResponses[this.userMood][serviceId]) {
@@ -1008,32 +1053,81 @@ window.landingApp = function() {
             const message = (this.typedInquiry || '').trim();
 
             if (!message) {
-                alert('Escribi una consulta para que la IA pueda responder.');
+                alert('Escribí una consulta para que la IA pueda responder.');
                 return;
             }
 
-            this.showChatbotResponse('Procesando tu consulta con la IA...');
+            this.chatInquiry = message;
+            this.chatbotThinking = true;
+            
+            // Ocultar el mensaje inicial y mostrar contenedor de respuestas si existen
+            const initialMessage = document.getElementById('initialChatbotMessage');
+            const voiceResponseContainer = document.getElementById('voiceResponseContainer');
+            const voiceResponseText = document.getElementById('voiceResponseText');
+            if (initialMessage && voiceResponseContainer) {
+                initialMessage.style.display = 'none';
+                voiceResponseContainer.style.display = 'block';
+            }
+            if (voiceResponseText) {
+                voiceResponseText.textContent = 'Procesando tu consulta con la IA...';
+            }
+
+            // Generar tip genérico y simple basado en palabras clave
+            let tip = '';
+            const msgLower = message.toLowerCase();
+            if (msgLower.includes('whatsapp') || msgLower.includes('chat') || msgLower.includes('atencion') || msgLower.includes('atención')) {
+                tip = '¡Excelente iniciativa! Diseñar agentes de WhatsApp autónomos integrados con n8n te va a permitir responder de forma instantánea a tus clientes las 24 horas, eliminando la pérdida de leads por demoras de respuesta.';
+            } else if (msgLower.includes('automatiz') || msgLower.includes('operac') || msgLower.includes('flujo') || msgLower.includes('sheets') || msgLower.includes('crm')) {
+                tip = '¡Las automatizaciones operativas son la clave! Conectar tus sistemas (WhatsApp, CRM y planillas) te permitirá eliminar la carga manual de datos, evitar errores humanos y ahorrar más de 15 horas de trabajo semanales.';
+            } else if (msgLower.includes('web') || msgLower.includes('landing') || msgLower.includes('pagin') || msgLower.includes('página') || msgLower.includes('diseño')) {
+                tip = '¡Estructurar una landing page es vital! Diseñar una web rápida y optimizada para conversión te dará la imagen premium y profesional necesaria para atraer leads realmente interesados en contratarte.';
+            } else {
+                tip = '¡Qué gran proyecto! Implementar una solución digital con inteligencia artificial y automatización te permitirá estandarizar la atención al cliente, optimizar tareas repetitivas y escalar tu negocio.';
+            }
 
             const webhookData = this.buildChatbotPayload({
                 message,
                 wants_voice_response: false
             });
 
-            fetch(CONFIG.webhooks.chatbot, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(webhookData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                this.showChatbotResponse(data.reply || 'Listo, recibimos tu consulta.', data.audio_url || null);
-            })
-            .catch(error => {
-                console.error('Error al enviar consulta al chatbot:', error);
-                this.showChatbotResponse('Hubo un error al procesar tu consulta. Por favor, intenta nuevamente.');
-            });
+            // Detectar si es entorno local
+            const isLocalEnvironment = window.location.hostname === 'localhost' || 
+                                       window.location.hostname === '127.0.0.1' ||
+                                       window.location.hostname.includes('.test') ||
+                                       window.location.hostname.includes('.local');
+
+            if (isLocalEnvironment) {
+                console.log('Simulando chatbot local con tip...');
+                setTimeout(() => {
+                    this.chatResponseText = tip;
+                    this.chatStep = 'name';
+                    this.chatbotThinking = false;
+                    this.showChatbotResponse(tip);
+                }, 1500);
+            } else {
+                fetch(CONFIG.webhooks.chatbot, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(webhookData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const aiReply = data.reply || data.text_response || '';
+                    this.chatResponseText = tip + (aiReply ? ' \n\nAdemás, la IA propone: ' + aiReply : '');
+                    this.chatStep = 'name';
+                    this.chatbotThinking = false;
+                    this.showChatbotResponse(this.chatResponseText, data.audio_url || null);
+                })
+                .catch(error => {
+                    console.error('Error al enviar consulta al chatbot:', error);
+                    this.chatResponseText = tip + ' (Nota: no pudimos conectar con el servidor principal, pero podemos agendar para armar tu plan).';
+                    this.chatStep = 'name';
+                    this.chatbotThinking = false;
+                    this.showChatbotResponse(this.chatResponseText);
+                });
+            }
         },
 
         // Send recorded audio to webhook
@@ -1047,17 +1141,45 @@ window.landingApp = function() {
                 const voiceResponseText = document.getElementById('voiceResponseText');
                 
                 if (initialMessage && voiceResponseContainer && voiceResponseText) {
-                    // Mostrar mensaje de carga
                     initialMessage.style.display = 'none';
                     voiceResponseContainer.style.display = 'block';
                     voiceResponseText.textContent = 'Procesando tu mensaje de voz...';
                 }
                 
+                this.chatbotThinking = true;
+                
+                // Obtener servicio seleccionado para el tip
+                let selectedServiceText = 'tu proyecto';
+                let selectedServiceId = '';
+                try {
+                    const selectedServiceObj = JSON.parse(localStorage.getItem('selectedService') || '{}');
+                    if (selectedServiceObj && selectedServiceObj.text) {
+                        selectedServiceText = selectedServiceObj.text;
+                        selectedServiceId = selectedServiceObj.id;
+                    }
+                } catch (e) {
+                    console.error('Error al parsear el servicio seleccionado:', e);
+                }
+
+                this.chatInquiry = `Mensaje de voz sobre ${selectedServiceText}`;
+
+                // Generar tip basado en el servicio seleccionado
+                let tip = '';
+                if (selectedServiceId === 'automatizaciones' || selectedServiceId === 'sistemas') {
+                    tip = '¡Excelente audio! Las automatizaciones e integraciones personalizadas con n8n son clave para eliminar las tareas mecánicas repetitivas. Automatizar este proceso te va a permitir ahorrar tiempo valioso y centrarte en expandir tu negocio.';
+                } else if (selectedServiceId === 'ia-atencion' || selectedServiceId === 'whatsapp') {
+                    tip = '¡Gran idea la que contás! Implementar un agente virtual inteligente en WhatsApp que responda de forma autónoma con RAG garantiza que ningún lead se pierda por demoras, aumentando tus ventas y manteniendo tu negocio abierto 24/7.';
+                } else if (selectedServiceId === 'web') {
+                    tip = '¡Buenísimo! Una landing page rápida, atractiva y optimizada con llamadas a la acción claras (CTA) es el núcleo de cualquier embudo de ventas exitoso para captar clientes en piloto automático.';
+                } else {
+                    tip = '¡Qué buen proyecto! Digitalizar y automatizar tus operaciones repetitivas con inteligencia artificial te va a liberar horas semanales de gestión manual y te dará una estructura escalable.';
+                }
+
                 const webhookData = this.buildChatbotPayload({
                     audio_base64: audioBase64,
                     audio_mime_type: 'audio/webm',
                     wants_voice_response: true,
-                    message: this.typedInquiry || ''
+                    message: this.typedInquiry || `Mensaje de voz sobre ${selectedServiceText}`
                 });
                 
                 // Check if we're in a local environment
@@ -1068,38 +1190,13 @@ window.landingApp = function() {
                 
                 if (isLocalEnvironment) {
                     console.log('Entorno local detectado. Simulando respuesta del webhook de audio...');
-                    
-                    // Recuperar el servicio seleccionado
-                    let selectedServiceText = 'tu proyecto';
-                    try {
-                        const selectedService = JSON.parse(localStorage.getItem('selectedService') || '{}');
-                        if (selectedService && selectedService.text) {
-                            selectedServiceText = selectedService.text;
-                        }
-                    } catch (e) {
-                        console.error('Error al parsear el servicio seleccionado:', e);
-                    }
-                    
-                    // Simulate webhook response locally after a short delay
                     setTimeout(() => {
-                        if (voiceResponseText) {
-                            voiceResponseText.textContent = `¡Gracias por tu mensaje! Entendimos que necesitas ayuda con ${selectedServiceText}. Nuestro equipo puede ayudarte a crear una solución personalizada. ¿Te gustaría que te contactemos por WhatsApp para darte más detalles?`;
-                        }
-                        
-                        // Simular respuesta de audio
-                        const audioResponseContainer = document.getElementById('audioResponseContainer');
-                        const audioResponsePlayer = document.getElementById('audioResponsePlayer');
-                        
-                        if (audioResponseContainer && audioResponsePlayer) {
-                            // En un entorno real, aquí se establecería la URL del audio
-                            // audioResponsePlayer.src = 'URL_DEL_AUDIO';
-                            // audioResponseContainer.style.display = 'block';
-                        }
-                        
-                        console.log('Respuesta simulada para el audio:', voiceResponseText?.textContent);
+                        this.chatResponseText = tip;
+                        this.chatStep = 'name';
+                        this.chatbotThinking = false;
+                        this.showChatbotResponse(tip);
                     }, 2000);
                 } else {
-                    // In production, make an actual API call
                     fetch(CONFIG.webhooks.chatbot, {
                         method: 'POST',
                         headers: {
@@ -1110,23 +1207,55 @@ window.landingApp = function() {
                     .then(response => response.json())
                     .then(data => {
                         console.log('Respuesta del webhook de audio:', data);
-                        
-                        this.showChatbotResponse(data.reply || data.text_response || data.transcription || 'Listo, recibimos tu audio.', data.audio_url || null);
+                        const aiReply = data.reply || data.text_response || data.transcription || '';
+                        this.chatResponseText = tip + (aiReply ? ' \n\nTranscripción/Propuesta: ' + aiReply : '');
+                        this.chatStep = 'name';
+                        this.chatbotThinking = false;
+                        this.showChatbotResponse(this.chatResponseText, data.audio_url || null);
                     })
                     .catch(error => {
                         console.error('Error al enviar audio al webhook:', error);
-                        if (voiceResponseText) {
-                            voiceResponseText.textContent = 'Lo sentimos, hubo un error al procesar tu mensaje de voz. Por favor, intenta nuevamente.';
-                        }
+                        this.chatResponseText = tip + ' (Nota: recibimos tu audio pero falló la conexión remota, continuamos para agendar).';
+                        this.chatStep = 'name';
+                        this.chatbotThinking = false;
+                        this.showChatbotResponse(this.chatResponseText);
                     });
                 }
             } catch (error) {
                 console.error('Error al enviar el audio al webhook:', error);
-                const voiceResponseText = document.getElementById('voiceResponseText');
-                if (voiceResponseText) {
-                    voiceResponseText.textContent = 'Lo sentimos, hubo un error al procesar tu mensaje de voz. Por favor, intenta nuevamente.';
-                }
+                this.chatbotThinking = false;
+                this.chatStep = 'name';
             }
+        },
+
+        // Submit accumulated lead conversational data to webhook
+        submitChatbotLeadData() {
+            const payload = this.buildChatbotPayload({
+                nombre: this.chatName,
+                provincia: this.chatProvince,
+                telefono: this.chatPhone,
+                inquiry: this.chatInquiry,
+                fecha_reunion: this.chatDate,
+                hora_reunion: this.chatTime,
+                scheduled: !!(this.chatDate && this.chatTime),
+                message: `Lead Conversacional: "${this.chatInquiry}". Cliente: ${this.chatName}. Provincia: ${this.chatProvince}. Teléfono: ${this.chatPhone}. Agenda llamada: ${this.chatDate || 'No agendada'} ${this.chatTime || ''}`
+            });
+
+            console.log('Enviando Lead conversacional al webhook:', payload);
+            
+            fetch(CONFIG.webhooks.newLead, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(res => {
+                console.log('Lead enviado con éxito a n8n');
+            })
+            .catch(err => {
+                console.error('Error al enviar Lead de chatbot a n8n:', err);
+            });
         },
         
         // Submit contact form
@@ -1272,6 +1401,31 @@ window.landingApp = function() {
                     observer.observe(element);
                 });
                 
+                // Smooth scroll and slide effect for links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            e.preventDefault();
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            
+                            // Apply slide transition effect
+                            targetElement.classList.remove('slide-focus');
+                            void targetElement.offsetWidth; // Trigger reflow
+                            targetElement.classList.add('slide-focus');
+                            setTimeout(() => {
+                                targetElement.classList.remove('slide-focus');
+                            }, 1000);
+                        }
+                    });
+                });
+                
                 console.log('Animaciones de desplazamiento inicializadas correctamente');
             } catch (error) {
                 console.error('Error al inicializar las animaciones de desplazamiento:', error);
@@ -1309,6 +1463,50 @@ window.landingApp = function() {
             }
         },
         
+        // Initialize scrollspy for floating navbar
+        initScrollspy() {
+            try {
+                console.log('Inicializando Scrollspy...');
+                
+                // Active targets
+                const sections = [
+                    document.getElementById('welcomeMessage'),
+                    document.getElementById('solutions-section'),
+                    document.getElementById('roi-section'),
+                    document.getElementById('faq-section')
+                ].filter(el => el !== null);
+                
+                const navLinks = document.querySelectorAll('.floating-nav a[href^="#"]');
+                if (sections.length === 0 || navLinks.length === 0) return;
+
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '-30% 0px -50% 0px',
+                    threshold: 0
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            navLinks.forEach(link => {
+                                if (link.getAttribute('href') === `#${id}`) {
+                                    link.classList.add('nav-link-active');
+                                } else {
+                                    link.classList.remove('nav-link-active');
+                                }
+                            });
+                        }
+                    });
+                }, observerOptions);
+
+                sections.forEach(section => observer.observe(section));
+                console.log('Scrollspy inicializado correctamente');
+            } catch (error) {
+                console.error('Error al inicializar Scrollspy:', error);
+            }
+        },
+        
         // Get browser name for analytics
         getBrowserName() {
             try {
@@ -1342,18 +1540,15 @@ window.landingApp = function() {
 console.log('main.js cargado correctamente');
 
 // Mock API response for demo purposes in local environment
-(function(originalFetch) {
-    window.fetch = function(url, options) {
-        return new Promise((resolve, reject) => {
-            // Check if this is a webhook call
-            if (url.includes('webhook')) {
-                // Check if we're in a local environment
-                const isLocalEnvironment = window.location.hostname === 'localhost' || 
-                                          window.location.hostname === '127.0.0.1' ||
-                                          window.location.hostname.includes('.test') ||
-                                          window.location.hostname.includes('.local');
-                
-                if (isLocalEnvironment) {
+if (window.location.hostname === 'localhost' || 
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname.includes('.test') ||
+    window.location.hostname.includes('.local')) {
+    (function(originalFetch) {
+        window.fetch = function(url, options) {
+            return new Promise((resolve, reject) => {
+                // Check if this is a webhook call
+                if (url.includes('webhook')) {
                     console.log('Simulando respuesta de API para:', url);
                     
                     // Simulate successful response
@@ -1375,13 +1570,10 @@ console.log('main.js cargado correctamente');
                         }
                     }, 1500); // Simulate network delay
                 } else {
-                    // For non-local environments, use the original fetch
+                    // For non-webhook calls, use the original fetch
                     return originalFetch(url, options).then(resolve, reject);
                 }
-            } else {
-                // For non-webhook calls, use the original fetch
-                return originalFetch(url, options).then(resolve, reject);
-            }
-        });
-    };
-})(window.fetch);
+            });
+        };
+    })(window.fetch);
+}

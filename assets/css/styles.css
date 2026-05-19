@@ -12,7 +12,7 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, .title-font {
+h1, .font-display {
     font-family: 'Permanent Marker', cursive;
     letter-spacing: 0.5px;
 }
@@ -24,15 +24,20 @@ h1 {
     transform: rotate(-1deg);
 }
 
-h2 {
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
-    transform: rotate(-0.5deg);
+h2, h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.025em;
 }
 
-.title-font {
-    transform: rotate(-0.5deg);
-    display: inline-block;
+h2 {
+    font-size: 2.5rem;
+    line-height: 1.25;
+}
+
+h3 {
+    font-size: 1.75rem;
+    line-height: 1.3;
 }
 
 .text-blue-electric {
@@ -401,3 +406,151 @@ audio::-webkit-media-controls-play-button {
     justify-content: center;
     min-width: 2rem;
 }
+
+/* Glassmorphism Styles */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.glass-card:hover {
+    border-color: rgba(0, 123, 202, 0.3) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 123, 202, 0.15) !important;
+    transform: translateY(-4px);
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Floating Glassmorphic Navbar */
+.floating-nav {
+    position: fixed;
+    top: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1100px;
+    z-index: 100;
+    background: rgba(31, 31, 31, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-nav:hover {
+    border-color: rgba(0, 123, 202, 0.2);
+    box-shadow: 0 12px 35px rgba(0, 123, 202, 0.1);
+}
+
+/* Mesh Gradient background with animated glows */
+.glow-mesh {
+    background-color: #0d0e12;
+    background-image: 
+        radial-gradient(at 15% 15%, rgba(0, 123, 202, 0.18) 0px, transparent 55%),
+        radial-gradient(at 85% 15%, rgba(249, 76, 102, 0.12) 0px, transparent 55%),
+        radial-gradient(at 50% 85%, rgba(0, 123, 202, 0.12) 0px, transparent 55%);
+    background-size: 100% 100%;
+}
+
+/* Chat bubble styling for modern UI */
+.chat-bubble-bot {
+    background: rgba(0, 123, 202, 0.15);
+    border: 1px solid rgba(0, 123, 202, 0.2);
+    border-radius: 0 1rem 1rem 1rem;
+}
+
+.chat-bubble-user {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem 0 1rem 1rem;
+}
+
+/* Glow Borders on Hover for inputs */
+.glow-input {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.glow-input:focus {
+    border-color: #007BCA !important;
+    box-shadow: 0 0 10px rgba(0, 123, 202, 0.25) !important;
+}
+
+/* Animated Waveform for Voice Input */
+.voice-wave {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 24px;
+}
+
+.voice-wave span {
+    display: block;
+    width: 3px;
+    height: 10%;
+    background-color: #F94C66;
+    border-radius: 9999px;
+    animation: wave-bounce 1.2s infinite ease-in-out;
+}
+
+.voice-wave span:nth-child(2) { animation-delay: 0.1s; }
+.voice-wave span:nth-child(3) { animation-delay: 0.2s; }
+.voice-wave span:nth-child(4) { animation-delay: 0.3s; }
+.voice-wave span:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes wave-bounce {
+    0%, 100% { height: 10%; }
+    50% { height: 100%; }
+}
+
+/* Slide targets navigation transition */
+@keyframes slideFocusAnimation {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-focus {
+    animation: slideFocusAnimation 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+/* Active Navigation link (Scrollspy) */
+.nav-link-active {
+    color: #007BCA !important;
+    border-bottom: 2px solid #007BCA;
+    padding-bottom: 2px;
+}
+
+/* Custom scrollbar for simulator */
+#mockChatContainer::-webkit-scrollbar {
+    width: 4px;
+}
+
+#mockChatContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#mockChatContainer::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+}
+
+
+
