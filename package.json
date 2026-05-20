@@ -1,0 +1,25 @@
+{
+  "name": "nolapenses",
+  "version": "1.0.0",
+  "description": "Interactive and immersive landing page for nolapenses.com.ar, offering digital automations, web page creation, custom AI chatbots, custom systems, and WhatsApp AI assistance.",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xKaruXx/nolapenses.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/xKaruXx/nolapenses/issues"
+  },
+  "homepage": "https://github.com/xKaruXx/nolapenses#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}
