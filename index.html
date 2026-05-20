@@ -190,6 +190,13 @@
             <a href="#roi-section" class="hover:text-blue-electric transition-colors hidden md:inline">Calculadora</a>
             <a href="#faq-section" class="hover:text-blue-electric transition-colors hidden md:inline">FAQ</a>
             <a href="portafolio.html" class="hover:text-blue-electric transition-colors">Carlos Salini</a>
+            <!-- Botón del Tema (Claro/Oscuro) -->
+            <button @click="toggleTheme()" class="text-white-pure hover:text-blue-electric transition-colors p-1 focus:outline-none rounded-full hover:bg-white-pure/5 flex items-center justify-center" aria-label="Cambiar tema">
+                <!-- Sol (se muestra en modo oscuro para ir al claro) -->
+                <svg x-show="darkMode" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+                <!-- Luna (se muestra en modo claro para ir al oscuro) -->
+                <svg x-show="!darkMode" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display: none;"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            </button>
         </div>
     </nav>
 
@@ -208,10 +215,10 @@
             <div class="max-w-4xl mx-auto">
                 <h1 class="text-4xl sm:text-5xl md:text-7xl mb-4 md:mb-6 animate__animated animate__fadeInDown">
                     <span class="text-white-pure drop-shadow-lg font-display">No la penses!</span> <br>
-                    <span class="text-blue-electric text-3xl sm:text-4xl md:text-5xl block mt-4 font-extrabold tracking-tight">Multiplicá tus ventas y automatizá tu negocio con IA</span>
+                    <span class="text-blue-electric text-3xl sm:text-4xl md:text-5xl block mt-4 font-extrabold tracking-tight" x-text="heroTitle">Multiplicá tus ventas y automatizá tu negocio con IA</span>
                 </h1>
-                <p class="text-lg md:text-xl text-white-pure/80 mb-8 max-w-2xl mx-auto leading-relaxed animate__animated animate__fadeIn animate__delay-1s">
-                    Creamos agentes autónomos de WhatsApp, chatbots inteligentes y flujos de trabajo automáticos que trabajan por vos 24/7. <strong class="text-white-pure font-bold">Recuperá tu tiempo y no pierdas ningún cliente más.</strong>
+                <p class="text-lg md:text-xl text-white-pure/80 mb-8 max-w-2xl mx-auto leading-relaxed animate__animated animate__fadeIn animate__delay-1s" x-text="heroSubtitle">
+                    Creamos chatbots de WhatsApp inteligentes, agentes de voz y automatizaciones a medida conectando tus herramientas favoritas.
                 </p>
 
                 <!-- Dynamic AI welcome message -->
@@ -944,37 +951,98 @@
                 Ingresá tus números estimativos y calculá de forma interactiva cuánto tiempo y dinero podrías recuperar automatizando tareas operativas.
             </p>
 
-            <div x-data="{ horas: 10, costoHora: 20 }" class="glass-card p-8 md:p-12 rounded-3xl border border-white-pure/10 shadow-2xl relative overflow-hidden">
+            <div x-data="{ 
+                horas: 10, 
+                costoHora: 20, 
+                get costoManual() { return this.horas * 52 * this.costoHora }, 
+                get ahorroNeto() { return Math.max(0, this.costoManual - 1500) },
+                get bar1Height() { return Math.min(150, Math.max(10, (this.costoManual / 83200) * 150)) },
+                get bar2Height() { return Math.min(150, Math.max(0, (this.ahorroNeto / 83200) * 150)) }
+            }" class="glass-card p-8 md:p-12 rounded-3xl border border-white-pure/10 shadow-2xl relative overflow-hidden">
                 <!-- Background glow -->
                 <div class="absolute -right-16 -top-16 w-32 h-32 bg-blue-electric/10 rounded-full blur-3xl"></div>
                 <div class="absolute -left-16 -bottom-16 w-32 h-32 bg-red-coral/5 rounded-full blur-3xl"></div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 relative z-10">
-                    <!-- Slider Horas de Trabajo Manual -->
-                    <div class="flex flex-col justify-center">
-                        <label class="block text-lg font-medium text-white-pure/80 mb-3">
-                            ¿Cuántas horas semanales perdés en tareas repetitivas?
-                        </label>
-                        <input type="range" min="2" max="40" x-model="horas" class="w-full h-2 bg-white-pure/10 rounded-lg appearance-none cursor-pointer accent-blue-electric">
-                        <div class="flex justify-between items-center mt-3">
-                            <span class="text-xs text-white-pure/50">2 horas</span>
-                            <span class="text-2xl font-extrabold text-blue-electric" x-text="horas + ' horas'"></span>
-                            <span class="text-xs text-white-pure/50">40 horas</span>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10 relative z-10 items-center">
+                    <!-- Column Left: Sliders and Inputs (7/12) -->
+                    <div class="lg:col-span-7 flex flex-col gap-6">
+                        <!-- Slider Horas de Trabajo Manual -->
+                        <div class="flex flex-col justify-center">
+                            <label class="block text-lg font-medium text-white-pure/80 mb-3">
+                                ¿Cuántas horas semanales perdés en tareas repetitivas?
+                            </label>
+                            <input type="range" min="2" max="40" x-model="horas" class="w-full h-2 bg-white-pure/10 rounded-lg appearance-none cursor-pointer accent-blue-electric">
+                            <div class="flex justify-between items-center mt-3">
+                                <span class="text-xs text-white-pure/50">2 horas</span>
+                                <span class="text-2xl font-extrabold text-blue-electric" x-text="horas + ' horas'"></span>
+                                <span class="text-xs text-white-pure/50">40 horas</span>
+                            </div>
+                            <p class="text-xs text-white-pure/40 mt-2">Ej: responder WhatsApps de soporte repetitivos, copiar contactos, facturar a mano.</p>
                         </div>
-                        <p class="text-xs text-white-pure/40 mt-2">Ej: responder WhatsApps de soporte repetitivos, copiar contactos, facturar a mano.</p>
+
+                        <!-- Input Costo por Hora -->
+                        <div class="flex flex-col justify-center">
+                            <label class="block text-lg font-medium text-white-pure/80 mb-3">
+                                Costo estimado de tu hora de trabajo (o de tu empleado)
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white-pure/60 text-xl">$</span>
+                                <input type="number" x-model="costoHora" class="w-full bg-white-pure/5 border border-white-pure/15 rounded-xl py-3 pl-8 pr-12 text-white-pure text-xl font-bold focus:outline-none focus:border-blue-electric/50 transition-colors glow-input">
+                                <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white-pure/60 font-semibold text-sm">USD</span>
+                            </div>
+                            <p class="text-xs text-white-pure/40 mt-2">Valor promedio por hora de la persona a cargo de la tarea.</p>
+                        </div>
                     </div>
 
-                    <!-- Input Costo por Hora -->
-                    <div class="flex flex-col justify-center">
-                        <label class="block text-lg font-medium text-white-pure/80 mb-3">
-                            Costo estimado de tu hora de trabajo (o de tu empleado)
-                        </label>
-                        <div class="relative">
-                            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white-pure/60 text-xl">$</span>
-                            <input type="number" x-model="costoHora" class="w-full bg-white-pure/5 border border-white-pure/15 rounded-xl py-3 pl-8 pr-12 text-white-pure text-xl font-bold focus:outline-none focus:border-blue-electric/50 transition-colors">
-                            <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white-pure/60 font-semibold text-sm">USD</span>
-                        </div>
-                        <p class="text-xs text-white-pure/40 mt-2">Valor promedio por hora de la persona a cargo de la tarea.</p>
+                    <!-- Column Right: SVG Interactive Chart (5/12) -->
+                    <div class="lg:col-span-5 flex flex-col items-center justify-center bg-white-pure/5 p-6 rounded-2xl border border-white-pure/5">
+                        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-white-pure/60 text-center">Comparativa Anual (USD)</h4>
+                        <!-- SVG Chart -->
+                        <svg viewBox="0 0 320 220" class="w-full h-auto max-h-[220px]">
+                            <!-- Grillas horizontales -->
+                            <line x1="40" y1="30" x2="300" y2="30" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="3,3" />
+                            <line x1="40" y1="105" x2="300" y2="105" stroke="currentColor" stroke-opacity="0.1" stroke-dasharray="3,3" />
+                            <line x1="40" y1="180" x2="300" y2="180" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.2" />
+
+                            <!-- Barra 1: Costo Sin IA (Rojo/Naranja) -->
+                            <rect x="80" 
+                                  :y="180 - bar1Height" 
+                                  width="40" 
+                                  :height="bar1Height" 
+                                  rx="6" 
+                                  fill="#F94C66" 
+                                  class="transition-all duration-300 ease-out" 
+                                  opacity="0.9" />
+                            
+                            <!-- Barra 2: Ahorro Neto con IA (Azul Eléctrico) -->
+                            <rect x="200" 
+                                  :y="180 - bar2Height" 
+                                  width="40" 
+                                  :height="bar2Height" 
+                                  rx="6" 
+                                  fill="#007BCA" 
+                                  class="transition-all duration-300 ease-out" 
+                                  opacity="0.95" />
+
+                            <!-- Texto de Valores sobre la Barra 1 -->
+                            <text x="100" 
+                                  :y="170 - bar1Height" 
+                                  text-anchor="middle" 
+                                  class="text-xs font-bold fill-current" 
+                                  x-text="'$' + Math.round(costoManual)"></text>
+
+                            <!-- Texto de Valores sobre la Barra 2 -->
+                            <text x="220" 
+                                  :y="170 - bar2Height" 
+                                  text-anchor="middle" 
+                                  class="text-xs font-bold fill-current" 
+                                  x-text="ahorroNeto > 0 ? '$' + Math.round(ahorroNeto) : '$0'"></text>
+
+                            <!-- Leyendas del Eje X -->
+                            <text x="100" y="200" text-anchor="middle" class="text-[10px] font-semibold text-white-pure/60 fill-current opacity-70">Gasto Manual</text>
+                            <text x="220" y="200" text-anchor="middle" class="text-[10px] font-semibold text-white-pure/60 fill-current opacity-70">Ahorro Neto</text>
+                        </svg>
+                        <p class="text-[10px] text-white-pure/40 text-center mt-3">*Restando costo de implementación base de No La Penses!</p>
                     </div>
                 </div>
                 

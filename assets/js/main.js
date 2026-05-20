@@ -11,6 +11,13 @@
 // Definir landingApp globalmente para que Alpine.js pueda acceder a él inmediatamente
 window.landingApp = function() {
     return {
+        // Tema Claro/Oscuro
+        darkMode: true,
+        
+        // Titulos dinámicos para DTR
+        heroTitle: 'Multiplicá tus ventas y automatizá tu negocio con IA',
+        heroSubtitle: 'Creamos chatbots de WhatsApp inteligentes, agentes de voz y automatizaciones a medida conectando tus herramientas favoritas.',
+        
         // AI state
         aiMood: '',
         aiGreeting: '',
@@ -155,6 +162,8 @@ window.landingApp = function() {
         init() {
             try {
                 console.log('Inicializando la aplicación...');
+                this.initTheme();
+                this.initDynamicPersonalization();
                 
                 // Verificar que CONFIG esté cargado
                 if (typeof CONFIG === 'undefined') {
@@ -1504,6 +1513,75 @@ window.landingApp = function() {
                 console.log('Scrollspy inicializado correctamente');
             } catch (error) {
                 console.error('Error al inicializar Scrollspy:', error);
+            }
+        },
+        
+        // Theme methods
+        toggleTheme() {
+            try {
+                this.darkMode = !this.darkMode;
+                console.log('Alternando tema a:', this.darkMode ? 'oscuro' : 'claro');
+                if (this.darkMode) {
+                    document.documentElement.classList.remove('light-theme');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.documentElement.classList.add('light-theme');
+                    localStorage.setItem('theme', 'light');
+                }
+            } catch (error) {
+                console.error('Error al alternar tema:', error);
+            }
+        },
+        
+        initTheme() {
+            try {
+                console.log('Inicializando tema...');
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'light' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+                    this.darkMode = false;
+                    document.documentElement.classList.add('light-theme');
+                } else {
+                    this.darkMode = true;
+                    document.documentElement.classList.remove('light-theme');
+                }
+            } catch (error) {
+                console.error('Error al inicializar tema:', error);
+            }
+        },
+        
+        initDynamicPersonalization() {
+            try {
+                console.log('Inicializando personalización dinámica (DTR)...');
+                const urlParams = new URLSearchParams(window.location.search);
+                const sector = urlParams.get('sector') || urlParams.get('utm_campaign') || '';
+                
+                if (sector) {
+                    const sectorLower = sector.toLowerCase();
+                    if (sectorLower.includes('inmo') || sectorLower.includes('propiedad') || sectorLower.includes('realestate')) {
+                        console.log('Personalización detectada: Sector Inmobiliario');
+                        this.heroTitle = 'Multiplicá las ventas de tu Inmobiliaria con nuestro Agente IA de WhatsApp';
+                        this.heroSubtitle = 'Automatizá respuestas a consultas de propiedades, agendamiento de visitas y seguimiento de leads las 24/7 sin esfuerzo.';
+                        this.industryTab = 'inmo';
+                        this.selectedService = 'whatsapp';
+                        localStorage.setItem('selectedService', 'whatsapp');
+                    } else if (sectorLower.includes('shop') || sectorLower.includes('ecom') || sectorLower.includes('ventas') || sectorLower.includes('store')) {
+                        console.log('Personalización detectada: Sector E-commerce');
+                        this.heroTitle = 'Maximizá la conversión de tu E-commerce con bots de IA';
+                        this.heroSubtitle = 'Recuperá carritos abandonados, respondé preguntas frecuentes sobre envíos y stock, y vendé en automático por WhatsApp.';
+                        this.industryTab = 'ecom';
+                        this.selectedService = 'ia-atencion';
+                        localStorage.setItem('selectedService', 'ia-atencion');
+                    } else if (sectorLower.includes('serv') || sectorLower.includes('consult') || sectorLower.includes('prof') || sectorLower.includes('agenda')) {
+                        console.log('Personalización detectada: Servicios / Profesionales');
+                        this.heroTitle = 'Automatizá tu agenda de turnos y consultas con un Agente IA';
+                        this.heroSubtitle = 'Ideal para consultorios, agencias y profesionales. Calificá prospectos y coordiná llamadas de forma proactiva y automatizada.';
+                        this.industryTab = 'serv';
+                        this.selectedService = 'sistemas';
+                        localStorage.setItem('selectedService', 'sistemas');
+                    }
+                }
+            } catch (error) {
+                console.error('Error al inicializar personalización dinámica:', error);
             }
         },
         

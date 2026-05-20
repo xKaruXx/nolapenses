@@ -552,5 +552,137 @@ audio::-webkit-media-controls-play-button {
     border-radius: 9999px;
 }
 
+/* ==========================================================================
+   Light Theme styles and overrides
+   ========================================================================== */
+.light-theme {
+    background-color: #F8FAFC !important;
+    color: #0F172A !important;
+}
+
+.light-theme body {
+    background-color: #F8FAFC !important;
+    color: #0F172A !important;
+}
+
+.light-theme .bg-gray-dark {
+    background-color: #F8FAFC !important;
+}
+
+.light-theme .text-white-pure {
+    color: #0F172A !important;
+}
+
+.light-theme .text-white-pure\/85 {
+    color: #1E293B !important;
+}
+
+.light-theme .text-white-pure\/80 {
+    color: #334155 !important;
+}
+
+.light-theme .text-white-pure\/70 {
+    color: #475569 !important;
+}
+
+.light-theme .text-white-pure\/60 {
+    color: #64748B !important;
+}
+
+.light-theme .text-white-pure\/50 {
+    color: #94A3B8 !important;
+}
+
+.light-theme .text-white-pure\/40 {
+    color: #CBD5E1 !important;
+}
+
+.light-theme .border-white-pure\/10,
+.light-theme .border-white-pure\/5 {
+    border-color: rgba(0, 123, 202, 0.15) !important;
+}
+
+.light-theme .glass-card, 
+.light-theme .glass-panel {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-color: rgba(0, 123, 202, 0.18) !important;
+    color: #0F172A !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 123, 202, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+}
+
+.light-theme .floating-nav {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-bottom-color: rgba(0, 123, 202, 0.15) !important;
+    box-shadow: 0 4px 30px rgba(0, 123, 202, 0.04) !important;
+}
+
+.light-theme .floating-nav a {
+    color: #475569 !important;
+}
+
+.light-theme .floating-nav a:hover,
+.light-theme .floating-nav a.nav-link-active {
+    color: #007BCA !important;
+}
+
+.light-theme img[src*="logo-blanco.svg"] {
+    filter: invert(0.8) sepia(1) saturate(10) hue-rotate(185deg);
+}
+
+.light-theme .project-card {
+    background: rgba(255, 255, 255, 0.75) !important;
+    border-color: rgba(0, 123, 202, 0.18) !important;
+}
+
+.light-theme .skill-chip {
+    background: rgba(0, 123, 202, 0.05) !important;
+    color: #007BCA !important;
+    border-color: rgba(0, 123, 202, 0.15) !important;
+}
+
+.light-theme .skill-chip:hover {
+    background: #007BCA !important;
+    color: #FFFFFF !important;
+    border-color: #007BCA !important;
+}
+
+.light-theme .section-divider {
+    background: linear-gradient(90deg, transparent, rgba(0, 123, 202, 0.4), transparent) !important;
+}
+
+.light-theme .glow-input {
+    background: rgba(255, 255, 255, 0.85) !important;
+    color: #0F172A !important;
+    border: 1px solid rgba(0, 123, 202, 0.25) !important;
+}
+
+.light-theme .glow-input::placeholder {
+    color: #64748B !important;
+}
+
+.light-theme .hero-bg, 
+.light-theme header {
+    background-image: linear-gradient(135deg, rgba(0,123,202,0.06) 0%, rgba(248,250,252,0) 60%), url('fondo-1920.png') !important;
+}
+
+.light-theme .whatsapp-btn {
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.2) !important;
+}
+
+.light-theme .bg-white-pure\/5,
+.light-theme .bg-white-pure\/10 {
+    background-color: rgba(0, 123, 202, 0.05) !important;
+}
+
+.light-theme button.bg-white-pure\/5:hover,
+.light-theme button.bg-white-pure\/10:hover {
+    background-color: rgba(0, 123, 202, 0.1) !important;
+}
+
+/* SVG Chart transitions */
+svg rect, svg text {
+    transition: y 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 
 
