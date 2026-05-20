@@ -704,13 +704,34 @@ svg rect, svg text {
 .network-svg {
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
 }
-.node-circle {
+.node-circle,
+.node-emoji {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-origin: center;
 }
+/* Individual transform origins for perfect in-place scaling */
+.node-group-1 .node-circle,
+.node-group-1 .node-emoji {
+    transform-origin: 120px 180px;
+}
+.node-group-2 .node-circle,
+.node-group-2 .node-emoji {
+    transform-origin: 250px 250px;
+}
+.node-group-3 .node-circle,
+.node-group-3 .node-emoji {
+    transform-origin: 380px 320px;
+}
+.node-group-4 .node-circle,
+.node-group-4 .node-emoji {
+    transform-origin: 120px 320px;
+}
+
 .node-group:hover .node-circle {
     transform: scale(1.15);
     filter: brightness(1.2);
+}
+.node-group:hover .node-emoji {
+    transform: scale(1.15);
 }
 .node-group {
     cursor: pointer;

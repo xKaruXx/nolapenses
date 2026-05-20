@@ -891,7 +891,7 @@
     </section>
 
     <!-- Ecosistema de Conectividad SVG Section -->
-    <section id="ecosystem-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5" x-data="{ activeNode: 'n8n' }">
+    <section id="ecosystem-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5" x-data="{ activeNode: 'orquestador' }">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Cómo Funciona Tu Ecosistema</h2>
             <div class="section-divider mb-12"></div>
@@ -912,45 +912,45 @@
                         </defs>
 
                         <!-- Líneas de Conexión en Red -->
-                        <!-- Clientes -> n8n -->
-                        <path d="M 120 180 Q 250 120 250 250" fill="transparent" stroke="#E2E8F0" stroke-width="2.5" class="network-line" :class="{ 'network-line-active': activeNode === 'clientes' || activeNode === 'n8n' }" />
-                        <!-- n8n -> IA (Brain) -->
-                        <path d="M 250 250 Q 250 380 380 320" fill="transparent" stroke="#E2E8F0" stroke-width="2.5" class="network-line" :class="{ 'network-line-active': activeNode === 'n8n' || activeNode === 'ia' }" />
+                        <!-- Clientes -> Orquestador -->
+                        <path d="M 120 180 Q 250 120 250 250" fill="transparent" stroke="#E2E8F0" stroke-width="2.5" class="network-line" :class="{ 'network-line-active': activeNode === 'clientes' || activeNode === 'orquestador' }" />
+                        <!-- Orquestador -> IA (Brain) -->
+                        <path d="M 250 250 Q 250 380 380 320" fill="transparent" stroke="#E2E8F0" stroke-width="2.5" class="network-line" :class="{ 'network-line-active': activeNode === 'orquestador' || activeNode === 'ia' }" />
                         <!-- IA (Brain) -> Sistemas -->
                         <path d="M 380 320 Q 300 200 120 320" fill="transparent" stroke="#E2E8F0" stroke-width="2.5" class="network-line" :class="{ 'network-line-active': activeNode === 'ia' || activeNode === 'sistemas' }" />
-                        <!-- Sistemas -> n8n -->
-                        <path d="M 120 320 Q 200 280 250 250" fill="transparent" stroke="#E2E8F0" stroke-width="2.5" class="network-line" :class="{ 'network-line-active': activeNode === 'sistemas' || activeNode === 'n8n' }" />
+                        <!-- Sistemas -> Orquestador -->
+                        <path d="M 120 320 Q 200 280 250 250" fill="transparent" stroke="#E2E8F0" stroke-width="2.5" class="network-line" :class="{ 'network-line-active': activeNode === 'sistemas' || activeNode === 'orquestador' }" />
 
                         <!-- Nodos Interactivos (Grupos) -->
                         <!-- 1. Nodo Clientes (📱) -->
-                        <g class="node-group" @click="activeNode = 'clientes'">
+                        <g class="node-group node-group-1" @click="activeNode = 'clientes'">
                             <circle cx="120" cy="180" r="35" class="node-circle fill-gray-900 stroke-white-pure/10" :class="{ 'stroke-blue-electric border-2 shadow-2xl': activeNode === 'clientes' }" stroke-width="2" />
                             <circle cx="120" cy="180" r="45" fill="none" stroke="#007BCA" stroke-width="1.5" class="pulse-glow" x-show="activeNode === 'clientes'" />
-                            <text x="120" y="186" text-anchor="middle" font-size="24" class="select-none">📱</text>
+                            <text x="120" y="186" text-anchor="middle" font-size="24" class="node-emoji select-none">📱</text>
                             <text x="120" y="235" text-anchor="middle" font-size="12" font-weight="bold" fill="#A0AEC0" :fill="activeNode === 'clientes' ? '#007BCA' : '#A0AEC0'">Clientes</text>
                         </g>
 
-                        <!-- 2. Nodo Central n8n (⚙️) -->
-                        <g class="node-group" @click="activeNode = 'n8n'">
-                            <circle cx="250" cy="250" r="45" class="node-circle fill-gray-900 stroke-white-pure/10" :class="{ 'stroke-emerald-500': activeNode === 'n8n' }" stroke-width="2.5" />
-                            <circle cx="250" cy="250" r="55" fill="none" stroke="#10B981" stroke-width="1.5" class="pulse-glow" x-show="activeNode === 'n8n'" />
-                            <text x="250" y="258" text-anchor="middle" font-size="32" class="select-none">⚙️</text>
-                            <text x="250" y="315" text-anchor="middle" font-size="13" font-weight="bold" fill="#A0AEC0" :fill="activeNode === 'n8n' ? '#10B981' : '#A0AEC0'">Orquestador (n8n)</text>
+                        <!-- 2. Nodo Central Orquestador (⚙️) -->
+                        <g class="node-group node-group-2" @click="activeNode = 'orquestador'">
+                            <circle cx="250" cy="250" r="45" class="node-circle fill-gray-900 stroke-white-pure/10" :class="{ 'stroke-emerald-500': activeNode === 'orquestador' }" stroke-width="2.5" />
+                            <circle cx="250" cy="250" r="55" fill="none" stroke="#10B981" stroke-width="1.5" class="pulse-glow" x-show="activeNode === 'orquestador'" />
+                            <text x="250" y="258" text-anchor="middle" font-size="32" class="node-emoji select-none">⚙️</text>
+                            <text x="250" y="315" text-anchor="middle" font-size="13" font-weight="bold" fill="#A0AEC0" :fill="activeNode === 'orquestador' ? '#10B981' : '#A0AEC0'">Orquestador</text>
                         </g>
 
                         <!-- 3. Nodo Inteligencia Artificial (🧠) -->
-                        <g class="node-group" @click="activeNode = 'ia'">
+                        <g class="node-group node-group-3" @click="activeNode = 'ia'">
                             <circle cx="380" cy="320" r="35" class="node-circle fill-gray-900 stroke-white-pure/10" :class="{ 'stroke-purple-500': activeNode === 'ia' }" stroke-width="2" />
                             <circle cx="380" cy="320" r="45" fill="none" stroke="#8B5CF6" stroke-width="1.5" class="pulse-glow" x-show="activeNode === 'ia'" />
-                            <text x="380" y="327" text-anchor="middle" font-size="24" class="select-none">🧠</text>
+                            <text x="380" y="327" text-anchor="middle" font-size="24" class="node-emoji select-none">🧠</text>
                             <text x="380" y="375" text-anchor="middle" font-size="12" font-weight="bold" fill="#A0AEC0" :fill="activeNode === 'ia' ? '#8B5CF6' : '#A0AEC0'">Cerebro IA</text>
                         </g>
 
                         <!-- 4. Nodo Tus Sistemas/CRM (📂) -->
-                        <g class="node-group" @click="activeNode = 'sistemas'">
+                        <g class="node-group node-group-4" @click="activeNode = 'sistemas'">
                             <circle cx="120" cy="320" r="35" class="node-circle fill-gray-900 stroke-white-pure/10" :class="{ 'stroke-amber-500': activeNode === 'sistemas' }" stroke-width="2" />
                             <circle cx="120" cy="320" r="45" fill="none" stroke="#F59E0B" stroke-width="1.5" class="pulse-glow" x-show="activeNode === 'sistemas'" />
-                            <text x="120" y="327" text-anchor="middle" font-size="24" class="select-none">📂</text>
+                            <text x="120" y="327" text-anchor="middle" font-size="24" class="node-emoji select-none">📂</text>
                             <text x="120" y="375" text-anchor="middle" font-size="12" font-weight="bold" fill="#A0AEC0" :fill="activeNode === 'sistemas' ? '#F59E0B' : '#A0AEC0'">Tus Sistemas/CRM</text>
                         </g>
                     </svg>
@@ -963,7 +963,7 @@
                         <div class="absolute -right-16 -top-16 w-32 h-32 rounded-full blur-3xl opacity-20 transition-all duration-500"
                             :class="{ 
                                 'bg-blue-500': activeNode === 'clientes',
-                                'bg-emerald-500': activeNode === 'n8n',
+                                'bg-emerald-500': activeNode === 'orquestador',
                                 'bg-purple-500': activeNode === 'ia',
                                 'bg-amber-500': activeNode === 'sistemas'
                             }"
@@ -974,7 +974,7 @@
                             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-4"
                                 :class="{ 
                                     'bg-blue-500/10 text-blue-400 border border-blue-500/20': activeNode === 'clientes',
-                                    'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20': activeNode === 'n8n',
+                                    'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20': activeNode === 'orquestador',
                                     'bg-purple-500/10 text-purple-400 border border-purple-500/20': activeNode === 'ia',
                                     'bg-amber-500/10 text-amber-400 border border-amber-500/20': activeNode === 'sistemas'
                                 }"
@@ -982,7 +982,7 @@
                                 <span class="w-1.5 h-1.5 rounded-full animate-ping"
                                     :class="{
                                         'bg-blue-400': activeNode === 'clientes',
-                                        'bg-emerald-400': activeNode === 'n8n',
+                                        'bg-emerald-400': activeNode === 'orquestador',
                                         'bg-purple-400': activeNode === 'ia',
                                         'bg-amber-400': activeNode === 'sistemas'
                                     }"
@@ -1000,11 +1000,11 @@
                                 </div>
                             </template>
 
-                            <template x-if="activeNode === 'n8n'">
+                            <template x-if="activeNode === 'orquestador'">
                                 <div>
-                                    <h4 class="text-2xl font-bold mb-3 text-white-pure">Orquestador de Procesos n8n</h4>
+                                    <h4 class="text-2xl font-bold mb-3 text-white-pure">Orquestador de Procesos</h4>
                                     <p class="text-white-pure/80 leading-relaxed text-sm">
-                                        El cerebro operativo central. n8n recibe los eventos de tus clientes en milisegundos, valida la seguridad con tokens de firma cliente, y rutea los datos hacia los modelos de IA y bases de datos correctas.
+                                        El cerebro operativo central. Recibe los eventos de tus clientes en milisegundos, valida la seguridad con tokens de firma cliente y rutea los datos hacia los modelos de IA y bases de datos correctas.
                                     </p>
                                 </div>
                             </template>
@@ -1194,7 +1194,7 @@
                             <text x="100" y="200" text-anchor="middle" class="text-[10px] font-semibold text-white-pure/60 fill-current opacity-70">Gasto Manual</text>
                             <text x="220" y="200" text-anchor="middle" class="text-[10px] font-semibold text-white-pure/60 fill-current opacity-70">Ahorro Neto</text>
                         </svg>
-                        <p class="text-[10px] text-white-pure/40 text-center mt-3">*Restando costo de implementación base de No La Penses!</p>
+                        <p class="text-[10px] text-white-pure/40 text-center mt-3">*Restando costo de implementación estimado de No La Penses!</p>
                     </div>
                 </div>
                 
