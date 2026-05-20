@@ -684,5 +684,65 @@ svg rect, svg text {
     transition: y 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Social Proof Toast styling */
+.light-theme .z-40.max-w-sm {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(0, 123, 202, 0.2) !important;
+    box-shadow: 0 10px 30px rgba(0, 123, 202, 0.1) !important;
+}
+.light-theme .z-40.max-w-sm p {
+    color: #0F172A !important;
+}
+.light-theme .z-40.max-w-sm p.text-white-pure\/50 {
+    color: #64748B !important;
+}
+
+/* Ecosystem SVG Network Map Styles */
+.ecosystem-container {
+    perspective: 1000px;
+}
+.network-svg {
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+}
+.node-circle {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+.node-group:hover .node-circle {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+.node-group {
+    cursor: pointer;
+}
+.network-line {
+    stroke-dasharray: 8, 8;
+    animation: dashflow 30s linear infinite;
+}
+.network-line-active {
+    stroke-dasharray: 4, 4;
+    animation: dashflow 15s linear infinite;
+    stroke: #007BCA;
+    filter: drop-shadow(0 0 2px rgba(0, 123, 202, 0.5));
+}
+@keyframes dashflow {
+    to {
+        stroke-dashoffset: -1000;
+    }
+}
+.pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite alternate;
+}
+@keyframes pulseGlow {
+    0% {
+        opacity: 0.2;
+        r: 6px;
+    }
+    100% {
+        opacity: 0.8;
+        r: 12px;
+    }
+}
+
 
 

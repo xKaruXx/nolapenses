@@ -18,6 +18,16 @@ window.landingApp = function() {
         heroTitle: 'Multiplicá tus ventas y automatizá tu negocio con IA',
         heroSubtitle: 'Creamos chatbots de WhatsApp inteligentes, agentes de voz y automatizaciones a medida conectando tus herramientas favoritas.',
         
+        // Social proof toast notifications state
+        socialNotifications: [
+            { text: '🏢 Inmobiliaria de San Luis acaba de agendar su llamada de diagnóstico.', time: 'Hace 5 min' },
+            { text: '🛒 Tienda de E-commerce de Córdoba redujo 12 horas de soporte semanal.', time: 'Hace 1 hora' },
+            { text: '💼 Consultorio de Buenos Aires automatizó el 100% de su agenda de turnos.', time: 'Ayer' },
+            { text: '⚡ Distribuidora de Mendoza integró su ERP con WhatsApp con éxito.', time: 'Hace 30 min' }
+        ],
+        currentNotificationIndex: 0,
+        showNotification: false,
+        
         // AI state
         aiMood: '',
         aiGreeting: '',
@@ -164,6 +174,7 @@ window.landingApp = function() {
                 console.log('Inicializando la aplicación...');
                 this.initTheme();
                 this.initDynamicPersonalization();
+                this.startSocialProofRotation();
                 
                 // Verificar que CONFIG esté cargado
                 if (typeof CONFIG === 'undefined') {
@@ -1109,7 +1120,7 @@ window.landingApp = function() {
                 console.log('Simulando chatbot local con tip...');
                 setTimeout(() => {
                     this.chatResponseText = tip;
-                    this.chatStep = 'name';
+                    this.advanceChatStep('name');
                     this.chatbotThinking = false;
                     this.showChatbotResponse(tip);
                 }, 1500);
@@ -1125,14 +1136,14 @@ window.landingApp = function() {
                 .then(data => {
                     const aiReply = data.reply || data.text_response || '';
                     this.chatResponseText = tip + (aiReply ? ' \n\nAdemás, la IA propone: ' + aiReply : '');
-                    this.chatStep = 'name';
+                    this.advanceChatStep('name');
                     this.chatbotThinking = false;
                     this.showChatbotResponse(this.chatResponseText, data.audio_url || null);
                 })
                 .catch(error => {
                     console.error('Error al enviar consulta al chatbot:', error);
                     this.chatResponseText = tip + ' (Nota: no pudimos conectar con el servidor principal, pero podemos agendar para armar tu plan).';
-                    this.chatStep = 'name';
+                    this.advanceChatStep('name');
                     this.chatbotThinking = false;
                     this.showChatbotResponse(this.chatResponseText);
                 });
@@ -1201,7 +1212,7 @@ window.landingApp = function() {
                     console.log('Entorno local detectado. Simulando respuesta del webhook de audio...');
                     setTimeout(() => {
                         this.chatResponseText = tip;
-                        this.chatStep = 'name';
+                        this.advanceChatStep('name');
                         this.chatbotThinking = false;
                         this.showChatbotResponse(tip);
                     }, 2000);
@@ -1218,14 +1229,14 @@ window.landingApp = function() {
                         console.log('Respuesta del webhook de audio:', data);
                         const aiReply = data.reply || data.text_response || data.transcription || '';
                         this.chatResponseText = tip + (aiReply ? ' \n\nTranscripción/Propuesta: ' + aiReply : '');
-                        this.chatStep = 'name';
+                        this.advanceChatStep('name');
                         this.chatbotThinking = false;
                         this.showChatbotResponse(this.chatResponseText, data.audio_url || null);
                     })
                     .catch(error => {
                         console.error('Error al enviar audio al webhook:', error);
                         this.chatResponseText = tip + ' (Nota: recibimos tu audio pero falló la conexión remota, continuamos para agendar).';
-                        this.chatStep = 'name';
+                        this.advanceChatStep('name');
                         this.chatbotThinking = false;
                         this.showChatbotResponse(this.chatResponseText);
                     });
@@ -1233,7 +1244,7 @@ window.landingApp = function() {
             } catch (error) {
                 console.error('Error al enviar el audio al webhook:', error);
                 this.chatbotThinking = false;
-                this.chatStep = 'name';
+                this.advanceChatStep('name');
             }
         },
 
@@ -1582,6 +1593,86 @@ window.landingApp = function() {
                 }
             } catch (error) {
                 console.error('Error al inicializar personalización dinámica:', error);
+        },
+        
+        // Sistema de Tracking de Eventos Analíticos
+        trackEvent(eventName, eventData = {}) {
+            try {
+                const enrichedData = {
+                    ...eventData,
+                    timestamp: new Date().toISOString(),
+                    url: window.location.href,
+                    theme: this.darkMode ? 'dark' : 'light'
+                };
+                
+                console.log(`[Analytics Event] ${eventName}:`, enrichedData);
+                
+                // 1. Dispatch Custom DOM Event (for GTM custom triggers)
+                window.dispatchEvent(new CustomEvent('nolapenses_analytics', {
+                    detail: { eventName, data: enrichedData }
+                }));
+                
+                // 2. Safely call GA4 (gtag)
+                if (typeof window.gtag === 'function') {
+                    window.gtag('event', eventName, enrichedData);
+                }
+                
+                // 3. Safely call Meta Pixel (fbq)
+                if (typeof window.fbq === 'function') {
+                    if (eventName === 'lead_phone_submitted') {
+                        window.fbq('track', 'Lead', { value: 0, currency: 'USD', ...enrichedData });
+                    } else if (eventName === 'lead_appointment_booked') {
+                        window.fbq('track', 'Schedule', enrichedData);
+                    } else {
+                        window.fbq('trackCustom', eventName, enrichedData);
+                    }
+                }
+            } catch (error) {
+                console.error('Error al traquear evento:', error);
+            }
+        },
+
+        advanceChatStep(nextStep) {
+            this.chatStep = nextStep;
+            
+            // Dispatch GA4/Meta Pixel events based on the new step
+            if (nextStep === 'name') {
+                this.trackEvent('lead_funnel_start', { inquiry: this.chatInquiry });
+            } else if (nextStep === 'province') {
+                this.trackEvent('lead_name_submitted', { name: this.chatName });
+            } else if (nextStep === 'phone') {
+                this.trackEvent('lead_province_submitted', { name: this.chatName, province: this.chatProvince });
+            } else if (nextStep === 'calendar') {
+                this.trackEvent('lead_phone_submitted', { name: this.chatName, province: this.chatProvince, phone: this.chatPhone });
+            } else if (nextStep === 'finished') {
+                const booked = !!(this.chatDate && this.chatTime);
+                if (booked) {
+                    this.trackEvent('lead_appointment_booked', { name: this.chatName, phone: this.chatPhone, date: this.chatDate, time: this.chatTime });
+                } else {
+                    this.trackEvent('lead_funnel_completed_no_appointment', { name: this.chatName, phone: this.chatPhone });
+                }
+        },
+        
+        startSocialProofRotation() {
+            try {
+                // Wait 4 seconds to show the first notification
+                setTimeout(() => {
+                    this.showNotification = true;
+                    
+                    // Rotate notifications every 18 seconds
+                    setInterval(() => {
+                        this.showNotification = false;
+                        
+                        // Switch content during transition delay
+                        setTimeout(() => {
+                            this.currentNotificationIndex = (this.currentNotificationIndex + 1) % this.socialNotifications.length;
+                            this.showNotification = true;
+                        }, 1000);
+                        
+                    }, 18000);
+                }, 4000);
+            } catch (error) {
+                console.error('Error al iniciar rotación de prueba social:', error);
             }
         },
         
@@ -1617,41 +1708,49 @@ window.landingApp = function() {
 // Log when the script is loaded
 console.log('main.js cargado correctamente');
 
-// Mock API response for demo purposes in local environment
-if (window.location.hostname === 'localhost' || 
-    window.location.hostname === '127.0.0.1' ||
-    window.location.hostname.includes('.test') ||
-    window.location.hostname.includes('.local')) {
-    (function(originalFetch) {
-        window.fetch = function(url, options) {
-            return new Promise((resolve, reject) => {
-                // Check if this is a webhook call
-                if (url.includes('webhook')) {
-                    console.log('Simulando respuesta de API para:', url);
-                    
-                    // Simulate successful response
-                    setTimeout(() => {
-                        if (url.includes('audio-recibido')) {
-                            // Simulate audio processing response
-                            resolve({
-                                json: () => Promise.resolve({
-                                    transcription: '¡Gracias por tu mensaje! Entendimos que necesitas ayuda con tu proyecto digital. Nuestro equipo puede ayudarte a crear una solución personalizada. ¿Te gustaría que te contactemos por WhatsApp para darte más detalles?',
-                                    audio_url: null // In production, this would be a URL
-                                })
-                            });
-                        } else {
-                            // For other webhooks, just return success
-                            resolve({
-                                ok: true,
-                                json: () => Promise.resolve({ success: true })
-                            });
-                        }
-                    }, 1500); // Simulate network delay
-                } else {
-                    // For non-webhook calls, use the original fetch
-                    return originalFetch(url, options).then(resolve, reject);
-                }
+// Fetch Interceptor for Security & Simulation
+(function(originalFetch) {
+    window.fetch = function(url, options) {
+        // Ensure options and options.headers exist
+        options = options || {};
+        options.headers = options.headers || {};
+        
+        // Inject security token for any webhook call in production/local
+        const isWebhook = typeof url === 'string' && url.includes('webhook');
+        if (isWebhook && typeof CONFIG !== 'undefined' && CONFIG.CLIENT_TOKEN) {
+            options.headers['X-NLP-Client-Token'] = CONFIG.CLIENT_TOKEN;
+            console.log(`[Security] Token X-NLP-Client-Token inyectado para: ${url}`);
+        }
+        
+        // Environment check for local mocking
+        const isLocalEnvironment = window.location.hostname === 'localhost' || 
+                                  window.location.hostname === '127.0.0.1' ||
+                                  window.location.hostname.includes('.test') ||
+                                  window.location.hostname.includes('.local');
+                                  
+        if (isLocalEnvironment && isWebhook) {
+            console.log('Simulando respuesta de API para:', url);
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    if (url.includes('audio-recibido') || url.includes('audioReceived')) {
+                        resolve({
+                            ok: true,
+                            json: () => Promise.resolve({
+                                transcription: '¡Gracias por tu mensaje! Entendimos que necesitas ayuda con tu proyecto digital. Nuestro equipo puede ayudarte a crear una solución personalizada. ¿Te gustaría que te contactemos por WhatsApp para darte más detalles?',
+                                audio_url: null
+                            })
+                        });
+                    } else {
+                        resolve({
+                            ok: true,
+                            json: () => Promise.resolve({ success: true, reply: '¡Datos recibidos con éxito!' })
+                        });
+                    }
+                }, 1500);
             });
-        };
-    })(window.fetch);
-}
+        }
+        
+        // Call the original fetch (which will now have the token header)
+        return originalFetch(url, options);
+    };
+})(window.fetch);

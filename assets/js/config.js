@@ -4,6 +4,9 @@
  */
 
 const CONFIG = {
+    // Token de seguridad para peticiones al webhook
+    CLIENT_TOKEN: 'nlp_secure_token_5cb382bc194a',
+
     // Webhook URLs for n8n integrations
     webhooks: {
         chatbot: 'https://n8n.nolapenses.com.ar/webhook/nolapenses-chatbot-leads',
