@@ -20,10 +20,19 @@ window.landingApp = function() {
         
         // Social proof toast notifications state
         socialNotifications: [
-            { text: '🏢 Inmobiliaria de San Luis acaba de agendar su llamada de diagnóstico.', time: 'Hace 5 min' },
-            { text: '🛒 Tienda de E-commerce de Córdoba redujo 12 horas de soporte semanal.', time: 'Hace 1 hora' },
-            { text: '💼 Consultorio de Buenos Aires automatizó el 100% de su agenda de turnos.', time: 'Ayer' },
-            { text: '⚡ Distribuidora de Mendoza integró su ERP con WhatsApp con éxito.', time: 'Hace 30 min' }
+            { text: '🏢 Inmobiliaria de San Luis agendó una llamada de diagnóstico.', time: 'Hace 4 min' },
+            { text: '🛒 Tienda de E-commerce de Córdoba redujo 12 horas de soporte semanal.', time: 'Hace 32 min' },
+            { text: '💼 Consultorio odontológico de Buenos Aires automatizó sus turnos.', time: 'Hace 15 min' },
+            { text: '⚡ Distribuidora de Mendoza integró su ERP con WhatsApp con éxito.', time: 'Hace 50 min' },
+            { text: '🏨 Hotel boutique de Bariloche configuró su bot de reservas de WhatsApp.', time: 'Hace 8 min' },
+            { text: '🏫 Instituto de enseñanza de Rosario automatizó inscripciones por chat.', time: 'Hace 22 min' },
+            { text: '🍕 Cadena de pizzerías de Mendoza automatizó su toma de pedidos.', time: 'Hace 11 min' },
+            { text: '📦 Distribuidora de autopartes de Tucumán conectó MercadoPago con n8n.', time: 'Hace 18 min' },
+            { text: '🏋️ Gimnasio de Santa Fe automatizó recordatorios de pago mensuales.', time: 'Hace 41 min' },
+            { text: '👔 Marca de indumentaria de Palermo agendó demo para recuperar carritos.', time: 'Hace 3 min' },
+            { text: '🩺 Clínica estética de Pilar automatizó confirmaciones de turnos.', time: 'Hace 27 min' },
+            { text: '🎨 Agencia de diseño en Mendoza integró Slack con n8n para leads.', time: 'Hace 14 min' },
+            { text: '🚗 Concesionaria de Bahía Blanca integró leads de Facebook Ads al CRM.', time: 'Hace 6 min' }
         ],
         currentNotificationIndex: 0,
         showNotification: false,
@@ -1657,6 +1666,18 @@ window.landingApp = function() {
         
         startSocialProofRotation() {
             try {
+                // Shuffle notifications using Fisher-Yates and assign random fresh times on every load
+                for (let i = this.socialNotifications.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [this.socialNotifications[i], this.socialNotifications[j]] = [this.socialNotifications[j], this.socialNotifications[i]];
+                }
+                
+                // Assign random fresh relative minutes to notifications
+                this.socialNotifications.forEach((notification) => {
+                    const mins = Math.floor(Math.random() * 55) + 3; // between 3 and 57 mins
+                    notification.time = `Hace ${mins} min`;
+                });
+
                 // Wait 4 seconds to show the first notification
                 setTimeout(() => {
                     this.showNotification = true;
