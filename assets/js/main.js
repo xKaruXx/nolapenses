@@ -1593,6 +1593,7 @@ window.landingApp = function() {
                 }
             } catch (error) {
                 console.error('Error al inicializar personalización dinámica:', error);
+            }
         },
         
         // Sistema de Tracking de Eventos Analíticos
@@ -1651,6 +1652,7 @@ window.landingApp = function() {
                 } else {
                     this.trackEvent('lead_funnel_completed_no_appointment', { name: this.chatName, phone: this.chatPhone });
                 }
+            }
         },
         
         startSocialProofRotation() {
