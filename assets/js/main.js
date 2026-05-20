@@ -88,7 +88,7 @@ window.landingApp = function() {
             { id: 'automatizaciones', emoji: '🤖', text: 'Automatizaciones' },
             { id: 'ia-atencion', emoji: '💬', text: 'Atención al cliente con IA' },
             { id: 'web', emoji: '🌐', text: 'Quiero mi página web' },
-            { id: 'sistemas', emoji: '💻', text: 'Sistemas personalizados' },
+            { id: 'sistemas', emoji: '💻', text: 'Sistemas a medida' },
             { id: 'whatsapp', emoji: '📱', text: 'Chatbot de WhatsApp' },
             { id: 'ayuda', emoji: '🤔', text: 'No lo sé bien, ayudame' }
         ],
@@ -99,7 +99,7 @@ window.landingApp = function() {
                 'automatizaciones': '¡Genial! Con tu energía positiva, vamos a crear automatizaciones que harán tu día a día mucho más fácil y divertido 😄',
                 'ia-atencion': 'Tu buen humor es contagioso. Vamos a crear un asistente de IA que refleje esa misma alegría para tus clientes 😊',
                 'web': '¡Excelente elección! Vamos a crear una página web tan vibrante y positiva como tú 🎉',
-                'sistemas': 'Con esa actitud positiva, desarrollar un sistema personalizado será un proceso divertido y gratificante 😄',
+                'sistemas': 'Con esa actitud positiva, desarrollar un sistema a medida será un proceso divertido y gratificante 😄',
                 'whatsapp': '¡Fantástico! Vamos a crear un chatbot de WhatsApp tan alegre y dinámico como tú, que hará sonreír a tus clientes 😀',
                 'ayuda': 'Me encanta tu entusiasmo. Vamos a explorar juntos todas las posibilidades para encontrar la solución perfecta para ti 🙌'
             },
@@ -107,7 +107,7 @@ window.landingApp = function() {
                 'automatizaciones': 'Tu mente creativa es perfecta para diseñar flujos de automatización innovadores. Vamos a crear algo único 💡',
                 'ia-atencion': 'Combinando tu creatividad con la IA, podemos diseñar experiencias de atención al cliente verdaderamente innovadoras 🎨',
                 'web': 'Tu visión creativa + nuestro expertise técnico = una página web que destacará del resto ✨',
-                'sistemas': 'Los sistemas más innovadores nacen de mentes creativas como la tuya. Vamos a diseñar algo revolucionario 💻',
+                'sistemas': 'Los sistemas a medida más innovadores nacen de mentes creativas como la tuya. Vamos a diseñar algo revolucionario 💻',
                 'whatsapp': 'Tu creatividad será la clave para diseñar un chatbot de WhatsApp único que sorprenderá a tus clientes con respuestas originales 🎨',
                 'ayuda': 'Las mentes creativas como la tuya siempre encuentran soluciones innovadoras. Exploremos juntos las posibilidades 🧐'
             },
@@ -115,7 +115,7 @@ window.landingApp = function() {
                 'automatizaciones': 'Con esa energía, vamos a implementar automatizaciones que potencien tu productividad al máximo ⚡',
                 'ia-atencion': 'Canalizaremos tu energía en un sistema de atención con IA que nunca duerme y siempre está listo para ayudar 💪',
                 'web': '¡A toda máquina! Vamos a crear una página web dinámica y potente que refleje tu energía 🚀',
-                'sistemas': 'Tu impulso es exactamente lo que se necesita para implementar sistemas robustos y eficientes. ¡Manos a la obra! 🛠️',
+                'sistemas': 'Tu impulso es exactamente lo que se necesita para implementar sistemas a medida robustos y eficientes. ¡Manos a la obra! 🛠️',
                 'whatsapp': '¡Con esa energía, tu chatbot de WhatsApp estará listo para responder a tus clientes 24/7 sin perder el ritmo! ⚡📱',
                 'ayuda': 'Con esa energía, encontraremos rápidamente la solución perfecta para tus necesidades. ¡Vamos a ello! 🏃‍♂️'
             },
@@ -123,7 +123,7 @@ window.landingApp = function() {
                 'automatizaciones': 'Tu curiosidad nos llevará a descubrir formas innovadoras de automatizar procesos que ni siquiera habías imaginado 🧐',
                 'ia-atencion': 'Las mentes curiosas como la tuya sacan el máximo provecho de la IA. Exploremos juntos cómo revolucionar tu atención al cliente 🔍',
                 'web': 'Tu curiosidad nos ayudará a explorar nuevas tendencias y tecnologías para crear una web verdaderamente innovadora 🌌',
-                'sistemas': 'Las preguntas que haces desde tu curiosidad nos ayudarán a diseñar un sistema que realmente se adapte a tus necesidades 🤓',
+                'sistemas': 'Las preguntas que haces desde tu curiosidad nos ayudarán a diseñar un sistema a medida que realmente se adapte a tus necesidades 🤓',
                 'whatsapp': 'Tu curiosidad nos llevará a explorar todas las posibilidades de WhatsApp Business API para crear un chatbot inteligente y adaptable 🤔📱',
                 'ayuda': 'La curiosidad es el primer paso hacia el conocimiento. Juntos descubriremos exactamente lo que necesitas 📖'
             },
@@ -131,7 +131,7 @@ window.landingApp = function() {
                 'automatizaciones': 'Con tu motivación, implementaremos automatizaciones que te ayudarán a alcanzar tus objetivos más rápido 🏁',
                 'ia-atencion': 'Tu motivación es clave para implementar con éxito un sistema de atención con IA que transforme tu negocio 📈',
                 'web': 'Canalizaremos tu motivación en una página web que no solo se vea bien, sino que te ayude a alcanzar tus metas de negocio 💯',
-                'sistemas': 'Con esa actitud, desarrollaremos un sistema que no solo cumpla con tus expectativas, sino que las supere 💪',
+                'sistemas': 'Con esa actitud, desarrollaremos un sistema a medida que no solo cumpla con tus expectativas, sino que las supere 💪',
                 'whatsapp': 'Tu motivación nos impulsará a crear un chatbot de WhatsApp que transforme la manera en que te comunicas con tus clientes 💪📱',
                 'ayuda': 'Tu motivación es inspiradora. Juntos encontraremos la solución perfecta para impulsar tu éxito 🚀'
             }
@@ -1105,9 +1105,11 @@ window.landingApp = function() {
             let tip = '';
             const msgLower = message.toLowerCase();
             if (msgLower.includes('whatsapp') || msgLower.includes('chat') || msgLower.includes('atencion') || msgLower.includes('atención')) {
-                tip = '¡Excelente iniciativa! Diseñar agentes de WhatsApp autónomos integrados con n8n te va a permitir responder de forma instantánea a tus clientes las 24 horas, eliminando la pérdida de leads por demoras de respuesta.';
+                tip = '¡Excelente iniciativa! Diseñar agentes de WhatsApp autónomos integrados con el orquestador te va a permitir responder de forma instantánea a tus clientes las 24 horas, eliminando la pérdida de leads por demoras de respuesta.';
             } else if (msgLower.includes('automatiz') || msgLower.includes('operac') || msgLower.includes('flujo') || msgLower.includes('sheets') || msgLower.includes('crm')) {
                 tip = '¡Las automatizaciones operativas son la clave! Conectar tus sistemas (WhatsApp, CRM y planillas) te permitirá eliminar la carga manual de datos, evitar errores humanos y ahorrar más de 15 horas de trabajo semanales.';
+            } else if (msgLower.includes('sistema') || msgLower.includes('a medida') || msgLower.includes('desarrollo') || msgLower.includes('software') || msgLower.includes('programa') || msgLower.includes('plataforma') || msgLower.includes('app')) {
+                tip = '¡Espectacular! En No La Penses! desarrollamos e implementamos sistemas a medida de alta performance (bases de datos, paneles de control, Node.js/PHP). Diseñamos y programamos software 100% adaptado a tus flujos y necesidades de negocio.';
             } else if (msgLower.includes('web') || msgLower.includes('landing') || msgLower.includes('pagin') || msgLower.includes('página') || msgLower.includes('diseño')) {
                 tip = '¡Estructurar una landing page es vital! Diseñar una web rápida y optimizada para conversión te dará la imagen premium y profesional necesaria para atraer leads realmente interesados en contratarte.';
             } else {
@@ -1194,8 +1196,10 @@ window.landingApp = function() {
 
                 // Generar tip basado en el servicio seleccionado
                 let tip = '';
-                if (selectedServiceId === 'automatizaciones' || selectedServiceId === 'sistemas') {
-                    tip = '¡Excelente audio! Las automatizaciones e integraciones personalizadas con n8n son clave para eliminar las tareas mecánicas repetitivas. Automatizar este proceso te va a permitir ahorrar tiempo valioso y centrarte en expandir tu negocio.';
+                if (selectedServiceId === 'sistemas') {
+                    tip = '¡Excelente audio! Los desarrollos de software y sistemas a medida son nuestra especialidad. Diseñamos la solución tecnológica ideal para tu negocio, adaptándonos al 100% a tus flujos y necesidades de gestión.';
+                } else if (selectedServiceId === 'automatizaciones') {
+                    tip = '¡Excelente audio! Las automatizaciones e integraciones de sistemas orquestados son clave para eliminar las tareas mecánicas repetitivas. Automatizar este proceso te va a permitir ahorrar tiempo valioso y centrarte en expandir tu negocio.';
                 } else if (selectedServiceId === 'ia-atencion' || selectedServiceId === 'whatsapp') {
                     tip = '¡Gran idea la que contás! Implementar un agente virtual inteligente en WhatsApp que responda de forma autónoma con RAG garantiza que ningún lead se pierda por demoras, aumentando tus ventas y manteniendo tu negocio abierto 24/7.';
                 } else if (selectedServiceId === 'web') {
