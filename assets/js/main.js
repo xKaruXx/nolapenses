@@ -9,6 +9,15 @@
  */
 
 // Definir landingApp globalmente para que Alpine.js pueda acceder a él inmediatamente
+const NLP_DEBUG = new URLSearchParams(window.location.search).has('debug') ||
+    window.localStorage.getItem('NLP_DEBUG') === 'true';
+const debugLog = (...args) => {
+    if (NLP_DEBUG) console.log(...args);
+};
+const debugWarn = (...args) => {
+    if (NLP_DEBUG) console.warn(...args);
+};
+
 window.landingApp = function() {
     return {
         // Tema Claro/Oscuro
@@ -180,7 +189,7 @@ window.landingApp = function() {
         // Initialize the app
         init() {
             try {
-                console.log('Inicializando la aplicación...');
+                debugLog('Inicializando la aplicación...');
                 this.initTheme();
                 this.initDynamicPersonalization();
                 this.startSocialProofRotation();
@@ -224,7 +233,7 @@ window.landingApp = function() {
                 }
                 this.availableDates = datesList;
                 
-                console.log('Aplicación inicializada correctamente');
+                debugLog('Aplicación inicializada correctamente');
             } catch (error) {
                 console.error('Error durante la inicialización:', error);
             }
@@ -257,7 +266,7 @@ window.landingApp = function() {
                                 chatServiceEmoji.textContent = savedService.emoji;
                             }
                             
-                            console.log('Mensaje del chatbot inicializado con servicio guardado:', savedService.text);
+                            debugLog('Mensaje del chatbot inicializado con servicio guardado:', savedService.text);
                         }
                     } catch (e) {
                         console.error('Error al parsear el servicio guardado:', e);
@@ -267,7 +276,7 @@ window.landingApp = function() {
                 // Actualizar el estado de ánimo si está guardado
                 if (savedMood && chatMoodBadge) {
                     chatMoodBadge.textContent = 'Estado de ánimo: ' + savedMood;
-                    console.log('Estado de ánimo del chatbot actualizado:', savedMood);
+                    debugLog('Estado de ánimo del chatbot actualizado:', savedMood);
                 }
             } catch (error) {
                 console.error('Error al inicializar el mensaje del chatbot:', error);
@@ -277,7 +286,7 @@ window.landingApp = function() {
         // Establecer directamente un estado de ánimo y saludo aleatorios
         setRandomMoodAndGreeting() {
             try {
-                console.log('Estableciendo estado de ánimo y saludo aleatorios...');
+                debugLog('Estableciendo estado de ánimo y saludo aleatorios...');
                 
                 // Lista de estados de ánimo disponibles
                 const availableMoods = [
@@ -311,7 +320,7 @@ window.landingApp = function() {
                     const greetingElement = document.getElementById('personalizedGreeting');
                     if (greetingElement) {
                         greetingElement.textContent = this.randomGreeting;
-                        console.log('Saludo aleatorio establecido en el DOM:', this.randomGreeting);
+                        debugLog('Saludo aleatorio establecido en el DOM:', this.randomGreeting);
                     } else {
                         console.error('No se encontró el elemento personalizedGreeting en el DOM');
                     }
@@ -319,7 +328,7 @@ window.landingApp = function() {
                     console.error('No hay saludos disponibles para el estado de ánimo:', this.userMood);
                 }
                 
-                console.log('Estado de ánimo y saludo aleatorios establecidos correctamente');
+                debugLog('Estado de ánimo y saludo aleatorios establecidos correctamente');
             } catch (error) {
                 console.error('Error al establecer estado de ánimo y saludo aleatorios:', error);
             }
@@ -328,7 +337,7 @@ window.landingApp = function() {
         // Seleccionar un estado de ánimo aleatorio
         selectRandomMood() {
             try {
-                console.log('Seleccionando estado de ánimo aleatorio...');
+                debugLog('Seleccionando estado de ánimo aleatorio...');
                 
                 // Lista de estados de ánimo disponibles
                 const availableMoods = [
@@ -343,7 +352,7 @@ window.landingApp = function() {
                 const randomIndex = Math.floor(Math.random() * availableMoods.length);
                 const selectedMood = availableMoods[randomIndex];
                 
-                console.log('Estado de ánimo aleatorio seleccionado:', selectedMood.mood);
+                debugLog('Estado de ánimo aleatorio seleccionado:', selectedMood.mood);
                 
                 // Establecer el estado de ánimo seleccionado
                 this.setUserMood(selectedMood.mood, selectedMood.emoji);
@@ -356,7 +365,7 @@ window.landingApp = function() {
         // Set a random AI mood on page load
         setRandomAIMood() {
             try {
-                console.log('Configurando estado de ánimo aleatorio para la IA...');
+                debugLog('Configurando estado de ánimo aleatorio para la IA...');
                 
                 if (!CONFIG.aiMoods || !Array.isArray(CONFIG.aiMoods) || CONFIG.aiMoods.length === 0) {
                     console.error('CONFIG.aiMoods no está definido correctamente');
@@ -371,7 +380,7 @@ window.landingApp = function() {
                 this.aiMood = selectedMood.mood;
                 this.aiGreeting = selectedMood.greeting;
                 
-                console.log('Estado de ánimo de la IA configurado:', this.aiMood);
+                debugLog('Estado de ánimo de la IA configurado:', this.aiMood);
             } catch (error) {
                 console.error('Error al configurar el estado de ánimo de la IA:', error);
                 this.aiMood = 'alegre';
@@ -382,7 +391,7 @@ window.landingApp = function() {
         // Handle user mood selection
         setUserMood(mood, emoji) {
             try {
-                console.log('Usuario seleccionó estado de ánimo:', mood, emoji);
+                debugLog('Usuario seleccionó estado de ánimo:', mood, emoji);
                 
                 this.userMood = mood;
                 this.userMoodEmoji = emoji;
@@ -391,13 +400,13 @@ window.landingApp = function() {
                 if (this.moodGreetings[mood] && this.moodGreetings[mood].length > 0) {
                     const randomIndex = Math.floor(Math.random() * this.moodGreetings[mood].length);
                     this.randomGreeting = this.moodGreetings[mood][randomIndex];
-                    console.log('Saludo aleatorio seleccionado:', this.randomGreeting);
+                    debugLog('Saludo aleatorio seleccionado:', this.randomGreeting);
                     
                     // Actualizar directamente el elemento del DOM con el saludo
                     const greetingElement = document.getElementById('personalizedGreeting');
                     if (greetingElement) {
                         greetingElement.textContent = this.randomGreeting;
-                        console.log('Saludo establecido directamente en el DOM');
+                        debugLog('Saludo establecido directamente en el DOM');
                     } else {
                         console.error('No se encontró el elemento personalizedGreeting en el DOM');
                     }
@@ -427,8 +436,8 @@ window.landingApp = function() {
                 this.selectedQuestion = '';
                 this.selectedService = '';
                 
-                console.log('Estado de ánimo del usuario establecido:', this.userMood);
-                console.log('Saludo aleatorio seleccionado:', this.randomGreeting);
+                debugLog('Estado de ánimo del usuario establecido:', this.userMood);
+                debugLog('Saludo aleatorio seleccionado:', this.randomGreeting);
             } catch (error) {
                 console.error('Error al establecer el estado de ánimo del usuario:', error);
             }
@@ -437,7 +446,7 @@ window.landingApp = function() {
         // Handle service selection
         selectService(serviceId) {
             try {
-                console.log('Servicio seleccionado:', serviceId);
+                debugLog('Servicio seleccionado:', serviceId);
                 
                 // Buscar el servicio en la lista de servicios disponibles
                 const selectedService = this.serviceOptions.find(service => service.id === serviceId) || {
@@ -474,8 +483,8 @@ window.landingApp = function() {
                 // Enviar el servicio seleccionado al webhook
                 this.sendServiceWebhook(this.userMood, serviceId, selectedService.text);
                 
-                console.log('Servicio seleccionado:', this.selectedService);
-                console.log('Respuesta personalizada:', this.selectedQuestion);
+                debugLog('Servicio seleccionado:', this.selectedService);
+                debugLog('Respuesta personalizada:', this.selectedQuestion);
             } catch (error) {
                 console.error('Error al seleccionar servicio:', error);
             }
@@ -484,7 +493,7 @@ window.landingApp = function() {
         // Función combinada para seleccionar servicio y desplazarse a la sección de voz
         selectServiceAndScroll(serviceId) {
             try {
-                console.log('Seleccionando servicio y desplazándose a la sección de voz:', serviceId);
+                debugLog('Seleccionando servicio y desplazándose a la sección de voz:', serviceId);
                 
                 // Primero seleccionar el servicio
                 this.selectService(serviceId);
@@ -494,7 +503,7 @@ window.landingApp = function() {
                 if (voiceSection) {
                     setTimeout(() => {
                         voiceSection.scrollIntoView({ behavior: 'smooth' });
-                        console.log('Desplazamiento a la sección de voz completado');
+                        debugLog('Desplazamiento a la sección de voz completado');
                     }, 500);
                 } else {
                     console.error('No se encontró la sección de voz');
@@ -507,7 +516,7 @@ window.landingApp = function() {
         // Scroll to voice section
         scrollToVoiceSection() {
             try {
-                console.log('Desplazándose a la sección de voz...');
+                debugLog('Desplazándose a la sección de voz...');
                 const voiceSection = document.getElementById('voice-section');
                 if (voiceSection) {
                     setTimeout(() => {
@@ -522,7 +531,7 @@ window.landingApp = function() {
         // Guardar selección del usuario en la base de datos
         saveUserSelectionToDatabase() {
             try {
-                console.log('Guardando datos del usuario en la base de datos...');
+                debugLog('Guardando datos del usuario en la base de datos...');
                 
                 // Crear objeto con los datos del usuario
                 const userData = {
@@ -534,7 +543,7 @@ window.landingApp = function() {
                     randomGreeting: this.randomGreeting
                 };
                 
-                console.log('Datos a guardar:', userData);
+                debugLog('Datos a guardar:', userData);
                 
                 // Enviar datos a un endpoint de backend para guardarlos
                 if (typeof CONFIG !== 'undefined' && CONFIG.database && CONFIG.database.url) {
@@ -547,7 +556,7 @@ window.landingApp = function() {
                     })
                     .then(response => response.json())
                     .then(data => {
-                        console.log('Datos guardados correctamente:', data);
+                        debugLog('Datos guardados correctamente:', data);
                     })
                     .catch(error => {
                         console.error('Error al guardar datos:', error);
@@ -557,7 +566,7 @@ window.landingApp = function() {
                     const storedSelections = JSON.parse(localStorage.getItem('userSelections') || '[]');
                     storedSelections.push(userData);
                     localStorage.setItem('userSelections', JSON.stringify(storedSelections));
-                    console.log('Datos guardados en localStorage como respaldo');
+                    debugLog('Datos guardados en localStorage como respaldo');
                 }
                 
             } catch (error) {
@@ -568,7 +577,7 @@ window.landingApp = function() {
         // Send service to webhook
         sendServiceWebhook(mood, serviceId, serviceText) {
             try {
-                console.log('Enviando servicio seleccionado al webhook...');
+                debugLog('Enviando servicio seleccionado al webhook...');
                 
                 // Prepare data for webhook
                 const webhookData = {
@@ -586,7 +595,7 @@ window.landingApp = function() {
                                           window.location.hostname.includes('.local');
                 
                 if (isLocalEnvironment) {
-                    console.log('Entorno local detectado. Simulando envío de servicio:', webhookData);
+                    debugLog('Entorno local detectado. Simulando envío de servicio:', webhookData);
                 } else {
                     // In production, make an actual API call
                     fetch(CONFIG.webhooks.mood, {
@@ -598,7 +607,7 @@ window.landingApp = function() {
                     })
                     .then(response => response.json())
                     .then(data => {
-                        console.log('Respuesta del webhook de servicio:', data);
+                        debugLog('Respuesta del webhook de servicio:', data);
                     })
                     .catch(error => {
                         console.error('Error al enviar servicio al webhook:', error);
@@ -612,7 +621,7 @@ window.landingApp = function() {
         // Send selected question to webhook
         sendQuestionWebhook(mood, question) {
             try {
-                console.log('Enviando pregunta seleccionada al webhook...');
+                debugLog('Enviando pregunta seleccionada al webhook...');
                 
                 // Prepare data for webhook
                 const webhookData = {
@@ -629,7 +638,7 @@ window.landingApp = function() {
                                           window.location.hostname.includes('.local');
                 
                 if (isLocalEnvironment) {
-                    console.log('Entorno local detectado. Simulando envío de pregunta:', webhookData);
+                    debugLog('Entorno local detectado. Simulando envío de pregunta:', webhookData);
                 } else {
                     // In production, make an actual API call
                     fetch(CONFIG.webhooks.mood, {
@@ -641,7 +650,7 @@ window.landingApp = function() {
                     })
                     .then(response => response.json())
                     .then(data => {
-                        console.log('Respuesta del webhook de pregunta:', data);
+                        debugLog('Respuesta del webhook de pregunta:', data);
                     })
                     .catch(error => {
                         console.error('Error al enviar pregunta al webhook:', error);
@@ -655,7 +664,7 @@ window.landingApp = function() {
         // Send user mood to n8n webhook
         sendMoodWebhook(mood) {
             try {
-                console.log('Enviando estado de ánimo al webhook:', mood);
+                debugLog('Enviando estado de ánimo al webhook:', mood);
                 
                 // Prepare data for webhook
                 const webhookData = {
@@ -681,13 +690,13 @@ window.landingApp = function() {
                     })
                     .then(response => response.json())
                     .then(data => {
-                        console.log('Respuesta del webhook:', data);
+                        debugLog('Respuesta del webhook:', data);
                     })
                     .catch(error => {
                         console.error('Error al enviar datos al webhook:', error);
                     });
                 } else {
-                    console.log('Entorno local detectado. Simulando envío al webhook:', webhookData);
+                    debugLog('Entorno local detectado. Simulando envío al webhook:', webhookData);
                 }
             } catch (error) {
                 console.error('Error al enviar el estado de ánimo al webhook:', error);
@@ -697,7 +706,7 @@ window.landingApp = function() {
         // Get personalized greeting from webhook
         getPersonalizedGreeting(mood) {
             try {
-                console.log('Obteniendo saludo personalizado para el estado de ánimo:', mood);
+                debugLog('Obteniendo saludo personalizado para el estado de ánimo:', mood);
                 
                 // Show loading state
                 this.userMoodResponse = 'Procesando tu estado de ánimo...';
@@ -717,7 +726,7 @@ window.landingApp = function() {
                                           window.location.hostname.includes('.local');
                 
                 if (isLocalEnvironment) {
-                    console.log('Entorno local detectado. Simulando respuesta del webhook...');
+                    debugLog('Entorno local detectado. Simulando respuesta del webhook...');
                     
                     // Simulate webhook response locally after a short delay
                     setTimeout(() => {
@@ -732,7 +741,7 @@ window.landingApp = function() {
                         
                         // Update the response with simulated greeting
                         this.userMoodResponse = simulatedResponses[mood] || CONFIG.userMoodResponses[mood];
-                        console.log('Respuesta simulada:', this.userMoodResponse);
+                        debugLog('Respuesta simulada:', this.userMoodResponse);
                     }, 1500);
                 } else {
                     // In production, make an actual API call
@@ -745,7 +754,7 @@ window.landingApp = function() {
                     })
                     .then(response => response.json())
                     .then(data => {
-                        console.log('Respuesta del webhook:', data);
+                        debugLog('Respuesta del webhook:', data);
                         
                         // Update the greeting with the response from the webhook
                         if (data && data.greeting) {
@@ -770,7 +779,7 @@ window.landingApp = function() {
         // Request microphone permission and then toggle recording
         requestMicrophonePermission() {
             try {
-                console.log('Solicitando permisos de micrófono...');
+                debugLog('Solicitando permisos de micrófono...');
                 
                 // Check if we already have permission
                 navigator.mediaDevices.getUserMedia({ audio: true })
@@ -778,7 +787,7 @@ window.landingApp = function() {
                         // Stop the stream immediately as we're just checking permissions
                         stream.getTracks().forEach(track => track.stop());
                         
-                        console.log('Permisos de micrófono concedidos');
+                        debugLog('Permisos de micrófono concedidos');
                         // Now that we have permission, toggle recording
                         this.toggleRecording();
                     })
@@ -804,7 +813,7 @@ window.landingApp = function() {
         // Start voice recording
         startRecording() {
             try {
-                console.log('Iniciando grabación de voz...');
+                debugLog('Iniciando grabación de voz...');
                 
                 // Reset state
                 this.isRecording = true;
@@ -853,14 +862,14 @@ window.landingApp = function() {
                         this.mediaRecorder.addEventListener('dataavailable', event => {
                             if (event.data.size > 0) {
                                 this.audioChunks.push(event.data);
-                                console.log('Fragmento de audio capturado:', event.data.size, 'bytes');
+                                debugLog('Fragmento de audio capturado:', event.data.size, 'bytes');
                             }
                         });
                         
                         this.mediaRecorder.addEventListener('stop', () => {
                             try {
-                                console.log('Grabación detenida, procesando audio...');
-                                console.log('Fragmentos de audio capturados:', this.audioChunks.length);
+                                debugLog('Grabación detenida, procesando audio...');
+                                debugLog('Fragmentos de audio capturados:', this.audioChunks.length);
                                 
                                 if (this.audioChunks.length === 0) {
                                     console.error('No se capturaron datos de audio');
@@ -870,7 +879,7 @@ window.landingApp = function() {
                                 
                                 // Create audio blob
                                 const audioBlob = new Blob(this.audioChunks, { type: 'audio/webm' });
-                                console.log('Tamaño del blob de audio:', audioBlob.size, 'bytes');
+                                debugLog('Tamaño del blob de audio:', audioBlob.size, 'bytes');
                                 
                                 if (audioBlob.size === 0) {
                                     console.error('El blob de audio está vacío');
@@ -880,7 +889,7 @@ window.landingApp = function() {
                                 
                                 // Create a URL for the blob (for debugging/preview)
                                 const audioUrl = URL.createObjectURL(audioBlob);
-                                console.log('URL del audio creada:', audioUrl);
+                                debugLog('URL del audio creada:', audioUrl);
                                 
                                 // Convert to base64
                                 const reader = new FileReader();
@@ -888,7 +897,7 @@ window.landingApp = function() {
                                 reader.onloadend = () => {
                                     try {
                                         const base64data = reader.result.split(',')[1];
-                                        console.log('Audio convertido a base64 correctamente');
+                                        debugLog('Audio convertido a base64 correctamente');
                                         
                                         // Send to webhook
                                         this.sendAudioWebhook(base64data);
@@ -910,7 +919,7 @@ window.landingApp = function() {
                         
                         // Start recording
                         this.mediaRecorder.start(1000); // Collect data in 1-second chunks
-                        console.log('Grabación iniciada correctamente con MediaRecorder:', this.mediaRecorder.state);
+                        debugLog('Grabación iniciada correctamente con MediaRecorder:', this.mediaRecorder.state);
                     } catch (error) {
                         console.error('Error al configurar el MediaRecorder:', error);
                         alert('Error al iniciar la grabación. Por favor, intenta nuevamente.');
@@ -983,15 +992,15 @@ window.landingApp = function() {
         // Stop voice recording
         stopRecording() {
             try {
-                console.log('Deteniendo grabación de voz...');
+                debugLog('Deteniendo grabación de voz...');
                 
                 if (this.mediaRecorder && this.isRecording) {
                     // Check if mediaRecorder is in recording state
                     if (this.mediaRecorder.state === 'recording') {
-                        console.log('MediaRecorder está grabando, deteniendo...');
+                        debugLog('MediaRecorder está grabando, deteniendo...');
                         this.mediaRecorder.stop();
                     } else {
-                        console.log('MediaRecorder no está grabando, estado actual:', this.mediaRecorder.state);
+                        debugLog('MediaRecorder no está grabando, estado actual:', this.mediaRecorder.state);
                     }
                     
                     this.isRecording = false;
@@ -1001,16 +1010,16 @@ window.landingApp = function() {
                     
                     // Stop all audio tracks
                     if (this.mediaRecorder.stream) {
-                        console.log('Deteniendo todas las pistas de audio...');
+                        debugLog('Deteniendo todas las pistas de audio...');
                         this.mediaRecorder.stream.getTracks().forEach(track => {
                             track.stop();
-                            console.log('Pista de audio detenida:', track.kind);
+                            debugLog('Pista de audio detenida:', track.kind);
                         });
                     }
                     
-                    console.log('Grabación detenida correctamente');
+                    debugLog('Grabación detenida correctamente');
                 } else {
-                    console.warn('No hay grabación activa para detener');
+                    debugWarn('No hay grabación activa para detener');
                     this.isRecording = false;
                     this.resetRecordButton();
                 }
@@ -1128,7 +1137,7 @@ window.landingApp = function() {
                                        window.location.hostname.includes('.local');
 
             if (isLocalEnvironment) {
-                console.log('Simulando chatbot local con tip...');
+                debugLog('Simulando chatbot local con tip...');
                 setTimeout(() => {
                     this.chatResponseText = tip;
                     this.advanceChatStep('name');
@@ -1164,7 +1173,7 @@ window.landingApp = function() {
         // Send recorded audio to webhook
         sendAudioWebhook(audioBase64) {
             try {
-                console.log('Enviando audio al webhook...');
+                debugLog('Enviando audio al webhook...');
                 
                 // Ocultar el mensaje inicial del chatbot
                 const initialMessage = document.getElementById('initialChatbotMessage');
@@ -1222,7 +1231,7 @@ window.landingApp = function() {
                                            window.location.hostname.includes('.local');
                 
                 if (isLocalEnvironment) {
-                    console.log('Entorno local detectado. Simulando respuesta del webhook de audio...');
+                    debugLog('Entorno local detectado. Simulando respuesta del webhook de audio...');
                     setTimeout(() => {
                         this.chatResponseText = tip;
                         this.advanceChatStep('name');
@@ -1239,7 +1248,7 @@ window.landingApp = function() {
                     })
                     .then(response => response.json())
                     .then(data => {
-                        console.log('Respuesta del webhook de audio:', data);
+                        debugLog('Respuesta del webhook de audio:', data);
                         const aiReply = data.reply || data.text_response || data.transcription || '';
                         this.chatResponseText = tip + (aiReply ? ' \n\nTranscripción/Propuesta: ' + aiReply : '');
                         this.advanceChatStep('name');
@@ -1274,7 +1283,7 @@ window.landingApp = function() {
                 message: `Lead Conversacional: "${this.chatInquiry}". Cliente: ${this.chatName}. Provincia: ${this.chatProvince}. Teléfono: ${this.chatPhone}. Agenda llamada: ${this.chatDate || 'No agendada'} ${this.chatTime || ''}`
             });
 
-            console.log('Enviando Lead conversacional al webhook:', payload);
+            debugLog('Enviando Lead conversacional al webhook:', payload);
             
             fetch(CONFIG.webhooks.newLead, {
                 method: 'POST',
@@ -1284,7 +1293,7 @@ window.landingApp = function() {
                 body: JSON.stringify(payload)
             })
             .then(res => {
-                console.log('Lead enviado con éxito a n8n');
+                debugLog('Lead enviado con éxito a n8n');
             })
             .catch(err => {
                 console.error('Error al enviar Lead de chatbot a n8n:', err);
@@ -1294,7 +1303,7 @@ window.landingApp = function() {
         // Submit contact form
         submitForm() {
             try {
-                console.log('Enviando formulario de contacto...');
+                debugLog('Enviando formulario de contacto...');
                 
                 // Validate form
                 if (!this.form.nombre || !this.form.telefono) {
@@ -1342,13 +1351,13 @@ window.landingApp = function() {
                                           window.location.hostname.includes('.local');
                 
                 if (isLocalEnvironment) {
-                    console.log('Entorno local detectado. Simulando envío del formulario:', webhookData);
+                    debugLog('Entorno local detectado. Simulando envío del formulario:', webhookData);
                     
                     // Simulate webhook response locally after a short delay
                     setTimeout(() => {
                         this.formSuccess = true;
                         this.formSuccessMessage = 'Demo local: la IA recibio tus datos y preparo el seguimiento.';
-                        console.log('Formulario enviado correctamente (simulado)');
+                        debugLog('Formulario enviado correctamente (simulado)');
                     }, 1500);
                 } else {
                     // In production, make an actual API call
@@ -1361,7 +1370,7 @@ window.landingApp = function() {
                     })
                     .then(response => response.json())
                     .then(data => {
-                        console.log('Respuesta del webhook de formulario:', data);
+                        debugLog('Respuesta del webhook de formulario:', data);
                         this.formSuccess = true;
                         this.formSuccessMessage = data.reply || 'Te vamos a responder por WhatsApp o email con el resumen y el proximo paso.';
                     })
@@ -1412,7 +1421,7 @@ window.landingApp = function() {
         // Initialize scroll animations
         initScrollAnimations() {
             try {
-                console.log('Inicializando animaciones de desplazamiento...');
+                debugLog('Inicializando animaciones de desplazamiento...');
                 
                 // Add reveal class to elements
                 const revealElements = document.querySelectorAll('section');
@@ -1459,7 +1468,7 @@ window.landingApp = function() {
                     });
                 });
                 
-                console.log('Animaciones de desplazamiento inicializadas correctamente');
+                debugLog('Animaciones de desplazamiento inicializadas correctamente');
             } catch (error) {
                 console.error('Error al inicializar las animaciones de desplazamiento:', error);
             }
@@ -1468,7 +1477,7 @@ window.landingApp = function() {
         // Setup scroll indicator functionality
         setupScrollIndicator() {
             try {
-                console.log('Configurando indicador de desplazamiento...');
+                debugLog('Configurando indicador de desplazamiento...');
                 
                 // Get the scroll indicator element
                 const scrollIndicator = document.querySelector('.absolute.bottom-8.left-1\\/2');
@@ -1490,7 +1499,7 @@ window.landingApp = function() {
                     }
                 });
                 
-                console.log('Indicador de desplazamiento configurado correctamente');
+                debugLog('Indicador de desplazamiento configurado correctamente');
             } catch (error) {
                 console.error('Error al configurar el indicador de desplazamiento:', error);
             }
@@ -1499,7 +1508,7 @@ window.landingApp = function() {
         // Initialize scrollspy for floating navbar
         initScrollspy() {
             try {
-                console.log('Inicializando Scrollspy...');
+                debugLog('Inicializando Scrollspy...');
                 
                 // Active targets
                 const sections = [
@@ -1534,7 +1543,7 @@ window.landingApp = function() {
                 }, observerOptions);
 
                 sections.forEach(section => observer.observe(section));
-                console.log('Scrollspy inicializado correctamente');
+                debugLog('Scrollspy inicializado correctamente');
             } catch (error) {
                 console.error('Error al inicializar Scrollspy:', error);
             }
@@ -1544,7 +1553,7 @@ window.landingApp = function() {
         toggleTheme() {
             try {
                 this.darkMode = !this.darkMode;
-                console.log('Alternando tema a:', this.darkMode ? 'oscuro' : 'claro');
+                debugLog('Alternando tema a:', this.darkMode ? 'oscuro' : 'claro');
                 if (this.darkMode) {
                     document.documentElement.classList.remove('light-theme');
                     localStorage.setItem('theme', 'dark');
@@ -1559,7 +1568,7 @@ window.landingApp = function() {
         
         initTheme() {
             try {
-                console.log('Inicializando tema...');
+                debugLog('Inicializando tema...');
                 const savedTheme = localStorage.getItem('theme');
                 if (savedTheme === 'light' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
                     this.darkMode = false;
@@ -1575,28 +1584,28 @@ window.landingApp = function() {
         
         initDynamicPersonalization() {
             try {
-                console.log('Inicializando personalización dinámica (DTR)...');
+                debugLog('Inicializando personalización dinámica (DTR)...');
                 const urlParams = new URLSearchParams(window.location.search);
                 const sector = urlParams.get('sector') || urlParams.get('utm_campaign') || '';
                 
                 if (sector) {
                     const sectorLower = sector.toLowerCase();
                     if (sectorLower.includes('inmo') || sectorLower.includes('propiedad') || sectorLower.includes('realestate')) {
-                        console.log('Personalización detectada: Sector Inmobiliario');
+                        debugLog('Personalización detectada: Sector Inmobiliario');
                         this.heroTitle = 'Multiplicá las ventas de tu Inmobiliaria con nuestro Agente IA de WhatsApp';
                         this.heroSubtitle = 'Automatizá respuestas a consultas de propiedades, agendamiento de visitas y seguimiento de leads las 24/7 sin esfuerzo.';
                         this.industryTab = 'inmo';
                         this.selectedService = 'whatsapp';
                         localStorage.setItem('selectedService', 'whatsapp');
                     } else if (sectorLower.includes('shop') || sectorLower.includes('ecom') || sectorLower.includes('ventas') || sectorLower.includes('store')) {
-                        console.log('Personalización detectada: Sector E-commerce');
+                        debugLog('Personalización detectada: Sector E-commerce');
                         this.heroTitle = 'Maximizá la conversión de tu E-commerce con bots de IA';
                         this.heroSubtitle = 'Recuperá carritos abandonados, respondé preguntas frecuentes sobre envíos y stock, y vendé en automático por WhatsApp.';
                         this.industryTab = 'ecom';
                         this.selectedService = 'ia-atencion';
                         localStorage.setItem('selectedService', 'ia-atencion');
                     } else if (sectorLower.includes('serv') || sectorLower.includes('consult') || sectorLower.includes('prof') || sectorLower.includes('agenda')) {
-                        console.log('Personalización detectada: Servicios / Profesionales');
+                        debugLog('Personalización detectada: Servicios / Profesionales');
                         this.heroTitle = 'Automatizá tu agenda de turnos y consultas con un Agente IA';
                         this.heroSubtitle = 'Ideal para consultorios, agencias y profesionales. Calificá prospectos y coordiná llamadas de forma proactiva y automatizada.';
                         this.industryTab = 'serv';
@@ -1619,7 +1628,7 @@ window.landingApp = function() {
                     theme: this.darkMode ? 'dark' : 'light'
                 };
                 
-                console.log(`[Analytics Event] ${eventName}:`, enrichedData);
+                debugLog(`[Analytics Event] ${eventName}:`, enrichedData);
                 
                 // 1. Dispatch Custom DOM Event (for GTM custom triggers)
                 window.dispatchEvent(new CustomEvent('nolapenses_analytics', {
@@ -1733,7 +1742,7 @@ window.landingApp = function() {
 };
 
 // Log when the script is loaded
-console.log('main.js cargado correctamente');
+debugLog('main.js cargado correctamente');
 
 // Fetch Interceptor for Security & Simulation
 (function(originalFetch) {
@@ -1746,7 +1755,7 @@ console.log('main.js cargado correctamente');
         const isWebhook = typeof url === 'string' && url.includes('webhook');
         if (isWebhook && typeof CONFIG !== 'undefined' && CONFIG.CLIENT_TOKEN) {
             options.headers['X-NLP-Client-Token'] = CONFIG.CLIENT_TOKEN;
-            console.log(`[Security] Token X-NLP-Client-Token inyectado para: ${url}`);
+            debugLog(`[Security] Token X-NLP-Client-Token inyectado para: ${url}`);
         }
         
         // Environment check for local mocking
@@ -1756,7 +1765,7 @@ console.log('main.js cargado correctamente');
                                   window.location.hostname.includes('.local');
                                   
         if (isLocalEnvironment && isWebhook) {
-            console.log('Simulando respuesta de API para:', url);
+            debugLog('Simulando respuesta de API para:', url);
             return new Promise((resolve) => {
                 setTimeout(() => {
                     if (url.includes('audio-recibido') || url.includes('audioReceived')) {

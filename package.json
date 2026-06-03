@@ -4,6 +4,7 @@
   "description": "Interactive and immersive landing page for nolapenses.com.ar, offering digital automations, web page creation, custom AI chatbots, custom systems, and WhatsApp AI assistance.",
   "main": "tailwind.config.js",
   "scripts": {
+    "build:css": "tailwindcss -i assets/css/tailwind-input.css -o assets/css/tailwind.css --cwd . --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
