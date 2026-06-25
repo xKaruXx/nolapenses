@@ -1,0 +1,254 @@
+[
+  {
+    "slug": "ia-privada-conocimiento-interno-empresas",
+    "title": "IA privada para conocimiento interno: qué problema resuelve en una empresa",
+    "excerpt": "Cuando la información vive repartida entre documentos, chats, planillas y sistemas, una IA privada puede ayudar al equipo a encontrar respuestas sin depender siempre de la misma persona.",
+    "date": "2026-06-21",
+    "readingTime": "5 min",
+    "category": "IA privada",
+    "tags": [
+      "IA privada",
+      "Empresas",
+      "Productividad",
+      "Automatización",
+      "Conocimiento interno"
+    ],
+    "sourceName": "OpenAI Enterprise Privacy y documentación pública de Microsoft sobre IA en el trabajo",
+    "sourceUrl": "https://openai.com/enterprise-privacy/",
+    "url": "https://nolapenses.com.ar/notas/ia-privada-conocimiento-interno-empresas/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/ia-privada-conocimiento-interno.svg"
+  },
+  {
+    "slug": "agentes-de-trabajo-en-chatgpt-automatizar-procesos-con-control",
+    "title": "Agentes de trabajo en ChatGPT: la oportunidad no es “tener IA”, es ordenar procesos",
+    "excerpt": "OpenAI presentó agentes de trabajo en ChatGPT para automatizar flujos complejos. Para una empresa, la pregunta práctica es qué tareas repetitivas conviene delegar, con qué permisos y cuándo debe intervenir una persona.",
+    "date": "2026-06-22",
+    "readingTime": "5 min",
+    "category": "Automatización con IA",
+    "tags": [
+      "Agentes IA",
+      "Automatización",
+      "Procesos internos",
+      "IA privada",
+      "Productividad"
+    ],
+    "sourceName": "OpenAI — Introducing workspace agents in ChatGPT",
+    "sourceUrl": "https://openai.com/index/introducing-workspace-agents-in-chatgpt/",
+    "url": "https://nolapenses.com.ar/notas/agentes-de-trabajo-en-chatgpt-automatizar-procesos-con-control/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/agentes-de-trabajo-en-chatgpt-automatizar-procesos-con-control-h.webp"
+  },
+  {
+    "slug": "ia-cara-herramientas-sueltas-procesos-claros",
+    "title": "Usar IA por usar IA puede salir caro: primero ordená el proceso",
+    "excerpt": "Antes de sumar otra herramienta conviene detectar dónde se pierden consultas, tiempo o ventas. La IA rinde cuando mejora un proceso concreto, no cuando se compra por moda.",
+    "date": "2026-06-18",
+    "readingTime": "4 min",
+    "category": "Automatización con IA",
+    "tags": [
+      "Automatización",
+      "WhatsApp IA",
+      "Procesos",
+      "Productividad",
+      "Pymes"
+    ],
+    "sourceName": "Jon Hernández — Newsletter 16 Junio",
+    "sourceUrl": "https://www.jonhernandez.education/newsletter/newsletter-16-junio/",
+    "url": "https://nolapenses.com.ar/notas/ia-cara-herramientas-sueltas-procesos-claros/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/ia-privada-conocimiento-interno.svg"
+  },
+  {
+    "slug": "informacion-desordenada-respuestas-inconsistentes-negocios",
+    "title": "Muchas empresas no tienen un problema de IA: tienen información desordenada",
+    "excerpt": "Cuando precios, horarios, requisitos y respuestas frecuentes viven en PDFs, chats o memoria del equipo, aparecen demoras, errores y respuestas distintas según quién atienda.",
+    "date": "2026-06-18",
+    "readingTime": "4 min",
+    "category": "Atención al cliente",
+    "tags": [
+      "Atención al cliente",
+      "Base de conocimiento",
+      "WhatsApp IA",
+      "IA privada",
+      "Procesos"
+    ],
+    "sourceName": "Jon Hernández — IA e infraestructura crítica",
+    "sourceUrl": "https://www.jonhernandez.education/noticias-ia/ia-infraestructura-critica-anthropic-apple-google/",
+    "url": "https://nolapenses.com.ar/notas/informacion-desordenada-respuestas-inconsistentes-negocios/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/ia-privada-conocimiento-interno.svg"
+  },
+  {
+    "slug": "atencion-con-contexto-whatsapp-no-respuestas-genericas",
+    "title": "El futuro de la atención no es responder automático: es responder con contexto",
+    "excerpt": "Los clientes no quieren repetir tres veces lo mismo. Un buen asistente debería entender intención, pedir solo lo que falta y derivar cuando corresponde.",
+    "date": "2026-06-18",
+    "readingTime": "4 min",
+    "category": "WhatsApp IA",
+    "tags": [
+      "WhatsApp IA",
+      "Atención al cliente",
+      "Contexto",
+      "Leads",
+      "Automatización"
+    ],
+    "sourceName": "Jon Hernández — Newsletter 16 Junio",
+    "sourceUrl": "https://www.jonhernandez.education/newsletter/newsletter-16-junio/",
+    "url": "https://nolapenses.com.ar/notas/atencion-con-contexto-whatsapp-no-respuestas-genericas/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/ia-privada-conocimiento-interno.svg"
+  },
+  {
+    "slug": "automatizar-tareas-repetitivas-sin-esperar-herramienta-perfecta",
+    "title": "Mientras algunos esperan la herramienta perfecta, otros ya automatizan lo repetitivo",
+    "excerpt": "La ventaja no está en hablar de IA, sino en detectar qué parte del negocio se repite todos los días y ordenarla con criterios claros.",
+    "date": "2026-06-21",
+    "readingTime": "4 min",
+    "category": "Procesos de negocio",
+    "tags": [
+      "Automatización",
+      "Procesos",
+      "WhatsApp Business",
+      "Atención al cliente",
+      "IA para negocios"
+    ],
+    "sourceName": "Jon Hernández — Podcast con Adrián Díaz",
+    "sourceUrl": "https://www.jonhernandez.education/podcast/adrian-diaz-china-inteligencia-artificial/",
+    "url": "https://nolapenses.com.ar/notas/automatizar-tareas-repetitivas-sin-esperar-herramienta-perfecta/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/ia-privada-conocimiento-interno.svg"
+  },
+  {
+    "slug": "agentes-autonomos-aws-quick-procesos-con-control",
+    "title": "Agentes autónomos de AWS: la señal no es el bot, es el proceso trabajando solo",
+    "excerpt": "AWS presentó agentes autónomos en Amazon Quick para ejecutar tareas en segundo plano. Más que una novedad de producto, marca hacia dónde va la automatización útil: procesos claros, permisos, contexto y control humano.",
+    "date": "2026-06-23",
+    "readingTime": "6 min",
+    "category": "Automatización con IA",
+    "tags": [
+      "Agentes IA",
+      "AWS",
+      "Automatización",
+      "Procesos",
+      "Productividad",
+      "Pymes"
+    ],
+    "sourceName": "AWS Machine Learning Blog — Get back hours every day with autonomous agents in Amazon Quick",
+    "sourceUrl": "https://aws.amazon.com/blogs/machine-learning/get-back-hours-every-day-with-autonomous-agents-in-amazon-quick/",
+    "url": "https://nolapenses.com.ar/notas/agentes-autonomos-aws-quick-procesos-con-control/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/agentes-autonomos-aws-quick-procesos-con-control-h.webp"
+  },
+  {
+    "slug": "atencion-conversacional-ia-consultas-viajes-negocios",
+    "title": "Atención conversacional con IA: la lección para negocios que reciben muchas consultas",
+    "excerpt": "OpenAI mostró cómo Omio usa IA para experiencias de viaje conversacionales. Para una pyme, la oportunidad no es copiar una app de turismo: es ordenar consultas, pedir datos correctos y derivar mejor sin perder trato humano.",
+    "date": "2026-06-23",
+    "readingTime": "5 min",
+    "category": "Atención al cliente",
+    "tags": [
+      "Atención al cliente",
+      "WhatsApp IA",
+      "Automatización",
+      "Leads",
+      "Procesos",
+      "IA para negocios"
+    ],
+    "sourceName": "OpenAI — How Omio is building the future of conversational travel",
+    "sourceUrl": "https://openai.com/index/omio",
+    "url": "https://nolapenses.com.ar/notas/atencion-conversacional-ia-consultas-viajes-negocios/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/atencion-conversacional-ia-consultas-viajes-negocios.webp"
+  },
+  {
+    "slug": "ia-soberania-tecnologica-negocios",
+    "title": "IA y soberanía tecnológica: qué debería mirar una pyme antes de automatizar",
+    "excerpt": "La discusión global sobre modelos, regulación y acceso a IA parece lejana, pero baja rápido a tierra: quién controla tus datos, tus automatizaciones y tus canales de atención.",
+    "date": "2026-06-23",
+    "readingTime": "5 min",
+    "category": "IA privada",
+    "tags": [
+      "IA privada",
+      "Automatización",
+      "Procesos internos",
+      "WhatsApp IA",
+      "Soberanía tecnológica"
+    ],
+    "sourceName": "Jon Hernández — NOTICIAS IA: El Nuevo Orden Mundial",
+    "sourceUrl": "https://www.jonhernandez.education/noticias-ia/ia-geopolitica-g7-anthropic-china/",
+    "url": "https://nolapenses.com.ar/notas/ia-soberania-tecnologica-negocios/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/ia-soberania-tecnologica-negocios.webp"
+  },
+  {
+    "slug": "openai-control-costos-ia-empresas",
+    "title": "OpenAI suma controles de gasto: la IA también necesita tablero de costos",
+    "excerpt": "OpenAI presentó nuevas analíticas de uso y controles de gasto para ChatGPT Enterprise. La señal para cualquier empresa es simple: adoptar IA sin medir consumo, responsables y límites termina siendo otro costo invisible.",
+    "date": "2026-06-24",
+    "readingTime": "5 min",
+    "category": "Gestión de IA",
+    "tags": [
+      "OpenAI",
+      "Control de costos",
+      "ChatGPT Enterprise",
+      "IA en empresas",
+      "Automatización"
+    ],
+    "sourceName": "OpenAI — New usage analytics and updated spend controls for enterprises",
+    "sourceUrl": "https://openai.com/index/chatgpt-enterprise-spend-controls",
+    "url": "https://nolapenses.com.ar/notas/openai-control-costos-ia-empresas/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/openai-control-costos-ia-empresas.webp"
+  },
+  {
+    "slug": "ia-privada-datos-sensibles-confidential-computing",
+    "title": "IA privada y datos sensibles: no alcanza con “usar IA”, hay que cuidar dónde corre",
+    "excerpt": "Google Cloud presentó novedades de Confidential Computing para IA. Para una pyme, la lectura práctica es clara: si vas a automatizar atención, documentos o procesos internos, también tenés que definir qué datos entran, dónde se procesan y con qué controles.",
+    "date": "2026-06-24",
+    "readingTime": "5 min",
+    "category": "IA privada",
+    "tags": [
+      "IA privada",
+      "Datos sensibles",
+      "Confidential Computing",
+      "Automatización",
+      "Procesos internos",
+      "Seguridad"
+    ],
+    "sourceName": "Google Cloud Blog — Verifiable trust in the AI era: What’s new in Confidential Computing",
+    "sourceUrl": "https://cloud.google.com/blog/products/identity-security/verifiable-trust-in-the-ai-era-whats-new-in-confidential-computing/",
+    "url": "https://nolapenses.com.ar/notas/ia-privada-datos-sensibles-confidential-computing/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/ia-privada-datos-sensibles-confidential-computing.webp"
+  },
+  {
+    "slug": "agente-voz-turnos-recordatorios-ia",
+    "title": "Agentes de voz para turnos: la IA útil no reemplaza al equipo, evita llamadas perdidas",
+    "excerpt": "AWS publicó un ejemplo de agente de voz para recordatorios de turnos médicos. Para cualquier negocio con reservas, la oportunidad práctica es ordenar confirmaciones, reprogramaciones y derivaciones humanas sin saturar al equipo.",
+    "date": "2026-06-25",
+    "readingTime": "5 min",
+    "category": "Atención al cliente",
+    "tags": [
+      "Agentes de voz",
+      "Turnos",
+      "Atención al cliente",
+      "Automatización",
+      "IA para negocios",
+      "Derivación humana"
+    ],
+    "sourceName": "AWS Machine Learning Blog — Build a healthcare appointment agent with Amazon Nova 2 Sonic",
+    "sourceUrl": "https://aws.amazon.com/blogs/machine-learning/build-a-healthcare-appointment-agent-with-amazon-nova-2-sonic/",
+    "url": "https://nolapenses.com.ar/notas/agente-voz-turnos-recordatorios-ia/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/agente-voz-turnos-recordatorios-ia.webp"
+  },
+  {
+    "slug": "ia-potente-control-humano-automatizaciones-negocios",
+    "title": "IA potente no alcanza: las automatizaciones necesitan control humano",
+    "excerpt": "El debate alrededor de Anthropic, Claude, Mythos y Fable muestra que la IA más avanzada también concentra poder y riesgos. Para una pyme, la lección práctica es diseñar automatizaciones con permisos, límites, trazabilidad y derivación humana.",
+    "date": "2026-06-25",
+    "readingTime": "5 min",
+    "category": "Automatización con IA",
+    "tags": [
+      "Automatización",
+      "IA privada",
+      "Control humano",
+      "Procesos internos",
+      "Seguridad",
+      "WhatsApp IA"
+    ],
+    "sourceName": "Jon Hernández — El hombre que creó la IA que nadie puede controlar",
+    "sourceUrl": "https://www.jonhernandez.education/video-noticias/dario-amodei-anthropic-historia/",
+    "url": "https://nolapenses.com.ar/notas/ia-potente-control-humano-automatizaciones-negocios/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/ia-potente-control-humano-automatizaciones-negocios.webp"
+  }
+]

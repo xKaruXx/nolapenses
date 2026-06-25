@@ -1,48 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WGR3XF56');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#007BCA">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>No La Penses! - Automatizaciones digitales y soluciones IA</title>
-    <meta name="description" content="Automatizaciones digitales, creación de páginas web, chatbots personalizados con IA, sistemas a medida y asistencia por WhatsApp IA.">
+    <title>WhatsApp IA y Automatizaciones para Empresas | No La Penses</title>
+    <meta name="description" content="Ordená consultas, respondé WhatsApp 24/7 y automatizá tareas repetitivas sin perder el trato humano. Chatbots IA, automatizaciones, IA privada y sistemas a medida.">
     <meta name="format-detection" content="telephone=no">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nolapenses.com.ar/">
-    <meta property="og:title" content="No La Penses! - Automatizaciones digitales y soluciones IA">
-    <meta property="og:description" content="Automatizaciones digitales, creación de páginas web, chatbots personalizados con IA, sistemas a medida y asistencia por WhatsApp IA.">
+    <meta property="og:title" content="WhatsApp IA y Automatizaciones para Empresas | No La Penses">
+    <meta property="og:description" content="Ordená consultas, respondé WhatsApp 24/7 y automatizá tareas repetitivas sin perder el trato humano. Chatbots IA, automatizaciones, IA privada y sistemas a medida.">
     <meta property="og:image" content="https://nolapenses.com.ar/FAVICON.png">
 
     <!-- Favicon -->
     <link rel="icon" href="FAVICON.png" type="image/png">
 
-    <!-- Google Tag Manager & Meta Pixel Template (Comentado para activar al lanzar pauta) -->
-    <!-- 
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-    
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'ID-PIXEL');
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=ID-PIXEL&ev=PageView&noscript=1"/></noscript>
-    -->
 
     <!-- Structured Data Schema.org (JSON-LD) para SEO Local y Profesional -->
     <script type="application/ld+json">
@@ -81,6 +67,20 @@
       "sameAs": [
         "https://nolapenses.com.ar/portafolio.html"
       ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de automatización e IA",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "IA privada para conocimiento interno",
+              "description": "Implementación y mantenimiento de buscadores y asistentes internos conectados a documentos, Drive, SharePoint, Slack, CRMs y herramientas de trabajo."
+            }
+          }
+        ]
+      },
       "founder": {
         "@type": "Person",
         "name": "Carlos Salini",
@@ -128,6 +128,14 @@
             "@type": "Answer",
             "text": "Los flujos operativos estándar se entregan y configuran en menos de 10 días. El retorno de inversión en tiempo libre y mensajes de soporte respondidos se percibe desde las primeras 24 horas del despliegue."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Pueden crear una IA privada para consultar documentos internos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Implementamos asistentes internos y buscadores inteligentes para que el equipo consulte manuales, políticas, procesos, PDFs y documentos conectados a herramientas como Drive, SharePoint, Slack o CRMs, manteniendo permisos, control y derivación humana cuando corresponde."
+          }
         }
       ]
     }
@@ -145,21 +153,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
 
     <!-- Tailwind compilado localmente para no depender del CDN -->
-    <link rel="stylesheet" href="assets/css/tailwind.css?v=20260603">
+    <link rel="stylesheet" href="assets/css/tailwind.css?v=20260621">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260624">
+    <link rel="stylesheet" href="assets/css/mobile.css?v=20260621">
 
     <!-- Animate.css for animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- Critical light-theme contrast fix for service buttons -->
+    <style>
+      .light-theme .service-button {
+        background-color: rgba(0, 123, 202, 0.06) !important;
+        color: #0F172A !important;
+        border: 1px solid rgba(0, 123, 202, 0.14) !important;
+      }
+      .light-theme .service-button:hover,
+      .light-theme .service-button:focus-visible {
+        background-color: rgba(0, 123, 202, 0.12) !important;
+        border-color: rgba(0, 123, 202, 0.35) !important;
+        color: #0F172A !important;
+      }
+    </style>
 </head>
 <body class="bg-gray-dark text-white-pure" x-data="landingApp()" x-init="init()">
-    <!-- Google Tag Manager (noscript) Template (Comentado para activar al lanzar pauta) -->
-    <!--
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGR3XF56"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    -->
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- Floating Glassmorphic Navbar -->
     <nav class="floating-nav px-6 py-4 flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
@@ -169,6 +192,7 @@
         <div class="flex items-center gap-6 text-sm font-medium">
             <a href="#welcomeMessage" class="hover:text-blue-electric transition-colors">Inicio</a>
             <a href="#solutions-section" class="hover:text-blue-electric transition-colors">Soluciones</a>
+            <a href="/notas/" class="hover:text-blue-electric transition-colors">Notas</a>
             <a href="#roi-section" class="hover:text-blue-electric transition-colors hidden md:inline">Calculadora</a>
             <a href="#faq-section" class="hover:text-blue-electric transition-colors hidden md:inline">FAQ</a>
             <a href="portafolio.html" class="hover:text-blue-electric transition-colors">Carlos Salini</a>
@@ -197,11 +221,26 @@
             <div class="max-w-4xl mx-auto">
                 <h1 class="text-4xl sm:text-5xl md:text-7xl mb-4 md:mb-6 animate__animated animate__fadeInDown">
                     <span class="text-white-pure drop-shadow-lg font-display">No la penses!</span> <br>
-                    <span class="text-blue-electric text-3xl sm:text-4xl md:text-5xl block mt-4 font-extrabold tracking-tight" x-text="heroTitle">Multiplicá tus ventas y automatizá tu negocio con IA</span>
+                    <span class="text-blue-electric text-3xl sm:text-4xl md:text-5xl block mt-4 font-extrabold tracking-tight" x-text="heroTitle">Automatizá WhatsApp y tareas repetitivas sin perder el trato humano</span>
                 </h1>
-                <p class="text-lg md:text-xl text-white-pure/80 mb-8 max-w-2xl mx-auto leading-relaxed animate__animated animate__fadeIn animate__delay-1s" x-text="heroSubtitle">
-                    Creamos chatbots de WhatsApp inteligentes, agentes de voz y automatizaciones a medida conectando tus herramientas favoritas.
+                <p class="text-lg md:text-xl text-white-pure/80 mb-6 max-w-2xl mx-auto leading-relaxed animate__animated animate__fadeIn animate__delay-1s" x-text="heroSubtitle">
+                    Diseñamos asistentes de WhatsApp, automatizaciones y sistemas a medida que responden consultas, califican clientes, agendan turnos y conectan con las herramientas que ya usás.
                 </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-5 animate__animated animate__fadeIn animate__delay-1s">
+                    <button type="button" onclick="window.NolapensesAnalytics && window.NolapensesAnalytics.track('hero_cta_click', {cta: 'diagnostico_chat'}); document.querySelector('.lead-chat-button')?.click();" class="inline-flex items-center justify-center gap-2 rounded-full bg-blue-electric px-6 py-3 font-bold text-white-pure shadow-lg shadow-blue-electric/25 transition-all hover:-translate-y-0.5 hover:bg-blue-electric/90 focus:outline-none focus:ring-2 focus:ring-blue-electric focus:ring-offset-2 focus:ring-offset-gray-dark">
+                        💬 Diagnóstico gratis en 2 minutos
+                    </button>
+                    <a href="https://wa.me/5492665267159?text=Hola%2C%20quiero%20ordenar%20consultas%20y%20automatizar%20procesos%20en%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full border border-white-pure/20 bg-white-pure/8 px-6 py-3 font-semibold text-white-pure transition-all hover:-translate-y-0.5 hover:border-blue-electric/60 hover:bg-white-pure/12 focus:outline-none focus:ring-2 focus:ring-blue-electric focus:ring-offset-2 focus:ring-offset-gray-dark">
+                        📱 Hablar por WhatsApp
+                    </a>
+                </div>
+
+                <div class="mb-8 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm text-white-pure/70 animate__animated animate__fadeIn animate__delay-1s" aria-label="Señales de confianza">
+                    <span class="rounded-full border border-white-pure/10 bg-white-pure/5 px-3 py-1">Sin cambiar tus herramientas actuales</span>
+                    <span class="rounded-full border border-white-pure/10 bg-white-pure/5 px-3 py-1">WhatsApp · Instagram · Web · CRM</span>
+                    <span class="rounded-full border border-white-pure/10 bg-white-pure/5 px-3 py-1">Derivación humana cuando hace falta</span>
+                </div>
 
                 <!-- Dynamic AI welcome message -->
                 <div id="welcomeMessage" class="glass-card p-6 rounded-2xl mb-8 border border-white-pure/10 animate__animated animate__fadeIn animate__delay-1s">
@@ -239,6 +278,10 @@
                         <button id="serviceButton-chatbot-ia" @click="selectServiceAndScroll('chatbot-ia')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">🤖</span>
                             <span class="text-lg font-medium">Chatbot con IA</span>
+                        </button>
+                        <button id="serviceButton-ia-interna" @click="selectServiceAndScroll('ia-interna')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
+                            <span class="text-2xl">🔎</span>
+                            <span class="text-lg font-medium">IA privada para tu empresa</span>
                         </button>
                         <button id="serviceButton-redes" @click="selectServiceAndScroll('redes')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">📸</span>
@@ -541,75 +584,91 @@
         <div class="diagonal-divider"></div>
     </section>
 
-    <!-- Soluciones en Acción Section -->
+    <!-- Soluciones de IA para automatizar tu negocio Section -->
     <section id="solutions-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
         <div class="container mx-auto px-4 max-w-6xl">
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Soluciones en Acción</h2>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Soluciones de IA para automatizar tu negocio</h2>
             <div class="section-divider mb-12"></div>
             <p class="text-xl text-center mb-16 max-w-3xl mx-auto text-white-pure/80">
-                No vendemos tecnología compleja. Desarrollamos soluciones directas y automatizadas que resuelven los dolores de tu negocio.
+                No vendemos IA como moda: ordenamos consultas, automatizamos tareas repetitivas y conectamos tus herramientas para que no pierdas mensajes, turnos ni oportunidades.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- Solución 1 -->
-                <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between h-full transform hover:scale-102 transition-transform duration-300">
-                    <div>
-                        <div class="text-4xl mb-4">🤖</div>
+                <div class="glass-card p-6 md:p-7 rounded-3xl border border-white-pure/10 grid md:grid-cols-[auto_1fr] gap-5 h-full transform hover:scale-102 transition-transform duration-300">
+                    <div class="text-4xl md:text-5xl leading-none">🤖</div>
+                    <div class="min-w-0">
                         <h3 class="text-2xl font-bold mb-3 text-blue-electric">Agente de Ventas WhatsApp 24/7</h3>
                         <p class="text-xs text-white-pure/50 mb-4 font-semibold uppercase tracking-wider">El dolor: Perder ventas por responder tarde</p>
                         <p class="text-white-pure/80 mb-6 leading-relaxed">
                             Agente de inteligencia artificial autónomo integrado con <strong>n8n, OpenAI y MercadoPago</strong>. Atiende consultas a cualquier hora, asesora sobre tus productos, cotiza y cobra de manera automática por WhatsApp.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-sm">
+                    <div class="md:col-start-2 pt-4 border-t border-white-pure/5 flex flex-wrap items-center justify-between gap-2 text-sm">
                         <span class="text-white-pure/60">Resultado:</span>
                         <span class="font-extrabold text-blue-electric">100% de chats respondidos</span>
                     </div>
                 </div>
 
                 <!-- Solución 2 -->
-                <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between h-full transform hover:scale-102 transition-transform duration-300">
-                    <div>
-                        <div class="text-4xl mb-4">📣</div>
+                <div class="glass-card p-6 md:p-7 rounded-3xl border border-white-pure/10 grid md:grid-cols-[auto_1fr] gap-5 h-full transform hover:scale-102 transition-transform duration-300">
+                    <div class="text-4xl md:text-5xl leading-none">📣</div>
+                    <div class="min-w-0">
                         <h3 class="text-2xl font-bold mb-3 text-blue-electric">Contenido IA y Publicación Multi-Red</h3>
                         <p class="text-xs text-white-pure/50 mb-4 font-semibold uppercase tracking-wider">El dolor: Redes frenadas por depender siempre de alguien</p>
                         <p class="text-white-pure/80 mb-6 leading-relaxed">
                             Workflow en producción para generar copys, adaptar formatos y publicar en <strong>LinkedIn, Instagram y Facebook</strong> desde una sola orquestación. Incluye calendarización, logging y salida lista para publicar sin estar copiando y pegando todos los días.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-sm">
+                    <div class="md:col-start-2 pt-4 border-t border-white-pure/5 flex flex-wrap items-center justify-between gap-2 text-sm">
                         <span class="text-white-pure/60">Resultado:</span>
                         <span class="font-extrabold text-blue-electric">Menos fricción operativa diaria</span>
                     </div>
                 </div>
 
                 <!-- Solución 3 -->
-                <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between h-full transform hover:scale-102 transition-transform duration-300">
-                    <div>
-                        <div class="text-4xl mb-4">🛰️</div>
+                <div class="glass-card p-6 md:p-7 rounded-3xl border border-white-pure/10 grid md:grid-cols-[auto_1fr] gap-5 h-full transform hover:scale-102 transition-transform duration-300">
+                    <div class="text-4xl md:text-5xl leading-none">🛰️</div>
+                    <div class="min-w-0">
                         <h3 class="text-2xl font-bold mb-3 text-blue-electric">Community Manager Operativo por APIs</h3>
                         <p class="text-xs text-white-pure/50 mb-4 font-semibold uppercase tracking-wider">El dolor: Publicar y moderar a mano, con herramientas inestables</p>
                         <p class="text-white-pure/80 mb-6 leading-relaxed">
                             Integraciones directas con <strong>Meta Graph API</strong>, LinkedIn y flujos propios para publicar, moderar comentarios, detectar leads calientes y responder rápido sin depender de wrappers flojos ni procesos manuales.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-sm">
+                    <div class="md:col-start-2 pt-4 border-t border-white-pure/5 flex flex-wrap items-center justify-between gap-2 text-sm">
                         <span class="text-white-pure/60">Resultado:</span>
                         <span class="font-extrabold text-blue-electric">Operación más estable y trazable</span>
+                    </div>
+                </div>
+
+                <!-- Solución 4 -->
+                <div class="glass-card p-6 md:p-7 rounded-3xl border border-white-pure/10 grid md:grid-cols-[auto_1fr] gap-5 h-full transform hover:scale-102 transition-transform duration-300">
+                    <div class="text-4xl md:text-5xl leading-none">🔎</div>
+                    <div class="min-w-0">
+                        <h3 class="text-2xl font-bold mb-3 text-blue-electric">IA Privada para Conocimiento Interno</h3>
+                        <p class="text-xs text-white-pure/50 mb-4 font-semibold uppercase tracking-wider">El dolor: Información dispersa en documentos, chats y sistemas</p>
+                        <p class="text-white-pure/80 mb-6 leading-relaxed">
+                            Implementamos un asistente interno conectado a <strong>Drive, SharePoint, Slack, CRMs, manuales y PDFs</strong> para que tu equipo encuentre respuestas confiables sin revisar carpetas eternas ni preguntar siempre lo mismo.
+                        </p>
+                    </div>
+                    <div class="md:col-start-2 pt-4 border-t border-white-pure/5 flex flex-wrap items-center justify-between gap-2 text-sm">
+                        <span class="text-white-pure/60">Resultado:</span>
+                        <span class="font-extrabold text-blue-electric">Conocimiento disponible y controlado</span>
                     </div>
                 </div>
             </div>
 
             <div class="mt-10 glass-card rounded-3xl border border-blue-electric/20 p-8 bg-blue-electric/5">
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-                    <div class="max-w-3xl">
+                <div class="flex flex-col gap-6">
+                    <div class="max-w-4xl">
                         <p class="text-xs font-semibold uppercase tracking-[0.25em] text-blue-electric mb-3">Lo último que estuvimos implementando</p>
                         <h3 class="text-2xl md:text-3xl font-extrabold mb-4 tracking-tight">Automatizaciones más aterrizadas a operación real</h3>
                         <p class="text-white-pure/80 leading-relaxed">
-                            En estas semanas estuvimos cerrando piezas concretas: publicación social multi-red para Nolapenses, ajustes en el workflow live para que Facebook y LinkedIn salgan con el payload correcto, y herramientas de community management para priorizar leads y moderación con menos trabajo manual.
+                            En estas semanas estuvimos cerrando piezas concretas: publicación social multi-red para Nolapenses, ajustes en el workflow live para que Facebook y LinkedIn salgan con el payload correcto, herramientas de community management y una nueva línea de IA privada para ordenar conocimiento interno de empresas.
                         </p>
                     </div>
-                    <div class="grid sm:grid-cols-3 gap-3 md:max-w-xl w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
                         <div class="rounded-2xl border border-white-pure/10 bg-gray-dark/60 p-4">
                             <p class="text-sm font-bold text-white-pure mb-1">Publishing</p>
                             <p class="text-sm text-white-pure/70">Copys y publicación coordinada para LinkedIn, Instagram y Facebook.</p>
@@ -621,6 +680,10 @@
                         <div class="rounded-2xl border border-white-pure/10 bg-gray-dark/60 p-4">
                             <p class="text-sm font-bold text-white-pure mb-1">Orquestación</p>
                             <p class="text-sm text-white-pure/70">Calendario, logs y automatización en n8n con menos puntos frágiles.</p>
+                        </div>
+                        <div class="rounded-2xl border border-white-pure/10 bg-gray-dark/60 p-4">
+                            <p class="text-sm font-bold text-white-pure mb-1">IA interna</p>
+                            <p class="text-sm text-white-pure/70">Buscador y asistente privado para documentos, procesos y herramientas de trabajo.</p>
                         </div>
                     </div>
                 </div>
@@ -1323,6 +1386,17 @@
                         Los flujos operativos estándar se entregan y configuran en menos de 10 días. El retorno de inversión en tiempo libre y mensajes de soporte respondidos se percibe desde las primeras 24 horas del despliegue.
                     </div>
                 </div>
+
+                <!-- FAQ 5 -->
+                <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
+                    <button @click="active = active === 5 ? null : 5" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                        <span class="text-white-pure">¿Pueden crear una IA privada para consultar documentos internos?</span>
+                        <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 5 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="active === 5" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                        Sí. Implementamos asistentes internos y buscadores inteligentes para que el equipo consulte manuales, políticas, procesos, PDFs y documentos conectados a herramientas como Drive, SharePoint, Slack o CRMs, manteniendo permisos, control y derivación humana cuando corresponde.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1331,14 +1405,14 @@
     <section id="contact-section" class="py-20 bg-blue-electric/10 relative">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-center">Conectá con nuestra IA de WhatsApp</h2>
-                <p class="text-xl text-center mb-12 max-w-3xl mx-auto">Una asistente inteligente que te ayudará con todo lo que necesites para tu negocio</p>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-center">Probá cómo sería tu asistente de WhatsApp con IA</h2>
+                <p class="text-xl text-center mb-12 max-w-3xl mx-auto">Te hacemos unas preguntas, entendemos tu caso y te orientamos con un próximo paso concreto.</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     <!-- Formulario de contacto -->
                     <div>
                         <form @submit.prevent="submitForm" class="bg-white-pure/5 backdrop-blur-sm p-8 rounded-lg h-full">
-                            <h3 class="text-2xl font-bold mb-6">Dejá tus datos</h3>
+                            <h3 class="text-2xl font-bold mb-6">Contanos qué querés automatizar</h3>
 
                             <div class="mb-6">
                                 <label for="name" class="block text-lg mb-2">Nombre</label>
@@ -1380,7 +1454,7 @@
                                     id="message"
                                     x-model="form.message"
                                     rows="4"
-                                    placeholder="Contanos que queres automatizar o que proyecto tenes en mente"
+                                    placeholder="Ej: recibo muchas consultas por WhatsApp y quiero responder más rápido"
                                     class="w-full bg-white-pure/10 border border-white-pure/20 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-electric"
                                 ></textarea>
                             </div>
@@ -1390,13 +1464,13 @@
                                 type="submit"
                                 class="w-full bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
                                 :disabled="formSubmitted"
-                                title="Conectar con la IA de WhatsApp"
+                                title="Recibir diagnóstico por WhatsApp de WhatsApp"
                                 aria-label="Enviar información de contacto para recibir asistencia por WhatsApp"
                             >
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
                                 </svg>
-                                <span class="font-bold">Conectar con la IA</span>
+                                <span class="font-bold">Recibir diagnóstico por WhatsApp</span>
                             </button>
                         </form>
 
@@ -1414,7 +1488,7 @@
 
                     <!-- Capacidades de la IA -->
                     <div class="bg-white-pure/5 backdrop-blur-sm p-8 rounded-lg">
-                        <h3 class="text-2xl font-bold mb-6">Lo que nuestra IA puede hacer por vos</h3>
+                        <h3 class="text-2xl font-bold mb-6">Lo que podés automatizar sin perder trato humano</h3>
 
                         <ul class="space-y-4">
                             <li class="flex items-start gap-3">
@@ -1444,7 +1518,7 @@
                         </ul>
 
                         <div class="mt-6 p-4 bg-blue-electric/20 rounded-lg">
-                            <p class="text-white-pure/90 italic">"Nuestra IA de WhatsApp trabaja 24/7 para tu negocio, atendiendo consultas y realizando tareas mientras vos te enfocás en lo importante"</p>
+                            <p class="text-white-pure/90 italic">"La idea no es reemplazar el trato humano: es responder mejor, pedir los datos correctos y derivar a una persona cuando hace falta."</p>
                         </div>
                     </div>
                 </div>
@@ -1578,6 +1652,15 @@
                     <h3 class="text-2xl font-bold mb-4">Marketing Digital con IA</h3>
                     <p>Potenciamos tus campañas de marketing con inteligencia artificial para maximizar resultados y optimizar tu inversión.</p>
                 </div>
+
+                <!-- Service card 7 -->
+                <div class="service-card">
+                    <div class="icon-container">
+                        <span class="text-4xl">🔎</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">IA Privada Empresarial</h3>
+                    <p>Implementamos asistentes internos para consultar documentos, procesos y herramientas de trabajo con permisos, seguridad y mantenimiento.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1616,11 +1699,12 @@
             </div>
 
             <div class="flex flex-wrap justify-center gap-4 mb-4 text-sm">
+                <a href="/notas/" class="text-white-pure/70 hover:text-blue-electric transition-colors">Notas</a>
                 <a href="/privacidad/" class="text-white-pure/70 hover:text-blue-electric transition-colors">Privacidad</a>
                 <a href="/responsabilidad-usuario/" class="text-white-pure/70 hover:text-blue-electric transition-colors">Responsabilidad del Usuario</a>
             </div>
 
-            <p class="text-white-pure/60">© 2025 No La Penses!. Todos los derechos reservados.</p>
+            <p class="text-white-pure/60">© 2026 No La Penses!. Todos los derechos reservados.</p>
         </div>
     </footer>
     <!-- Widget de Prueba Social Flotante (Toast) -->
@@ -1662,9 +1746,11 @@
     </div>
 
     <!-- Config JS -->
-    <script src="assets/js/config.js"></script>
+    <script src="assets/js/config.js?v=20260624-recaptcha"></script>
 
     <!-- Main JS -->
-    <script src="assets/js/main.js?v=20260603"></script>
-</body>
+    <script src="assets/js/main.js?v=20260623"></script>
+<script src="/assets/js/recaptcha-guard.js?v=20260624bb" defer></script>
+    <script src="/assets/js/conversion-tracking.js?v=20260624" defer></script>
+<script src="/assets/js/lead-chat-widget.js?v=20260624b" defer></script></body>
 </html>

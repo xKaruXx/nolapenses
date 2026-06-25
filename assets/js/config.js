@@ -23,6 +23,12 @@ const CONFIG = {
         // Webhook for new lead form submission
         newLead: 'https://n8n.nolapenses.com.ar/webhook/nolapenses-chatbot-leads'
     },
+
+    // reCAPTCHA: clave publica del sitio. La clave secreta se valida solo en n8n/servidor.
+    recaptcha: {
+        siteKey: '6LewPjItAAAAAKxBzvxrNqqWD0iyuLB2faWKFAMh',
+        actionPrefix: 'nolapenses'
+    },
     
     // WhatsApp contact information
     whatsapp: {
@@ -47,3 +53,5 @@ const CONFIG = {
         'Motivado': '¡Golazo! Con tus ganas y nuestras soluciones, vamos a romperla toda.'
     }
 };
+
+window.CONFIG = CONFIG;

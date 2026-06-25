@@ -24,8 +24,8 @@ window.landingApp = function() {
         darkMode: true,
         
         // Titulos dinámicos para DTR
-        heroTitle: 'Multiplicá tus ventas y automatizá tu negocio con IA',
-        heroSubtitle: 'Creamos chatbots de WhatsApp inteligentes, agentes de voz y automatizaciones a medida conectando tus herramientas favoritas.',
+        heroTitle: 'Automatizá WhatsApp y tareas repetitivas sin perder el trato humano',
+        heroSubtitle: 'Diseñamos asistentes de WhatsApp, automatizaciones y sistemas a medida que responden consultas, califican clientes, agendan turnos y conectan con las herramientas que ya usás.',
         
         // Social proof toast notifications state
         socialNotifications: [
@@ -99,6 +99,7 @@ window.landingApp = function() {
             { id: 'web', emoji: '🌐', text: 'Quiero mi página web' },
             { id: 'sistemas', emoji: '💻', text: 'Sistemas a medida' },
             { id: 'whatsapp', emoji: '📱', text: 'Chatbot de WhatsApp' },
+            { id: 'ia-interna', emoji: '🔎', text: 'IA privada para conocimiento interno' },
             { id: 'ayuda', emoji: '🤔', text: 'No lo sé bien, ayudame' }
         ],
         
@@ -110,6 +111,7 @@ window.landingApp = function() {
                 'web': '¡Excelente elección! Vamos a crear una página web tan vibrante y positiva como tú 🎉',
                 'sistemas': 'Con esa actitud positiva, desarrollar un sistema a medida será un proceso divertido y gratificante 😄',
                 'whatsapp': '¡Fantástico! Vamos a crear un chatbot de WhatsApp tan alegre y dinámico como tú, que hará sonreír a tus clientes 😀',
+                'ia-interna': 'Buenísimo. Podemos ordenar documentos, procesos y herramientas internas para que tu equipo encuentre respuestas confiables sin perder tiempo 🔎',
                 'ayuda': 'Me encanta tu entusiasmo. Vamos a explorar juntos todas las posibilidades para encontrar la solución perfecta para ti 🙌'
             },
             'Creativo': {
@@ -118,6 +120,7 @@ window.landingApp = function() {
                 'web': 'Tu visión creativa + nuestro expertise técnico = una página web que destacará del resto ✨',
                 'sistemas': 'Los sistemas a medida más innovadores nacen de mentes creativas como la tuya. Vamos a diseñar algo revolucionario 💻',
                 'whatsapp': 'Tu creatividad será la clave para diseñar un chatbot de WhatsApp único que sorprenderá a tus clientes con respuestas originales 🎨',
+                'ia-interna': 'Tu mirada creativa nos ayuda a convertir el conocimiento disperso de tu empresa en un asistente interno útil, claro y seguro 💡',
                 'ayuda': 'Las mentes creativas como la tuya siempre encuentran soluciones innovadoras. Exploremos juntos las posibilidades 🧐'
             },
             'Energético': {
@@ -126,6 +129,7 @@ window.landingApp = function() {
                 'web': '¡A toda máquina! Vamos a crear una página web dinámica y potente que refleje tu energía 🚀',
                 'sistemas': 'Tu impulso es exactamente lo que se necesita para implementar sistemas a medida robustos y eficientes. ¡Manos a la obra! 🛠️',
                 'whatsapp': '¡Con esa energía, tu chatbot de WhatsApp estará listo para responder a tus clientes 24/7 sin perder el ritmo! ⚡📱',
+                'ia-interna': 'Con esa energía podemos montar una IA interna para que tu equipo deje de buscar información en mil lugares y avance más rápido ⚡',
                 'ayuda': 'Con esa energía, encontraremos rápidamente la solución perfecta para tus necesidades. ¡Vamos a ello! 🏃‍♂️'
             },
             'Curioso': {
@@ -134,6 +138,7 @@ window.landingApp = function() {
                 'web': 'Tu curiosidad nos ayudará a explorar nuevas tendencias y tecnologías para crear una web verdaderamente innovadora 🌌',
                 'sistemas': 'Las preguntas que haces desde tu curiosidad nos ayudarán a diseñar un sistema a medida que realmente se adapte a tus necesidades 🤓',
                 'whatsapp': 'Tu curiosidad nos llevará a explorar todas las posibilidades de WhatsApp Business API para crear un chatbot inteligente y adaptable 🤔📱',
+                'ia-interna': 'Tu curiosidad es ideal para descubrir qué conocimiento interno conviene conectar: documentos, manuales, Drive, SharePoint, Slack o CRM 🔍',
                 'ayuda': 'La curiosidad es el primer paso hacia el conocimiento. Juntos descubriremos exactamente lo que necesitas 📖'
             },
             'Motivado': {
@@ -142,6 +147,7 @@ window.landingApp = function() {
                 'web': 'Canalizaremos tu motivación en una página web que no solo se vea bien, sino que te ayude a alcanzar tus metas de negocio 💯',
                 'sistemas': 'Con esa actitud, desarrollaremos un sistema a medida que no solo cumpla con tus expectativas, sino que las supere 💪',
                 'whatsapp': 'Tu motivación nos impulsará a crear un chatbot de WhatsApp que transforme la manera en que te comunicas con tus clientes 💪📱',
+                'ia-interna': 'Con esa motivación podemos implementar una base de conocimiento inteligente para que tu equipo responda mejor y trabaje con menos fricción 📚',
                 'ayuda': 'Tu motivación es inspiradora. Juntos encontraremos la solución perfecta para impulsar tu éxito 🚀'
             }
         },
@@ -554,7 +560,11 @@ window.landingApp = function() {
                         },
                         body: JSON.stringify(userData)
                     })
-                    .then(response => response.json())
+                    .then(async response => {
+                    const data = await response.json().catch(() => ({}));
+                    if (!response.ok || data.ok === false) throw new Error(data.message || 'No pudimos validar la seguridad del formulario.');
+                    return data;
+                })
                     .then(data => {
                         debugLog('Datos guardados correctamente:', data);
                     })
@@ -605,7 +615,11 @@ window.landingApp = function() {
                         },
                         body: JSON.stringify(webhookData)
                     })
-                    .then(response => response.json())
+                    .then(async response => {
+                    const data = await response.json().catch(() => ({}));
+                    if (!response.ok || data.ok === false) throw new Error(data.message || 'No pudimos validar la seguridad del formulario.');
+                    return data;
+                })
                     .then(data => {
                         debugLog('Respuesta del webhook de servicio:', data);
                     })
@@ -648,7 +662,11 @@ window.landingApp = function() {
                         },
                         body: JSON.stringify(webhookData)
                     })
-                    .then(response => response.json())
+                    .then(async response => {
+                    const data = await response.json().catch(() => ({}));
+                    if (!response.ok || data.ok === false) throw new Error(data.message || 'No pudimos validar la seguridad del formulario.');
+                    return data;
+                })
                     .then(data => {
                         debugLog('Respuesta del webhook de pregunta:', data);
                     })
@@ -688,7 +706,11 @@ window.landingApp = function() {
                         },
                         body: JSON.stringify(webhookData)
                     })
-                    .then(response => response.json())
+                    .then(async response => {
+                    const data = await response.json().catch(() => ({}));
+                    if (!response.ok || data.ok === false) throw new Error(data.message || 'No pudimos validar la seguridad del formulario.');
+                    return data;
+                })
                     .then(data => {
                         debugLog('Respuesta del webhook:', data);
                     })
@@ -752,7 +774,11 @@ window.landingApp = function() {
                         },
                         body: JSON.stringify(webhookData)
                     })
-                    .then(response => response.json())
+                    .then(async response => {
+                    const data = await response.json().catch(() => ({}));
+                    if (!response.ok || data.ok === false) throw new Error(data.message || 'No pudimos validar la seguridad del formulario.');
+                    return data;
+                })
                     .then(data => {
                         debugLog('Respuesta del webhook:', data);
                         
@@ -1145,14 +1171,19 @@ window.landingApp = function() {
                     this.showChatbotResponse(tip);
                 }, 1500);
             } else {
-                fetch(CONFIG.webhooks.chatbot, {
+                (window.NolapensesRecaptcha ? window.NolapensesRecaptcha.attach(webhookData, 'chatbot_text') : Promise.resolve(webhookData))
+                .then((securedPayload) => fetch(CONFIG.webhooks.chatbot, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(webhookData)
+                    body: JSON.stringify(securedPayload)
+                }))
+                .then(async response => {
+                    const data = await response.json().catch(() => ({}));
+                    if (!response.ok || data.ok === false) throw new Error(data.message || 'No pudimos validar la seguridad del formulario.');
+                    return data;
                 })
-                .then(response => response.json())
                 .then(data => {
                     const aiReply = data.reply || data.text_response || '';
                     this.chatResponseText = tip + (aiReply ? ' \n\nAdemás, la IA propone: ' + aiReply : '');
@@ -1239,14 +1270,19 @@ window.landingApp = function() {
                         this.showChatbotResponse(tip);
                     }, 2000);
                 } else {
-                    fetch(CONFIG.webhooks.chatbot, {
+                    (window.NolapensesRecaptcha ? window.NolapensesRecaptcha.attach(webhookData, 'chatbot_audio') : Promise.resolve(webhookData))
+                    .then((securedPayload) => fetch(CONFIG.webhooks.chatbot, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify(webhookData)
-                    })
-                    .then(response => response.json())
+                        body: JSON.stringify(securedPayload)
+                    }))
+                    .then(async response => {
+                    const data = await response.json().catch(() => ({}));
+                    if (!response.ok || data.ok === false) throw new Error(data.message || 'No pudimos validar la seguridad del formulario.');
+                    return data;
+                })
                     .then(data => {
                         debugLog('Respuesta del webhook de audio:', data);
                         const aiReply = data.reply || data.text_response || data.transcription || '';
@@ -1285,13 +1321,21 @@ window.landingApp = function() {
 
             debugLog('Enviando Lead conversacional al webhook:', payload);
             
-            fetch(CONFIG.webhooks.newLead, {
+            if (window.NolapensesAnalytics) {
+                window.NolapensesAnalytics.track('generate_lead', {
+                    form_type: 'conversational_chatbot',
+                    scheduled: payload.scheduled || false
+                });
+            }
+
+            (window.NolapensesRecaptcha ? window.NolapensesRecaptcha.attach(payload, 'chatbot_lead') : Promise.resolve(payload))
+            .then((securedPayload) => fetch(CONFIG.webhooks.newLead, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(payload)
-            })
+                body: JSON.stringify(securedPayload)
+            }))
             .then(res => {
                 debugLog('Lead enviado con éxito a n8n');
             })
@@ -1343,6 +1387,13 @@ window.landingApp = function() {
                     message: this.form.message || 'Quiero que me contacten para conversar un proyecto con IA y automatizacion.',
                     wants_voice_response: false
                 });
+
+                if (window.NolapensesAnalytics) {
+                    window.NolapensesAnalytics.track('contact_click', {
+                        form_type: 'main_contact_form',
+                        contact_method: this.form.telefono ? 'phone_or_whatsapp' : 'form'
+                    });
+                }
                 
                 // Check if we're in a local environment
                 const isLocalEnvironment = window.location.hostname === 'localhost' || 
@@ -1357,22 +1408,39 @@ window.landingApp = function() {
                     setTimeout(() => {
                         this.formSuccess = true;
                         this.formSuccessMessage = 'Demo local: la IA recibio tus datos y preparo el seguimiento.';
+                        if (window.NolapensesAnalytics) {
+                            window.NolapensesAnalytics.track('generate_lead', {
+                                form_type: 'main_contact_form',
+                                lead_status: 'local_simulated'
+                            });
+                        }
                         debugLog('Formulario enviado correctamente (simulado)');
                     }, 1500);
                 } else {
                     // In production, make an actual API call
-                    fetch(CONFIG.webhooks.newLead, {
+                    (window.NolapensesRecaptcha ? window.NolapensesRecaptcha.attach(webhookData, 'contact_form') : Promise.resolve(webhookData))
+                    .then((securedPayload) => fetch(CONFIG.webhooks.newLead, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify(webhookData)
-                    })
-                    .then(response => response.json())
+                        body: JSON.stringify(securedPayload)
+                    }))
+                    .then(async response => {
+                    const data = await response.json().catch(() => ({}));
+                    if (!response.ok || data.ok === false) throw new Error(data.message || 'No pudimos validar la seguridad del formulario.');
+                    return data;
+                })
                     .then(data => {
                         debugLog('Respuesta del webhook de formulario:', data);
                         this.formSuccess = true;
                         this.formSuccessMessage = data.reply || 'Te vamos a responder por WhatsApp o email con el resumen y el proximo paso.';
+                        if (window.NolapensesAnalytics) {
+                            window.NolapensesAnalytics.track('generate_lead', {
+                                form_type: 'main_contact_form',
+                                lead_status: 'webhook_sent'
+                            });
+                        }
                     })
                     .catch(error => {
                         console.error('Error al enviar formulario:', error);

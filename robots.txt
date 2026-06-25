@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /assets/js/
-Disallow: /assets/css/
 Disallow: /.git/
 
 Sitemap: https://nolapenses.com.ar/sitemap.xml

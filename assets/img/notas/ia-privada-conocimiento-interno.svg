@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">IA privada para conocimiento interno</title>
+<desc id="desc">Ilustración editorial de documentos conectados a una capa de IA privada para empresas.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#07111f"/>
+    <stop offset="0.55" stop-color="#0f2744"/>
+    <stop offset="1" stop-color="#007BCA"/>
+  </linearGradient>
+  <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="12" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<circle cx="980" cy="90" r="170" fill="#42e8f4" opacity="0.13"/>
+<circle cx="200" cy="560" r="230" fill="#ffffff" opacity="0.06"/>
+<g opacity="0.95">
+  <rect x="92" y="94" width="305" height="370" rx="26" fill="#ffffff" opacity="0.10" stroke="#ffffff" stroke-opacity="0.22"/>
+  <rect x="132" y="144" width="214" height="18" rx="9" fill="#fff" opacity="0.68"/>
+  <rect x="132" y="190" width="185" height="12" rx="6" fill="#fff" opacity="0.35"/>
+  <rect x="132" y="220" width="226" height="12" rx="6" fill="#fff" opacity="0.35"/>
+  <rect x="132" y="250" width="150" height="12" rx="6" fill="#fff" opacity="0.35"/>
+  <rect x="132" y="318" width="92" height="70" rx="14" fill="#42e8f4" opacity="0.18"/>
+  <rect x="246" y="318" width="92" height="70" rx="14" fill="#fff" opacity="0.10"/>
+</g>
+<g filter="url(#glow)">
+  <circle cx="610" cy="300" r="116" fill="#08111f" stroke="#42e8f4" stroke-width="3"/>
+  <path d="M560 300c0-36 22-63 52-63s52 27 52 63-22 63-52 63-52-27-52-63z" fill="none" stroke="#fff" stroke-width="9" opacity="0.9"/>
+  <path d="M508 300h206M612 192v216" stroke="#42e8f4" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+</g>
+<g opacity="0.9">
+  <rect x="796" y="156" width="295" height="70" rx="18" fill="#fff" opacity="0.13"/>
+  <rect x="826" y="183" width="180" height="14" rx="7" fill="#fff" opacity="0.65"/>
+  <rect x="844" y="286" width="215" height="18" rx="9" fill="#42e8f4" opacity="0.75"/>
+  <rect x="804" y="338" width="302" height="95" rx="22" fill="#fff" opacity="0.11"/>
+  <rect x="834" y="372" width="206" height="12" rx="6" fill="#fff" opacity="0.5"/>
+  <rect x="834" y="402" width="154" height="12" rx="6" fill="#fff" opacity="0.32"/>
+</g>
+<path d="M397 276c76-48 132-54 190-24M720 260c38-34 70-48 116-56M720 342c48 34 80 42 125 42" fill="none" stroke="#42e8f4" stroke-width="3" stroke-dasharray="9 12" opacity="0.55"/>
+<text x="92" y="540" font-family="Inter, Arial, sans-serif" font-size="31" fill="#fff" opacity="0.74">Nolapenses · Notas</text>
+<text x="92" y="585" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" fill="#fff">IA privada para conocimiento interno</text>
+</svg>
