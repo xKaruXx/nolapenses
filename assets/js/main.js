@@ -330,7 +330,7 @@ window.landingApp = function() {
                         greetingElement.textContent = this.randomGreeting;
                         debugLog('Saludo aleatorio establecido en el DOM:', this.randomGreeting);
                     } else {
-                        console.error('No se encontró el elemento personalizedGreeting en el DOM');
+                        debugWarn('No se encontró el elemento personalizedGreeting en el DOM; se omite saludo visual en esta página');
                     }
                 } else {
                     console.error('No hay saludos disponibles para el estado de ánimo:', this.userMood);
@@ -416,7 +416,7 @@ window.landingApp = function() {
                         greetingElement.textContent = this.randomGreeting;
                         debugLog('Saludo establecido directamente en el DOM');
                     } else {
-                        console.error('No se encontró el elemento personalizedGreeting en el DOM');
+                        debugWarn('No se encontró el elemento personalizedGreeting en el DOM; se omite saludo visual en esta página');
                     }
                 } else {
                     this.randomGreeting = `¡Hola! ¿Qué te trae por aquí hoy?`;
@@ -1552,7 +1552,7 @@ window.landingApp = function() {
                 // Get the scroll indicator element
                 const scrollIndicator = document.querySelector('.absolute.bottom-8.left-1\\/2');
                 if (!scrollIndicator) {
-                    console.error('No se encontró el indicador de desplazamiento');
+                    debugWarn('No se encontró el indicador de desplazamiento; se omite animación en esta página');
                     return;
                 }
                 

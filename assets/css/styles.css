@@ -1124,6 +1124,16 @@ html.user-interacted .social-proof-toast {
   .notes-nav img {
     flex: 0 0 auto;
   }
+  .floating-nav a,
+  .floating-nav button,
+  .notes-nav a,
+  .notes-nav button {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
   body > nav.fixed .container {
     gap: .75rem;
   }

@@ -211,7 +211,7 @@
     <link rel="stylesheet" href="assets/css/tailwind.css?v=20260621">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260624">
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260626">
     <link rel="stylesheet" href="assets/css/mobile.css?v=20260621">
 
     <!-- Animate.css for animations -->
@@ -239,7 +239,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Floating Glassmorphic Navbar -->
-    <nav class="floating-nav px-6 py-4 flex items-center justify-between">
+    <nav class="floating-nav px-6 py-4 flex items-center justify-between" aria-label="Menú principal">
         <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <img src="assets/img/logo-blanco.svg" alt="No La Penses!" class="w-8 h-8">
             <span class="font-display text-lg hidden sm:inline text-white-pure font-bold">No La Penses!</span>
@@ -370,7 +370,7 @@
 
                         <!-- Voice recorder UI -->
                         <div class="flex flex-col items-center">
-                            <button
+                            <button type="button"
                                 id="recordButton"
                                 @click="requestMicrophonePermission"
                                 class="record-button flex items-center justify-center gap-2 bg-red-coral hover:bg-red-coral/90"
@@ -446,10 +446,10 @@
                                         <p class="text-white-pure/90 text-sm leading-relaxed whitespace-pre-line" x-text="chatResponseText"></p>
                                     </div>
                                     <p class="text-lg leading-relaxed">Para poder armarte una propuesta a medida y pasarte un presupuesto, contame: <strong class="text-blue-electric">¿cómo te llamás?</strong></p>
-                                    
+
                                     <div class="flex flex-col sm:flex-row gap-3">
                                         <input type="text" x-model="chatName" placeholder="Tu nombre y apellido" class="flex-1 bg-white-pure/5 border border-white-pure/15 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-electric">
-                                        <button @click="if(chatName.trim()) { advanceChatStep('province'); } else { alert('Por favor, ingresá tu nombre.'); }" class="bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-3 px-6 rounded-xl transition-colors">Siguiente</button>
+                                        <button type="button" @click="if(chatName.trim()) { advanceChatStep('province'); } else { alert('Por favor, ingresá tu nombre.'); }" class="bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-3 px-6 rounded-xl transition-colors">Siguiente</button>
                                     </div>
                                 </div>
                             </div>
@@ -463,9 +463,9 @@
                                 </div>
                                 <div class="flex-1 space-y-4">
                                     <p class="text-lg leading-relaxed">¡Un gusto, <span class="font-bold text-blue-300" x-text="chatName"></span>! ¿De qué provincia de Argentina nos escribís?</p>
-                                    
+
                                     <div class="flex flex-col sm:flex-row gap-3">
-                                        <select x-model="chatProvince" class="flex-1 bg-gray-dark border border-white-pure/15 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-electric">
+                                        <select x-model="chatProvince" aria-label="Provincia" class="flex-1 bg-gray-dark border border-white-pure/15 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-electric">
                                             <option value="">Seleccioná tu provincia...</option>
                                             <option value="San Luis">San Luis</option>
                                             <option value="Buenos Aires">Buenos Aires</option>
@@ -492,9 +492,9 @@
                                             <option value="Catamarca">Catamarca</option>
                                             <option value="La Rioja">La Rioja</option>
                                         </select>
-                                        <button @click="if(chatProvince) { advanceChatStep('phone'); } else { alert('Por favor, seleccioná tu provincia.'); }" class="bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-3 px-6 rounded-xl transition-colors">Siguiente</button>
+                                        <button type="button" @click="if(chatProvince) { advanceChatStep('phone'); } else { alert('Por favor, seleccioná tu provincia.'); }" class="bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-3 px-6 rounded-xl transition-colors">Siguiente</button>
                                     </div>
-                                    <button @click="advanceChatStep('name')" class="text-xs text-white-pure/40 hover:text-white-pure/80 transition-colors">← Volver al paso anterior</button>
+                                    <button type="button" @click="advanceChatStep('name')" class="text-xs text-white-pure/40 hover:text-white-pure/80 transition-colors">← Volver al paso anterior</button>
                                 </div>
                             </div>
                         </div>
@@ -507,13 +507,13 @@
                                 </div>
                                 <div class="flex-1 space-y-4">
                                     <p class="text-lg leading-relaxed">Buenísimo. Por último, ¿cuál es tu número de <strong class="text-blue-electric">teléfono / WhatsApp</strong> para que te enviemos la propuesta?</p>
-                                    
+
                                     <div class="flex flex-col sm:flex-row gap-3">
                                         <input type="tel" x-model="chatPhone" placeholder="Ej: 2664123456 (con código de área sin 0 ni 15)" class="flex-1 bg-white-pure/5 border border-white-pure/15 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-electric">
-                                        <button @click="if(chatPhone.trim()) { advanceChatStep('calendar'); submitChatbotLeadData(); } else { alert('Por favor, ingresá tu número de teléfono.'); }" class="bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-3 px-6 rounded-xl transition-colors">Enviar y Continuar</button>
+                                        <button type="button" @click="if(chatPhone.trim()) { advanceChatStep('calendar'); submitChatbotLeadData(); } else { alert('Por favor, ingresá tu número de teléfono.'); }" class="bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-3 px-6 rounded-xl transition-colors">Enviar y Continuar</button>
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <button @click="advanceChatStep('province')" class="text-xs text-white-pure/40 hover:text-white-pure/80 transition-colors">← Volver al paso anterior</button>
+                                        <button type="button" @click="advanceChatStep('province')" class="text-xs text-white-pure/40 hover:text-white-pure/80 transition-colors">← Volver al paso anterior</button>
                                         <span class="text-xs text-emerald-400 flex items-center gap-1 font-semibold">
                                             <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.9L10 9.554l7.834-4.654A2.001 2.001 0 0016 3H4a2.001 2.001 0 00-1.834 1.9zM18 7.21l-8 4.756-8-4.757V15a2 2 0 002 2h12a2 2 0 002-2V7.21z" clip-rule="evenodd"></path></svg>
                                             Tus datos están 100% seguros
@@ -531,7 +531,7 @@
                                 </div>
                                 <div class="flex-1 space-y-4">
                                     <p class="text-lg leading-relaxed">¡Excelente, datos guardados! Para coordinar en detalle y ver una demostración en vivo de la tecnología, te sugiero agendar una llamada virtual rápida (15 min) en nuestro calendario:</p>
-                                    
+
                                     <!-- Embedded Interactive Calendar Grid -->
                                     <div class="bg-white-pure/5 border border-white-pure/10 rounded-2xl p-4 md:p-6 space-y-4">
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -540,8 +540,9 @@
                                                 <label class="block text-xs font-semibold text-white-pure/50 uppercase tracking-wider mb-2">Seleccioná un Día:</label>
                                                 <div class="space-y-2 max-h-48 overflow-y-auto scrollbar-thin scrollbar-thumb-white-pure/10 pr-1">
                                                     <template x-for="date in availableDates" :key="date.value">
-                                                        <button 
+                                                        <button type="button"
                                                             @click="chatDate = date.value"
+                                                            :aria-pressed="chatDate === date.value"
                                                             class="w-full text-left px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all duration-200"
                                                             :class="chatDate === date.value ? 'bg-blue-electric border-blue-electric text-white' : 'bg-white-pure/5 border-white-pure/10 text-white-pure/80 hover:bg-white-pure/10'"
                                                             x-text="date.label"
@@ -555,8 +556,9 @@
                                                 <label class="block text-xs font-semibold text-white-pure/50 uppercase tracking-wider mb-2">Seleccioná un Horario (Zona Horaria Arg):</label>
                                                 <div class="grid grid-cols-3 gap-2">
                                                     <template x-for="time in availableTimes" :key="time">
-                                                        <button 
+                                                        <button type="button"
                                                             @click="chatTime = time"
+                                                            :aria-pressed="chatTime === time"
                                                             class="px-2 py-2.5 rounded-xl border text-sm font-bold text-center transition-all duration-200"
                                                             :class="chatTime === time ? 'bg-red-coral border-red-coral text-white' : 'bg-white-pure/5 border-white-pure/10 text-white-pure/80 hover:bg-white-pure/10'"
                                                             x-text="time"
@@ -566,7 +568,7 @@
                                             </div>
                                         </div>
 
-                                        <button 
+                                        <button type="button"
                                             @click="if(chatDate && chatTime) { advanceChatStep('finished'); submitChatbotLeadData(); } else { alert('Por favor, selecciona un día y horario.'); }"
                                             class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
                                         >
@@ -576,8 +578,8 @@
                                     </div>
 
                                     <div class="flex justify-between items-center pt-2">
-                                        <button @click="advanceChatStep('phone')" class="text-xs text-white-pure/40 hover:text-white-pure/80 transition-colors">← Volver al teléfono</button>
-                                        <button @click="advanceChatStep('finished'); submitChatbotLeadData();" class="text-xs text-blue-electric hover:underline font-bold transition-all">Saltar este paso y finalizar</button>
+                                        <button type="button" @click="advanceChatStep('phone')" class="text-xs text-white-pure/40 hover:text-white-pure/80 transition-colors">← Volver al teléfono</button>
+                                        <button type="button" @click="advanceChatStep('finished'); submitChatbotLeadData();" class="text-xs text-blue-electric hover:underline font-bold transition-all">Saltar este paso y finalizar</button>
                                     </div>
                                 </div>
                             </div>
@@ -598,7 +600,7 @@
                             <p class="text-sm text-white-pure/60 max-w-sm mx-auto">
                                 Te enviaremos un mensaje de confirmación por WhatsApp en unos minutos con el link de la reunión. ¡No la penses más!
                             </p>
-                            
+
                             <!-- WhatsApp CTA direct button -->
                             <div class="pt-4">
                                 <a :href="'https://wa.me/5492665267159?text=Hola%20Carlos,%20soy%20' + encodeURIComponent(chatName) + '.%20Acabo%20de%20completar%20la%20consulta%20en%20No%20La%20Penses%20sobre:%20' + encodeURIComponent(chatInquiry)" target="_blank" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-8 rounded-xl transition-colors shadow-lg shadow-emerald-500/20">
@@ -727,7 +729,7 @@
             </div>
 
             <!-- Automatizaciones por Sector / Industria -->
-            <div x-data="{ 
+            <div x-data="{
                 industryTab: 'salud',
                 inmoChat: [
                     { sender: 'user', text: 'Hola! Vi el dpto de 2 ambientes en alquiler' },
@@ -798,7 +800,7 @@
                         }, 5000);
                     }
                 }
-            }" 
+            }"
             x-init="$watch('industryTab', value => playChatLoop()); playChatLoop();"
             class="mt-24 border-t border-white-pure/5 pt-16">
                 <h3 class="text-2xl md:text-4xl font-extrabold mb-4 text-center tracking-tight">Especialidades por Sector</h3>
@@ -857,7 +859,7 @@
 
                 <!-- Contenido de las Pestañas (Rejilla combinada con Simulador) -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-                    
+
                     <!-- Columna de Contenidos (Ancho 2/3) -->
                     <div class="lg:col-span-2 space-y-8">
                         <!-- Salud & Odontología -->
@@ -1006,15 +1008,15 @@
                         <div class="w-full max-w-[290px] relative">
                             <!-- Brillo trasero en vidrio -->
                             <div class="absolute -inset-1 bg-gradient-to-tr from-blue-electric to-emerald-500 rounded-[2.3rem] blur-lg opacity-30 animate-pulse"></div>
-                            
+
                             <!-- Smartphone Wrapper -->
                             <div class="relative bg-[#0b141a] border-[6px] border-gray-900 rounded-[2.2rem] shadow-2xl overflow-hidden h-[410px] flex flex-col z-10 w-full">
-                                
+
                                 <!-- Top notch/camera -->
                                 <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-4 bg-gray-900 rounded-b-xl flex items-center justify-center z-30">
                                     <div class="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
                                 </div>
-                                
+
                                 <!-- WhatsApp Header -->
                                 <div class="bg-[#128c7e] p-2.5 pt-5 flex items-center gap-2 border-b border-[#075e54] relative z-20 shadow-md">
                                     <div class="w-7 h-7 rounded-full bg-emerald-700/50 flex items-center justify-center font-bold text-xs text-white">
@@ -1031,8 +1033,8 @@
                                     <!-- Message bubbles -->
                                     <template x-for="(msg, index) in visibleMessages" :key="index">
                                         <div class="flex w-full" :class="msg.sender === 'user' ? 'justify-end' : 'justify-start'">
-                                            <div 
-                                                class="max-w-[85%] rounded-lg p-2 text-[10px] leading-relaxed shadow-sm relative" 
+                                            <div
+                                                class="max-w-[85%] rounded-lg p-2 text-[10px] leading-relaxed shadow-sm relative"
                                                 :class="msg.sender === 'user' ? 'bg-[#005c4b] text-white rounded-tr-none' : 'bg-[#202c33] text-white rounded-tl-none'"
                                             >
                                                 <span x-text="msg.text"></span>
@@ -1049,7 +1051,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- WhatsApp Input bar (visual only) -->
                                 <div class="bg-[#1f2c34] p-1.5 flex items-center gap-2 border-t border-[#2a3942]">
                                     <div class="flex-1 bg-[#2a3942] rounded-full px-2.5 py-1 flex items-center text-[9px] text-gray-400">
@@ -1138,7 +1140,7 @@
                     <div class="glass-card p-8 rounded-3xl border border-white-pure/10 relative overflow-hidden min-h-[280px] flex flex-col justify-between">
                         <!-- Brillo dinámico decorativo según el nodo activo -->
                         <div class="absolute -right-16 -top-16 w-32 h-32 rounded-full blur-3xl opacity-20 transition-all duration-500"
-                            :class="{ 
+                            :class="{
                                 'bg-blue-500': activeNode === 'clientes',
                                 'bg-emerald-500': activeNode === 'orquestador',
                                 'bg-purple-500': activeNode === 'ia',
@@ -1149,7 +1151,7 @@
                         <div>
                             <!-- Badge de Estado -->
                             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-4"
-                                :class="{ 
+                                :class="{
                                     'bg-blue-500/10 text-blue-400 border border-blue-500/20': activeNode === 'clientes',
                                     'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20': activeNode === 'orquestador',
                                     'bg-purple-500/10 text-purple-400 border border-purple-500/20': activeNode === 'ia',
@@ -1356,10 +1358,10 @@
                 Ingresá tus números estimativos y calculá de forma interactiva cuánto tiempo y dinero podrías recuperar automatizando tareas operativas.
             </p>
 
-            <div x-data="{ 
-                horas: 10, 
-                costoHora: 20, 
-                get costoManual() { return this.horas * 52 * this.costoHora }, 
+            <div x-data="{
+                horas: 10,
+                costoHora: 20,
+                get costoManual() { return this.horas * 52 * this.costoHora },
                 get ahorroNeto() { return Math.max(0, this.costoManual - 1500) },
                 get bar1Height() { return Math.min(150, Math.max(10, (this.costoManual / 83200) * 150)) },
                 get bar2Height() { return Math.min(150, Math.max(0, (this.ahorroNeto / 83200) * 150)) }
@@ -1373,10 +1375,10 @@
                     <div class="lg:col-span-7 flex flex-col gap-6">
                         <!-- Slider Horas de Trabajo Manual -->
                         <div class="flex flex-col justify-center">
-                            <label class="block text-lg font-medium text-white-pure/80 mb-3">
+                            <label for="horas-repetitivas" class="block text-lg font-medium text-white-pure/80 mb-3">
                                 ¿Cuántas horas semanales perdés en tareas repetitivas?
                             </label>
-                            <input type="range" min="2" max="40" x-model="horas" class="w-full h-2 bg-white-pure/10 rounded-lg appearance-none cursor-pointer accent-blue-electric">
+                            <input id="horas-repetitivas" type="range" min="2" max="40" x-model="horas" aria-label="Horas semanales en tareas repetitivas" class="w-full h-2 bg-white-pure/10 rounded-lg appearance-none cursor-pointer accent-blue-electric">
                             <div class="flex justify-between items-center mt-3">
                                 <span class="text-xs text-white-pure/50">2 horas</span>
                                 <span class="text-2xl font-extrabold text-blue-electric" x-text="horas + ' horas'"></span>
@@ -1387,12 +1389,12 @@
 
                         <!-- Input Costo por Hora -->
                         <div class="flex flex-col justify-center">
-                            <label class="block text-lg font-medium text-white-pure/80 mb-3">
+                            <label for="costo-hora" class="block text-lg font-medium text-white-pure/80 mb-3">
                                 Costo estimado de tu hora de trabajo (o de tu empleado)
                             </label>
                             <div class="relative">
                                 <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white-pure/60 text-xl">$</span>
-                                <input type="number" x-model="costoHora" class="w-full bg-white-pure/5 border border-white-pure/15 rounded-xl py-3 pl-8 pr-12 text-white-pure text-xl font-bold focus:outline-none focus:border-blue-electric/50 transition-colors glow-input">
+                                <input id="costo-hora" type="number" x-model="costoHora" aria-label="Costo por hora en dólares" class="w-full bg-white-pure/5 border border-white-pure/15 rounded-xl py-3 pl-8 pr-12 text-white-pure text-xl font-bold focus:outline-none focus:border-blue-electric/50 transition-colors glow-input">
                                 <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white-pure/60 font-semibold text-sm">USD</span>
                             </div>
                             <p class="text-xs text-white-pure/40 mt-2">Valor promedio por hora de la persona a cargo de la tarea.</p>
@@ -1410,37 +1412,37 @@
                             <line x1="40" y1="180" x2="300" y2="180" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.2" />
 
                             <!-- Barra 1: Costo Sin IA (Rojo/Naranja) -->
-                            <rect x="80" 
-                                  :y="180 - bar1Height" 
-                                  width="40" 
-                                  :height="bar1Height" 
-                                  rx="6" 
-                                  fill="#F94C66" 
-                                  class="transition-all duration-300 ease-out" 
+                            <rect x="80"
+                                  :y="180 - bar1Height"
+                                  width="40"
+                                  :height="bar1Height"
+                                  rx="6"
+                                  fill="#F94C66"
+                                  class="transition-all duration-300 ease-out"
                                   opacity="0.9" />
-                            
+
                             <!-- Barra 2: Ahorro Neto con IA (Azul Eléctrico) -->
-                            <rect x="200" 
-                                  :y="180 - bar2Height" 
-                                  width="40" 
-                                  :height="bar2Height" 
-                                  rx="6" 
-                                  fill="#007BCA" 
-                                  class="transition-all duration-300 ease-out" 
+                            <rect x="200"
+                                  :y="180 - bar2Height"
+                                  width="40"
+                                  :height="bar2Height"
+                                  rx="6"
+                                  fill="#007BCA"
+                                  class="transition-all duration-300 ease-out"
                                   opacity="0.95" />
 
                             <!-- Texto de Valores sobre la Barra 1 -->
-                            <text x="100" 
-                                  :y="170 - bar1Height" 
-                                  text-anchor="middle" 
-                                  class="text-xs font-bold fill-current" 
+                            <text x="100"
+                                  :y="170 - bar1Height"
+                                  text-anchor="middle"
+                                  class="text-xs font-bold fill-current"
                                   x-text="'$' + Math.round(costoManual)"></text>
 
                             <!-- Texto de Valores sobre la Barra 2 -->
-                            <text x="220" 
-                                  :y="170 - bar2Height" 
-                                  text-anchor="middle" 
-                                  class="text-xs font-bold fill-current" 
+                            <text x="220"
+                                  :y="170 - bar2Height"
+                                  text-anchor="middle"
+                                  class="text-xs font-bold fill-current"
                                   x-text="ahorroNeto > 0 ? '$' + Math.round(ahorroNeto) : '$0'"></text>
 
                             <!-- Leyendas del Eje X -->
@@ -1450,7 +1452,7 @@
                         <p class="text-[10px] text-white-pure/40 text-center mt-3">*Referencia orientativa: resta una implementación inicial estimada para mostrar ahorro neto.</p>
                     </div>
                 </div>
-                
+
                 <!-- Resultados del Cálculo -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
                     <div class="bg-white-pure/5 p-6 rounded-2xl border border-white-pure/5 flex flex-col justify-center items-center text-center">
@@ -1476,7 +1478,7 @@
         <div class="container mx-auto px-4 max-w-4xl">
             <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Quién está detrás</h2>
             <div class="section-divider mb-12"></div>
-            
+
             <div class="glass-card rounded-3xl border border-white-pure/10 p-8 md:p-12 shadow-2xl relative overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                     <!-- Photo Column -->
@@ -1487,7 +1489,7 @@
                         <h3 class="text-2xl font-bold text-white-pure">Carlos Salini</h3>
                         <p class="text-sm text-blue-electric font-semibold mt-1">Engineering Manager + AI Builder</p>
                     </div>
-                    
+
                     <!-- Bio Column -->
                     <div class="md:col-span-2 space-y-4 text-white-pure/80 text-base leading-relaxed">
                         <p>
@@ -1496,7 +1498,7 @@
                         <p>
                             En el ámbito de la consultoría IA, no solo planifico estrategias; <strong class="text-white-pure">desarrollo y programo soluciones que operan en producción real</strong>. He diseñado integraciones complejas con n8n, asistentes entrenados con RAG y flujos transaccionales automáticos con MercadoPago.
                         </p>
-                        
+
                         <!-- Badges -->
                         <div class="flex flex-wrap gap-2 pt-3">
                             <span class="text-xs px-3 py-1 bg-white-pure/5 rounded-full border border-white-pure/10">+8 Años Exp.</span>
@@ -1504,11 +1506,11 @@
                             <span class="text-xs px-3 py-1 bg-white-pure/5 rounded-full border border-white-pure/10">n8n & AI Agent Expert</span>
                             <span class="text-xs px-3 py-1 bg-white-pure/5 rounded-full border border-white-pure/10">Microsoft Forum Delegate</span>
                         </div>
-                        
+
                         <!-- CTA Link to Portfolio -->
                         <div class="pt-4 flex items-center gap-3">
                             <a href="portafolio.html" class="inline-flex items-center gap-2 text-blue-electric hover:text-blue-electric/80 font-bold transition-colors">
-                                Conocé mi portafolio completo 
+                                Conocé mi portafolio completo
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                             </a>
                         </div>
@@ -1523,7 +1525,7 @@
         <div class="container mx-auto px-4 max-w-3xl">
             <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Preguntas Frecuentes</h2>
             <div class="section-divider mb-12"></div>
-            
+
             <div x-data="{ active: null }" class="space-y-4">
                 <!-- FAQ 1 -->
                 <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
@@ -1911,7 +1913,7 @@
         </div>
     </footer>
     <!-- Widget de Prueba Social Flotante (Toast) -->
-    <div 
+    <div
         x-show="showNotification"
         x-transition:enter="transition ease-out duration-500"
         x-transition:enter-start="opacity-0 translate-y-8 scale-95"
@@ -1928,7 +1930,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
         </div>
-        
+
         <!-- Contenido -->
         <div class="flex-1 min-w-0">
             <p class="text-sm font-semibold text-white-pure/90 leading-snug" x-text="socialNotifications[currentNotificationIndex].text"></p>
@@ -1939,7 +1941,7 @@
                 <span x-text="socialNotifications[currentNotificationIndex].time"></span>
             </p>
         </div>
-        
+
         <!-- Botón Cerrar -->
         <button type="button" aria-label="Cerrar notificación" @click="showNotification = false; window.dispatchEvent(new CustomEvent('nolapenses_social_proof_closed'))" class="text-white-pure/30 hover:text-white-pure/70 transition-colors flex-shrink-0">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
