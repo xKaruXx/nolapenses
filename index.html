@@ -766,8 +766,16 @@
                     { sender: 'bot', text: '¡Hola! 👋 Con gusto. Para enviarte la propuesta adecuada, ¿cuál es el principal cuello de botella que tenés hoy?' },
                     { sender: 'user', text: 'El agendamiento de turnos y las preguntas repetitivas' },
                     { sender: 'bot', text: 'Entendido ⚙️. Es nuestra especialidad. Dejame tu email y teléfono, y te agendo una llamada breve de 15 min con Carlos.' },
-                    { sender: 'user', text: 'charly@nolapenses.com.ar, +5492664000' },
+                    { sender: 'user', text: 'charly@nolapenses.com.ar, +549****4000' },
                     { sender: 'bot', text: '¡Listo! Registrado en nuestro CRM. Carlos te contactará por WhatsApp para coordinar el horario. ¡Gracias! 🚀' }
+                ],
+                saludChat: [
+                    { sender: 'user', text: 'Hola, necesito turno para una limpieza dental' },
+                    { sender: 'bot', text: '¡Hola! 👋 Te ayudo. ¿Es primera consulta o ya sos paciente del consultorio?' },
+                    { sender: 'user', text: 'Ya soy paciente. Me queda cómodo por la tarde' },
+                    { sender: 'bot', text: 'Perfecto. Tengo disponible martes 16:30 o jueves 18:00. ¿Cuál te sirve mejor?' },
+                    { sender: 'user', text: 'Jueves 18' },
+                    { sender: 'bot', text: 'Listo, te dejo preagendado el jueves a las 18:00. Te vamos a enviar un recordatorio por WhatsApp el día anterior. Si necesitás cancelar o reprogramar, respondé este mismo chat. 🦷' }
                 ],
                 visibleMessages: [],
                 messageIndex: 0,
@@ -783,6 +791,9 @@
                 },
                 typeNextMessage() {
                     let chat = this.industryTab === 'salud' ? this.saludChat : (this.industryTab === 'inmo' ? this.inmoChat : (this.industryTab === 'ecom' ? this.ecomChat : this.servChat));
+                    if (!Array.isArray(chat) || chat.length === 0) {
+                        chat = this.servChat;
+                    }
                     if (this.messageIndex < chat.length) {
                         this.typing = true;
                         this.chatTimeout = setTimeout(() => {
