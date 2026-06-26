@@ -56,8 +56,11 @@ for (const file of htmlFiles) {
     if (local && !exists(local)) errors.push(`${file}: missing local asset ${ref} -> ${local}`);
   }
   if (html.includes('lead-chat-widget.js')) {
-    for (const dep of ['config.js', 'conversion-tracking.js', 'recaptcha-guard.js']) {
+    for (const dep of ['config.js', 'conversion-tracking.js']) {
       if (!html.includes(dep)) errors.push(`${file}: lead widget requires ${dep}`);
+    }
+    if (!html.includes('human-check.js') && !html.includes('recaptcha-guard.js')) {
+      errors.push(`${file}: lead widget requires human-check.js or recaptcha-guard.js`);
     }
   }
 }
