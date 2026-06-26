@@ -1,7 +1,6 @@
 /* Main Styles for No La Pienses Landing Page */
 
-/* Custom Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Fonts are loaded from index.html with preconnect to avoid duplicate render-blocking imports. */
 
 /* Base Styles */
 body {
@@ -1036,8 +1035,18 @@ svg rect, svg text {
   .lead-chat-messages { height: min(25rem, calc(100vh - 13rem)); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .lead-chat-button {
-    transition: none;
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+  .lead-chat-button,
+  .animate__animated,
+  .animate-pulse,
+  .animate-bounce,
+  .emoji-background {
+    animation: none !important;
+    transition: none !important;
   }
   .lead-chat-button:hover,
   .lead-chat-button:focus-visible {

@@ -26,6 +26,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>WhatsApp IA, turnos y automatizaciones para clínicas | No La Penses</title>
     <meta name="description" content="Automatizá WhatsApp, consultas y turnos con IA. Ideal para clínicas, consultorios odontológicos, médicos y negocios que pierden clientes por responder tarde.">
+    <link rel="canonical" href="https://nolapenses.com.ar/">
     <meta name="format-detection" content="telephone=no">
 
     <!-- Open Graph / Facebook -->
@@ -34,6 +35,10 @@
     <meta property="og:title" content="WhatsApp IA, turnos y automatizaciones para clínicas | No La Penses">
     <meta property="og:description" content="Automatizá WhatsApp, consultas y turnos con IA. Ideal para clínicas, consultorios odontológicos, médicos y negocios que pierden clientes por responder tarde.">
     <meta property="og:image" content="https://nolapenses.com.ar/FAVICON.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WhatsApp IA, turnos y automatizaciones para clínicas | No La Penses">
+    <meta name="twitter:description" content="Automatizá WhatsApp, consultas y turnos con IA para no perder mensajes, pacientes ni oportunidades por responder tarde.">
+    <meta name="twitter:image" content="https://nolapenses.com.ar/FAVICON.png">
 
     <!-- Favicon -->
     <link rel="icon" href="FAVICON.png" type="image/png">
@@ -108,7 +113,9 @@
             "itemOffered": {
               "@type": "Service",
               "name": "IA privada para conocimiento interno",
-              "description": "Implementación y mantenimiento de buscadores y asistentes internos conectados a documentos, Drive, SharePoint, Slack, CRMs y herramientas de trabajo."
+              "description": "Implementación y mantenimiento de buscadores y asistentes internos conectados a documentos, Drive, SharePoint, Slack, CRMs y herramientas de trabajo.",
+              "areaServed": "AR",
+              "serviceType": "Private AI knowledge assistant"
             }
           }
         ]
@@ -246,7 +253,7 @@
             <a href="#faq-section" class="hover:text-blue-electric transition-colors hidden md:inline">FAQ</a>
             <a href="portafolio.html" class="hover:text-blue-electric transition-colors">Carlos Salini</a>
             <!-- Botón del Tema (Claro/Oscuro) -->
-            <button @click="toggleTheme()" class="text-white-pure hover:text-blue-electric transition-colors p-1 focus:outline-none rounded-full hover:bg-white-pure/5 flex items-center justify-center" aria-label="Cambiar tema">
+            <button type="button" @click="toggleTheme()" class="text-white-pure hover:text-blue-electric transition-colors p-1 focus:outline-none rounded-full hover:bg-white-pure/5 flex items-center justify-center" aria-label="Cambiar tema">
                 <!-- Sol (se muestra en modo oscuro para ir al claro) -->
                 <svg x-show="darkMode" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
                 <!-- Luna (se muestra en modo claro para ir al oscuro) -->
@@ -302,48 +309,24 @@
 
                 <!-- Service options section - shown automatically -->
                 <div id="serviceSelectionSection" class="animate__animated animate__fadeIn animate__delay-2s">
-                    <p id="serviceSelectionTitle" class="text-xl mb-4 opacity-90">Seleccioná qué te gustaría implementar:</p>
+                    <p id="serviceSelectionTitle" class="text-xl mb-4 opacity-90">Elegí el cuello de botella que querés resolver primero:</p>
 
-                    <div id="serviceButtonsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-                        <button id="serviceButton-automatizaciones" @click="selectServiceAndScroll('automatizaciones')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
-                            <span class="text-2xl">🤖</span>
-                            <span class="text-lg font-medium">Automatizaciones</span>
-                        </button>
-                        <button id="serviceButton-ia-atencion" @click="selectServiceAndScroll('ia-atencion')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
-                            <span class="text-2xl">💬</span>
-                            <span class="text-lg font-medium">Atención al cliente con IA</span>
-                        </button>
-                        <button id="serviceButton-web" @click="selectServiceAndScroll('web')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
-                            <span class="text-2xl">🌐</span>
-                            <span class="text-lg font-medium">Quiero mi página web</span>
-                        </button>
-                        <button id="serviceButton-sistemas" @click="selectServiceAndScroll('sistemas')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
-                            <span class="text-2xl">💻</span>
-                            <span class="text-lg font-medium">Sistemas a medida</span>
-                        </button>
-                        <button id="serviceButton-whatsapp" @click="selectServiceAndScroll('whatsapp')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
-                            <span class="text-2xl">📱</span>
-                            <span class="text-lg font-medium">Chatbot de WhatsApp</span>
-                        </button>
-                        <button id="serviceButton-salud" @click="selectServiceAndScroll('salud')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
+                    <div id="serviceButtonsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
+                        <button type="button" id="serviceButton-salud" @click="selectServiceAndScroll('salud')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">🦷</span>
-                            <span class="text-lg font-medium">Turnos para clínicas y consultorios</span>
+                            <span class="text-lg font-medium">Automatizar turnos</span>
                         </button>
-                        <button id="serviceButton-chatbot-ia" @click="selectServiceAndScroll('chatbot-ia')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
-                            <span class="text-2xl">🤖</span>
-                            <span class="text-lg font-medium">Chatbot con IA</span>
+                        <button type="button" id="serviceButton-whatsapp" @click="selectServiceAndScroll('whatsapp')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
+                            <span class="text-2xl">💬</span>
+                            <span class="text-lg font-medium">Responder WhatsApp más rápido</span>
                         </button>
-                        <button id="serviceButton-ia-interna" @click="selectServiceAndScroll('ia-interna')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
-                            <span class="text-2xl">🔎</span>
-                            <span class="text-lg font-medium">IA privada para tu empresa</span>
+                        <button type="button" id="serviceButton-recordatorios" @click="selectServiceAndScroll('automatizaciones')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
+                            <span class="text-2xl">🔔</span>
+                            <span class="text-lg font-medium">Reducir ausencias con recordatorios</span>
                         </button>
-                        <button id="serviceButton-redes" @click="selectServiceAndScroll('redes')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
-                            <span class="text-2xl">📸</span>
-                            <span class="text-lg font-medium">Automatización de redes sociales</span>
-                        </button>
-                        <button id="serviceButton-ayuda" @click="selectServiceAndScroll('ayuda')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
+                        <button type="button" id="serviceButton-ayuda" @click="selectServiceAndScroll('ayuda')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">🤔</span>
-                            <span class="text-lg font-medium">No lo sé bien, ayudame</span>
+                            <span class="text-lg font-medium">No sé por dónde empezar</span>
                         </button>
                     </div>
                 </div>
@@ -825,30 +808,46 @@
                 </p>
 
                 <!-- Selector de Pestañas -->
-                <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <div class="flex flex-wrap justify-center gap-3 mb-12" role="tablist" aria-label="Especialidades por sector">
                     <button
+                        type="button"
+                        role="tab"
+                        aria-label="Salud y odontología"
+                        :aria-selected="industryTab === 'salud'"
                         @click="industryTab = 'salud'"
                         :class="industryTab === 'salud' ? 'bg-blue-electric text-white-pure shadow-lg shadow-blue-electric/25' : 'bg-white-pure/5 hover:bg-white-pure/10 text-white-pure/70 hover:text-white-pure'"
                         class="px-6 py-3 rounded-full font-bold transition-all flex items-center gap-2 text-sm md:text-base border border-white-pure/10"
                     >
                         <span>🩺</span> Salud & Odontología
                     </button>
-                    <button 
-                        @click="industryTab = 'inmo'" 
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-label="Inmobiliarias"
+                        :aria-selected="industryTab === 'inmo'"
+                        @click="industryTab = 'inmo'"
                         :class="industryTab === 'inmo' ? 'bg-blue-electric text-white-pure shadow-lg shadow-blue-electric/25' : 'bg-white-pure/5 hover:bg-white-pure/10 text-white-pure/70 hover:text-white-pure'"
                         class="px-6 py-3 rounded-full font-bold transition-all flex items-center gap-2 text-sm md:text-base border border-white-pure/10"
                     >
                         <span>🏢</span> Inmobiliarias
                     </button>
-                    <button 
-                        @click="industryTab = 'ecom'" 
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-label="E-commerce"
+                        :aria-selected="industryTab === 'ecom'"
+                        @click="industryTab = 'ecom'"
                         :class="industryTab === 'ecom' ? 'bg-blue-electric text-white-pure shadow-lg shadow-blue-electric/25' : 'bg-white-pure/5 hover:bg-white-pure/10 text-white-pure/70 hover:text-white-pure'"
                         class="px-6 py-3 rounded-full font-bold transition-all flex items-center gap-2 text-sm md:text-base border border-white-pure/10"
                     >
                         <span>🛒</span> E-commerce
                     </button>
-                    <button 
-                        @click="industryTab = 'serv'" 
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-label="Servicios y consultoría"
+                        :aria-selected="industryTab === 'serv'"
+                        @click="industryTab = 'serv'"
                         :class="industryTab === 'serv' ? 'bg-blue-electric text-white-pure shadow-lg shadow-blue-electric/25' : 'bg-white-pure/5 hover:bg-white-pure/10 text-white-pure/70 hover:text-white-pure'"
                         class="px-6 py-3 rounded-full font-bold transition-all flex items-center gap-2 text-sm md:text-base border border-white-pure/10"
                     >
@@ -1528,76 +1527,76 @@
             <div x-data="{ active: null }" class="space-y-4">
                 <!-- FAQ 1 -->
                 <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
-                    <button @click="active = active === 1 ? null : 1" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                    <button type="button" @click="active = active === 1 ? null : 1" :aria-expanded="active === 1" aria-controls="faq-panel-1" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
                         <span class="text-white-pure">¿La IA va a responder cualquier cosa a mis clientes?</span>
                         <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <div x-show="active === 1" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                    <div id="faq-panel-1" x-show="active === 1" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
                         No. Diseñamos directrices estrictas y sistemas de contención (guardrails) basados en prompts y RAG para asegurar que el agente de IA solo responda con información oficial y aprobada de tu negocio. Si detecta un caso complejo, puede derivarlo automáticamente a un operador humano.
                     </div>
                 </div>
 
                 <!-- FAQ Salud -->
                 <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
-                    <button @click="active = active === 6 ? null : 6" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                    <button type="button" @click="active = active === 6 ? null : 6" :aria-expanded="active === 6" aria-controls="faq-panel-6" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
                         <span class="text-white-pure">¿Sirve para consultorios, odontólogos o profesionales de salud?</span>
                         <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 6 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <div x-show="active === 6" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                    <div id="faq-panel-6" x-show="active === 6" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
                         Sí. Podemos automatizar respuestas frecuentes, pedidos de turno, confirmaciones, recordatorios y reprogramaciones por WhatsApp. En casos sensibles o consultas que requieren criterio profesional, el sistema deriva a una persona. La idea no es reemplazar la atención humana: es ordenar lo repetitivo para que el equipo tenga más tiempo.
                     </div>
                 </div>
 
                 <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
-                    <button @click="active = active === 7 ? null : 7" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                    <button type="button" @click="active = active === 7 ? null : 7" :aria-expanded="active === 7" aria-controls="faq-panel-7" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
                         <span class="text-white-pure">¿El asistente puede dar consejos médicos?</span>
                         <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 7 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <div x-show="active === 7" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                    <div id="faq-panel-7" x-show="active === 7" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
                         No. Lo configuramos para información administrativa y operativa: horarios, ubicación, turnos, requisitos previos, medios de pago, cobertura y recordatorios. Las consultas médicas, urgentes o sensibles se derivan a una persona del equipo.
                     </div>
                 </div>
 
                 <!-- FAQ 2 -->
                 <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
-                    <button @click="active = active === 2 ? null : 2" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                    <button type="button" @click="active = active === 2 ? null : 2" :aria-expanded="active === 2" aria-controls="faq-panel-2" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
                         <span class="text-white-pure">¿Tengo que cambiar los sistemas que ya uso en mi empresa?</span>
                         <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <div x-show="active === 2" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                    <div id="faq-panel-2" x-show="active === 2" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
                         Para nada. Integramos nuestros flujos mediante APIs y webhooks seguros con tus herramientas actuales (WhatsApp, CRMs, Google Sheets, Trello, Stripe, MercadoPago, Gmail, etc.) para que no tengas que cambiar tu forma de operar ni forzar a tu equipo a aprender una nueva interfaz.
                     </div>
                 </div>
 
                 <!-- FAQ 3 -->
                 <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
-                    <button @click="active = active === 3 ? null : 3" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                    <button type="button" @click="active = active === 3 ? null : 3" :aria-expanded="active === 3" aria-controls="faq-panel-3" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
                         <span class="text-white-pure">¿Qué herramientas utilizan para las automatizaciones?</span>
                         <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 3 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <div x-show="active === 3" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                    <div id="faq-panel-3" x-show="active === 3" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
                         Nuestra herramienta central es n8n, por su flexibilidad para albergar agentes y conectarse con servicios externos sin depender de costos inflados por ejecución. También desarrollamos backends en Node.js/PHP si el flujo requiere bases de datos locales o procesos a medida de alta performance.
                     </div>
                 </div>
 
                 <!-- FAQ 4 -->
                 <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
-                    <button @click="active = active === 4 ? null : 4" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                    <button type="button" @click="active = active === 4 ? null : 4" :aria-expanded="active === 4" aria-controls="faq-panel-4" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
                         <span class="text-white-pure">¿Cuánto tiempo toma implementar un asistente o automatización?</span>
                         <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 4 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <div x-show="active === 4" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                    <div id="faq-panel-4" x-show="active === 4" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
                         Los flujos operativos estándar se entregan y configuran en menos de 10 días. El retorno de inversión en tiempo libre y mensajes de soporte respondidos se percibe desde las primeras 24 horas del despliegue.
                     </div>
                 </div>
 
                 <!-- FAQ 5 -->
                 <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
-                    <button @click="active = active === 5 ? null : 5" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                    <button type="button" @click="active = active === 5 ? null : 5" :aria-expanded="active === 5" aria-controls="faq-panel-5" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
                         <span class="text-white-pure">¿Pueden crear una IA privada para consultar documentos internos?</span>
                         <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 5 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <div x-show="active === 5" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                    <div id="faq-panel-5" x-show="active === 5" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
                         Sí. Implementamos asistentes internos y buscadores inteligentes para que el equipo consulte manuales, políticas, procesos, PDFs y documentos conectados a herramientas como Drive, SharePoint, Slack o CRMs, manteniendo permisos, control y derivación humana cuando corresponde.
                     </div>
                 </div>
@@ -1668,7 +1667,7 @@
                                 type="submit"
                                 class="w-full bg-blue-electric hover:bg-blue-electric/80 text-white-pure font-bold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
                                 :disabled="formSubmitted"
-                                title="Recibir diagnóstico por WhatsApp de WhatsApp"
+                                title="Recibir diagnóstico por WhatsApp"
                                 aria-label="Enviar información de contacto para recibir asistencia por WhatsApp"
                             >
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1740,7 +1739,7 @@
     <section id="chatbot-section" class="py-20 relative">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center">Mirá lo que hace nuestro chatbot IA, ¡es un caño!</h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center">Ejemplo de atención por WhatsApp con IA</h2>
 
                 <div class="chat-container bg-white-pure/5 backdrop-blur-sm p-6 rounded-lg mb-12">
                     <!-- Chat messages -->
@@ -1761,7 +1760,7 @@
                                 <span>👤</span>
                             </div>
                             <div class="flex-1 bg-white-pure/10 p-4 rounded-lg">
-                                <p>Che, necesito armar una página web para mi negocio. ¿Me dan una mano?</p>
+                                <p>Hola, necesito pedir un turno y saber si atienden por obra social.</p>
                             </div>
                         </div>
 
@@ -1771,7 +1770,7 @@
                                 <span>🤖</span>
                             </div>
                             <div class="flex-1 bg-blue-electric/20 p-4 rounded-lg">
-                                <p>¡Claro que sí! En No La Penses! nos especializamos en crear páginas web a medida. ¿Podrías contarme un poco más sobre tu negocio? ¿Qué tipo de funcionalidades necesitarías en tu sitio web?</p>
+                                <p>Claro 😊 Te puedo pedir los datos básicos, revisar disponibilidad, confirmar requisitos administrativos y derivarte a recepción si el caso necesita atención humana.</p>
                             </div>
                         </div>
                     </div>
@@ -1787,7 +1786,7 @@
                         <svg class="w-10 h-10 text-white-pure" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.520-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.711.306 1.265.489 1.697.626.713.226 1.362.194 1.875.118.572-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
                         </svg>
-                        <span class="title-font">¡Dale, charlá con nuestro chatbot IA! 💬</span>
+                        <span class="title-font">Quiero ordenar mi atención por WhatsApp 💬</span>
                     </a>
                 </div>
             </div>
@@ -1800,7 +1799,7 @@
     <!-- Services section -->
     <section id="services-section" class="py-20 bg-blue-electric/5">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center">Nuestros servicios</h2>
+            <h2 class="text-3xl md:text-5xl font-bold mb-16 text-center">Qué podemos automatizar en una clínica o negocio</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service card 1 -->
@@ -1808,8 +1807,8 @@
                     <div class="icon-container">
                         <span class="text-4xl">🌐</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Páginas Web</h3>
-                    <p>Diseñamos y desarrollamos sitios web a medida, optimizados para móviles y con las últimas tecnologías.</p>
+                    <h3 class="text-2xl font-bold mb-4">Pedido y confirmación de turnos</h3>
+                    <p>Tomamos datos, validamos horarios disponibles y dejamos el pase listo para recepción o agenda.</p>
                 </div>
 
                 <!-- Service card 2 -->
@@ -1817,8 +1816,8 @@
                     <div class="icon-container">
                         <span class="text-4xl">🤖</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Chatbots IA</h3>
-                    <p>Creamos asistentes virtuales inteligentes que pueden interactuar con tus clientes las 24 horas.</p>
+                    <h3 class="text-2xl font-bold mb-4">Respuestas frecuentes por WhatsApp</h3>
+                    <p>Respondemos preguntas repetidas con información aprobada y derivamos cuando hace falta trato humano.</p>
                 </div>
 
                 <!-- Service card 3 -->
@@ -1826,8 +1825,8 @@
                     <div class="icon-container">
                         <span class="text-4xl">⚙️</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Automatizaciones</h3>
-                    <p>Optimizamos tus procesos con flujos de trabajo automatizados que ahorran tiempo y recursos.</p>
+                    <h3 class="text-2xl font-bold mb-4">Recordatorios y reprogramaciones</h3>
+                    <p>Enviamos avisos, confirmaciones y opciones de reprogramación para reducir ausencias y mensajes manuales.</p>
                 </div>
 
                 <!-- Service card 4 -->
@@ -1835,8 +1834,8 @@
                     <div class="icon-container">
                         <span class="text-4xl">📱</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">WhatsApp IA</h3>
-                    <p>Integramos la inteligencia artificial con WhatsApp para brindar atención inmediata a tus clientes.</p>
+                    <h3 class="text-2xl font-bold mb-4">Derivación a recepción</h3>
+                    <p>Detectamos urgencias, casos sensibles o dudas complejas para pasarlas a una persona sin perder contexto.</p>
                 </div>
 
                 <!-- Service card 5 -->
@@ -1844,8 +1843,8 @@
                     <div class="icon-container">
                         <span class="text-4xl">💻</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Sistemas a medida</h3>
-                    <p>Desarrollamos soluciones personalizadas que se adaptan perfectamente a las necesidades de tu negocio.</p>
+                    <h3 class="text-2xl font-bold mb-4">Registro en planilla, Calendar o CRM</h3>
+                    <p>Conectamos las consultas con tus herramientas actuales para que el equipo no copie datos a mano.</p>
                 </div>
 
                 <!-- Service card 6 -->
@@ -1853,8 +1852,8 @@
                     <div class="icon-container">
                         <span class="text-4xl">📊</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Marketing Digital con IA</h3>
-                    <p>Potenciamos tus campañas de marketing con inteligencia artificial para maximizar resultados y optimizar tu inversión.</p>
+                    <h3 class="text-2xl font-bold mb-4">Seguimiento comercial y campañas</h3>
+                    <p>Ordenamos contactos, respuestas y próximos pasos para no perder oportunidades después de la primera consulta.</p>
                 </div>
 
                 <!-- Service card 7 -->
@@ -1862,8 +1861,8 @@
                     <div class="icon-container">
                         <span class="text-4xl">🔎</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">IA Privada Empresarial</h3>
-                    <p>Implementamos asistentes internos para consultar documentos, procesos y herramientas de trabajo con permisos, seguridad y mantenimiento.</p>
+                    <h3 class="text-2xl font-bold mb-4">IA privada para procesos internos</h3>
+                    <p>Creamos asistentes para consultar documentos y procesos internos con permisos, límites y mantenimiento.</p>
                 </div>
             </div>
         </div>
@@ -1873,7 +1872,7 @@
     <footer class="py-12 bg-gray-dark">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold mb-6">No La Penses!</h2>
-            <p class="mb-8">Automatizaciones digitales, armado de páginas web, chatbots personalizados con IA</p>
+            <p class="mb-8">Recordatorios y reprogramaciones digitales, armado de páginas web, chatbots personalizados con IA</p>
 
             <div class="flex justify-center space-x-6 mb-8">
                 <!-- Facebook -->
@@ -1942,7 +1941,7 @@
         </div>
         
         <!-- Botón Cerrar -->
-        <button @click="showNotification = false; window.dispatchEvent(new CustomEvent('nolapenses_social_proof_closed'))" class="text-white-pure/30 hover:text-white-pure/70 transition-colors flex-shrink-0">
+        <button type="button" aria-label="Cerrar notificación" @click="showNotification = false; window.dispatchEvent(new CustomEvent('nolapenses_social_proof_closed'))" class="text-white-pure/30 hover:text-white-pure/70 transition-colors flex-shrink-0">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
