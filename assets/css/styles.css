@@ -1064,18 +1064,75 @@ html.user-interacted .social-proof-toast {
   display: none !important;
 }
 @media (max-width: 640px) {
+  html,
   body {
     overflow-x: hidden;
+    max-width: 100%;
   }
-  .floating-nav {
+  .hero-bg,
+  .notes-page,
+  .article-page {
+    overflow-x: hidden;
+  }
+  .notes-title,
+  .article-title {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .animate__animated {
+    max-width: 100%;
+  }
+  .floating-nav,
+  .notes-nav.floating-nav {
     left: .75rem;
     right: .75rem;
     width: auto;
     max-width: calc(100vw - 1.5rem);
-    padding: .7rem .85rem !important;
+    transform: none;
+    padding: .65rem .75rem !important;
+    gap: .5rem;
   }
+  .floating-nav > a,
+  .notes-nav > a {
+    min-width: 0;
+    flex: 0 1 auto;
+  }
+  .floating-nav .nav-links,
+  .floating-nav .notes-nav-links,
   .floating-nav .gap-6 {
+    gap: .65rem !important;
+    min-width: 0;
+  }
+  .floating-nav .nav-secondary,
+  .floating-nav .notes-nav-links a[href="/#solutions-section"],
+  .floating-nav .notes-nav-links a[href="/#roi-section"],
+  .floating-nav .notes-nav-links a[href="/#faq-section"] {
+    display: none !important;
+  }
+  .floating-nav .nav-portfolio,
+  .notes-nav .notes-nav-links a[href="/portafolio.html"] {
+    max-width: 6.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .floating-nav .nav-cta {
+    padding: .55rem .75rem !important;
+    white-space: nowrap;
+  }
+  .floating-nav img,
+  .notes-nav img {
+    flex: 0 0 auto;
+  }
+  body > nav.fixed .container {
+    gap: .75rem;
+  }
+  body > nav.fixed .container > div {
     gap: .75rem !important;
+    min-width: 0;
+  }
+  body > nav.fixed a {
+    white-space: nowrap;
   }
   header.min-h-screen {
     min-height: auto;
@@ -1083,6 +1140,7 @@ html.user-interacted .social-proof-toast {
     padding-bottom: 3.5rem !important;
   }
   #serviceButtonsContainer {
+    grid-template-columns: 1fr !important;
     gap: .65rem !important;
   }
   .service-button {
@@ -1104,8 +1162,10 @@ html.user-interacted .social-proof-toast {
     left: .65rem;
   }
   .lead-chat-button {
+    margin-left: auto;
     width: 3.55rem;
     height: 3.55rem;
+    box-shadow: 0 16px 36px rgba(34, 197, 94, .34);
   }
   .lead-chat-button-icon {
     font-size: 1.72rem;
@@ -1141,9 +1201,14 @@ html.user-interacted .social-proof-toast {
     font-size: 16px;
   }
 }
-@media (max-width: 380px) {
-  .floating-nav a[href="/notas/"],
-  .floating-nav a[href="portafolio.html"] {
-    display: none;
+@media (max-width: 420px) {
+  .floating-nav .nav-home {
+    display: none !important;
+  }
+  .notes-nav .notes-nav-links a[href="/portafolio.html"] {
+    display: none !important;
+  }
+  .notes-nav .notes-nav-links a[href="/notas/"] {
+    display: inline-flex !important;
   }
 }

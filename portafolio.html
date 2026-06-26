@@ -23,6 +23,7 @@
     <meta name="theme-color" content="#007BCA">
     <title>Carlos Salini — Engineering Manager + AI Builder</title>
     <meta name="description" content="Engineering Manager con foco en IA y automatización end-to-end. n8n, OpenAI, agentes conversacionales en producción. San Luis, Argentina · Remoto.">
+    <link rel="canonical" href="https://nolapenses.com.ar/portafolio.html">
 
     <!-- Favicon -->
     <link rel="icon" href="FAVICON.png" type="image/png">
@@ -33,6 +34,10 @@
     <meta property="og:image" content="https://nolapenses.com.ar/assets/img/perfil.jpeg">
     <meta property="og:url" content="https://nolapenses.com.ar/portafolio.html">
     <meta property="og:type" content="profile">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Carlos Salini — Engineering Manager + AI Builder">
+    <meta name="twitter:description" content="Engineering Manager con IA y automatización end-to-end. n8n, OpenAI, agentes en producción.">
+    <meta name="twitter:image" content="https://nolapenses.com.ar/assets/img/perfil.jpeg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -143,13 +148,13 @@
             <img src="assets/img/logo-blanco.svg" alt="No La Penses!" class="w-8 h-8">
             <span class="font-display text-lg hidden sm:inline text-white-pure font-bold">No La Penses!</span>
         </a>
-        <div class="flex items-center gap-6 text-sm font-medium">
-            <a href="index.html" class="hover:text-blue-electric transition-colors">Inicio</a>
-            <a href="#proyectos" class="hover:text-blue-electric transition-colors hidden md:inline">Proyectos</a>
-            <a href="#experiencia" class="hover:text-blue-electric transition-colors hidden md:inline">Experiencia</a>
-            <a href="#contacto" class="bg-blue-electric hover:bg-blue-electric/80 px-4 py-2 rounded-lg font-medium transition-all text-white-pure">Contacto</a>
+        <div class="nav-links flex items-center gap-6 text-sm font-medium">
+            <a href="index.html" class="nav-home hover:text-blue-electric transition-colors">Inicio</a>
+            <a href="#proyectos" class="nav-secondary hover:text-blue-electric transition-colors hidden md:inline">Proyectos</a>
+            <a href="#experiencia" class="nav-secondary hover:text-blue-electric transition-colors hidden md:inline">Experiencia</a>
+            <a href="#contacto" class="nav-cta bg-blue-electric hover:bg-blue-electric/80 px-4 py-2 rounded-lg font-medium transition-all text-white-pure">Contacto</a>
             <!-- Botón del Tema (Claro/Oscuro) -->
-            <button @click="toggleTheme()" class="text-white-pure hover:text-blue-electric transition-colors p-1 focus:outline-none rounded-full hover:bg-white-pure/5 flex items-center justify-center" aria-label="Cambiar tema">
+            <button type="button" @click="toggleTheme()" class="nav-theme text-white-pure hover:text-blue-electric transition-colors p-1 focus:outline-none rounded-full hover:bg-white-pure/5 flex items-center justify-center" aria-label="Cambiar tema">
                 <!-- Sol (se muestra en modo oscuro para ir al claro) -->
                 <svg x-show="darkMode" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
                 <!-- Luna (se muestra en modo claro para ir al oscuro) -->

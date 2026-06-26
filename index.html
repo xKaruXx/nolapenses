@@ -244,16 +244,16 @@
             <img src="assets/img/logo-blanco.svg" alt="No La Penses!" class="w-8 h-8">
             <span class="font-display text-lg hidden sm:inline text-white-pure font-bold">No La Penses!</span>
         </a>
-        <div class="flex items-center gap-6 text-sm font-medium">
-            <a href="#welcomeMessage" class="hover:text-blue-electric transition-colors">Inicio</a>
-            <a href="#solutions-section" class="hover:text-blue-electric transition-colors">Soluciones</a>
-            <a href="/notas/" class="hover:text-blue-electric transition-colors">Notas</a>
-            <a href="#plan-section" class="hover:text-blue-electric transition-colors hidden lg:inline">Plan</a>
-            <a href="#roi-section" class="hover:text-blue-electric transition-colors hidden md:inline">Calculadora</a>
-            <a href="#faq-section" class="hover:text-blue-electric transition-colors hidden md:inline">FAQ</a>
-            <a href="portafolio.html" class="hover:text-blue-electric transition-colors">Carlos Salini</a>
+        <div class="nav-links flex items-center gap-6 text-sm font-medium">
+            <a href="#welcomeMessage" class="nav-home hover:text-blue-electric transition-colors">Inicio</a>
+            <a href="#solutions-section" class="nav-secondary hover:text-blue-electric transition-colors hidden md:inline">Soluciones</a>
+            <a href="/notas/" class="nav-secondary hover:text-blue-electric transition-colors hidden sm:inline">Notas</a>
+            <a href="#plan-section" class="nav-secondary hover:text-blue-electric transition-colors hidden md:inline">Plan</a>
+            <a href="#roi-section" class="nav-secondary hover:text-blue-electric transition-colors hidden md:inline">Calculadora</a>
+            <a href="#faq-section" class="nav-secondary hover:text-blue-electric transition-colors hidden md:inline">FAQ</a>
+            <a href="portafolio.html" class="nav-portfolio hover:text-blue-electric transition-colors">Carlos Salini</a>
             <!-- Botón del Tema (Claro/Oscuro) -->
-            <button type="button" @click="toggleTheme()" class="text-white-pure hover:text-blue-electric transition-colors p-1 focus:outline-none rounded-full hover:bg-white-pure/5 flex items-center justify-center" aria-label="Cambiar tema">
+            <button type="button" @click="toggleTheme()" class="nav-theme text-white-pure hover:text-blue-electric transition-colors p-1 focus:outline-none rounded-full hover:bg-white-pure/5 flex items-center justify-center" aria-label="Cambiar tema">
                 <!-- Sol (se muestra en modo oscuro para ir al claro) -->
                 <svg x-show="darkMode" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
                 <!-- Luna (se muestra en modo claro para ir al oscuro) -->
