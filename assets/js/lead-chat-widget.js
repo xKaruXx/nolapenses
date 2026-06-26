@@ -295,12 +295,18 @@
       submitButton.disabled = sending;
       recordButton.disabled = sending || audioProcessing;
     }
+    function messageTime(date = new Date()) {
+      return date.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' });
+    }
     function addMessage(kind, html, options = {}) {
       const item = document.createElement('div');
+      const now = new Date();
+      const label = options.time || messageTime(now);
       item.className = `lead-chat-message lead-chat-message--${kind}`;
-      item.innerHTML = `${html}<time>${options.time || new Date().toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' })}</time>`;
+      item.innerHTML = `<span class="lead-chat-message-text">${html}</span><time datetime="${escapeHtml(options.at || now.toISOString())}">${escapeHtml(label)}</time>`;
       messages.appendChild(item);
       messages.scrollTop = messages.scrollHeight;
+      return { item, time: label, at: options.at || now.toISOString() };
     }
     function addTyping() {
       const typing = document.createElement('div');
@@ -313,15 +319,15 @@
     function restoreMessages() {
       messages.innerHTML = '';
       if (!state.history.length) {
-        addMessage('bot', escapeHtml(INITIAL_GREETING));
-        state.history.push({ role: 'assistant', text: INITIAL_GREETING, at: new Date().toISOString() });
+        const added = addMessage('bot', escapeHtml(INITIAL_GREETING));
+        state.history.push({ role: 'assistant', text: INITIAL_GREETING, at: added.at, time: added.time });
         persist();
         return;
       }
       state.history.forEach((m) => addMessage(m.role === 'user' ? 'user' : 'bot', linkifySafe(m.text), { time: m.time }));
     }
-    function pushHistory(role, text) {
-      state.history.push({ role, text: String(text || '').trim(), at: new Date().toISOString() });
+    function pushHistory(role, text, meta = {}) {
+      state.history.push({ role, text: String(text || '').trim(), at: meta.at || new Date().toISOString(), time: meta.time || messageTime() });
       if (state.history.length > 30) state.history = state.history.slice(-30);
       persist();
     }
@@ -381,9 +387,10 @@
     async function sendMessage(text, meta = {}) {
       const clean = String(text || '').trim();
       if ((!clean && !meta.audioBlob) || sending) return;
-      const userVisible = meta.audio ? '🎙️ Audio recibido' : clean;
-      addMessage('user', escapeHtml(userVisible));
-      pushHistory('user', meta.audio ? (clean || userVisible) : clean);
+      const visibleText = meta.audio ? '🎙️ Audio recibido' : clean;
+      const historyText = meta.audio ? (clean || visibleText) : clean;
+      const addedUserMessage = addMessage('user', escapeHtml(visibleText));
+      pushHistory('user', historyText, addedUserMessage);
       state.facts = updateFactsFromMessage(state.facts, clean);
       input.value = '';
       autoSize();
@@ -412,6 +419,8 @@
           payload.type = 'web_lead_chat_ai_audio';
           payload.audio_base64 = await blobToBase64(meta.audioBlob);
           payload.audio_mime_type = meta.mimeType || meta.audioBlob.type || 'audio/webm';
+          payload.audio_file_name = `lead-chat-${Date.now()}.${(payload.audio_mime_type.split('/')[1] || 'webm').split(';')[0]}`;
+          payload.audio_size_bytes = meta.audioBlob.size;
           payload.message = clean || 'Audio recibido desde el chat web';
           payload.text = payload.message;
         }
@@ -430,14 +439,14 @@
           };
         }
         typing.remove();
-        addMessage('bot', linkifySafe(reply));
-        pushHistory('assistant', reply);
+        const addedBotMessage = addMessage('bot', linkifySafe(reply));
+        pushHistory('assistant', reply, addedBotMessage);
         track('lead_chat_ai_reply_received', { next_action: result.actions && result.actions.next_action });
         await sendHandoffIfNeeded();
       } catch (error) {
         typing.remove();
-        addMessage('bot', escapeHtml(FALLBACK_REPLY));
-        pushHistory('assistant', FALLBACK_REPLY);
+        const addedFallbackMessage = addMessage('bot', escapeHtml(FALLBACK_REPLY));
+        pushHistory('assistant', FALLBACK_REPLY, addedFallbackMessage);
         track('lead_chat_webhook_error', { message: String(error && error.message || error) });
       } finally {
         setBusy(false);
@@ -456,13 +465,28 @@
         mediaRecorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
         audioChunks = [];
         mediaRecorder.addEventListener('dataavailable', (event) => { if (event.data && event.data.size) audioChunks.push(event.data); });
-        mediaRecorder.addEventListener('stop', () => {
+        mediaRecorder.addEventListener('stop', async () => {
           stream.getTracks().forEach((track) => track.stop());
           recordButton.classList.remove('is-recording');
-          recordButton.setAttribute('aria-label', 'Grabar audio');
+          recordButton.classList.add('is-processing');
+          recordButton.setAttribute('aria-label', 'Procesando audio');
           clearTimeout(recordingTimer);
           const blob = new Blob(audioChunks, { type: mediaRecorder.mimeType || mimeType || 'audio/webm' });
-          if (blob.size) sendMessage('Audio recibido desde el chat web', { audio: true, audioBlob: blob, mimeType: blob.type });
+          if (!blob.size) {
+            recordButton.classList.remove('is-processing');
+            recordButton.setAttribute('aria-label', 'Grabar audio');
+            addMessage('bot', 'No llegué a capturar audio. Probá mantener presionado unos segundos o escribime el mensaje.');
+            return;
+          }
+          audioProcessing = true;
+          try {
+            await sendMessage('Audio recibido desde el chat web', { audio: true, audioBlob: blob, mimeType: blob.type });
+          } finally {
+            audioProcessing = false;
+            recordButton.classList.remove('is-processing');
+            recordButton.setAttribute('aria-label', 'Grabar audio');
+            setBusy(false);
+          }
         });
         mediaRecorder.start(1000);
         recordButton.classList.add('is-recording');

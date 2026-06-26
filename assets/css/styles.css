@@ -916,20 +916,32 @@ svg rect, svg text {
 }
 .lead-chat-message {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
   max-width: 82%;
+  min-width: 5.6rem;
   border-radius: .7rem;
-  padding: .55rem .68rem 1.05rem;
+  padding: .55rem .68rem .38rem;
   font-size: .93rem;
   line-height: 1.42;
   box-shadow: 0 1px 1px rgba(15, 23, 42, .08);
-  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.lead-chat-message-text {
+  display: block;
+  min-width: 0;
 }
 .lead-chat-message time {
-  position: absolute;
-  right: .55rem;
-  bottom: .25rem;
+  position: static;
+  display: block;
+  align-self: flex-end;
+  margin-top: .05rem;
   color: rgba(15, 23, 42, .52);
   font-size: .63rem;
+  line-height: 1;
+  white-space: nowrap;
 }
 .lead-chat-message--bot {
   align-self: flex-start;
@@ -1021,6 +1033,8 @@ svg rect, svg text {
 .lead-chat-form button[type="submit"] { grid-column: 3; }
 .lead-chat-record { grid-column: 1; background: #0ea5e9 !important; }
 .lead-chat-record.is-recording { background: #ef4444 !important; animation: lead-chat-record-pulse 1.1s ease-in-out infinite; }
+.lead-chat-record.is-processing { background: #64748b !important; cursor: progress; }
+.lead-chat-record.is-processing span { animation: leadTyping .9s ease-in-out infinite; }
 .lead-chat-form button svg { width: 1.25rem; height: 1.25rem; fill: currentColor; transform: translateX(1px); }
 .lead-chat-wa { padding: .68rem .9rem; border-radius: .9rem; margin-top: .25rem; }
 .lead-chat-form button:disabled { opacity: .55; cursor: not-allowed; }
@@ -1192,6 +1206,11 @@ html.user-interacted .social-proof-toast {
   .lead-chat-messages {
     min-height: 15rem;
     height: min(56vh, 25rem);
+    padding: .85rem .62rem .65rem;
+  }
+  .lead-chat-message {
+    max-width: 88%;
+    min-width: 5.35rem;
   }
   .lead-chat-hint {
     display: none;
