@@ -40,6 +40,7 @@ window.landingApp = function() {
             { text: '🏋️ Gimnasio de Santa Fe automatizó recordatorios de pago mensuales.', time: 'Hace 41 min' },
             { text: '👔 Marca de indumentaria de Palermo agendó demo para recuperar carritos.', time: 'Hace 3 min' },
             { text: '🩺 Clínica médica automatizó recordatorios y recuperó horarios cancelados.', time: 'Hace 27 min' },
+            { text: '📅 Centro médico pidió diagnóstico para reducir mensajes repetidos y turnos perdidos.', time: 'Hace 28 min' },
             { text: '🎨 Agencia de diseño en Mendoza integró Slack con n8n para leads.', time: 'Hace 14 min' },
             { text: '🚗 Concesionaria de Bahía Blanca integró leads de Facebook Ads al CRM.', time: 'Hace 6 min' }
         ],
@@ -1756,12 +1757,17 @@ window.landingApp = function() {
         startSocialProofRotation() {
             try {
                 const isMobile = window.matchMedia('(max-width: 640px)').matches;
-                const hasInteracted = () => document.body.classList.contains('lead-chat-active') || document.documentElement.classList.contains('user-interacted');
+                const toastDismissed = () => sessionStorage.getItem('nlp_social_proof_dismissed') === '1';
+                const hasInteracted = () => toastDismissed() || document.body.classList.contains('lead-chat-active') || document.documentElement.classList.contains('user-interacted');
                 const markInteracted = () => {
                     document.documentElement.classList.add('user-interacted');
                     this.showNotification = false;
                 };
                 window.addEventListener('nolapenses_lead_chat_opened', markInteracted);
+                window.addEventListener('nolapenses_social_proof_closed', () => {
+                    sessionStorage.setItem('nlp_social_proof_dismissed', '1');
+                    markInteracted();
+                });
                 if (isMobile) {
                     ['click', 'keydown', 'touchstart', 'scroll'].forEach((eventName) => {
                         window.addEventListener(eventName, markInteracted, { once: true, passive: true });

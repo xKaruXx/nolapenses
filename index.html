@@ -74,12 +74,35 @@
         "closes": "18:00"
       },
       "sameAs": [
+        "https://www.facebook.com/nolapensesok",
+        "https://www.instagram.com/nolapenses.ia/",
+        "https://www.linkedin.com/company/nolapenses/about",
         "https://nolapenses.com.ar/portafolio.html"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Servicios de automatización e IA",
         "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automatización de WhatsApp para consultorios médicos y odontológicos",
+              "description": "Asistente conversacional para responder consultas frecuentes, pedir datos del paciente, coordinar turnos, enviar recordatorios y derivar a recepción cuando corresponde.",
+              "areaServed": "AR",
+              "serviceType": "WhatsApp automation for healthcare appointments"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Recordatorios automáticos de turnos por WhatsApp",
+              "description": "Flujos de confirmación, cancelación y reprogramación para reducir ausentismo y mejorar la ocupación de agenda en clínicas y consultorios.",
+              "areaServed": "AR",
+              "serviceType": "Appointment reminders automation"
+            }
+          },
           {
             "@type": "Offer",
             "itemOffered": {
@@ -112,6 +135,22 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "No. Diseñamos directrices estrictas y sistemas de contención (guardrails) basados en prompts y RAG para asegurar que el agente de IA solo responda con información oficial y aprobada de tu negocio. Si detecta un caso complejo, puede derivarlo automáticamente a un operador humano."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Sirve para consultorios, odontólogos o profesionales de salud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Podemos automatizar respuestas frecuentes, pedidos de turno, confirmaciones, recordatorios y reprogramaciones por WhatsApp. En casos sensibles o consultas que requieren criterio profesional, el sistema deriva a una persona. La idea no es reemplazar la atención humana: es ordenar lo repetitivo para que el equipo tenga más tiempo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El asistente puede dar consejos médicos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El asistente se configura para información administrativa y operativa: horarios, ubicación, turnos, requisitos previos, medios de pago, cobertura y recordatorios. Las consultas médicas, urgentes o sensibles se derivan a una persona del equipo."
           }
         },
         {
@@ -1410,6 +1449,27 @@
                     </div>
                 </div>
 
+                <!-- FAQ Salud -->
+                <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
+                    <button @click="active = active === 6 ? null : 6" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                        <span class="text-white-pure">¿Sirve para consultorios, odontólogos o profesionales de salud?</span>
+                        <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 6 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="active === 6" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                        Sí. Podemos automatizar respuestas frecuentes, pedidos de turno, confirmaciones, recordatorios y reprogramaciones por WhatsApp. En casos sensibles o consultas que requieren criterio profesional, el sistema deriva a una persona. La idea no es reemplazar la atención humana: es ordenar lo repetitivo para que el equipo tenga más tiempo.
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
+                    <button @click="active = active === 7 ? null : 7" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
+                        <span class="text-white-pure">¿El asistente puede dar consejos médicos?</span>
+                        <svg class="w-5 h-5 text-blue-electric transform transition-transform duration-300" :class="{ 'rotate-180': active === 7 }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="active === 7" x-transition.opacity.duration.250ms class="p-6 pt-0 text-white-pure/70 border-t border-white-pure/5 leading-relaxed text-sm">
+                        No. Lo configuramos para información administrativa y operativa: horarios, ubicación, turnos, requisitos previos, medios de pago, cobertura y recordatorios. Las consultas médicas, urgentes o sensibles se derivan a una persona del equipo.
+                    </div>
+                </div>
+
                 <!-- FAQ 2 -->
                 <div class="glass-card rounded-2xl border border-white-pure/10 overflow-hidden transition-all duration-300">
                     <button @click="active = active === 2 ? null : 2" class="w-full p-6 text-left flex items-center justify-between font-bold text-lg focus:outline-none">
@@ -1794,7 +1854,7 @@
         </div>
         
         <!-- Botón Cerrar -->
-        <button @click="showNotification = false" class="text-white-pure/30 hover:text-white-pure/70 transition-colors flex-shrink-0">
+        <button @click="showNotification = false; window.dispatchEvent(new CustomEvent('nolapenses_social_proof_closed'))" class="text-white-pure/30 hover:text-white-pure/70 transition-colors flex-shrink-0">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
