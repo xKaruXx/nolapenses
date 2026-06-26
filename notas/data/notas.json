@@ -250,5 +250,125 @@
     "sourceUrl": "https://www.jonhernandez.education/video-noticias/dario-amodei-anthropic-historia/",
     "url": "https://nolapenses.com.ar/notas/ia-potente-control-humano-automatizaciones-negocios/",
     "image": "https://nolapenses.com.ar/assets/img/notas/ia-potente-control-humano-automatizaciones-negocios.webp"
+  },
+  {
+    "slug": "sistemas-viejos-automatizacion-ia-sin-rehacer-todo",
+    "title": "Automatizar sistemas viejos con IA: no siempre hace falta rehacer todo",
+    "excerpt": "AWS presentó el enfoque de “agentic overlays”: capas livianas que conectan servicios existentes con agentes y herramientas. Para una pyme, la señal práctica es clara: antes de reemplazar un sistema, conviene ver qué proceso se puede ordenar y automatizar alrededor.",
+    "date": "2026-06-26",
+    "readingTime": "5 min",
+    "category": "Automatización con IA",
+    "tags": [
+      "Automatización",
+      "Agentes IA",
+      "Procesos internos",
+      "Integraciones",
+      "Pymes",
+      "MCP"
+    ],
+    "sourceName": "AWS Machine Learning Blog — Retrofit, don’t rebuild: Agentic overlays for transforming legacy enterprise services",
+    "sourceUrl": "https://aws.amazon.com/blogs/machine-learning/retrofit-dont-rebuild-agentic-overlays-for-transforming-legacy-enterprise-services/",
+    "url": "https://nolapenses.com.ar/notas/sistemas-viejos-automatizacion-ia-sin-rehacer-todo/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/sistemas-viejos-automatizacion-ia-sin-rehacer-todo.webp"
+  },
+  {
+    "slug": "copilot-costos-procesos-ia-empresas",
+    "title": "Copilot, costos y procesos: la IA empresaria necesita tablero",
+    "excerpt": "El nuevo podcast de Jon Hernández con Jordi Ribas deja una señal clara para negocios reales: la IA en la empresa no se gana instalando un asistente, sino midiendo costos, permisos, adopción y procesos donde realmente ahorra tiempo.",
+    "date": "2026-06-26",
+    "readingTime": "5 min",
+    "category": "Gestión de IA",
+    "tags": [
+      "Copilot",
+      "IA en empresas",
+      "Automatización",
+      "Procesos internos",
+      "Control de costos",
+      "Productividad"
+    ],
+    "sourceName": "Jon Hernández — El día que Microsoft pudo quedarse con todo OpenAI – Jordi Ribas",
+    "sourceUrl": "https://www.jonhernandez.education/podcast/podcast-ia-jordi-ribas-microsoft-copilot-inteligencia-artificial/",
+    "url": "https://nolapenses.com.ar/notas/copilot-costos-procesos-ia-empresas/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/copilot-costos-procesos-ia-empresas.webp"
+  },
+  {
+    "slug": "agentes-ia-que-aprenden-procesos-negocio",
+    "title": "Agentes de IA que aprenden: la oportunidad está en mejorar procesos, no en improvisar",
+    "excerpt": "n8n mostró un flujo donde un agente revisa su propio desempeño y propone mejoras. Para un negocio, la lectura práctica es diseñar automatizaciones que puedan medirse, corregirse y escalarse con control humano.",
+    "date": "2026-06-26",
+    "readingTime": "6 min",
+    "category": "Automatización con IA",
+    "tags": [
+      "Agentes IA",
+      "Automatización",
+      "n8n",
+      "Procesos",
+      "Mejora continua",
+      "Control humano"
+    ],
+    "sourceName": "n8n Blog — Build Self-Improving Agent Skills with cognee and n8n",
+    "sourceUrl": "https://blog.n8n.io/skill-loop/",
+    "url": "https://nolapenses.com.ar/notas/agentes-ia-que-aprenden-procesos-negocio/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/agentes-ia-que-aprenden-procesos-negocio.webp"
+  },
+  {
+    "slug": "madurez-ia-empresas-procesos-antes-herramientas",
+    "title": "Madurez en IA: antes de sumar herramientas, medí qué tan ordenado está el proceso",
+    "excerpt": "n8n publicó un marco de cinco niveles para evaluar madurez en IA. La idea sirve para negocios chicos y medianos: no alcanza con usar ChatGPT; hay que mirar adopción, procesos, control y resultados.",
+    "date": "2026-06-26",
+    "readingTime": "5 min",
+    "category": "Gestión de IA",
+    "tags": [
+      "Gestión de IA",
+      "Automatización",
+      "Procesos internos",
+      "n8n",
+      "Productividad",
+      "Pymes"
+    ],
+    "sourceName": "n8n Blog — AI Maturity: The 5-Level Framework",
+    "sourceUrl": "https://blog.n8n.io/ai-maturity-the-5-level-framework/",
+    "url": "https://nolapenses.com.ar/notas/madurez-ia-empresas-procesos-antes-herramientas/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/madurez-ia-empresas-procesos-antes-herramientas.webp"
+  },
+  {
+    "slug": "apps-script-core-service-automatizaciones-google-workspace",
+    "title": "Google Apps Script como servicio core: una señal fuerte para automatizaciones internas",
+    "excerpt": "Google informó que Apps Script pasa a ser un servicio core de Workspace con protección de datos empresarial. Para negocios que viven en Gmail, Sheets y Drive, es una oportunidad para ordenar automatizaciones sin rehacer todo.",
+    "date": "2026-06-26",
+    "readingTime": "5 min",
+    "category": "Automatización con IA",
+    "tags": [
+      "Google Workspace",
+      "Apps Script",
+      "Automatización",
+      "Procesos internos",
+      "Productividad",
+      "Datos"
+    ],
+    "sourceName": "Google Workspace Updates — Google Apps Script is now a Google Workspace core service",
+    "sourceUrl": "http://workspaceupdates.googleblog.com/2026/06/google-apps-script-workspace-core-service.html",
+    "url": "https://nolapenses.com.ar/notas/apps-script-core-service-automatizaciones-google-workspace/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/apps-script-core-service-automatizaciones-google-workspace.webp"
+  },
+  {
+    "slug": "gemini-sheets-formulas-planillas-menos-errores",
+    "title": "Gemini en Sheets para corregir fórmulas: menos errores invisibles en planillas de negocio",
+    "excerpt": "Google presentó una función de Gemini para diagnosticar y corregir errores de fórmulas en Sheets. Para una pyme, la noticia importa porque muchas decisiones comerciales todavía dependen de planillas frágiles.",
+    "date": "2026-06-26",
+    "readingTime": "4 min",
+    "category": "Productividad con IA",
+    "tags": [
+      "Google Sheets",
+      "Gemini",
+      "Productividad",
+      "Planillas",
+      "Automatización",
+      "Pymes"
+    ],
+    "sourceName": "Google Workspace Updates — Troubleshoot formula errors quickly with Gemini in Google Sheets",
+    "sourceUrl": "http://workspaceupdates.googleblog.com/2026/06/troubleshoot-formula-errors-in-sheets.html",
+    "url": "https://nolapenses.com.ar/notas/gemini-sheets-formulas-planillas-menos-errores/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/gemini-sheets-formulas-planillas-menos-errores.webp"
   }
 ]

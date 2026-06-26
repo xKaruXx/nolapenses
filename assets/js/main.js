@@ -24,8 +24,8 @@ window.landingApp = function() {
         darkMode: true,
         
         // Titulos dinámicos para DTR
-        heroTitle: 'Respondé WhatsApp, agendá turnos y no pierdas pacientes por contestar tarde',
-        heroSubtitle: 'Diseñamos asistentes de WhatsApp, automatizaciones y sistemas a medida para responder consultas, pedir los datos correctos, agendar turnos, enviar recordatorios y derivar a una persona cuando hace falta.',
+        heroTitle: 'Automatizá lo repetitivo de tu negocio sin perder el trato humano',
+        heroSubtitle: 'Diseñamos asistentes de WhatsApp, automatizaciones e integraciones a medida para responder consultas, pedir los datos correctos, hacer seguimiento, conectar herramientas y derivar a una persona cuando hace falta.',
         
         // Social proof toast notifications state
         socialNotifications: [
@@ -100,7 +100,7 @@ window.landingApp = function() {
             { id: 'web', emoji: '🌐', text: 'Quiero mi página web' },
             { id: 'sistemas', emoji: '💻', text: 'Sistemas a medida' },
             { id: 'whatsapp', emoji: '📱', text: 'Chatbot de WhatsApp' },
-            { id: 'salud', emoji: '🦷', text: 'Turnos para clínicas y consultorios' },
+            { id: 'salud', emoji: '🩺', text: 'Turnos, reservas y recordatorios' },
             { id: 'ia-interna', emoji: '🔎', text: 'IA privada para conocimiento interno' },
             { id: 'ayuda', emoji: '🤔', text: 'No lo sé bien, ayudame' }
         ],
@@ -1677,15 +1677,15 @@ window.landingApp = function() {
                         localStorage.setItem('selectedService', 'ia-atencion');
                     } else if (sectorLower.includes('salud') || sectorLower.includes('odont') || sectorLower.includes('clinic') || sectorLower.includes('medic') || sectorLower.includes('turno')) {
                         debugLog('Personalización detectada: Salud / Odontología');
-                        this.heroTitle = 'No pierdas pacientes por responder tarde en WhatsApp';
-                        this.heroSubtitle = 'Ideal para clínicas, consultorios odontológicos y profesionales de salud: respondé consultas, pedí datos, agendá turnos y enviá recordatorios automáticamente.';
+                        this.heroTitle = 'Ordená turnos, reservas y consultas por WhatsApp';
+                        this.heroSubtitle = 'Ideal para negocios con agenda, reservas o seguimiento: respondé consultas, pedí datos, coordiná próximos pasos y enviá recordatorios automáticamente.';
                         this.industryTab = 'salud';
                         this.selectedService = 'salud';
                         localStorage.setItem('selectedService', 'salud');
                     } else if (sectorLower.includes('serv') || sectorLower.includes('consult') || sectorLower.includes('prof') || sectorLower.includes('agenda')) {
                         debugLog('Personalización detectada: Servicios / Profesionales');
-                        this.heroTitle = 'Automatizá tu agenda de turnos y consultas con un Agente IA';
-                        this.heroSubtitle = 'Ideal para consultorios, agencias y profesionales. Calificá prospectos y coordiná llamadas de forma proactiva y automatizada.';
+                        this.heroTitle = 'Automatizá consultas, seguimiento y tareas repetitivas con IA';
+                        this.heroSubtitle = 'Ideal para servicios, agencias, profesionales y equipos internos. Calificá prospectos, pedí datos y coordiná próximos pasos de forma proactiva.';
                         this.industryTab = 'serv';
                         this.selectedService = 'sistemas';
                         localStorage.setItem('selectedService', 'sistemas');
