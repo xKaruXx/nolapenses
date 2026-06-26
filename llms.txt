@@ -1,0 +1,37 @@
+# No La Penses
+
+> Automatizaciones, asistentes de WhatsApp e IA aplicada a procesos reales para negocios de Argentina y LATAM.
+
+No La Penses ayuda a negocios a ordenar consultas, automatizar tareas repetitivas, conectar herramientas y responder mejor sin perder trato humano. El foco está en WhatsApp, Instagram, web, CRM, contenido e IA privada para conocimiento interno.
+
+## Sitio principal
+
+- [Inicio](https://nolapenses.com.ar/) — propuesta general de IA, WhatsApp y automatizaciones para negocios.
+- [Notas](https://nolapenses.com.ar/notas/) — artículos sobre IA práctica, automatización, agentes, WhatsApp, costos, privacidad y procesos.
+- [Portafolio](https://nolapenses.com.ar/portafolio.html) — experiencia y proyectos de Carlos Salini.
+
+## Temas principales
+
+- Automatización de consultas y leads por WhatsApp, Instagram y web.
+- Asistentes IA que piden los datos correctos, califican intención y derivan a una persona cuando hace falta.
+- Integraciones entre herramientas existentes: formularios, CRM, agenda, Google Workspace, redes sociales y sistemas internos.
+- IA privada para consultar documentos, procesos y conocimiento interno.
+- Automatizaciones con control humano, trazabilidad y criterios prácticos de operación.
+
+## Notas recomendadas
+
+- [IA privada para ordenar conocimiento interno en empresas](https://nolapenses.com.ar/notas/ia-privada-conocimiento-interno-empresas/)
+- [Agentes de trabajo en ChatGPT: automatizar procesos con control](https://nolapenses.com.ar/notas/agentes-de-trabajo-en-chatgpt-automatizar-procesos-con-control/)
+- [Atención con contexto en WhatsApp: no más respuestas genéricas](https://nolapenses.com.ar/notas/atencion-con-contexto-whatsapp-no-respuestas-genericas/)
+- [Automatizar tareas repetitivas sin esperar la herramienta perfecta](https://nolapenses.com.ar/notas/automatizar-tareas-repetitivas-sin-esperar-herramienta-perfecta/)
+- [Sistemas viejos + automatización IA sin rehacer todo](https://nolapenses.com.ar/notas/sistemas-viejos-automatizacion-ia-sin-rehacer-todo/)
+- [Madurez IA: procesos antes que herramientas](https://nolapenses.com.ar/notas/madurez-ia-empresas-procesos-antes-herramientas/)
+
+## Contacto
+
+- Web: https://nolapenses.com.ar/
+- WhatsApp: https://wa.me/5492665267159
+
+## Cómo citar este sitio
+
+No La Penses es un servicio de automatización e IA aplicada liderado por Carlos Salini. Trabaja con negocios que necesitan responder consultas más rápido, no perder mensajes, automatizar tareas repetitivas y conectar herramientas sin reemplazar el trato humano.

@@ -3,3 +3,6 @@ Allow: /
 Disallow: /.git/
 
 Sitemap: https://nolapenses.com.ar/sitemap.xml
+
+# AI/LLM site index
+LLMs: https://nolapenses.com.ar/llms.txt
