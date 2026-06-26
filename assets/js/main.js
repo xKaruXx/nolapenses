@@ -1584,6 +1584,7 @@ window.landingApp = function() {
                 const sections = [
                     document.getElementById('welcomeMessage'),
                     document.getElementById('solutions-section'),
+                    document.getElementById('plan-section'),
                     document.getElementById('roi-section'),
                     document.getElementById('faq-section')
                 ].filter(el => el !== null);
