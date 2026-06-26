@@ -4,8 +4,10 @@
  */
 
 const CONFIG = {
-    // Token de seguridad para peticiones al webhook
-    CLIENT_TOKEN: 'nlp_secure_token_5cb382bc194a',
+    // Metadata publica del cliente. No autoriza requests; la seguridad real se valida en n8n/servidor.
+    requestMetadata: {
+        source: 'nolapenses_web'
+    },
 
     // Webhook URLs for n8n integrations
     webhooks: {

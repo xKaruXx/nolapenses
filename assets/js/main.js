@@ -24,14 +24,14 @@ window.landingApp = function() {
         darkMode: true,
         
         // Titulos dinámicos para DTR
-        heroTitle: 'Automatizá WhatsApp y tareas repetitivas sin perder el trato humano',
-        heroSubtitle: 'Diseñamos asistentes de WhatsApp, automatizaciones y sistemas a medida que responden consultas, califican clientes, agendan turnos y conectan con las herramientas que ya usás.',
+        heroTitle: 'Respondé WhatsApp, agendá turnos y no pierdas pacientes por contestar tarde',
+        heroSubtitle: 'Diseñamos asistentes de WhatsApp, automatizaciones y sistemas a medida para responder consultas, pedir los datos correctos, agendar turnos, enviar recordatorios y derivar a una persona cuando hace falta.',
         
         // Social proof toast notifications state
         socialNotifications: [
             { text: '🏢 Inmobiliaria de San Luis agendó una llamada de diagnóstico.', time: 'Hace 4 min' },
             { text: '🛒 Tienda de E-commerce de Córdoba redujo 12 horas de soporte semanal.', time: 'Hace 32 min' },
-            { text: '💼 Consultorio odontológico de Buenos Aires automatizó sus turnos.', time: 'Hace 15 min' },
+            { text: '🦷 Consultorio odontológico redujo demoras para confirmar turnos por WhatsApp.', time: 'Hace 15 min' },
             { text: '⚡ Distribuidora de Mendoza integró su ERP con WhatsApp con éxito.', time: 'Hace 50 min' },
             { text: '🏨 Hotel boutique de Bariloche configuró su bot de reservas de WhatsApp.', time: 'Hace 8 min' },
             { text: '🏫 Instituto de enseñanza de Rosario automatizó inscripciones por chat.', time: 'Hace 22 min' },
@@ -39,7 +39,7 @@ window.landingApp = function() {
             { text: '📦 Distribuidora de autopartes de Tucumán conectó MercadoPago con n8n.', time: 'Hace 18 min' },
             { text: '🏋️ Gimnasio de Santa Fe automatizó recordatorios de pago mensuales.', time: 'Hace 41 min' },
             { text: '👔 Marca de indumentaria de Palermo agendó demo para recuperar carritos.', time: 'Hace 3 min' },
-            { text: '🩺 Clínica estética de Pilar automatizó confirmaciones de turnos.', time: 'Hace 27 min' },
+            { text: '🩺 Clínica médica automatizó recordatorios y recuperó horarios cancelados.', time: 'Hace 27 min' },
             { text: '🎨 Agencia de diseño en Mendoza integró Slack con n8n para leads.', time: 'Hace 14 min' },
             { text: '🚗 Concesionaria de Bahía Blanca integró leads de Facebook Ads al CRM.', time: 'Hace 6 min' }
         ],
@@ -99,6 +99,7 @@ window.landingApp = function() {
             { id: 'web', emoji: '🌐', text: 'Quiero mi página web' },
             { id: 'sistemas', emoji: '💻', text: 'Sistemas a medida' },
             { id: 'whatsapp', emoji: '📱', text: 'Chatbot de WhatsApp' },
+            { id: 'salud', emoji: '🦷', text: 'Turnos para clínicas y consultorios' },
             { id: 'ia-interna', emoji: '🔎', text: 'IA privada para conocimiento interno' },
             { id: 'ayuda', emoji: '🤔', text: 'No lo sé bien, ayudame' }
         ],
@@ -1672,6 +1673,13 @@ window.landingApp = function() {
                         this.industryTab = 'ecom';
                         this.selectedService = 'ia-atencion';
                         localStorage.setItem('selectedService', 'ia-atencion');
+                    } else if (sectorLower.includes('salud') || sectorLower.includes('odont') || sectorLower.includes('clinic') || sectorLower.includes('medic') || sectorLower.includes('turno')) {
+                        debugLog('Personalización detectada: Salud / Odontología');
+                        this.heroTitle = 'No pierdas pacientes por responder tarde en WhatsApp';
+                        this.heroSubtitle = 'Ideal para clínicas, consultorios odontológicos y profesionales de salud: respondé consultas, pedí datos, agendá turnos y enviá recordatorios automáticamente.';
+                        this.industryTab = 'salud';
+                        this.selectedService = 'salud';
+                        localStorage.setItem('selectedService', 'salud');
                     } else if (sectorLower.includes('serv') || sectorLower.includes('consult') || sectorLower.includes('prof') || sectorLower.includes('agenda')) {
                         debugLog('Personalización detectada: Servicios / Profesionales');
                         this.heroTitle = 'Automatizá tu agenda de turnos y consultas con un Agente IA';
@@ -1747,6 +1755,19 @@ window.landingApp = function() {
         
         startSocialProofRotation() {
             try {
+                const isMobile = window.matchMedia('(max-width: 640px)').matches;
+                const hasInteracted = () => document.body.classList.contains('lead-chat-active') || document.documentElement.classList.contains('user-interacted');
+                const markInteracted = () => {
+                    document.documentElement.classList.add('user-interacted');
+                    this.showNotification = false;
+                };
+                window.addEventListener('nolapenses_lead_chat_opened', markInteracted);
+                if (isMobile) {
+                    ['click', 'keydown', 'touchstart', 'scroll'].forEach((eventName) => {
+                        window.addEventListener(eventName, markInteracted, { once: true, passive: true });
+                    });
+                }
+
                 // Shuffle notifications using Fisher-Yates and assign random fresh times on every load
                 for (let i = this.socialNotifications.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
@@ -1759,22 +1780,24 @@ window.landingApp = function() {
                     notification.time = `Hace ${mins} min`;
                 });
 
-                // Wait 4 seconds to show the first notification
+                const firstDelay = isMobile ? 12000 : 4500;
+                const rotationDelay = isMobile ? 42000 : 22000;
+                const visibleMs = isMobile ? 6500 : 11000;
+
                 setTimeout(() => {
-                    this.showNotification = true;
+                    if (!hasInteracted()) this.showNotification = true;
+                    setTimeout(() => { this.showNotification = false; }, visibleMs);
                     
-                    // Rotate notifications every 18 seconds
                     setInterval(() => {
-                        this.showNotification = false;
-                        
-                        // Switch content during transition delay
-                        setTimeout(() => {
-                            this.currentNotificationIndex = (this.currentNotificationIndex + 1) % this.socialNotifications.length;
-                            this.showNotification = true;
-                        }, 1000);
-                        
-                    }, 18000);
-                }, 4000);
+                        if (hasInteracted()) {
+                            this.showNotification = false;
+                            return;
+                        }
+                        this.currentNotificationIndex = (this.currentNotificationIndex + 1) % this.socialNotifications.length;
+                        this.showNotification = true;
+                        setTimeout(() => { this.showNotification = false; }, visibleMs);
+                    }, rotationDelay);
+                }, firstDelay);
             } catch (error) {
                 console.error('Error al iniciar rotación de prueba social:', error);
             }
@@ -1819,14 +1842,8 @@ debugLog('main.js cargado correctamente');
         options = options || {};
         options.headers = options.headers || {};
         
-        // Inject security token for any webhook call in production/local
-        const isWebhook = typeof url === 'string' && url.includes('webhook');
-        if (isWebhook && typeof CONFIG !== 'undefined' && CONFIG.CLIENT_TOKEN) {
-            options.headers['X-NLP-Client-Token'] = CONFIG.CLIENT_TOKEN;
-            debugLog(`[Security] Token X-NLP-Client-Token inyectado para: ${url}`);
-        }
-        
         // Environment check for local mocking
+        const isWebhook = typeof url === 'string' && url.includes('webhook');
         const isLocalEnvironment = window.location.hostname === 'localhost' || 
                                   window.location.hostname === '127.0.0.1' ||
                                   window.location.hostname.includes('.test') ||

@@ -9,21 +9,30 @@
     })(window,document,'script','dataLayer','GTM-WGR3XF56');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PTMH8173DX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PTMH8173DX');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#007BCA">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>WhatsApp IA y Automatizaciones para Empresas | No La Penses</title>
-    <meta name="description" content="Ordená consultas, respondé WhatsApp 24/7 y automatizá tareas repetitivas sin perder el trato humano. Chatbots IA, automatizaciones, IA privada y sistemas a medida.">
+    <title>WhatsApp IA, turnos y automatizaciones para clínicas | No La Penses</title>
+    <meta name="description" content="Automatizá WhatsApp, consultas y turnos con IA. Ideal para clínicas, consultorios odontológicos, médicos y negocios que pierden clientes por responder tarde.">
     <meta name="format-detection" content="telephone=no">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nolapenses.com.ar/">
-    <meta property="og:title" content="WhatsApp IA y Automatizaciones para Empresas | No La Penses">
-    <meta property="og:description" content="Ordená consultas, respondé WhatsApp 24/7 y automatizá tareas repetitivas sin perder el trato humano. Chatbots IA, automatizaciones, IA privada y sistemas a medida.">
+    <meta property="og:title" content="WhatsApp IA, turnos y automatizaciones para clínicas | No La Penses">
+    <meta property="og:description" content="Automatizá WhatsApp, consultas y turnos con IA. Ideal para clínicas, consultorios odontológicos, médicos y negocios que pierden clientes por responder tarde.">
     <meta property="og:image" content="https://nolapenses.com.ar/FAVICON.png">
 
     <!-- Favicon -->
@@ -221,10 +230,10 @@
             <div class="max-w-4xl mx-auto">
                 <h1 class="text-4xl sm:text-5xl md:text-7xl mb-4 md:mb-6 animate__animated animate__fadeInDown">
                     <span class="text-white-pure drop-shadow-lg font-display">No la penses!</span> <br>
-                    <span class="text-blue-electric text-3xl sm:text-4xl md:text-5xl block mt-4 font-extrabold tracking-tight" x-text="heroTitle">Automatizá WhatsApp y tareas repetitivas sin perder el trato humano</span>
+                    <span class="text-blue-electric text-3xl sm:text-4xl md:text-5xl block mt-4 font-extrabold tracking-tight" x-text="heroTitle">Respondé WhatsApp, agendá turnos y no pierdas pacientes por contestar tarde</span>
                 </h1>
                 <p class="text-lg md:text-xl text-white-pure/80 mb-6 max-w-2xl mx-auto leading-relaxed animate__animated animate__fadeIn animate__delay-1s" x-text="heroSubtitle">
-                    Diseñamos asistentes de WhatsApp, automatizaciones y sistemas a medida que responden consultas, califican clientes, agendan turnos y conectan con las herramientas que ya usás.
+                    Diseñamos asistentes de WhatsApp, automatizaciones y sistemas a medida para responder consultas, pedir los datos correctos, agendar turnos, enviar recordatorios y derivar a una persona cuando hace falta.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-5 animate__animated animate__fadeIn animate__delay-1s">
@@ -237,6 +246,7 @@
                 </div>
 
                 <div class="mb-8 flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm text-white-pure/70 animate__animated animate__fadeIn animate__delay-1s" aria-label="Señales de confianza">
+                    <span class="rounded-full border border-white-pure/10 bg-white-pure/5 px-3 py-1">Ideal para clínicas, odontólogos y consultorios</span>
                     <span class="rounded-full border border-white-pure/10 bg-white-pure/5 px-3 py-1">Sin cambiar tus herramientas actuales</span>
                     <span class="rounded-full border border-white-pure/10 bg-white-pure/5 px-3 py-1">WhatsApp · Instagram · Web · CRM</span>
                     <span class="rounded-full border border-white-pure/10 bg-white-pure/5 px-3 py-1">Derivación humana cuando hace falta</span>
@@ -274,6 +284,10 @@
                         <button id="serviceButton-whatsapp" @click="selectServiceAndScroll('whatsapp')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">📱</span>
                             <span class="text-lg font-medium">Chatbot de WhatsApp</span>
+                        </button>
+                        <button id="serviceButton-salud" @click="selectServiceAndScroll('salud')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
+                            <span class="text-2xl">🦷</span>
+                            <span class="text-lg font-medium">Turnos para clínicas y consultorios</span>
                         </button>
                         <button id="serviceButton-chatbot-ia" @click="selectServiceAndScroll('chatbot-ia')" class="service-button flex items-center justify-start gap-3 p-4 bg-white-pure/5 hover:bg-white-pure/10 hover:border-blue-electric/50 rounded-xl transition-all duration-300 text-left border border-white-pure/10 shadow-sm hover:shadow-blue-electric/25">
                             <span class="text-2xl">🤖</span>
@@ -691,7 +705,7 @@
 
             <!-- Automatizaciones por Sector / Industria -->
             <div x-data="{ 
-                industryTab: 'inmo',
+                industryTab: 'salud',
                 inmoChat: [
                     { sender: 'user', text: 'Hola! Vi el dpto de 2 ambientes en alquiler' },
                     { sender: 'bot', text: '¡Hola! 👋 Sí, está disponible. Para ver si se ajusta a lo que buscás, ¿cuál es tu presupuesto aproximado de alquiler?' },
@@ -729,7 +743,7 @@
                     this.typeNextMessage();
                 },
                 typeNextMessage() {
-                    let chat = this.industryTab === 'inmo' ? this.inmoChat : (this.industryTab === 'ecom' ? this.ecomChat : this.servChat);
+                    let chat = this.industryTab === 'salud' ? this.saludChat : (this.industryTab === 'inmo' ? this.inmoChat : (this.industryTab === 'ecom' ? this.ecomChat : this.servChat));
                     if (this.messageIndex < chat.length) {
                         this.typing = true;
                         this.chatTimeout = setTimeout(() => {
@@ -756,11 +770,18 @@
                 <h3 class="text-2xl md:text-4xl font-extrabold mb-4 text-center tracking-tight">Especialidades por Sector</h3>
                 <div class="section-divider mb-8"></div>
                 <p class="text-lg text-center mb-10 max-w-2xl mx-auto text-white-pure/70">
-                    Diseñamos integraciones específicas según el modelo de negocio de tu sector. Hacé clic para ver ejemplos reales de lo que podemos construir.
+                    Diseñamos integraciones específicas según el modelo de negocio de tu sector. En salud y odontología atacamos un problema concreto: si el paciente no recibe respuesta rápida por WhatsApp, pide turno en otro lado.
                 </p>
 
                 <!-- Selector de Pestañas -->
                 <div class="flex flex-wrap justify-center gap-3 mb-12">
+                    <button
+                        @click="industryTab = 'salud'"
+                        :class="industryTab === 'salud' ? 'bg-blue-electric text-white-pure shadow-lg shadow-blue-electric/25' : 'bg-white-pure/5 hover:bg-white-pure/10 text-white-pure/70 hover:text-white-pure'"
+                        class="px-6 py-3 rounded-full font-bold transition-all flex items-center gap-2 text-sm md:text-base border border-white-pure/10"
+                    >
+                        <span>🩺</span> Salud & Odontología
+                    </button>
                     <button 
                         @click="industryTab = 'inmo'" 
                         :class="industryTab === 'inmo' ? 'bg-blue-electric text-white-pure shadow-lg shadow-blue-electric/25' : 'bg-white-pure/5 hover:bg-white-pure/10 text-white-pure/70 hover:text-white-pure'"
@@ -789,6 +810,41 @@
                     
                     <!-- Columna de Contenidos (Ancho 2/3) -->
                     <div class="lg:col-span-2 space-y-8">
+                        <!-- Salud & Odontología -->
+                        <div x-show="industryTab === 'salud'" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <span class="text-3xl">🦷</span>
+                                        <h4 class="text-xl font-bold text-white-pure">Turnos por WhatsApp sin saturar recepción</h4>
+                                    </div>
+                                    <p class="text-white-pure/85 leading-relaxed text-sm mb-6">
+                                        El asistente responde al instante, pregunta motivo de consulta, obra social/prepaga, profesional preferido y disponibilidad horaria. Luego propone turnos reales, confirma la reserva y deja registrado el dato en Calendar, planilla o sistema de gestión.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-xs text-blue-electric font-semibold gap-3">
+                                    <span>Dolor: pacientes que se van por respuesta lenta</span>
+                                    <span>Agenda ordenada 24/7</span>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <span class="text-3xl">🔔</span>
+                                        <h4 class="text-xl font-bold text-white-pure">Recordatorios y seguimiento automático</h4>
+                                    </div>
+                                    <p class="text-white-pure/85 leading-relaxed text-sm mb-6">
+                                        Enviá avisos 24 h antes y el mismo día, pedí confirmación, detectá cancelaciones y liberá horarios sin que el médico o la secretaria estén pendientes del celular todo el día. También puede responder preguntas frecuentes sobre preparación, horarios y ubicación.
+                                    </p>
+                                </div>
+                                <div class="pt-4 border-t border-white-pure/5 flex items-center justify-between text-xs text-blue-electric font-semibold gap-3">
+                                    <span>Menos ausencias y huecos perdidos</span>
+                                    <span>Más tiempo libre para el equipo</span>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Inmobiliarias -->
                         <div x-show="industryTab === 'inmo'" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="glass-card p-8 rounded-3xl border border-white-pure/10 flex flex-col justify-between">
@@ -1716,7 +1772,7 @@
         x-transition:leave="transition ease-in duration-500"
         x-transition:leave-start="opacity-100 translate-y-0 scale-100"
         x-transition:leave-end="opacity-0 translate-y-8 scale-95"
-        class="fixed bottom-6 left-6 z-40 max-w-sm bg-gray-dark/90 dark:bg-gray-dark/95 border border-white-pure/10 dark:border-white-pure/15 rounded-2xl p-4 shadow-2xl backdrop-blur-md flex items-start gap-4 transition-all duration-300 pointer-events-auto hover:border-blue-electric/40"
+        class="social-proof-toast fixed bottom-24 left-6 z-40 max-w-sm bg-gray-dark/90 dark:bg-gray-dark/95 border border-white-pure/10 dark:border-white-pure/15 rounded-2xl p-4 shadow-2xl backdrop-blur-md flex items-start gap-4 transition-all duration-300 pointer-events-auto hover:border-blue-electric/40"
         style="display: none;"
     >
         <!-- Icono de Check / Notificación -->
@@ -1746,11 +1802,11 @@
     </div>
 
     <!-- Config JS -->
-    <script src="assets/js/config.js?v=20260624-recaptcha"></script>
 
     <!-- Main JS -->
+    <script src="/assets/js/config.js?v=20260625-leads"></script>
     <script src="assets/js/main.js?v=20260623"></script>
-<script src="/assets/js/recaptcha-guard.js?v=20260624bb" defer></script>
-    <script src="/assets/js/conversion-tracking.js?v=20260624" defer></script>
-<script src="/assets/js/lead-chat-widget.js?v=20260624b" defer></script></body>
+<script src="/assets/js/recaptcha-guard.js?v=20260625-leads" defer></script>
+<script src="/assets/js/conversion-tracking.js?v=20260625-leads" defer></script>
+<script src="/assets/js/lead-chat-widget.js?v=20260625-audio-budget" defer></script></body>
 </html>
