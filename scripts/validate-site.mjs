@@ -11,6 +11,8 @@ const requiredFiles = [
   'sitemap.xml',
   'assets/js/config.js',
   'assets/js/main.js',
+  'assets/js/human-check.js',
+  'assets/js/conversion-tracking.js',
   'assets/js/lead-chat-widget.js',
   'assets/css/tailwind.css',
 ];
@@ -61,6 +63,36 @@ for (const file of htmlFiles) {
     }
     if (!html.includes('human-check.js') && !html.includes('recaptcha-guard.js')) {
       errors.push(`${file}: lead widget requires human-check.js or recaptcha-guard.js`);
+    }
+    const order = [
+      ['config.js', html.indexOf('config.js')],
+      ['human-check.js/recaptcha-guard.js', Math.max(html.indexOf('human-check.js'), html.indexOf('recaptcha-guard.js'))],
+      ['conversion-tracking.js', html.indexOf('conversion-tracking.js')],
+      ['lead-chat-widget.js', html.indexOf('lead-chat-widget.js')],
+    ];
+    const missingOrder = order.filter(([, index]) => index < 0).map(([name]) => name);
+    if (!missingOrder.length) {
+      const [, configIndex] = order[0];
+      const [, humanIndex] = order[1];
+      const [, trackingIndex] = order[2];
+      const [, widgetIndex] = order[3];
+      if (!(configIndex < humanIndex && humanIndex < trackingIndex && trackingIndex < widgetIndex)) {
+        errors.push(`${file}: lead widget dependencies must load in order: config, human-check/recaptcha, conversion-tracking, lead-chat-widget`);
+      }
+    }
+  }
+}
+
+const leadWidgetJs = exists('assets/js/lead-chat-widget.js') ? fs.readFileSync(path.join(root, 'assets/js/lead-chat-widget.js'), 'utf8') : '';
+if (/n8n\.nolapenses\.com\.ar|CLIENT_TOKEN|X-NLP-Client-Token/.test(leadWidgetJs)) {
+  errors.push('assets/js/lead-chat-widget.js must not hardcode webhook URLs or client-token authorization');
+}
+
+for (const runtimeJs of ['assets/js/config.js', 'assets/js/main.js', 'assets/js/lead-chat-widget.js']) {
+  if (exists(runtimeJs)) {
+    const source = fs.readFileSync(path.join(root, runtimeJs), 'utf8');
+    if (/CLIENT_TOKEN|X-NLP-Client-Token/.test(source)) {
+      errors.push(`${runtimeJs}: browser runtime must not reference CLIENT_TOKEN or X-NLP-Client-Token`);
     }
   }
 }

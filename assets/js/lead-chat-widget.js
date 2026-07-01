@@ -1,4 +1,5 @@
 (() => {
+  const PUBLIC_REQUEST_METADATA = window.CONFIG && CONFIG.requestMetadata ? CONFIG.requestMetadata : { source: 'nolapenses_web' };
   const WEBHOOK_URL = window.CONFIG && CONFIG.webhooks && (CONFIG.webhooks.chatbot || CONFIG.webhooks.newLead) || '';
   const CARLOS_WHATSAPP = '5492665267159';
   const STORAGE_KEY = 'nolapenses_ai_lead_chat_state_v1';
@@ -211,7 +212,7 @@
   }
 
   function track(eventName, detail = {}) {
-    const payload = { source: 'web_ai_lead_chat', ...getAttribution(), ...detail };
+    const payload = { ...PUBLIC_REQUEST_METADATA, source: 'web_ai_lead_chat', ...getAttribution(), ...detail };
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: eventName, ...payload });
     if (typeof window.gtag === 'function') window.gtag('event', eventName, payload);
@@ -356,8 +357,9 @@
       const publicText = publicWhatsAppText(state);
       const waUrl = `https://wa.me/${CARLOS_WHATSAPP}?text=${encodeURIComponent(publicText)}`;
       const payload = {
+        ...PUBLIC_REQUEST_METADATA,
         type: 'web_lead_chat',
-        source: 'nolapenses_web',
+        source: PUBLIC_REQUEST_METADATA.source || 'nolapenses_web',
         page_url: location.href,
         created_at: new Date().toISOString(),
         session_id: state.sessionId,
@@ -378,6 +380,7 @@
         await postToWebhook(payload, 'lead_chat_handoff');
         state.handoffSent = true;
         persist();
+        track('lead_chat_submitted', { ...summary.classification, form_type: 'ai_chat_widget' });
         track('lead_chat_handoff_sent', summary.classification);
       } catch (error) {
         track('lead_chat_handoff_error', { message: String(error && error.message || error) });
@@ -399,6 +402,7 @@
       track(meta.audio ? 'lead_chat_audio_message_sent' : 'lead_chat_message_sent');
       try {
         const payload = {
+          ...PUBLIC_REQUEST_METADATA,
           type: 'web_lead_chat_ai_message',
           source: 'nolapenses_web_ai_chat',
           session_id: state.sessionId,

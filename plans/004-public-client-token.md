@@ -132,12 +132,12 @@ Expected: tests and audit pass; runtime files have no old token/header reference
 
 ## Done criteria
 
-- [ ] `npm test` exits 0.
-- [ ] `npm audit --audit-level=high` exits 0.
-- [ ] Runtime JS no longer contains `CLIENT_TOKEN` or `X-NLP-Client-Token`.
-- [ ] Docs explicitly state browser metadata is public and n8n must validate reCAPTCHA server-side.
-- [ ] Old token value was not copied into any new file, comment, commit message, or issue.
-- [ ] `plans/README.md` status row updated.
+- [x] `npm test` exits 0.
+- [x] `npm audit --audit-level=high` exits 0.
+- [x] Runtime JS no longer contains `CLIENT_TOKEN` or `X-NLP-Client-Token`.
+- [x] Docs explicitly state browser metadata is public and n8n must validate reCAPTCHA server-side.
+- [x] Old token value was not copied into any new file, comment, commit message, or issue.
+- [x] `plans/README.md` status row updated.
 
 ## STOP conditions
 

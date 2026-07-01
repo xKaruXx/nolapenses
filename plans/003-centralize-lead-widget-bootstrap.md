@@ -149,11 +149,11 @@ Expected: tests pass and every widget page has the shared dependencies.
 
 ## Done criteria
 
-- [ ] `npm test` exits 0.
-- [ ] Every HTML page that loads `lead-chat-widget.js` also loads config, tracking, and recaptcha guard first.
-- [ ] `assets/js/lead-chat-widget.js` no longer hardcodes the production webhook URL.
-- [ ] `lead_chat_submitted` is emitted when widget lead collection completes.
-- [ ] `plans/README.md` status row updated.
+- [x] `npm test` exits 0.
+- [x] Every HTML page that loads `lead-chat-widget.js` also loads config, tracking, and recaptcha guard first.
+- [x] `assets/js/lead-chat-widget.js` no longer hardcodes the production webhook URL.
+- [x] `lead_chat_submitted` is emitted when widget lead collection completes.
+- [x] `plans/README.md` status row updated.
 
 ## STOP conditions
 

@@ -1095,7 +1095,10 @@ window.landingApp = function() {
         buildChatbotPayload(extraData = {}) {
             const selectedService = this.getSelectedService();
 
+            const publicRequestMetadata = (typeof CONFIG !== 'undefined' && CONFIG.requestMetadata) ? CONFIG.requestMetadata : { source: 'nolapenses_web' };
+
             return {
+                ...publicRequestMetadata,
                 session_id: localStorage.getItem('nlp_session_id') || this.createSessionId(),
                 source: 'landing',
                 nombre: this.form.nombre || '',
@@ -1328,6 +1331,10 @@ window.landingApp = function() {
                     form_type: 'conversational_chatbot',
                     scheduled: payload.scheduled || false
                 });
+                window.NolapensesAnalytics.track('lead_chat_submitted', {
+                    form_type: 'conversational_chatbot',
+                    scheduled: payload.scheduled || false
+                });
             }
 
             (window.NolapensesRecaptcha ? window.NolapensesRecaptcha.attach(payload, 'chatbot_lead') : Promise.resolve(payload))
@@ -1415,6 +1422,10 @@ window.landingApp = function() {
                                 form_type: 'main_contact_form',
                                 lead_status: 'local_simulated'
                             });
+                            window.NolapensesAnalytics.track('lead_chat_submitted', {
+                                form_type: 'main_contact_form',
+                                lead_status: 'local_simulated'
+                            });
                         }
                         debugLog('Formulario enviado correctamente (simulado)');
                     }, 1500);
@@ -1439,6 +1450,10 @@ window.landingApp = function() {
                         this.formSuccessMessage = data.reply || 'Te vamos a responder por WhatsApp o email con el resumen y el proximo paso.';
                         if (window.NolapensesAnalytics) {
                             window.NolapensesAnalytics.track('generate_lead', {
+                                form_type: 'main_contact_form',
+                                lead_status: 'webhook_sent'
+                            });
+                            window.NolapensesAnalytics.track('lead_chat_submitted', {
                                 form_type: 'main_contact_form',
                                 lead_status: 'webhook_sent'
                             });
@@ -1878,7 +1893,7 @@ debugLog('main.js cargado correctamente');
             });
         }
         
-        // Call the original fetch (which will now have the token header)
+        // Call the original fetch. Browser metadata is public; authorization must be enforced server-side.
         return originalFetch(url, options);
     };
 })(window.fetch);
