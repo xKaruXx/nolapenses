@@ -2,12 +2,55 @@
 
 ## Reglas editoriales para notas
 
-- Las notas tienen que sonar a criterio propio de Nolapenses, no a resumen automático de novedades.
-- Evitar fórmulas repetidas como “la lectura práctica es clara”, “la señal para una pyme” o enumeraciones neutras de noticias.
-- Partir de una postura: qué importa, qué es ruido, qué decisión conviene tomar y qué riesgo hay si se implementa mal.
-- El primer párrafo debe opinar y orientar. Ejemplo de tono: “Lo importante no es el modelo nuevo; es qué proceso concreto mejora y quién queda a cargo cuando la IA duda”.
-- Usar automatización como consecuencia de un problema real, no como palabra comodín. Preferir “ordenar consultas”, “reducir errores”, “decidir mejor”, “no perder mensajes”, “tener trazabilidad”.
-- Antes de publicar, revisar título, excerpt y bajada como si fueran una columna breve: menos neutralidad, más punto de vista.
+Las notas de Nolapenses no son resúmenes automáticos de novedades. La fuente es el disparador; la nota tiene que traer criterio propio, mirada de negocio y una postura clara.
+
+### Voz editorial
+
+- Español rioplatense/LatAm, cercano, profesional y práctico.
+- Opinativo sin ser soberbio.
+- Sin hype tecnológico ni tono corporativo duro.
+- Con foco en decisiones reales de negocio.
+- La automatización aparece como herramienta para resolver un problema, no como fin en sí mismo.
+
+### Enfoque obligatorio
+
+- Arrancar desde una postura: qué importa, qué es ruido, qué riesgo hay y qué decisión conviene tomar.
+- No empezar con un resumen neutro de la fuente si la bajada editorial todavía no está clara.
+- Identificar primero el problema operativo real: consultas que se pierden, datos desordenados, procesos sin dueño, permisos mal definidos, respuestas inconsistentes, falta de seguimiento, costos invisibles, trazabilidad débil o derivación humana ausente.
+- Después explicar cómo IA/automatización puede ayudar, con límites claros.
+- Revisar título, excerpt y primer párrafo como si fueran una columna breve: menos neutralidad, más punto de vista.
+
+### Evitar
+
+- “la lectura práctica es clara”
+- “la señal es clara”
+- “la lección práctica”
+- “la señal práctica es clara”
+- “para una pyme...” como puente mecánico
+- “transformación digital”
+- “soluciones disruptivas”
+- “revolucionar el negocio”
+- enumerar novedades sin interpretación
+- repetir “automatización” como palabra comodín
+
+### Estructura sugerida
+
+1. **Título:** con postura, no clickbait vacío.
+2. **Excerpt/bajada:** 2 o 3 frases con qué importa y por qué debería importarle a un negocio.
+3. **Introducción:** interpretación fuerte antes que resumen.
+4. **Desarrollo:** contexto de la fuente, solo lo necesario.
+5. **Bajada a negocio:** atención, WhatsApp, agenda, datos, permisos, seguimiento, equipo humano, costos o control.
+6. **Cierre:** recomendación concreta o pregunta estratégica.
+
+### Ejemplo de tono
+
+En vez de:
+
+> “Para una pyme, la lectura práctica es clara: no alcanza con esperar el modelo más potente...”
+
+Preferir:
+
+> “Lo de Sol, Terra y Luna sirve menos como carrera por el modelo de moda y más como recordatorio incómodo: si una empresa no tiene claro qué dato usa, quién decide y cuándo interviene una persona, cualquier modelo nuevo termina siendo solo ruido caro.”
 
 ## Reglas de imágenes para notas
 
