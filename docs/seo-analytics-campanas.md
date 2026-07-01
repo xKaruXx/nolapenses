@@ -1,5 +1,14 @@
 # Nolapenses — SEO, analítica y campañas pagas
 
+## Reglas editoriales para notas
+
+- Las notas tienen que sonar a criterio propio de Nolapenses, no a resumen automático de novedades.
+- Evitar fórmulas repetidas como “la lectura práctica es clara”, “la señal para una pyme” o enumeraciones neutras de noticias.
+- Partir de una postura: qué importa, qué es ruido, qué decisión conviene tomar y qué riesgo hay si se implementa mal.
+- El primer párrafo debe opinar y orientar. Ejemplo de tono: “Lo importante no es el modelo nuevo; es qué proceso concreto mejora y quién queda a cargo cuando la IA duda”.
+- Usar automatización como consecuencia de un problema real, no como palabra comodín. Preferir “ordenar consultas”, “reducir errores”, “decidir mejor”, “no perder mensajes”, “tener trazabilidad”.
+- Antes de publicar, revisar título, excerpt y bajada como si fueran una columna breve: menos neutralidad, más punto de vista.
+
 ## Reglas de imágenes para notas
 
 - No usar imágenes verticales en notas.

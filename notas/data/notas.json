@@ -175,7 +175,7 @@
   {
     "slug": "openai-control-costos-ia-empresas",
     "title": "OpenAI suma controles de gasto: la IA también necesita tablero de costos",
-    "excerpt": "OpenAI presentó nuevas analíticas de uso y controles de gasto para ChatGPT Enterprise. La señal para cualquier empresa es simple: adoptar IA sin medir consumo, responsables y límites termina siendo otro costo invisible.",
+    "excerpt": "OpenAI sumó analíticas y controles de gasto para ChatGPT Enterprise. El punto incómodo para cualquier empresa: si nadie mide consumo, responsables y límites, la IA deja de ser ayuda y se convierte en otro costo invisible.",
     "date": "2026-06-24",
     "readingTime": "5 min",
     "category": "Gestión de IA",
@@ -194,7 +194,7 @@
   {
     "slug": "ia-privada-datos-sensibles-confidential-computing",
     "title": "IA privada y datos sensibles: no alcanza con “usar IA”, hay que cuidar dónde corre",
-    "excerpt": "Google Cloud presentó novedades de Confidential Computing para IA. Para una pyme, la lectura práctica es clara: si vas a automatizar atención, documentos o procesos internos, también tenés que definir qué datos entran, dónde se procesan y con qué controles.",
+    "excerpt": "Google Cloud volvió a poner el foco en Confidential Computing para IA. El tema no es técnico por capricho: si una empresa mete atención, documentos o procesos internos en una IA, tiene que saber qué datos entran, dónde se procesan y quién controla el acceso.",
     "date": "2026-06-24",
     "readingTime": "5 min",
     "category": "IA privada",
@@ -234,7 +234,7 @@
   {
     "slug": "ia-potente-control-humano-automatizaciones-negocios",
     "title": "IA potente no alcanza: las automatizaciones necesitan control humano",
-    "excerpt": "El debate alrededor de Anthropic, Claude, Mythos y Fable muestra que la IA más avanzada también concentra poder y riesgos. Para una pyme, la lección práctica es diseñar automatizaciones con permisos, límites, trazabilidad y derivación humana.",
+    "excerpt": "El debate alrededor de Anthropic, Claude, Mythos y Fable muestra algo que conviene no minimizar: cuanto más potente es la IA, más necesarios se vuelven los permisos, los límites, la trazabilidad y la derivación humana.",
     "date": "2026-06-25",
     "readingTime": "5 min",
     "category": "Automatización con IA",
@@ -254,7 +254,7 @@
   {
     "slug": "sistemas-viejos-automatizacion-ia-sin-rehacer-todo",
     "title": "Automatizar sistemas viejos con IA: no siempre hace falta rehacer todo",
-    "excerpt": "AWS presentó el enfoque de “agentic overlays”: capas livianas que conectan servicios existentes con agentes y herramientas. Para una pyme, la señal práctica es clara: antes de reemplazar un sistema, conviene ver qué proceso se puede ordenar y automatizar alrededor.",
+    "excerpt": "AWS presentó el enfoque de “agentic overlays”: capas livianas que conectan servicios existentes con agentes y herramientas. La idea útil no es reemplazar todo, sino detectar qué proceso se puede ordenar alrededor de lo que ya funciona.",
     "date": "2026-06-26",
     "readingTime": "5 min",
     "category": "Automatización con IA",
@@ -274,7 +274,7 @@
   {
     "slug": "copilot-costos-procesos-ia-empresas",
     "title": "Copilot, costos y procesos: la IA empresaria necesita tablero",
-    "excerpt": "El nuevo podcast de Jon Hernández con Jordi Ribas deja una señal clara para negocios reales: la IA en la empresa no se gana instalando un asistente, sino midiendo costos, permisos, adopción y procesos donde realmente ahorra tiempo.",
+    "excerpt": "El podcast de Jon Hernández con Jordi Ribas sirve para bajar la IA empresaria a tierra: instalar un asistente no alcanza si nadie mira costos, permisos, adopción y procesos donde realmente se ahorra tiempo.",
     "date": "2026-06-26",
     "readingTime": "5 min",
     "category": "Gestión de IA",
@@ -294,7 +294,7 @@
   {
     "slug": "agentes-ia-que-aprenden-procesos-negocio",
     "title": "Agentes de IA que aprenden: la oportunidad está en mejorar procesos, no en improvisar",
-    "excerpt": "n8n mostró un flujo donde un agente revisa su propio desempeño y propone mejoras. Para un negocio, la lectura práctica es diseñar automatizaciones que puedan medirse, corregirse y escalarse con control humano.",
+    "excerpt": "n8n mostró un flujo donde un agente revisa su propio desempeño y propone mejoras. Lo interesante no es que “aprenda solo”, sino que una automatización pueda medirse, corregirse y escalarse sin perder control humano.",
     "date": "2026-06-26",
     "readingTime": "6 min",
     "category": "Automatización con IA",
@@ -370,5 +370,125 @@
     "sourceUrl": "http://workspaceupdates.googleblog.com/2026/06/troubleshoot-formula-errors-in-sheets.html",
     "url": "https://nolapenses.com.ar/notas/gemini-sheets-formulas-planillas-menos-errores/",
     "image": "https://nolapenses.com.ar/assets/img/notas/gemini-sheets-formulas-planillas-menos-errores.webp"
+  },
+  {
+    "slug": "ia-agentes-perimetro-seguro-negocios",
+    "title": "Agentes de IA con límites: automatizar no significa abrir todos los datos",
+    "excerpt": "Google Cloud presentó novedades de VPC Service Controls para cargas agentic. Antes de conectar una IA a herramientas y bases de datos, una empresa tiene que decidir permisos, límites y trazabilidad; después viene la automatización.",
+    "date": "2026-06-27",
+    "readingTime": "5 min",
+    "category": "IA privada",
+    "tags": [
+      "IA privada",
+      "Agentes IA",
+      "Seguridad",
+      "Automatización",
+      "Procesos internos",
+      "Datos sensibles"
+    ],
+    "sourceName": "Google Cloud Blog — Securing agentic AI: What's new in VPC Service Controls",
+    "sourceUrl": "https://cloud.google.com/blog/products/identity-security/securing-agentic-ai-whats-new-in-vpc-service-controls/",
+    "url": "https://nolapenses.com.ar/notas/ia-agentes-perimetro-seguro-negocios/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/ia-agentes-perimetro-seguro-negocios.webp"
+  },
+  {
+    "slug": "agentes-ia-produccion-control-humano-stripe",
+    "title": "Agentes de IA en producción: automatizar no es soltar el control",
+    "excerpt": "AWS y Stripe mostraron cómo un sistema de agentes redujo tiempos de revisión en compliance sin sacar la supervisión humana. Ese es el punto: la IA puede acelerar trabajo repetitivo, pero solo si hay tareas bien divididas, métricas, permisos y decisiones finales controladas.",
+    "date": "2026-06-28",
+    "readingTime": "5 min",
+    "category": "Automatización con IA",
+    "tags": [
+      "Agentes IA",
+      "Automatización",
+      "Control humano",
+      "Procesos internos",
+      "Trazabilidad",
+      "Pymes"
+    ],
+    "sourceName": "AWS Machine Learning Blog — Production-grade AI agents for financial compliance: Lessons from Stripe",
+    "sourceUrl": "https://aws.amazon.com/blogs/machine-learning/production-grade-ai-agents-for-financial-compliance-lessons-from-stripe/",
+    "url": "https://nolapenses.com.ar/notas/agentes-ia-produccion-control-humano-stripe/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/agentes-ia-produccion-control-humano-stripe.webp"
+  },
+  {
+    "slug": "ia-especifica-por-rubro-procesos-negocio",
+    "title": "IA específica por rubro: automatizar bien empieza por entender el trabajo real",
+    "excerpt": "AWS mostró el caso de Cara, una solución de IA para procesos de corredurías de seguros. Lo valioso no está en responder en genérico, sino en entender documentos, reglas, excepciones y cuándo conviene derivar a una persona.",
+    "date": "2026-06-29",
+    "readingTime": "5 min",
+    "category": "Automatización con IA",
+    "tags": [
+      "IA para negocios",
+      "Automatización",
+      "Procesos internos",
+      "Datos sensibles",
+      "Control humano",
+      "Pymes"
+    ],
+    "sourceName": "AWS Machine Learning Blog — How Cara pioneers domain-specific AI for enterprise insurance brokerages with AWS",
+    "sourceUrl": "https://aws.amazon.com/blogs/machine-learning/how-cara-pioneers-domain-specific-ai-for-enterprise-insurance-brokerages-with-aws/",
+    "url": "https://nolapenses.com.ar/notas/ia-especifica-por-rubro-procesos-negocio/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/ia-especifica-por-rubro-procesos-negocio.webp"
+  },
+  {
+    "slug": "whatsapp-usernames-negocios-atencion",
+    "title": "WhatsApp usernames: oportunidad para negocios, pero también para ordenar la atención",
+    "excerpt": "Meta empezó a lanzar usernames en WhatsApp para conectar sin compartir el número de teléfono. Para negocios que reciben consultas por WhatsApp, la novedad puede ayudar a la difusión, pero también exige cuidar identidad, datos y derivaciones.",
+    "date": "2026-06-30",
+    "readingTime": "5 min",
+    "category": "WhatsApp IA",
+    "tags": [
+      "WhatsApp",
+      "Atención al cliente",
+      "Automatización",
+      "Identidad digital",
+      "Leads",
+      "Pymes"
+    ],
+    "sourceName": "Meta Newsroom — It’s Time to Reserve Your WhatsApp Username",
+    "sourceUrl": "https://about.fb.com/news/2026/06/its-time-to-reserve-your-whatsapp-username/",
+    "url": "https://nolapenses.com.ar/notas/whatsapp-usernames-negocios-atencion/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/whatsapp-usernames-negocios-atencion.webp"
+  },
+  {
+    "slug": "modelos-ia-control-procesos-negocios",
+    "title": "Nuevos modelos de IA: para los negocios, la ventaja está en el control del proceso",
+    "excerpt": "Lo de Sol, Terra y Luna sirve menos como carrera por el modelo de moda y más como recordatorio incómodo: si una empresa no tiene claro qué dato usa, quién decide y cuándo interviene una persona, cualquier modelo nuevo termina siendo solo ruido caro.",
+    "date": "2026-06-30",
+    "readingTime": "5 min",
+    "category": "Gestión de IA",
+    "tags": [
+      "IA para negocios",
+      "Automatización",
+      "Procesos internos",
+      "Control humano",
+      "WhatsApp IA",
+      "Cumplimiento"
+    ],
+    "sourceName": "Jon Hernández — Nuevo modelo de ChatGPT, Sol",
+    "sourceUrl": "https://www.jonhernandez.education/video-noticias/openai-sol-terra-luna-nuevos-modelos/",
+    "url": "https://nolapenses.com.ar/notas/modelos-ia-control-procesos-negocios/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/modelos-ia-control-procesos-negocios.webp"
+  },
+  {
+    "slug": "emails-desordenados-extraccion-datos-ia",
+    "title": "Emails desordenados, datos claros: una automatización útil para no perder tiempo ni ventas",
+    "excerpt": "AWS mostró cómo ajustar modelos de IA para extraer datos de emails con más precisión y menor costo. Para una pyme, la oportunidad no es entrenar modelos por moda: es convertir consultas, pedidos y notificaciones en datos accionables.",
+    "date": "2026-07-01",
+    "readingTime": "5 min",
+    "category": "Automatización con IA",
+    "tags": [
+      "Automatización",
+      "Emails",
+      "Procesos internos",
+      "IA para negocios",
+      "Atención al cliente",
+      "Datos"
+    ],
+    "sourceName": "AWS Machine Learning Blog — Fine-tune Amazon Nova models for accurate email data extraction",
+    "sourceUrl": "https://aws.amazon.com/blogs/machine-learning/fine-tune-amazon-nova-models-for-accurate-email-data-extraction/",
+    "url": "https://nolapenses.com.ar/notas/emails-desordenados-extraccion-datos-ia/",
+    "image": "https://nolapenses.com.ar/assets/img/notas/emails-desordenados-extraccion-datos-ia.webp"
   }
 ]

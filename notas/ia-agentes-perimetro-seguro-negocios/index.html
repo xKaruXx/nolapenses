@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es-AR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentes de IA con límites: automatizar no significa abrir todos los datos | Nolapenses</title>
+<meta name="description" content="Google Cloud presentó novedades de VPC Service Controls para cargas agentic. Antes de conectar una IA a herramientas y bases de datos, una empresa tiene que decidir permisos, límites y trazabilidad; después viene la automatización."><link rel="canonical" href="https://nolapenses.com.ar/notas/ia-agentes-perimetro-seguro-negocios/">
+<meta property="og:type" content="article"><meta property="og:title" content="Agentes de IA con límites: automatizar no significa abrir todos los datos">
+<meta property="og:description" content="Google Cloud presentó novedades de VPC Service Controls para cargas agentic. Antes de conectar una IA a herramientas y bases de datos, una empresa tiene que decidir permisos, límites y trazabilidad; después viene la automatización."><meta property="og:url" content="https://nolapenses.com.ar/notas/ia-agentes-perimetro-seguro-negocios/"><meta property="og:image" content="https://nolapenses.com.ar/assets/img/notas/ia-agentes-perimetro-seguro-negocios.webp">
+<link rel="icon" href="/FAVICON.png" type="image/png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/tailwind.css?v=20260621"><link rel="stylesheet" href="/assets/css/styles.css?v=20260623"><link rel="stylesheet" href="/assets/css/notas.css?v=20260623">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Agentes de IA con límites: automatizar no significa abrir todos los datos", "description": "Google Cloud presentó novedades de VPC Service Controls para cargas agentic. Antes de conectar una IA a herramientas y bases de datos, una empresa tiene que decidir permisos, límites y trazabilidad; después viene la automatización.", "image": "https://nolapenses.com.ar/assets/img/notas/ia-agentes-perimetro-seguro-negocios.webp", "datePublished": "2026-06-27T09:00:00-03:00", "dateModified": "2026-06-27T09:00:00-03:00", "author": {"@type": "Person", "name": "Carlos Salini", "url": "https://nolapenses.com.ar/portafolio.html"}, "publisher": {"@type": "Organization", "name": "No La Penses!", "logo": {"@type": "ImageObject", "url": "https://nolapenses.com.ar/FAVICON.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://nolapenses.com.ar/notas/ia-agentes-perimetro-seguro-negocios/"}, "keywords": ["IA privada", "Agentes IA", "Seguridad", "Automatización", "Procesos internos", "Datos sensibles"]}</script>    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WGR3XF56');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PTMH8173DX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PTMH8173DX', { 'send_page_view': false });
+    </script>
+</head>
+<body class="article-page">    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGR3XF56"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<nav class="notes-nav floating-nav px-6 py-4 flex items-center justify-between" aria-label="Menú principal">
+  <a href="/" class="flex items-center gap-2 hover:opacity-80 transition-opacity text-white no-underline">
+    <img src="/assets/img/logo-blanco.svg" alt="No La Penses!" class="w-8 h-8">
+    <span class="font-display text-lg hidden sm:inline font-bold">No La Penses!</span>
+  </a>
+  <div class="notes-nav-links flex items-center gap-6 text-sm font-medium">
+    <a href="/#welcomeMessage" class="hover:text-blue-electric transition-colors no-underline">Inicio</a>
+    <a href="/#solutions-section" class="hover:text-blue-electric transition-colors no-underline">Soluciones</a>
+    <a href="/notas/" class="hover:text-blue-electric transition-colors nav-link-active no-underline" aria-current="page">Notas</a>
+    <a href="/#roi-section" class="hover:text-blue-electric transition-colors no-underline hidden md:inline">Calculadora</a>
+    <a href="/#faq-section" class="hover:text-blue-electric transition-colors no-underline hidden md:inline">FAQ</a>
+    <a href="/portafolio.html" class="hover:text-blue-electric transition-colors no-underline">Carlos Salini</a>
+  </div>
+</nav><main><header class="article-hero"><div class="notes-shell"><a href="/notas/" class="article-kicker no-underline">← Notas</a><h1 class="article-title mt-4">Agentes de IA con límites: automatizar no significa abrir todos los datos</h1><p class="article-lead">Google Cloud presentó novedades de VPC Service Controls para cargas agentic. Antes de conectar una IA a herramientas y bases de datos, una empresa tiene que decidir permisos, límites y trazabilidad; después viene la automatización.</p><div class="article-meta"><span>2026-06-27</span><span>·</span><span>5 min</span><span>·</span><span>IA privada</span></div><img class="article-cover" src="/assets/img/notas/ia-agentes-perimetro-seguro-negocios.webp" alt="Imagen editorial de la nota"></div></header><div class="notes-shell article-layout"><article class="article-content"><p>La novedad técnica viene de Google Cloud: nuevas capacidades de <strong>VPC Service Controls</strong> orientadas a cargas de trabajo con agentes de IA. La explicación oficial habla de establecer perímetros a nivel de red y basados en destinos para que los agentes puedan operar con más seguridad cuando se conectan a herramientas, servicios y datasets. Fuente: <a href="https://cloud.google.com/blog/products/identity-security/securing-agentic-ai-whats-new-in-vpc-service-controls/" target="_blank" rel="noopener noreferrer">Google Cloud Blog — Securing agentic AI: What's new in VPC Service Controls</a>.</p><h2>La lectura práctica para negocios</h2><p>Muchas empresas quieren sumar IA para responder consultas, buscar información interna, preparar presupuestos o mover datos entre sistemas. El problema aparece cuando el asistente tiene acceso amplio a todo: documentos sensibles, clientes, precios, historial comercial, planillas y herramientas operativas.</p><p>La oportunidad no es “poner un agente” y listo. Es diseñar una automatización con límites claros: qué puede consultar, qué puede modificar, qué debe registrar y cuándo tiene que derivar a una persona.</p><h2>Qué debería definirse antes de automatizar</h2><ul><li><strong>Permisos por tarea:</strong> no todos los flujos necesitan acceso a todos los datos.</li><li><strong>Datos sensibles:</strong> separar información pública, interna y confidencial antes de conectar una IA.</li><li><strong>Acciones permitidas:</strong> una cosa es sugerir una respuesta; otra es enviar mensajes, cambiar estados o tocar una base.</li><li><strong>Trazabilidad:</strong> guardar qué consultó el agente, qué respondió y qué acción disparó.</li><li><strong>Derivación humana:</strong> cuando hay dudas, reclamos, dinero o datos delicados, conviene escalar.</li></ul><h2>Ejemplo bajado a WhatsApp y atención</h2><p>Un asistente de WhatsApp puede pedir datos correctos, responder preguntas frecuentes y ordenar leads sin ver información que no necesita. Si el cliente consulta precios sensibles, condiciones especiales o reclamos, el flujo puede pasar a una persona con el contexto ya resumido.</p><p>Así la IA ayuda a no perder mensajes y a responder más rápido, pero sin convertir cada integración en una puerta abierta a toda la empresa.</p><h2>La decisión de negocio</h2><p>Antes de sumar agentes más autónomos, conviene mapear procesos y datos. Qué entra por WhatsApp, Instagram o formularios; dónde se guarda; quién decide; y qué riesgos hay si una automatización se equivoca.</p><p>La tecnología de perímetros y controles confirma una tendencia: la IA útil para empresas no solo depende del modelo, sino de cómo se gobiernan accesos, contexto y acciones.</p><section class="article-cta"><h2>¿Querés aplicar algo parecido en tu empresa?</h2><p>En Nolapenses podemos ayudarte a bajar esta idea a un flujo real de trabajo, con automatización, integración y derivación humana cuando hace falta.</p><p><a class="notes-primary-link" href="https://wa.me/5492665267159">Hablar por WhatsApp</a></p></section></article><aside class="article-sidebar" aria-label="Datos de la nota"><p class="article-kicker">Tags</p><div class="notes-tags mt-3"><span class="article-tag">IA privada</span><span class="article-tag">Agentes IA</span><span class="article-tag">Seguridad</span><span class="article-tag">Automatización</span><span class="article-tag">Procesos internos</span><span class="article-tag">Datos sensibles</span></div><hr class="my-5 border-slate-200"><p class="article-kicker">Fuente</p><p class="article-source mt-3">Fuente original citada para contexto y transparencia.</p><p class="article-source"><a href="https://cloud.google.com/blog/products/identity-security/securing-agentic-ai-whats-new-in-vpc-service-controls/" target="_blank" rel="noopener noreferrer">Google Cloud Blog — Securing agentic AI: What&#x27;s new in VPC Service Controls</a></p></aside></div></main><footer class="py-12 bg-slate-950 text-slate-300">
+  <div class="notes-shell text-center">
+    <h2 class="font-display text-3xl text-white mb-3">No La Penses!</h2>
+    <p class="max-w-2xl mx-auto">Automatizaciones digitales, WhatsApp IA, sistemas a medida e IA privada para conocimiento interno.</p>
+    <div class="notes-footer-links">
+      <a class="text-slate-300 hover:text-sky-300" href="/">Inicio</a>
+      <a class="text-slate-300 hover:text-sky-300" href="/notas/">Notas</a>
+      <a class="text-slate-300 hover:text-sky-300" href="/privacidad/">Privacidad</a>
+      <a class="text-slate-300 hover:text-sky-300" href="https://www.linkedin.com/company/nolapenses/about" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+    <p class="text-sm mt-8 text-slate-500">© 2026 No La Penses!. Todos los derechos reservados.</p>
+  </div>
+</footer><script>
+(function(){
+  function track(eventName,data){
+    const detail = Object.assign({ page: location.pathname, slug: "ia-agentes-perimetro-seguro-negocios" }, data || {});
+    window.dispatchEvent(new CustomEvent('nolapenses_analytics', { detail: { eventName, data: detail } }));
+    if (typeof window.gtag === 'function') window.gtag('event', eventName, detail);
+  }
+  track('note_view', { category: "IA privada", tags: "IA privada|Agentes IA|Seguridad|Automatizaci\u00f3n|Procesos internos|Datos sensibles" });
+  document.addEventListener('click', function(e){
+    const a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    if (a.href.includes('wa.me')) track('note_whatsapp_click');
+    if (a.closest('.article-sidebar')) track('note_source_click', { sourceName: "Google Cloud Blog \u2014 Securing agentic AI: What's new in VPC Service Controls" });
+  });
+})();
+</script><script src="/assets/js/config.js?v=20260625-leads" defer></script>
+<script src="/assets/js/human-check.js?v=20260626-ai-chat" defer></script>
+<script src="/assets/js/conversion-tracking.js?v=20260625-leads" defer></script>
+<script src="/assets/js/lead-chat-widget.js?v=20260623" defer></script></body></html>

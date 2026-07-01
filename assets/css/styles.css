@@ -12,15 +12,15 @@ body {
 
 /* Typography */
 h1, .font-display {
-    font-family: 'Permanent Marker', cursive;
-    letter-spacing: 0.5px;
+    font-family: 'Sora', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.055em;
 }
 
 h1 {
-    font-size: 4rem;
-    line-height: 1.2;
-    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
-    transform: rotate(-1deg);
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 0.98;
+    text-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+    transform: none;
 }
 
 h2, h3 {

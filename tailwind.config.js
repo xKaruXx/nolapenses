@@ -11,7 +11,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        display: ["Permanent Marker", "cursive"],
+        display: ["Sora", "Inter", "sans-serif"],
       },
     },
   },
