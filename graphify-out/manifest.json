@@ -1,0 +1,517 @@
+{
+  "assets/js/config.js": {
+    "mtime": 1783364779.072851,
+    "ast_hash": "32b2ac64a40ae5d849d25c1e052dbdbf",
+    "semantic_hash": "32b2ac64a40ae5d849d25c1e052dbdbf"
+  },
+  "assets/js/conversion-tracking.js": {
+    "mtime": 1783364779.0738509,
+    "ast_hash": "61ec3e6ef97bcf0e8f6b36608a754cb3",
+    "semantic_hash": "61ec3e6ef97bcf0e8f6b36608a754cb3"
+  },
+  "assets/js/human-check.js": {
+    "mtime": 1783364779.0738509,
+    "ast_hash": "049103bf20c6c82eabcb1fc7a2c016ab",
+    "semantic_hash": "049103bf20c6c82eabcb1fc7a2c016ab"
+  },
+  "assets/js/lead-chat-widget.js": {
+    "mtime": 1783364779.0738509,
+    "ast_hash": "0b49ba960ef83913e192d6ad7802611a",
+    "semantic_hash": "0b49ba960ef83913e192d6ad7802611a"
+  },
+  "assets/js/main-new.js": {
+    "mtime": 1783364779.0738509,
+    "ast_hash": "4bc61d46f8fd326502721b10f0b062c2",
+    "semantic_hash": "4bc61d46f8fd326502721b10f0b062c2"
+  },
+  "assets/js/main-simple.js": {
+    "mtime": 1783364779.0738509,
+    "ast_hash": "5562e809f34f4ba86fe0404ebafae603",
+    "semantic_hash": "5562e809f34f4ba86fe0404ebafae603"
+  },
+  "assets/js/main.js": {
+    "mtime": 1783364779.0738509,
+    "ast_hash": "d556e94b5efc66aafb6875d6c706b371",
+    "semantic_hash": "d556e94b5efc66aafb6875d6c706b371"
+  },
+  "assets/js/notas.js": {
+    "mtime": 1783364779.0738509,
+    "ast_hash": "9eb37650058dfcc42f12884328a228e1",
+    "semantic_hash": "9eb37650058dfcc42f12884328a228e1"
+  },
+  "assets/js/recaptcha-guard.js": {
+    "mtime": 1783364779.0738509,
+    "ast_hash": "049103bf20c6c82eabcb1fc7a2c016ab",
+    "semantic_hash": "049103bf20c6c82eabcb1fc7a2c016ab"
+  },
+  "notas/data/notas.json": {
+    "mtime": 1783364779.077851,
+    "ast_hash": "72eb1f8be61ca193a98de6aeb5309e8e",
+    "semantic_hash": "72eb1f8be61ca193a98de6aeb5309e8e"
+  },
+  "package.json": {
+    "mtime": 1783364779.079851,
+    "ast_hash": "ceef87e8e478d0c93857b69a0977d1cf",
+    "semantic_hash": "ceef87e8e478d0c93857b69a0977d1cf"
+  },
+  "scripts/validate-site.mjs": {
+    "mtime": 1783364779.082851,
+    "ast_hash": "f602edbdc970c8d5a8812135b32d938a",
+    "semantic_hash": "f602edbdc970c8d5a8812135b32d938a"
+  },
+  "tailwind.config.js": {
+    "mtime": 1783364779.082851,
+    "ast_hash": "39e67ea6e4df0ae953ec25b26b821713",
+    "semantic_hash": "39e67ea6e4df0ae953ec25b26b821713"
+  },
+  "webhook-example.json": {
+    "mtime": 1783364779.082851,
+    "ast_hash": "239e01a0fc7c7005e02e1b4bec7328fe",
+    "semantic_hash": "239e01a0fc7c7005e02e1b4bec7328fe"
+  },
+  ".hermes/skills/graphify/SKILL.md": {
+    "mtime": 1783605011.105673,
+    "ast_hash": "e582759bfc00f68579f37c74cbb64df9",
+    "semantic_hash": ""
+  },
+  ".hermes/skills/graphify/references/add-watch.md": {
+    "mtime": 1783604945.4025402,
+    "ast_hash": "d59d027fe449f06aa03905a01184e779",
+    "semantic_hash": ""
+  },
+  ".hermes/skills/graphify/references/exports.md": {
+    "mtime": 1783604945.4035401,
+    "ast_hash": "9da2a2152e60a22f07f05fed5158f287",
+    "semantic_hash": ""
+  },
+  ".hermes/skills/graphify/references/extraction-spec.md": {
+    "mtime": 1783604945.4035401,
+    "ast_hash": "bf895ec4d4e40f5f66f7d31c2a9bd4a7",
+    "semantic_hash": ""
+  },
+  ".hermes/skills/graphify/references/github-and-merge.md": {
+    "mtime": 1783604945.4035401,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": ""
+  },
+  ".hermes/skills/graphify/references/hooks.md": {
+    "mtime": 1783604945.4035401,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": ""
+  },
+  ".hermes/skills/graphify/references/query.md": {
+    "mtime": 1783604945.4035401,
+    "ast_hash": "3c46f8ad006874260614ed8657d02307",
+    "semantic_hash": ""
+  },
+  ".hermes/skills/graphify/references/transcribe.md": {
+    "mtime": 1783604945.4035401,
+    "ast_hash": "67b6a5fa6c0974e18f60db9f8932fbd8",
+    "semantic_hash": ""
+  },
+  ".hermes/skills/graphify/references/update.md": {
+    "mtime": 1783604945.4035401,
+    "ast_hash": "c698309979460d0f02ba616417844399",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1783605011.105673,
+    "ast_hash": "6a47d64fcc136324ca395065a707ef76",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1783364779.068851,
+    "ast_hash": "677fc660b57cc84cf6348924cb0e3307",
+    "semantic_hash": ""
+  },
+  "deploy/preview/docker-compose.yml": {
+    "mtime": 1783364779.0738509,
+    "ast_hash": "cd0ca24bc10da21f71f986646ebbd0ea",
+    "semantic_hash": ""
+  },
+  "docker-compose.yml": {
+    "mtime": 1783364779.0738509,
+    "ast_hash": "d296e4f85c7563fee272406dbeb8f0b3",
+    "semantic_hash": ""
+  },
+  "docs/seo-analytics-campanas.md": {
+    "mtime": 1783364779.0738509,
+    "ast_hash": "1bb86083a079450e4e348ee20d4f26cc",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1783364779.076851,
+    "ast_hash": "4e4965b933bf61f1548e7118b141ee7a",
+    "semantic_hash": ""
+  },
+  "llms.txt": {
+    "mtime": 1783364779.076851,
+    "ast_hash": "fd019ff7dfe4b1d75029835330b2aa7b",
+    "semantic_hash": ""
+  },
+  "notas/agente-voz-turnos-recordatorios-ia/index.html": {
+    "mtime": 1783364779.076851,
+    "ast_hash": "5faef68de2e477d3511d5f5ad9b7ffc3",
+    "semantic_hash": ""
+  },
+  "notas/agentes-autonomos-aws-quick-procesos-con-control/index.html": {
+    "mtime": 1783364779.076851,
+    "ast_hash": "c9d2b9831c64eff15d26f45cb998a29e",
+    "semantic_hash": ""
+  },
+  "notas/agentes-de-trabajo-en-chatgpt-automatizar-procesos-con-control/index.html": {
+    "mtime": 1783364779.076851,
+    "ast_hash": "cd2e580dcd0118a23428f34f03792b7c",
+    "semantic_hash": ""
+  },
+  "notas/agentes-ia-produccion-control-humano-stripe/index.html": {
+    "mtime": 1783364779.076851,
+    "ast_hash": "89e95f13a38899032d87f8946e12bc43",
+    "semantic_hash": ""
+  },
+  "notas/agentes-ia-que-aprenden-procesos-negocio/index.html": {
+    "mtime": 1783364779.077851,
+    "ast_hash": "694cb656843c584414bd770020783c28",
+    "semantic_hash": ""
+  },
+  "notas/apps-script-core-service-automatizaciones-google-workspace/index.html": {
+    "mtime": 1783364779.077851,
+    "ast_hash": "2b024411d49727a20b035eb2462e181e",
+    "semantic_hash": ""
+  },
+  "notas/atencion-con-contexto-whatsapp-no-respuestas-genericas/index.html": {
+    "mtime": 1783364779.077851,
+    "ast_hash": "33317c9197a9a83935436c83acfd1e40",
+    "semantic_hash": ""
+  },
+  "notas/atencion-conversacional-ia-consultas-viajes-negocios/index.html": {
+    "mtime": 1783364779.077851,
+    "ast_hash": "445a288091c1b5ea01770a7c7e19b7cd",
+    "semantic_hash": ""
+  },
+  "notas/automatizar-tareas-repetitivas-sin-esperar-herramienta-perfecta/index.html": {
+    "mtime": 1783364779.077851,
+    "ast_hash": "f57f8978985df7e9e78eb208fb1fded4",
+    "semantic_hash": ""
+  },
+  "notas/copilot-costos-procesos-ia-empresas/index.html": {
+    "mtime": 1783364779.077851,
+    "ast_hash": "fa400b931dd1d89f57aca404959d37be",
+    "semantic_hash": ""
+  },
+  "notas/emails-desordenados-extraccion-datos-ia/index.html": {
+    "mtime": 1783364779.077851,
+    "ast_hash": "ae79e86f5341416326dea1cc950f40ac",
+    "semantic_hash": ""
+  },
+  "notas/gemini-sheets-formulas-planillas-menos-errores/index.html": {
+    "mtime": 1783364779.078851,
+    "ast_hash": "f0540e84bc39af9d0d51ac263003d224",
+    "semantic_hash": ""
+  },
+  "notas/ia-agentes-perimetro-seguro-negocios/index.html": {
+    "mtime": 1783364779.078851,
+    "ast_hash": "6dc29d1ab7269a38d05318c59cdeff89",
+    "semantic_hash": ""
+  },
+  "notas/ia-cara-herramientas-sueltas-procesos-claros/index.html": {
+    "mtime": 1783364779.078851,
+    "ast_hash": "0433a9f2dfd68a7b54525ac0c89adb55",
+    "semantic_hash": ""
+  },
+  "notas/ia-especifica-por-rubro-procesos-negocio/index.html": {
+    "mtime": 1783364779.078851,
+    "ast_hash": "476cb65a950a48fea3ede9c5c074bbbe",
+    "semantic_hash": ""
+  },
+  "notas/ia-potente-control-humano-automatizaciones-negocios/index.html": {
+    "mtime": 1783364779.078851,
+    "ast_hash": "9b9fbfbfac7c251c819e61397b8eb03f",
+    "semantic_hash": ""
+  },
+  "notas/ia-privada-conocimiento-interno-empresas/index.html": {
+    "mtime": 1783364779.078851,
+    "ast_hash": "c318720aeccb4dad086897fbda756d44",
+    "semantic_hash": ""
+  },
+  "notas/ia-privada-datos-sensibles-confidential-computing/index.html": {
+    "mtime": 1783364779.078851,
+    "ast_hash": "6836602bb2fad92d2e4fa5c75f1acfa8",
+    "semantic_hash": ""
+  },
+  "notas/ia-soberania-tecnologica-negocios/index.html": {
+    "mtime": 1783364779.078851,
+    "ast_hash": "6570e8aae85505cf42468f1f6583faca",
+    "semantic_hash": ""
+  },
+  "notas/index.html": {
+    "mtime": 1783364779.078851,
+    "ast_hash": "1cd40fba0945e64071567be14fd3ef8e",
+    "semantic_hash": ""
+  },
+  "notas/informacion-desordenada-respuestas-inconsistentes-negocios/index.html": {
+    "mtime": 1783364779.078851,
+    "ast_hash": "93fe1e9115befd68013f285674cf1e04",
+    "semantic_hash": ""
+  },
+  "notas/madurez-ia-empresas-procesos-antes-herramientas/index.html": {
+    "mtime": 1783364779.078851,
+    "ast_hash": "0d359ee12bc438086826eb1e7e7ae810",
+    "semantic_hash": ""
+  },
+  "notas/modelos-ia-control-procesos-negocios/index.html": {
+    "mtime": 1783364779.079851,
+    "ast_hash": "7cc3603d5bfed6247b5f23bce83acf6b",
+    "semantic_hash": ""
+  },
+  "notas/openai-control-costos-ia-empresas/index.html": {
+    "mtime": 1783364779.079851,
+    "ast_hash": "baf68b8e82d9b9cafc33bdcb8615a427",
+    "semantic_hash": ""
+  },
+  "notas/sistemas-viejos-automatizacion-ia-sin-rehacer-todo/index.html": {
+    "mtime": 1783364779.079851,
+    "ast_hash": "29a870cf520f26b4a61b7c8983c85490",
+    "semantic_hash": ""
+  },
+  "notas/whatsapp-usernames-negocios-atencion/index.html": {
+    "mtime": 1783364779.079851,
+    "ast_hash": "88dc32d3c68791d8b9a973bec6534397",
+    "semantic_hash": ""
+  },
+  "plans/001-verification-baseline.md": {
+    "mtime": 1783364779.079851,
+    "ast_hash": "979db0e6e042961ae87cf0b94cca61de",
+    "semantic_hash": ""
+  },
+  "plans/002-nginx-proxy-manager-deploy.md": {
+    "mtime": 1783364779.079851,
+    "ast_hash": "bba2726cf2833253b9867c8a9155b3e8",
+    "semantic_hash": ""
+  },
+  "plans/003-centralize-lead-widget-bootstrap.md": {
+    "mtime": 1783364779.079851,
+    "ast_hash": "89fce1340625d82fcddbc861b0df4584",
+    "semantic_hash": ""
+  },
+  "plans/README.md": {
+    "mtime": 1783364779.079851,
+    "ast_hash": "6599ea6abdb37e7d5e7de23a069bee6f",
+    "semantic_hash": ""
+  },
+  "portafolio.html": {
+    "mtime": 1783365131.5614736,
+    "ast_hash": "f31839cd7a42a658036a554cc70f96f3",
+    "semantic_hash": ""
+  },
+  "privacidad/index.html": {
+    "mtime": 1783364779.081851,
+    "ast_hash": "6d51c0b4e692b0f1e7a1e9b85440c1e6",
+    "semantic_hash": ""
+  },
+  "responsabilidad-usuario/index.html": {
+    "mtime": 1783364779.081851,
+    "ast_hash": "e4ba9162f71122faa3504b111294b286",
+    "semantic_hash": ""
+  },
+  "robots.txt": {
+    "mtime": 1783364779.081851,
+    "ast_hash": "d9a9cc34f2201dc8ab061b7dd0001f81",
+    "semantic_hash": ""
+  },
+  "w/index.html": {
+    "mtime": 1783364836.6149507,
+    "ast_hash": "cc3c27b35e6c28059826d78714484a6a",
+    "semantic_hash": ""
+  },
+  "FAVICON.png": {
+    "mtime": 1783364779.068851,
+    "ast_hash": "8729ebbfe9e2f49b0967c1c525829963",
+    "semantic_hash": ""
+  },
+  "HOME-2.jpg": {
+    "mtime": 1783364779.068851,
+    "ast_hash": "74299ecaad5d87cf52d21f2084372b67",
+    "semantic_hash": ""
+  },
+  "assets/img/fondo-emojis.png": {
+    "mtime": 1783364779.069851,
+    "ast_hash": "68b329da9893e34099c7d8ad5cb9c940",
+    "semantic_hash": ""
+  },
+  "assets/img/logo en azul_logo blanco.svg": {
+    "mtime": 1783364779.069851,
+    "ast_hash": "6244742b587deed3724a32424d1cf372",
+    "semantic_hash": ""
+  },
+  "assets/img/logo-blanco.svg": {
+    "mtime": 1783364779.069851,
+    "ast_hash": "cc6c4e218faccef3b12737f6069331ac",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/agente-voz-turnos-recordatorios-ia.webp": {
+    "mtime": 1783364779.069851,
+    "ast_hash": "321465970581080f4712295b88ee676f",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/agentes-autonomos-aws-quick-procesos-con-control-h.webp": {
+    "mtime": 1783364779.069851,
+    "ast_hash": "5f1db1351863f1479459b14dde41f5a1",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/agentes-autonomos-aws-quick-procesos-con-control-vertical-original.webp": {
+    "mtime": 1783364779.069851,
+    "ast_hash": "2e75651fe81ad9c6b09c9b24f082612d",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/agentes-autonomos-aws-quick-procesos-con-control.webp": {
+    "mtime": 1783364779.069851,
+    "ast_hash": "81574258389e56f9173cc8829a6cf98d",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/agentes-de-trabajo-en-chatgpt-automatizar-procesos-con-control-h.webp": {
+    "mtime": 1783364779.0708508,
+    "ast_hash": "e1bbe7b7c1d8760c399caea3a6df3926",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/agentes-de-trabajo-en-chatgpt-automatizar-procesos-con-control.webp": {
+    "mtime": 1783364779.0708508,
+    "ast_hash": "a0b6ab1fb615311f430e2d3268378261",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/agentes-ia-produccion-control-humano-stripe.webp": {
+    "mtime": 1783364779.0708508,
+    "ast_hash": "c3ccba429af3cf2ff8274c50967c5183",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/agentes-ia-que-aprenden-procesos-negocio.webp": {
+    "mtime": 1783364779.0708508,
+    "ast_hash": "273ded63da52440d480385428592dee3",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/apps-script-core-service-automatizaciones-google-workspace.webp": {
+    "mtime": 1783364779.0708508,
+    "ast_hash": "02fefaf1cd60db4fd54750afc89283d7",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/atencion-conversacional-ia-consultas-viajes-negocios-vertical-original.webp": {
+    "mtime": 1783364779.0708508,
+    "ast_hash": "1b2dd5af9167e324039174b9943a7b9a",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/atencion-conversacional-ia-consultas-viajes-negocios.webp": {
+    "mtime": 1783364779.0708508,
+    "ast_hash": "f5086de61514413f1c72b4564f8a01b7",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/copilot-costos-procesos-ia-empresas.webp": {
+    "mtime": 1783364779.0708508,
+    "ast_hash": "8abde87e85a95d32f93568d5fff30e16",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/emails-desordenados-extraccion-datos-ia.webp": {
+    "mtime": 1783364779.0708508,
+    "ast_hash": "6cc01671a6ebccab528af28002110ebf",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/gemini-sheets-formulas-planillas-menos-errores.webp": {
+    "mtime": 1783364779.0708508,
+    "ast_hash": "995552830db0ef49fa4f9da6bdbc3d25",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/ia-agentes-perimetro-seguro-negocios.webp": {
+    "mtime": 1783364779.071851,
+    "ast_hash": "295ace073810a7f3d29532214b820183",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/ia-especifica-por-rubro-procesos-negocio.webp": {
+    "mtime": 1783364779.071851,
+    "ast_hash": "3af6927582195e556959589c6c221095",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/ia-potente-control-humano-automatizaciones-negocios.webp": {
+    "mtime": 1783364779.071851,
+    "ast_hash": "9a62b3f214d1a7dad415af2c86389f25",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/ia-privada-conocimiento-interno.svg": {
+    "mtime": 1783364779.071851,
+    "ast_hash": "c9cc5216f00be7c44877a05d8b30c4c3",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/ia-privada-datos-sensibles-confidential-computing.webp": {
+    "mtime": 1783364779.071851,
+    "ast_hash": "47be450d9973186baf0f6284f79e2b80",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/ia-soberania-tecnologica-negocios.webp": {
+    "mtime": 1783364779.071851,
+    "ast_hash": "20e6f758cb6cf13b094057935969e298",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/madurez-ia-empresas-procesos-antes-herramientas.webp": {
+    "mtime": 1783364779.071851,
+    "ast_hash": "84ad00279f124cb2590ae555d14364a7",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/modelos-ia-control-procesos-negocios.webp": {
+    "mtime": 1783364779.071851,
+    "ast_hash": "78b3c87c042032e537aca813638671a0",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/openai-control-costos-ia-empresas-vertical-original.webp": {
+    "mtime": 1783364779.071851,
+    "ast_hash": "3637ae8325f3b6ed52e5208ffdbd9e43",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/openai-control-costos-ia-empresas.webp": {
+    "mtime": 1783364779.071851,
+    "ast_hash": "483ad00aed6f42ac6af5067006595a41",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/sistemas-viejos-automatizacion-ia-sin-rehacer-todo.webp": {
+    "mtime": 1783364779.072851,
+    "ast_hash": "237c1994613dadb4b007570c18054b61",
+    "semantic_hash": ""
+  },
+  "assets/img/notas/whatsapp-usernames-negocios-atencion.webp": {
+    "mtime": 1783364779.072851,
+    "ast_hash": "dfe48b2abd58f95a96199789f48ea7b2",
+    "semantic_hash": ""
+  },
+  "assets/img/perfil.jpeg": {
+    "mtime": 1783364779.072851,
+    "ast_hash": "e636ce0161d50c7e47456814c88796a9",
+    "semantic_hash": ""
+  },
+  "facebook.png": {
+    "mtime": 1783364779.074851,
+    "ast_hash": "59479e0c3aadc901b53dbbc7a6832efc",
+    "semantic_hash": ""
+  },
+  "fondo-1920.png": {
+    "mtime": 1783364779.075851,
+    "ast_hash": "02df5007d1c233d9a71588dbe5e5a442",
+    "semantic_hash": ""
+  },
+  "perfil-face.png": {
+    "mtime": 1783364779.079851,
+    "ast_hash": "db3f56d679e6be1ed14d62eafec45169",
+    "semantic_hash": ""
+  },
+  "portada-de-face.png": {
+    "mtime": 1783364779.079851,
+    "ast_hash": "d17db7e0fcff5553ad0c10169484478a",
+    "semantic_hash": ""
+  },
+  "portada-face.png": {
+    "mtime": 1783364779.081851,
+    "ast_hash": "841b630d2d4f632231d7f30eb9c0436f",
+    "semantic_hash": ""
+  },
+  "portada-freelance.png": {
+    "mtime": 1783364779.081851,
+    "ast_hash": "27fa203161a0dbbccfceac0b33b86f68",
+    "semantic_hash": ""
+  }
+}

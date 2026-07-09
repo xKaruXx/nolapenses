@@ -48,3 +48,8 @@ yarn-error.log*
 # Archivos específicos del proyecto
 /certbot/conf/*
 /certbot/www/*
+
+# Mapas locales de codigo
+# Graphify se versiona porque sirve como mapa compartido del repo.
+# CodeGraph usa SQLite local para navegación rápida; se reconstruye con codegraph index/sync.
+.codegraph/
