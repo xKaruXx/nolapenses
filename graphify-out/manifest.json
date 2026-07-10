@@ -55,9 +55,9 @@
     "semantic_hash": "ceef87e8e478d0c93857b69a0977d1cf"
   },
   "scripts/validate-site.mjs": {
-    "mtime": 1783364779.082851,
-    "ast_hash": "f602edbdc970c8d5a8812135b32d938a",
-    "semantic_hash": "f602edbdc970c8d5a8812135b32d938a"
+    "mtime": 1783685354.2105186,
+    "ast_hash": "3c0eef7245796c3326aa4170dc700a2b",
+    "semantic_hash": ""
   },
   "tailwind.config.js": {
     "mtime": 1783364779.082851,
@@ -512,6 +512,11 @@
   "portada-freelance.png": {
     "mtime": 1783364779.081851,
     "ast_hash": "27fa203161a0dbbccfceac0b33b86f68",
+    "semantic_hash": ""
+  },
+  "tiktok-demo/index.html": {
+    "mtime": 1783685318.9984252,
+    "ast_hash": "cbc5e88cce94ce8afa458659cf3bd5d4",
     "semantic_hash": ""
   }
 }

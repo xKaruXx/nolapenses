@@ -45,7 +45,7 @@ for (const file of requiredFiles) {
 }
 
 const htmlFiles = [
-  ...walk('.', (rel) => rel.endsWith('.html') && !rel.startsWith('node_modules/')),
+  ...walk('.', (rel) => rel.endsWith('.html') && !rel.startsWith('node_modules/') && !rel.startsWith('graphify-out/')),
 ].sort();
 
 for (const file of htmlFiles) {
