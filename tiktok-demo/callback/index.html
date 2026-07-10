@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WGR3XF56');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#007BCA">
+    <title>TikTok OAuth Callback | No La Penses!</title>
+    <meta name="description" content="TikTok OAuth callback endpoint for the internal No La Penses! publishing demo.">
+    <link rel="canonical" href="https://nolapenses.com.ar/tiktok-demo/callback/">
+    <link rel="icon" href="../../FAVICON.png" type="image/png">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="../../assets/css/tailwind.css?v=20260603">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #f8fbff;
+            background:
+                radial-gradient(circle at 20% 10%, rgba(0,123,202,0.32), transparent 28rem),
+                linear-gradient(135deg, #03050b 0%, #07111f 50%, #02040a 100%);
+            display: grid;
+            place-items: center;
+            padding: 24px;
+        }
+        .font-display { font-family: 'Sora', 'Inter', sans-serif; letter-spacing: -0.055em; }
+        .card {
+            width: min(720px, 100%);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 28px;
+            background: rgba(255,255,255,0.055);
+            box-shadow: 0 24px 80px rgba(0,0,0,0.32);
+            padding: clamp(24px, 5vw, 44px);
+        }
+        .badge {
+            display: inline-flex;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(0,123,202,0.14);
+            border: 1px solid rgba(59,180,255,0.28);
+            color: #bfe9ff;
+            font-size: 13px;
+            font-weight: 800;
+        }
+        h1 { margin: 18px 0 14px; font-size: clamp(34px, 8vw, 58px); line-height: .95; }
+        p { color: rgba(248,251,255,.76); line-height: 1.6; font-size: 17px; }
+        a { color: #bfe9ff; font-weight: 800; }
+        code { background: rgba(255,255,255,.08); border-radius: 8px; padding: 3px 6px; color: #d9f2ff; }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGR3XF56"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <main class="card">
+        <span class="badge">TikTok Login Kit callback</span>
+        <h1 class="font-display">TikTok authorization callback received.</h1>
+        <p>
+            This URL is reserved for TikTok OAuth redirects in the No La Penses! internal publishing workflow. In production, the server exchanges the temporary authorization code for an access token and returns the admin to the publishing panel.
+        </p>
+        <p>
+            Callback URL: <code>https://nolapenses.com.ar/tiktok-demo/callback/</code>
+        </p>
+        <p><a href="../">Return to TikTok publishing demo</a></p>
+    </main>
+</body>
+</html>
