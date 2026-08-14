@@ -1,0 +1,21 @@
+services:
+  ana-agent-tools:
+    build: .
+    container_name: ana-agent-tools
+    restart: unless-stopped
+    user: "1000:1000"
+    environment:
+      EA_BASE_URL: "https://calendario.nolapenses.com.ar/index.php/api/v1"
+      TOOLS_DB: "/data/ana_tools.db"
+      PROVIDER_ID: "2"
+      ADMIN_PHONES: "${ADMIN_PHONES:?set ADMIN_PHONES in .env}"
+      EXPECTED_BASIC_AUTH_SHA256: "${EXPECTED_BASIC_AUTH_SHA256:?set EXPECTED_BASIC_AUTH_SHA256 in .env}"
+    volumes:
+      - ./data:/data
+    networks:
+      - n8n_internal
+
+networks:
+  n8n_internal:
+    external: true
+    name: n8n_n8n_internal

@@ -1,0 +1,3 @@
+# Process verified day-block outreach once per minute.
+# The worker claims each queued row before sending and never retries an uncertain send automatically.
+* * * * * flock -n /tmp/ana_rebooking_outreach.lock /opt/nolapenses/ana-ops/ana_calendar_ops.py process-rebooking-outreach >> /opt/nolapenses/ana-ops/logs/rebooking-outreach.log 2>&1 # ANA_REBOOKING_OUTREACH

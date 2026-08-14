@@ -26,5 +26,11 @@
   "24": "graphify reference: GitHub clone and cross-repo merge",
   "25": "graphify reference: transcribe video and audio",
   "26": "AGENTS.md",
-  "27": "extraction-spec.md"
+  "27": "extraction-spec.md",
+  "28": "graphify reference: commit hook and native CLAUDE.md integration",
+  "29": "graphify reference: incremental update and cluster-only",
+  "30": "graphify reference: GitHub clone and cross-repo merge",
+  "31": "graphify reference: transcribe video and audio",
+  "32": "graphify",
+  "33": "graphify reference: extraction subagent prompt (compact)"
 }
