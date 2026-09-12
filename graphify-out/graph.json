@@ -2724,6 +2724,126 @@
       "norm_label": ".test_idle_rebooking_worker_is_silent_and_does_not_record_runs()"
     },
     {
+      "label": "test_update_ana_conversation_review.py",
+      "file_type": "code",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ops_n8n_test_update_ana_conversation_review",
+      "community": 34,
+      "norm_label": "test_update_ana_conversation_review.py"
+    },
+    {
+      "label": "fixture()",
+      "file_type": "code",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "ops_n8n_test_update_ana_conversation_review_fixture",
+      "community": 34,
+      "norm_label": "fixture()"
+    },
+    {
+      "label": "ConversationReviewTransformTests",
+      "file_type": "code",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests",
+      "community": 34,
+      "norm_label": "conversationreviewtransformtests"
+    },
+    {
+      "label": ".test_adds_validated_conversation_rules_without_schedule()",
+      "file_type": "code",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_adds_validated_conversation_rules_without_schedule",
+      "community": 34,
+      "norm_label": ".test_adds_validated_conversation_rules_without_schedule()"
+    },
+    {
+      "label": ".test_updates_version()",
+      "file_type": "code",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_updates_version",
+      "community": 34,
+      "norm_label": ".test_updates_version()"
+    },
+    {
+      "label": ".test_is_idempotent()",
+      "file_type": "code",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_is_idempotent",
+      "community": 34,
+      "norm_label": ".test_is_idempotent()"
+    },
+    {
+      "label": ".test_fails_closed_when_prompt_anchor_changes()",
+      "file_type": "code",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_fails_closed_when_prompt_anchor_changes",
+      "community": 34,
+      "norm_label": ".test_fails_closed_when_prompt_anchor_changes()"
+    },
+    {
+      "label": ".test_fails_closed_on_duplicate_target_node()",
+      "file_type": "code",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_fails_closed_on_duplicate_target_node",
+      "community": 34,
+      "norm_label": ".test_fails_closed_on_duplicate_target_node()"
+    },
+    {
+      "label": "update_ana_conversation_review.py",
+      "file_type": "code",
+      "source_file": "ops/n8n/update_ana_conversation_review.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ops_n8n_update_ana_conversation_review",
+      "community": 34,
+      "norm_label": "update_ana_conversation_review.py"
+    },
+    {
+      "label": "node()",
+      "file_type": "code",
+      "source_file": "ops/n8n/update_ana_conversation_review.py",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "ops_n8n_update_ana_conversation_review_node",
+      "community": 34,
+      "norm_label": "node()"
+    },
+    {
+      "label": "transform()",
+      "file_type": "code",
+      "source_file": "ops/n8n/update_ana_conversation_review.py",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "ops_n8n_update_ana_conversation_review_transform",
+      "community": 34,
+      "norm_label": "transform()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ops/n8n/update_ana_conversation_review.py",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "ops_n8n_update_ana_conversation_review_main",
+      "community": 34,
+      "norm_label": "main()"
+    },
+    {
       "label": "update_ana_day_blocking.py",
       "file_type": "code",
       "source_file": "ops/n8n/update_ana_day_blocking.py",
@@ -4132,6 +4252,66 @@
       "id": "ops_readme_ana_day_blocking_rollback",
       "community": 24,
       "norm_label": "rollback"
+    },
+    {
+      "label": "ana-schedule-grid-review.md",
+      "file_type": "document",
+      "source_file": "ops/ana-schedule-grid-review.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ops_ana_schedule_grid_review",
+      "community": 35,
+      "norm_label": "ana-schedule-grid-review.md"
+    },
+    {
+      "label": "Grilla de horarios de Ana \u2014 revisi\u00f3n de las im\u00e1genes",
+      "file_type": "document",
+      "source_file": "ops/ana-schedule-grid-review.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ops_ana_schedule_grid_review_grilla_de_horarios_de_ana_revisi\u00f3n_de_las_im\u00e1genes",
+      "community": 35,
+      "norm_label": "grilla de horarios de ana \u2014 revision de las imagenes"
+    },
+    {
+      "label": "Criterio de lectura",
+      "file_type": "document",
+      "source_file": "ops/ana-schedule-grid-review.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "ops_ana_schedule_grid_review_criterio_de_lectura",
+      "community": 35,
+      "norm_label": "criterio de lectura"
+    },
+    {
+      "label": "Grilla interpretada",
+      "file_type": "document",
+      "source_file": "ops/ana-schedule-grid-review.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "ops_ana_schedule_grid_review_grilla_interpretada",
+      "community": 35,
+      "norm_label": "grilla interpretada"
+    },
+    {
+      "label": "Reglas generales entendidas con claridad",
+      "file_type": "document",
+      "source_file": "ops/ana-schedule-grid-review.md",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "ops_ana_schedule_grid_review_reglas_generales_entendidas_con_claridad",
+      "community": 35,
+      "norm_label": "reglas generales entendidas con claridad"
+    },
+    {
+      "label": "Preguntas m\u00ednimas para cerrar la grilla",
+      "file_type": "document",
+      "source_file": "ops/ana-schedule-grid-review.md",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "ops_ana_schedule_grid_review_preguntas_m\u00ednimas_para_cerrar_la_grilla",
+      "community": 35,
+      "norm_label": "preguntas minimas para cerrar la grilla"
     },
     {
       "label": "001-verification-baseline.md",
@@ -12081,6 +12261,194 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review",
+      "target": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review",
+      "target": "ops_n8n_test_update_ana_conversation_review_fixture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review",
+      "target": "ops_n8n_update_ana_conversation_review",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_adds_validated_conversation_rules_without_schedule",
+      "target": "ops_n8n_test_update_ana_conversation_review_fixture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_fails_closed_on_duplicate_target_node",
+      "target": "ops_n8n_test_update_ana_conversation_review_fixture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_fails_closed_when_prompt_anchor_changes",
+      "target": "ops_n8n_test_update_ana_conversation_review_fixture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_is_idempotent",
+      "target": "ops_n8n_test_update_ana_conversation_review_fixture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_updates_version",
+      "target": "ops_n8n_test_update_ana_conversation_review_fixture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests",
+      "target": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_adds_validated_conversation_rules_without_schedule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests",
+      "target": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_fails_closed_on_duplicate_target_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests",
+      "target": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_fails_closed_when_prompt_anchor_changes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests",
+      "target": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_is_idempotent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/test_update_ana_conversation_review.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests",
+      "target": "ops_n8n_test_update_ana_conversation_review_conversationreviewtransformtests_test_updates_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/update_ana_conversation_review.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "ops_n8n_update_ana_conversation_review",
+      "target": "ops_n8n_update_ana_conversation_review_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/update_ana_conversation_review.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "ops_n8n_update_ana_conversation_review",
+      "target": "ops_n8n_update_ana_conversation_review_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/update_ana_conversation_review.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "ops_n8n_update_ana_conversation_review",
+      "target": "ops_n8n_update_ana_conversation_review_transform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/update_ana_conversation_review.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "ops_n8n_update_ana_conversation_review_transform",
+      "target": "ops_n8n_update_ana_conversation_review_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/n8n/update_ana_conversation_review.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "ops_n8n_update_ana_conversation_review_main",
+      "target": "ops_n8n_update_ana_conversation_review_transform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "ops/n8n/update_ana_day_blocking.py",
       "source_location": "L54",
       "weight": 1.0,
@@ -13454,6 +13822,56 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "ops/ana-schedule-grid-review.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "ops_ana_schedule_grid_review",
+      "target": "ops_ana_schedule_grid_review_grilla_de_horarios_de_ana_revisi\u00f3n_de_las_im\u00e1genes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/ana-schedule-grid-review.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "ops_ana_schedule_grid_review_grilla_de_horarios_de_ana_revisi\u00f3n_de_las_im\u00e1genes",
+      "target": "ops_ana_schedule_grid_review_criterio_de_lectura",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/ana-schedule-grid-review.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "ops_ana_schedule_grid_review_grilla_de_horarios_de_ana_revisi\u00f3n_de_las_im\u00e1genes",
+      "target": "ops_ana_schedule_grid_review_grilla_interpretada",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/ana-schedule-grid-review.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "ops_ana_schedule_grid_review_grilla_de_horarios_de_ana_revisi\u00f3n_de_las_im\u00e1genes",
+      "target": "ops_ana_schedule_grid_review_preguntas_m\u00ednimas_para_cerrar_la_grilla",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ops/ana-schedule-grid-review.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "ops_ana_schedule_grid_review_grilla_de_horarios_de_ana_revisi\u00f3n_de_las_im\u00e1genes",
+      "target": "ops_ana_schedule_grid_review_reglas_generales_entendidas_con_claridad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "plans/001-verification-baseline.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -13983,5 +14401,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "717c306aa6cffc8fe5970e8c58c52433074de07e"
+  "built_at_commit": "9f10f6d04c9ac20d5b514cf0c27a6a0476b63a27"
 }

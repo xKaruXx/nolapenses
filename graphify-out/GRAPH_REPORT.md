@@ -1,16 +1,16 @@
-# Graph Report - nolapenses-ana-day-block  (2026-08-14)
+# Graph Report - nolapenses-ana-day-block  (2026-09-12)
 
 ## Corpus Check
-- 36 files · ~194,348 words
+- 39 files · ~195,802 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 470 nodes · 883 edges · 34 communities (26 shown, 8 thin omitted)
+- 488 nodes · 906 edges · 36 communities (28 shown, 8 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `717c306a`
+- Built from commit: `9f10f6d0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -48,6 +48,8 @@
 - graphify reference: transcribe video and audio
 - graphify
 - graphify reference: extraction subagent prompt (compact)
+- ConversationReviewTransformTests
+- Grilla de horarios de Ana — revisión de las imágenes
 
 ## God Nodes (most connected - your core abstractions)
 1. `ExceptionalBookingTests` - 45 edges
@@ -67,7 +69,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (34 total, 8 thin omitted)
+## Communities (36 total, 8 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.10
@@ -169,8 +171,16 @@ Nodes (3): For git commit hook, For native CLAUDE.md integration, graphify refer
 Cohesion: 0.50
 Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
 
+### Community 34 - "ConversationReviewTransformTests"
+Cohesion: 0.27
+Nodes (5): ConversationReviewTransformTests, fixture(), main(), node(), transform()
+
+### Community 35 - "Grilla de horarios de Ana — revisión de las imágenes"
+Cohesion: 0.33
+Nodes (5): Criterio de lectura, Grilla de horarios de Ana — revisión de las imágenes, Grilla interpretada, Preguntas mínimas para cerrar la grilla, Reglas generales entendidas con claridad
+
 ## Knowledge Gaps
-- **139 isolated node(s):** `CONFIG`, `name`, `version`, `description`, `main` (+134 more)
+- **143 isolated node(s):** `CONFIG`, `name`, `version`, `description`, `main` (+138 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -178,7 +188,7 @@ Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphif
 _Questions this graph is uniquely positioned to answer:_
 
 - **What connects `CONFIG`, `name`, `version` to the rest of the system?**
-  _139 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _143 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.10140845070422536 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
