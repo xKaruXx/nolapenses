@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 493 nodes · 914 edges · 36 communities (28 shown, 8 thin omitted)
+- 494 nodes · 914 edges · 37 communities (28 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `358bdc74`
+- Built from commit: `08d7712c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -50,6 +50,7 @@
 - graphify reference: extraction subagent prompt (compact)
 - ConversationReviewTransformTests
 - Grilla de horarios de Ana — revisión de las imágenes
+- Path
 
 ## God Nodes (most connected - your core abstractions)
 1. `ExceptionalBookingTests` - 45 edges
@@ -69,7 +70,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (36 total, 8 thin omitted)
+## Communities (37 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.10
@@ -173,7 +174,7 @@ Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphif
 
 ### Community 34 - "ConversationReviewTransformTests"
 Cohesion: 0.19
-Nodes (8): ConversationReviewTransformTests, fixture(), load_workflow(), main(), node(), Path, Load either an n8n API object or a singleton CLI export., transform()
+Nodes (8): ConversationReviewTransformTests, fixture(), load_workflow(), main(), node(), Load either an n8n API object or a singleton CLI export., transform(), Path
 
 ### Community 35 - "Grilla de horarios de Ana — revisión de las imágenes"
 Cohesion: 0.33
@@ -182,12 +183,12 @@ Nodes (5): Criterio de lectura, Grilla de horarios de Ana — revisión de las i
 ## Knowledge Gaps
 - **143 isolated node(s):** `CONFIG`, `name`, `version`, `description`, `main` (+138 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What connects `CONFIG`, `Load either an n8n API object or a singleton CLI export.`, `name` to the rest of the system?**
+- **What connects `Load either an n8n API object or a singleton CLI export.`, `CONFIG`, `name` to the rest of the system?**
   _144 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.10140845070422536 - nodes in this community are weakly interconnected._
