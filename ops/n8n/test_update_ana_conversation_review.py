@@ -1,4 +1,7 @@
 import copy
+import json
+import pathlib
+import tempfile
 import unittest
 
 import update_ana_conversation_review as update
@@ -23,12 +26,26 @@ def fixture():
 
 
 class ConversationReviewTransformTests(unittest.TestCase):
+    def test_loads_singleton_cli_export(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = pathlib.Path(directory) / "workflow.json"
+            path.write_text(json.dumps([fixture()]))
+            self.assertEqual(update.load_workflow(path), fixture())
+
+    def test_rejects_multi_workflow_cli_export(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = pathlib.Path(directory) / "workflow.json"
+            path.write_text(json.dumps([fixture(), fixture()]))
+            with self.assertRaisesRegex(RuntimeError, "único workflow"):
+                update.load_workflow(path)
+
     def test_adds_validated_conversation_rules_without_schedule(self):
         result = update.transform(fixture())
         code = result["nodes"][0]["parameters"]["jsCode"]
         self.assertIn(update.MARKER, code)
         self.assertIn("entre 1 y 4 líneas", code)
-        self.assertIn("Hablar con Ana", code)
+        self.assertNotIn("4. Hablar con Ana", code)
+        self.assertIn("reactivación siguen pendientes", code)
         self.assertIn("No estoy seguro/a", code)
         self.assertIn("operational_catalog", code)
         self.assertIn("pendientes de validación escrita", code)

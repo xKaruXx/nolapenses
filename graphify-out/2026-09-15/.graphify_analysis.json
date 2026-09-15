@@ -1,0 +1,309 @@
+{
+  "communities": {
+    "0": [
+      "package",
+      "package_author",
+      "package_bugs",
+      "package_bugs_url",
+      "package_description",
+      "package_devdependencies",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_cli",
+      "package_homepage",
+      "package_keywords",
+      "package_license",
+      "package_main",
+      "package_name",
+      "package_repository",
+      "package_repository_type",
+      "package_repository_url",
+      "package_scripts",
+      "package_scripts_build_css",
+      "package_scripts_test",
+      "package_type",
+      "package_version"
+    ],
+    "1": [
+      "assets_js_lead_chat_widget",
+      "assets_js_lead_chat_widget_blobtobase64",
+      "assets_js_lead_chat_widget_classifyfromfacts",
+      "assets_js_lead_chat_widget_createwidget",
+      "assets_js_lead_chat_widget_ensurerecaptchaclient",
+      "assets_js_lead_chat_widget_escapehtml",
+      "assets_js_lead_chat_widget_getattribution",
+      "assets_js_lead_chat_widget_getsessionid",
+      "assets_js_lead_chat_widget_init",
+      "assets_js_lead_chat_widget_leadsummary",
+      "assets_js_lead_chat_widget_linkifysafe",
+      "assets_js_lead_chat_widget_normalizephone",
+      "assets_js_lead_chat_widget_publicwhatsapptext",
+      "assets_js_lead_chat_widget_shouldhandoff",
+      "assets_js_lead_chat_widget_supportedmimetype",
+      "assets_js_lead_chat_widget_track",
+      "assets_js_lead_chat_widget_updatefactsfrommessage"
+    ],
+    "2": [
+      "assets_js_main_new",
+      "assets_js_main_new_getbrowsername",
+      "assets_js_main_new_getpersonalizedgreeting",
+      "assets_js_main_new_init",
+      "assets_js_main_new_initscrollanimations",
+      "assets_js_main_new_sendaudiowebhook",
+      "assets_js_main_new_sendmoodwebhook",
+      "assets_js_main_new_setrandomaimood",
+      "assets_js_main_new_setupscrollindicator",
+      "assets_js_main_new_setusermood",
+      "assets_js_main_new_startrecording",
+      "assets_js_main_new_stoprecording",
+      "assets_js_main_new_submitform",
+      "assets_js_main_new_togglerecording"
+    ],
+    "3": [
+      "assets_js_main_debuglog",
+      "assets_js_main_getpersonalizedgreeting",
+      "assets_js_main_saveuserselectiontodatabase",
+      "assets_js_main_scrolltovoicesection",
+      "assets_js_main_selectrandommood",
+      "assets_js_main_selectservice",
+      "assets_js_main_selectserviceandscroll",
+      "assets_js_main_sendmoodwebhook",
+      "assets_js_main_sendquestionwebhook",
+      "assets_js_main_sendservicewebhook",
+      "assets_js_main_setrandomaimood",
+      "assets_js_main_setusermood",
+      "assets_js_main_toggletheme"
+    ],
+    "4": [
+      "assets_js_main",
+      "assets_js_main_debugwarn",
+      "assets_js_main_getbrowsername",
+      "assets_js_main_init",
+      "assets_js_main_initchatbotmessage",
+      "assets_js_main_initdynamicpersonalization",
+      "assets_js_main_initscrollanimations",
+      "assets_js_main_initscrollspy",
+      "assets_js_main_inittheme",
+      "assets_js_main_setrandommoodandgreeting",
+      "assets_js_main_setupscrollindicator",
+      "assets_js_main_startsocialproofrotation"
+    ],
+    "5": [
+      "scripts_validate_site",
+      "scripts_validate_site_errors",
+      "scripts_validate_site_exists",
+      "scripts_validate_site_htmlfiles",
+      "scripts_validate_site_normalizelocalref",
+      "scripts_validate_site_requiredfiles",
+      "scripts_validate_site_root",
+      "scripts_validate_site_walk"
+    ],
+    "6": [
+      "assets_js_human_check",
+      "assets_js_human_check_attach",
+      "assets_js_human_check_gettoken",
+      "assets_js_human_check_loadscript",
+      "assets_js_human_check_normalizeaction",
+      "assets_js_human_check_ready"
+    ],
+    "7": [
+      "assets_js_main_buildchatbotpayload",
+      "assets_js_main_createsessionid",
+      "assets_js_main_getselectedservice",
+      "assets_js_main_resetsubmitbutton",
+      "assets_js_main_submitchatbotleaddata",
+      "assets_js_main_submitform"
+    ],
+    "8": [
+      "assets_js_main_simple",
+      "assets_js_main_simple_getbrowsername",
+      "assets_js_main_simple_getpersonalizedgreeting",
+      "assets_js_main_simple_init",
+      "assets_js_main_simple_setrandomaimood",
+      "assets_js_main_simple_setusermood"
+    ],
+    "9": [
+      "assets_js_recaptcha_guard",
+      "assets_js_recaptcha_guard_attach",
+      "assets_js_recaptcha_guard_gettoken",
+      "assets_js_recaptcha_guard_loadscript",
+      "assets_js_recaptcha_guard_normalizeaction",
+      "assets_js_recaptcha_guard_ready"
+    ],
+    "10": [
+      "assets_js_main_advancechatstep",
+      "assets_js_main_sendaudiowebhook",
+      "assets_js_main_sendtextwebhook",
+      "assets_js_main_showchatbotresponse",
+      "assets_js_main_trackevent"
+    ],
+    "11": [
+      "assets_js_main_requestmicrophonepermission",
+      "assets_js_main_resetrecordbutton",
+      "assets_js_main_startrecording",
+      "assets_js_main_stoprecording",
+      "assets_js_main_togglerecording"
+    ],
+    "12": [
+      "assets_js_notas",
+      "assets_js_notas_apply",
+      "assets_js_notas_normalize",
+      "assets_js_notas_track"
+    ],
+    "13": [
+      "assets_js_conversion_tracking",
+      "assets_js_conversion_tracking_readattribution",
+      "assets_js_conversion_tracking_track"
+    ],
+    "14": [
+      "assets_js_config",
+      "assets_js_config_config"
+    ],
+    "15": [
+      "tailwind_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.09523809523809523,
+    "1": 0.18382352941176472,
+    "2": 0.24175824175824176,
+    "3": 0.21794871794871795,
+    "4": 0.3333333333333333,
+    "5": 0.25,
+    "6": 0.6666666666666666,
+    "7": 0.3333333333333333,
+    "8": 0.5333333333333333,
+    "9": 0.6666666666666666,
+    "10": 0.5,
+    "11": 0.5,
+    "12": 0.6666666666666666,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0
+  },
+  "gods": [
+    {
+      "id": "assets_js_main_debuglog",
+      "label": "debugLog()",
+      "degree": 29
+    },
+    {
+      "id": "assets_js_main_init",
+      "label": "init()",
+      "degree": 11
+    },
+    {
+      "id": "assets_js_main_buildchatbotpayload",
+      "label": "buildChatbotPayload()",
+      "degree": 8
+    },
+    {
+      "id": "assets_js_main_sendaudiowebhook",
+      "label": "sendAudioWebhook()",
+      "degree": 6
+    },
+    {
+      "id": "assets_js_main_new_init",
+      "label": "init()",
+      "degree": 5
+    },
+    {
+      "id": "assets_js_main_debugwarn",
+      "label": "debugWarn()",
+      "degree": 5
+    },
+    {
+      "id": "assets_js_main_setusermood",
+      "label": "setUserMood()",
+      "degree": 5
+    },
+    {
+      "id": "assets_js_main_selectservice",
+      "label": "selectService()",
+      "degree": 5
+    },
+    {
+      "id": "assets_js_main_startrecording",
+      "label": "startRecording()",
+      "degree": 5
+    },
+    {
+      "id": "assets_js_main_stoprecording",
+      "label": "stopRecording()",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "init()",
+      "target": "debugLog()",
+      "source_files": [
+        "assets/js/main.js",
+        "assets/js/main.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 3 → community 4"
+    },
+    {
+      "source": "requestMicrophonePermission()",
+      "target": "debugLog()",
+      "source_files": [
+        "assets/js/main.js",
+        "assets/js/main.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 3 → community 11"
+    },
+    {
+      "source": "sendAudioWebhook()",
+      "target": "debugLog()",
+      "source_files": [
+        "assets/js/main.js",
+        "assets/js/main.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 3 → community 10"
+    },
+    {
+      "source": "submitChatbotLeadData()",
+      "target": "debugLog()",
+      "source_files": [
+        "assets/js/main.js",
+        "assets/js/main.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 3 → community 7"
+    },
+    {
+      "source": "stopRecording()",
+      "target": "debugWarn()",
+      "source_files": [
+        "assets/js/main.js",
+        "assets/js/main.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 4 → community 11"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `debugLog()` connect `Community 3` to `Community 10`, `Community 11`, `Community 4`, `Community 7`?",
+      "why": "High betweenness centrality (0.022) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `CONFIG`, `name`, `version` to the rest of the system?",
+      "why": "21 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
