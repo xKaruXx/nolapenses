@@ -504,10 +504,17 @@ audio::-webkit-media-controls-play-button {
     animation: wave-bounce 1.2s infinite ease-in-out;
 }
 
-.voice-wave span:nth-child(2) { animation-delay: 0.1s; }
-.voice-wave span:nth-child(3) { animation-delay: 0.2s; }
-.voice-wave span:nth-child(4) { animation-delay: 0.3s; }
-.voice-wave span:nth-child(5) { animation-delay: 0.4s; }
+/* Stagger moderno con sibling-index() */
+@supports (animation-delay: calc(sibling-index() * 0.1s)) {
+    .voice-wave span { animation-delay: calc((sibling-index() - 1) * 0.1s); }
+}
+/* Fallback :nth-child() para navegadores sin sibling-index() */
+@supports not (animation-delay: calc(sibling-index() * 0.1s)) {
+    .voice-wave span:nth-child(2) { animation-delay: 0.1s; }
+    .voice-wave span:nth-child(3) { animation-delay: 0.2s; }
+    .voice-wave span:nth-child(4) { animation-delay: 0.3s; }
+    .voice-wave span:nth-child(5) { animation-delay: 0.4s; }
+}
 
 @keyframes wave-bounce {
     0%, 100% { height: 10%; }
@@ -537,19 +544,37 @@ audio::-webkit-media-controls-play-button {
     padding-bottom: 2px;
 }
 
-/* Custom scrollbar for simulator */
-#mockChatContainer::-webkit-scrollbar {
-    width: 4px;
+/* Scrollspy nativo: el navegador marca el link cuya sección está en vista */
+.floating-nav { scroll-target-group: auto; }
+
+/* Custom scrollbar for simulator (propiedades estándar) */
+#mockChatContainer {
+    --scrollbar-thumb: rgba(255, 255, 255, 0.15);
+    --scrollbar-track: transparent;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
-#mockChatContainer::-webkit-scrollbar-track {
-    background: transparent;
+/* Fallback legacy para navegadores sin scrollbar-color */
+@supports not (scrollbar-color: auto) {
+    #mockChatContainer {
+        scrollbar-width: auto;
+    }
+    #mockChatContainer::-webkit-scrollbar {
+        width: 4px;
+    }
+    #mockChatContainer::-webkit-scrollbar-track {
+        background: var(--scrollbar-track);
+    }
+    #mockChatContainer::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb);
+        border-radius: 9999px;
+    }
 }
 
-#mockChatContainer::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 9999px;
-}
+/* Esquema de color nativo sincronizado con el toggle de tema */
+:root { color-scheme: dark; }
+html.light-theme { color-scheme: light; }
 
 /* ==========================================================================
    Light Theme styles and overrides
@@ -624,8 +649,17 @@ audio::-webkit-media-controls-play-button {
     color: #007BCA !important;
 }
 
-.light-theme img[src*="logo-blanco.svg"] {
-    filter: invert(0.8) sepia(1) saturate(10) hue-rotate(185deg);
+/* Logo recoloreado vía mask + background-color (reemplaza la cadena
+   invert()/sepia()/saturate()/hue-rotate(); #0540d1 es el color exacto
+   que producía ese filtro sobre el logo blanco original). */
+span.logo-mask {
+    display: block;
+    background-color: #fff;
+    -webkit-mask: url("../img/logo-blanco.svg") no-repeat center / contain;
+    mask: url("../img/logo-blanco.svg") no-repeat center / contain;
+}
+.light-theme span.logo-mask {
+    background-color: #0540d1;
 }
 
 .light-theme .project-card {
@@ -967,8 +1001,13 @@ svg rect, svg text {
   background: #94a3b8;
   animation: leadTyping 1s infinite ease-in-out;
 }
-.lead-chat-typing span:nth-child(2) { animation-delay: .15s; }
-.lead-chat-typing span:nth-child(3) { animation-delay: .3s; }
+@supports (animation-delay: calc(sibling-index() * 0.15s)) {
+  .lead-chat-typing span { animation-delay: calc((sibling-index() - 1) * 0.15s); }
+}
+@supports not (animation-delay: calc(sibling-index() * 0.15s)) {
+  .lead-chat-typing span:nth-child(2) { animation-delay: .15s; }
+  .lead-chat-typing span:nth-child(3) { animation-delay: .3s; }
+}
 @keyframes leadTyping { 0%, 100% { transform: translateY(0); opacity:.45; } 50% { transform: translateY(-3px); opacity:1; } }
 .lead-chat-hint {
   position: relative;
@@ -1005,6 +1044,7 @@ svg rect, svg text {
   grid-column: 2;
   width: 100%;
   resize: none;
+  field-sizing: content; /* autoresize nativo; JS queda como fallback */
   min-height: 2.65rem;
   max-height: 7rem;
   border: 0;

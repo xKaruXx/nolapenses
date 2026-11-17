@@ -1607,6 +1607,23 @@ window.landingApp = function() {
                 const navLinks = document.querySelectorAll('.floating-nav a[href^="#"]');
                 if (sections.length === 0 || navLinks.length === 0) return;
 
+                // Camino moderno: scroll-target-group + :target-current (Chromium 140+)
+                if (typeof CSS !== 'undefined' && typeof CSS.supports === 'function' && CSS.supports('scroll-target-group: auto')) {
+                    const syncFromTargetCurrent = () => {
+                        const current = document.querySelector('.floating-nav a:target-current');
+                        navLinks.forEach(link => {
+                            link.classList.toggle('nav-link-active', link === current);
+                            if (link === current) link.setAttribute('aria-current', 'true');
+                            else link.removeAttribute('aria-current');
+                        });
+                    };
+                    syncFromTargetCurrent();
+                    document.addEventListener('scrollend', syncFromTargetCurrent);
+                    debugLog('Scrollspy inicializado (nativo :target-current)');
+                    return;
+                }
+
+                // Fallback: IntersectionObserver (Firefox/Safari)
                 const observerOptions = {
                     root: null,
                     rootMargin: '-30% 0px -50% 0px',
@@ -1642,9 +1659,13 @@ window.landingApp = function() {
                 debugLog('Alternando tema a:', this.darkMode ? 'oscuro' : 'claro');
                 if (this.darkMode) {
                     document.documentElement.classList.remove('light-theme');
+                    const meta = document.querySelector('meta[name="color-scheme"]');
+                    if (meta) meta.setAttribute('content', 'dark');
                     localStorage.setItem('theme', 'dark');
                 } else {
                     document.documentElement.classList.add('light-theme');
+                    const meta = document.querySelector('meta[name="color-scheme"]');
+                    if (meta) meta.setAttribute('content', 'light');
                     localStorage.setItem('theme', 'light');
                 }
             } catch (error) {
@@ -1656,12 +1677,15 @@ window.landingApp = function() {
             try {
                 debugLog('Inicializando tema...');
                 const savedTheme = localStorage.getItem('theme');
+                const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
                 if (savedTheme === 'light' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)) {
                     this.darkMode = false;
                     document.documentElement.classList.add('light-theme');
+                    if (colorSchemeMeta) colorSchemeMeta.setAttribute('content', 'light');
                 } else {
                     this.darkMode = true;
                     document.documentElement.classList.remove('light-theme');
+                    if (colorSchemeMeta) colorSchemeMeta.setAttribute('content', 'dark');
                 }
             } catch (error) {
                 console.error('Error al inicializar tema:', error);

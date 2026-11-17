@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Esquema de color nativo, sincronizado con el toggle de tema (dark por defecto) -->
+    <meta name="color-scheme" content="dark">
+    <script>try{document.querySelector('meta[name="color-scheme"]').content=localStorage.getItem("theme")==="light"?"light":"dark"}catch(e){}</script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -214,11 +217,10 @@
     }
     </script>
 
-    <!-- Alpine.js (Updated to v3) -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <!-- Alpine.js (versión fijada en 3.17.5 + SRI) -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.17.5/dist/cdn.min.js" integrity="sha384-FYLKjwG3aohNhNZoVG8sY/5ntunm+MqylL90Q+rT3OM7AwV9/BKFjk/RjoIpIgsI" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 
-    <!-- Web Speech API polyfill -->
-    <script src="https://cdn.jsdelivr.net/npm/web-speech-cognitive-services@7.1.3/dist/webspeech-polyfill.min.js"></script>
+    <!-- Web Speech API polyfill: eliminado (la URL devolvía 404 y ningún código del sitio lo usaba) -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -233,7 +235,7 @@
     <link rel="stylesheet" href="assets/css/mobile.css?v=20260621">
 
     <!-- Animate.css for animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha384-Gu3KVV2H9d+yA4QDpVB7VcOyhJlAVrcXd0thEjr4KznfaFPLe0xQJyonVxONa4ZC" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Critical light-theme contrast fix for service buttons -->
     <style>
@@ -269,7 +271,7 @@
     <!-- Floating Glassmorphic Navbar -->
     <nav class="floating-nav px-6 py-4 flex items-center justify-between" aria-label="Menú principal">
         <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <img src="assets/img/logo-blanco.svg" alt="No La Penses!" class="w-8 h-8">
+            <span class="logo-mask w-8 h-8" role="img" aria-label="No La Penses!"></span>
             <span class="font-display text-lg hidden sm:inline text-white-pure font-bold">No La Penses!</span>
         </a>
         <div class="nav-links flex items-center gap-6 text-sm font-medium">
@@ -297,7 +299,7 @@
 
         <!-- Logo/Profile Image -->
         <div class="absolute top-4 left-4 z-20 hidden">
-            <img src="assets/img/logo-blanco.svg" alt="No La Penses!" class="w-24 h-24">
+            <span class="logo-mask w-24 h-24" role="img" aria-label="No La Penses!"></span>
         </div>
 
         <!-- Main content -->
@@ -328,7 +330,7 @@
                 </div>
 
                 <!-- Dynamic AI welcome message -->
-                <div id="welcomeMessage" class="glass-card p-6 rounded-2xl mb-8 border border-white-pure/10 animate__animated animate__fadeIn animate__delay-1s">
+                <div id="welcomeMessage" tabindex="-1" class="glass-card p-6 rounded-2xl mb-8 border border-white-pure/10 animate__animated animate__fadeIn animate__delay-1s">
                     <div class="flex items-center mb-2">
                         <span id="moodBadge" class="text-sm bg-blue-electric/30 px-3 py-1 rounded-full font-medium inline-block text-blue-300 border border-blue-400/20 shadow-sm" x-text="'Estado de ánimo: ' + (userMood || 'Creativo')">Estado de ánimo: Creativo</span>
                     </div>
@@ -652,7 +654,7 @@
     </section>
 
     <!-- Soluciones digitales para atraer, convertir y operar mejor -->
-    <section id="solutions-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
+    <section id="solutions-section" tabindex="-1" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Soluciones digitales para atraer, convertir y operar mejor</h2>
             <div class="section-divider mb-12"></div>
@@ -1339,7 +1341,7 @@
     </section>
 
     <!-- Plan de trabajo Section -->
-    <section id="plan-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
+    <section id="plan-section" tabindex="-1" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <p class="text-xs font-semibold uppercase tracking-[0.25em] text-blue-electric mb-3">Plan de trabajo</p>
@@ -1415,7 +1417,7 @@
     </section>
 
     <!-- Calculadora de ROI Section -->
-    <section id="roi-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
+    <section id="roi-section" tabindex="-1" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
         <div class="container mx-auto px-4 max-w-4xl">
             <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Simulá tu Ahorro con IA</h2>
             <div class="section-divider mb-12"></div>
@@ -1586,7 +1588,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq-section" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
+    <section id="faq-section" tabindex="-1" class="py-20 relative overflow-hidden bg-gray-dark border-t border-white-pure/5">
         <div class="container mx-auto px-4 max-w-3xl">
             <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-center tracking-tight">Preguntas Frecuentes</h2>
             <div class="section-divider mb-12"></div>

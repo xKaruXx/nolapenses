@@ -289,7 +289,13 @@
     state.facts = state.facts || {};
 
     function persist() { try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch {} }
-    function autoSize() { input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 112) + 'px'; }
+    // Con field-sizing: content el autoresize lo hace el CSS; JS queda como fallback
+    const cssAutoSize = !(typeof CSS !== 'undefined' && typeof CSS.supports === 'function' && CSS.supports('field-sizing', 'content'));
+    function autoSize() {
+      if (!cssAutoSize) return;
+      input.style.height = 'auto';
+      input.style.height = Math.min(input.scrollHeight, 112) + 'px';
+    }
     function setBusy(value) {
       sending = Boolean(value);
       input.disabled = sending;
@@ -318,7 +324,7 @@
       return typing;
     }
     function restoreMessages() {
-      messages.innerHTML = '';
+      messages.replaceChildren();
       if (!state.history.length) {
         const added = addMessage('bot', escapeHtml(INITIAL_GREETING));
         state.history.push({ role: 'assistant', text: INITIAL_GREETING, at: added.at, time: added.time });
@@ -532,6 +538,7 @@
     input.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault();
+        if (event.isComposing || event.keyCode === 229) return;
         if (typeof form.requestSubmit === 'function') form.requestSubmit();
         else form.dispatchEvent(new Event('submit', { cancelable: true }));
       }
